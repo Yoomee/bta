@@ -2959,5 +2959,11 @@ h3.blog_post_date{
 }
 
 
-
+/* ========= Calendar =========== */
+.ec-add-event {
+  float: left;
+}
+.ec-view-event {
+  float: right;
+}
 
