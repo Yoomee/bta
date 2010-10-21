@@ -8,6 +8,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* ===============================  text styles ================================ */
 body, textarea, input {font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif}a:focus{outline:1px dotted invert}hr{border:0 #ccc solid;border-top-width:1px;clear:both;height:0}h1{font-size:25px}h2{font-size:23px}h3{font-size:21px}h4{font-size:19px}h5{font-size:17px}h6{font-size:15px}ol{list-style:decimal}ul{list-style:disc}li{margin-left:30px}p,dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset{margin-bottom:10px}
 
+
+
 /* ===========  @font face ==========
 
 @font-face {
@@ -50,14 +52,14 @@ a.backto {
 
 /* =============================  colours ============================= */
 a, p.inline-errors {
-	color:#D4205D;
+	color:#2795e4;
 }
 body span.cal_sheet span.month {
 	background:#87cd29;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	color:#000;
+
 }
 
 /* =============================  general styles ============================= */
@@ -66,10 +68,31 @@ body {
 	margin:0;
 	float:left;
 	width:100%;
+	background: #f6f9fd;
 
 }
 #main {
 	clear: both;
+	float: right;
+	width: 735px;
+	margin: 0px 0 0 0;
+	background: #fff;
+	position: relative;
+	padding: 20px;
+	
+	
+	min-height:500px;
+	height:auto !important;
+	height:500px;
+
+}
+#home #main {
+	background: none;
+	width: 100%;
+	padding: 0;
+}
+#home #lower_wrapper_inside {
+	margin: 0;
 }
 a {
 	text-decoration:none;
@@ -87,10 +110,18 @@ a:hover {
 .hide {
 	visibility:hidden;
 }
-#wrapper, #nav, #login_slide_bar_inside, #header_inside {
+#nav, #login_slide_bar_inside, #header_inside, #lower_wrapper, #footer {
 	width:940px;
 	margin:0 auto;
 }
+
+#lower_wrapper_inside {
+	width: 100%;
+	float: left;
+	margin: -140px 0 0 0;
+	
+}
+
 table {}
 td, th {
 	border:1px solid #CCCCCC;
@@ -909,14 +940,28 @@ html body form {
 
 /* =============================  top styles ============================= */
 div#top {
-	background:#000;
 	float:left;
 	width:100%;
+	
+	-webkit-box-shadow:0 0 6px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 6px rgba(0,0,0,0.2);
+    -box-shadow:0 0 6px rgba(0,0,0,0.2); 
+    
+     position: relative;
+     
+     z-index: 20;
+     
+     background: #0870AD;
+     
+
 }
 #header {
-	height:140px;
 	width:100%;
 	margin: 0;
+	background: #2795e4;
+	float: left;
+	position: relative;
+	z-index: 0;
 }
 #header_inside {
 	clear: both;
@@ -926,7 +971,6 @@ div#top {
 }
 #home #header_inside {
 	top: 0;
-	height: 265px;
 }
 #login_slide_bar {
 	background:#D4205D;
@@ -948,17 +992,123 @@ h1#site_logo {
 	float: left;
 } 
 h1#site_logo a {
-	background:url("/images/logo.png") no-repeat scroll -2px 0 transparent;
+	background:url("/images/bta_logo.png") no-repeat scroll -2px 0 transparent;
 	display:block;
-	height:70px;
-	margin:15px 0 0 0px;
-	width: 180px;
+	height:201px;
+	margin:15px 0 20px 0px;
+	width: 131px;
 	text-indent:-9000em;
 }
 #home h1#site_logo a {
 }
 h1#site_logo a:active {
 }
+
+#logo_box {
+	float: left;
+	width: 140px;
+	color: #fff;
+	
+}
+#inside #logo_box p {
+	display: none;
+}
+div#home_header {
+	float: left;
+	background: #fff;
+	width: 780px;
+	height: 390px;
+	margin: 30px 0 0 20px;
+	
+	-webkit-box-shadow: 0 0 7px rgba(0,0,0,0.7);
+	
+}
+#case_study_carousel {
+	float: left;
+	height: 390px;
+	position: relative;
+	width: 470px;
+	background: #333 ;
+}
+#case_study_image {
+	background: url(/images/carousel_image.jpg) no-repeat -1px -1px;
+	float: left;
+	width: 450px;
+	margin: 0px;
+	height: 360px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 14;
+
+}
+
+#case_study_quote {
+	background: #6D4885;
+	position: absolute;
+	z-index: 15;
+	width: 180px;
+	height: 220px;
+	color: #fff;
+	padding: 20px;
+	top: 40px;
+	right: -20px;
+
+	
+}
+
+#case_study_quote h3 {
+	font-weight: 300;
+	letter-spacing: normal;
+	font-size: 18px;
+}
+
+
+#other_case_studies {
+	color: #fff;
+	position: absolute;
+	z-index: 18;
+	background:;
+	width: 470px;
+	bottom: 0;
+	height: 70px;
+	
+	background: #545454; /* old browsers */
+background: -moz-linear-gradient(top, #545454 0%, #383838 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#383838)); /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 ); /* ie */
+
+
+	
+}
+
+#get_suppport {
+	float: right;
+	width: 240px;
+	padding: 20px 20px 20px 50px;
+	background: #D5DEE5; /* old browsers */	
+background: -moz-linear-gradient(top, #D5DEE5 0%, #E3EBF2 65%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D5DEE5), color-stop(65%,#E3EBF2)); /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', endColorstr='#E3EBF2',GradientType=0 ); /* ie */
+	height: 350px;
+	
+}
+
+#get_suppport h2 {
+	font-weight: 200;
+	color: #184f7b;
+	font-size: 17px;
+	
+}
+
+#get_suppport h2 span {
+	font-weight: bold;
+}
+
 
 /* =======  cycle  ====== */
 .cycle_frame {
@@ -998,10 +1148,12 @@ h1#site_logo a:active {
 #user_links {
 	float:right;
 	margin:0px 0;
-	width:450px;
+	width:340px;
+	
+	border-bottom: 1px dashed rgba(255,255,255,0.3);
 }
 #home #user_links {
-	margin: 0 180px 0 0;
+	margin: 10px 0px 0 0;
 }
 #user_links p {
 	margin:0;
@@ -1009,7 +1161,6 @@ h1#site_logo a:active {
 #user_links a {
 	display: block;
 	padding: 10px;
-	background: #fff;
 	float: right;
 }
 
@@ -1077,7 +1228,6 @@ input#search_icon {
 
 /* ====================  navigation  ===================== */
 #nav {
-	height:45px;
 	padding: 0px 0 0;
 }
 #nav ul {
@@ -1096,21 +1246,23 @@ input#search_icon {
 
 }
 #nav ul li a {
-	color:#FFFFFF;
+	color:#fff;
 	display:block;
 	float:left;
-	height:20px;
-	margin:5px 5px 0 0;
-	padding:4px 7px 7px;
-	font: 17px/27px 'QuicksandBold', Arial, sans-serif;
-	text-transform: uppercase;
+	margin:5px 5px 5px 0;
+	padding:3px 7px 3px;
+	font: 16px/27px Arial, sans-serif;
+	font-weight: bold;
+	
+	text-shadow: 0px -1px 1px rgba(0,0,0,0.2);
 }
 #nav ul li a:hover, .section_2 #nav ul li#link_news a, .controller_enquiries.action_new #nav ul li#link_contact_us a {	
 	text-decoration:none;
 	color: #D4205D;
 }
 #nav ul li.active a, #home #nav ul li#link_home a {
-	color: #D4205D;
+	background: #f6f9fd;
+	color: #000;
 }
 
 /* ====================  homepage  ===================== */
@@ -1801,12 +1953,7 @@ ul.action_links li {
 /* ====================  footer  ===================== */
 
 #footer {
-	clear:both;
-	margin:0px 0;
-	padding:0;
-	position:relative;
-	float: left;
-	width: 945px;
+
 }
 #copyright {
 
