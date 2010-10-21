@@ -1,0 +1,19 @@
+development:
+  username: root
+  adapter: mysql
+  database: vanilla_development
+  host: localhost
+  password: ''
+test:
+  username: root
+  adapter: mysql
+  database: vanilla_test
+  host: localhost
+  password: ''
+production: 
+  username: root
+  adapter: mysql
+  database: vanilla_production
+  host: localhost
+  password: ''
+
