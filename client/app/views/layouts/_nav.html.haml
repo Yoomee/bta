@@ -3,17 +3,14 @@
     %li.active
       =link_to 'Home', {:controller => '/home'}
     %li
-      =link_to 'Pages', page_path(1)
+      =link_to 'About tinnitus', page_path(1)
     %li
-      =link_to 'Blog', {:controller => 'blog'}
+      =link_to 'Get support', {:controller => 'blog'}
     %li
-      =link_to 'Events', '/calendar'
+      =link_to 'For health professionals', calendar_path
     %li
-      =link_to 'Forum', {:controller => 'Forum'}
+      =link_to 'For researchers', calendar_path      
     %li
-      =link_to 'Group', {:controller => 'group', :action => 'show', :id=> 5}
-  
-  #search_box
-    %form{ :action => "/search/results", :method => "post" }
-      %input#search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('search_field');element.value='';" }
-      %input#search_icon{ :name => "commit", :title => "search", :value => "search" }
+      =link_to 'For policy makers', calendar_path      
+    %li
+      =link_to 'News &amp events', '/calendar'     

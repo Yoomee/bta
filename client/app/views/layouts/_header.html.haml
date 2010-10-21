@@ -1,6 +1,12 @@
-%h1#site_logo
-  =link_to site_name, :home
+#logo_box
+  %h1#site_logo
+    =link_to site_name, :home
+  %p The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.  
 #user_links
+  #search_box
+    %form{ :action => "/search/results", :method => "post" }
+      %input#search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('search_field');element.value='';" }
+      %input#search_icon{ :name => "commit", :title => "search", :value => "search" }  
   - if logged_in?
     =link_to('Logout', session_path, :method => :delete)
     =link_if_allowed 'Site settings', admin_proc
@@ -8,3 +14,35 @@
       =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
   - elsif !current_page?(new_session_path)
     %p=link_to('login', new_session_path, :id => 'member_login_bttn')
+-if is_home?
+  #home_header
+    #case_study_carousel
+      #case_study_image
+      #case_study_quote
+        %h3
+          My message to anyone who thinks they may have tinnitus is 'you are not alone'
+        =link_to "Read Nicola's story'", "#", :class=>'read_more'
+      #other_case_studies
+        %h4 Other Case studies
+    #get_suppport
+      %h2 
+        Have tinnitus? 
+        %span 
+          Get support
+        &rarr;
+        
+      %ul.lst
+        %li
+          -link_to({:controller => "enquiries", :action => "new", :id => "competition"}, :id => "competition_link") do
+            %strong Speak to someone
+            %p Call our confidential helpline
+            %p.phone_number 0800 018 0527
+        %li
+          -link_to({:controller => "enquiries", :action => "new", :id => "competition"}, :id => "competition_link") do
+            %strong Speak to someone
+            %p Call our confidential helpline
+            %p.phone_number 0800 018 0527
+          
+          =link_to 'Speak to someton'
+          
+%br.clear  

@@ -31,25 +31,29 @@
         });
   - body_tag do
     -#<body id='= is_home? ? 'home' : 'inside''>
-    #top
-      =render :partial => 'layouts/nav'
-    -unless current_page?(new_session_path)
-      #login_slide_bar
-        #login_slide_bar_inside
-          =render :partial=>'sessions/form'
-    #wrapper
+    #wrapper  
+      #top
+        =render :partial => 'layouts/nav'
+      -unless current_page?(new_session_path)
+        #login_slide_bar
+          #login_slide_bar_inside
+            =render :partial=>'sessions/form'
       #header
-        =render :partial => 'layouts/header'
-      #main.content
-        -if flash[:notice]
-          %p#flash_notice
-            =flash[:notice]
-        -if flash[:error]
-          %p#flash_error
-            =flash[:error]
-        %h1
-          = page_title
-        = @content_for_layout
-        %br.clear
-      #footer
-        =render :partial => 'layouts/footer'
+        #header_inside
+          =render :partial => 'layouts/header'
+          
+      #lower_wrapper 
+        #lower_wrapper_inside
+          #main.content
+            -if flash[:notice]
+              %p#flash_notice
+                =flash[:notice]
+            -if flash[:error]
+              %p#flash_error
+                =flash[:error]
+            %h1
+              = page_title
+            = @content_for_layout
+            %br.clear
+        #footer
+          =render :partial => 'layouts/footer'
