@@ -3107,11 +3107,16 @@ h3.blog_post_date{
 
 
 /* ========= Calendar =========== */
+.ec-day-link {
+  float: right; 
+  width: 100%;
+}
 .ec-add-event {
   float: left;
 }
 .ec-view-event {
   float: right;
+  width: 90%;
 }
 #previous_next_day_links {
   margin-bottom: 10px;
@@ -3124,5 +3129,12 @@ h3.blog_post_date{
 }
 li.event_list_item {
   list-style-type: none;
-  margin:15px 0 15px 0;
+  margin: 15px 0 15px 0;
+}
+#calendar_header {
+  float: left; 
+}
+#event_categories {
+  float: right;
+  margin:10px;  
 }
