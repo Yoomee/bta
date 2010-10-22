@@ -3142,3 +3142,148 @@ li.event_list_item {
   border:none;
   padding:0;
 }
+
+/* ==================  Event Categories Lists ==================== */
+
+#categories_list .category_wrapper {
+	border-bottom:1px solid gray;
+	clear:both;
+	height:37px;
+	margin-bottom:5px;
+	width:500px;
+}
+
+#categories_list .category_wrapper ol li {
+	clear:none;
+}
+
+.category_wrapper h3 a {
+	color: black;
+}
+
+#categories_list .edit_category_form .category_name_input {
+	width: 240px;
+	float:left;
+	font-weight: bold;
+	font-size:21px;
+	padding:2px;
+	margin-bottom: 9px;
+}
+
+#categories_list li.error .category_name_input {
+	padding:1px;
+}
+
+#categories_list .edit_category_form .category_color_input {
+	width: 50px;
+	float:left;
+}
+
+.edit_category_form {
+	float:left;
+	clear:none;
+}
+
+.edit_category_form p.inline-errors {
+	color:#DA1C5A;
+	float:left;
+	font-size:15px;
+	line-height:15px;
+	margin:7px 0 0 5px;
+}
+
+.edit_category_form fieldset.inputs, .edit_category_form ol li{
+	margin-bottom:0;
+}
+
+.edit_category_form .buttons{
+	display:none;
+	margin-bottom:0;
+}
+
+
+a#new_category_link {
+	text-decoration: underline;
+	font-size: 16px;
+	color: gray;
+}
+
+a#new_category_link:hover{
+	color: black;
+}
+
+a.category_function_link {
+	float:right;
+	clear:none;	
+	padding: 5px;
+}
+
+.ajax_category_form_loader{
+	background-color:#DFDFDF;
+	clear:none;
+	float:left;
+	height:12px;
+	padding:7px 0 13px 143px;
+	width:357px;
+}
+
+.category_display{
+	float:left;
+	clear:none;
+}
+
+.category_display h3{
+	clear:none;
+	float:left;
+	margin:0 0 9px;
+	padding:1px 0 0 4px;
+}
+.category_display .color_block{
+	border:2px solid;
+	clear:none;
+	float:left;
+	height:22px;
+	margin:2px 5px 0 0;
+	width:41px;
+}
+
+/* ================== Color Picker ==================== */
+
+div.color_picker {
+	border:4px gray solid;
+	clear:none;
+	float:left;
+	height:18px;
+	margin:2px 5px 0 0;
+	padding: 0 !important;
+	width:37px;
+
+	background: url(images/arrow.gif) no-repeat top right;
+	cursor: pointer;
+	line-height: 16px;
+	
+	box-shadow: 3px 3px 4px #888888;
+	-moz-box-shadow: 3px 3px 4px #888888;
+	-webkit-box-shadow: 3px 3px 4px #888888;
+}
+
+div#color_selector {
+  width: 147px;
+  position: absolute;
+  border: 1px solid #598FEF;
+  background-color: #EFEFEF;
+  padding: 2px;
+}
+  div#color_custom {width: 100%; float:left }
+  div#color_custom label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
+  div#color_custom input {margin: 5px 2px; padding: 0; font-size: 95%; border: 1px solid #000; width: 65%; }
+
+div.color_swatch {
+  height: 22px;
+  width: 41px;
+  border:2px solid #000;
+  margin: 2px;
+  float: left;
+  cursor: pointer;
+  line-height: 12px;
+}
