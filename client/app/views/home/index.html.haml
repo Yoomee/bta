@@ -1,0 +1,101 @@
+#home_left_col.h_box
+  %ul.lst
+    %li
+      =link_to "About us", "#", :class=>'about_link'
+    %li
+      =link_to "Contact us", "#", :class=>'contact_link'
+    %li
+      =link_to "Donate", "#", :class=>'donate_link'
+  =link_to "Our Ambassador", "#", :class=>'our_ambassador'
+  #campaign_box
+    %h4 Campaign title
+#home_box_center  
+  #box_professionals.h_box
+    %h3.title Get informed
+    %ul.lst
+      %li
+        %h4.title 
+          =link_to "For researchers", "#"
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
+        %p
+          Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+      %li
+        %h4.title 
+          =link_to "For health professionals", "#"
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
+        %p
+          Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+      %li
+        %h4.title  
+          =link_to "For policy makers", "#"
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
+        %p
+          Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+      %li
+        %h4.title  
+          =link_to "Latest medical advances ", "#"
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
+        %p
+          Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+  #box_shop.h_box
+    %h3.title The BTA shop    
+    %ul.lst
+      %li
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/product.jpg"
+          %h4.title 
+            Product title
+      %li
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class=> "h_image") do
+          =image_tag "/images/product.jpg"
+          %h4.title 
+            Product title
+      %li
+        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =image_tag "/images/product.jpg"
+          %h4.title 
+            Product title
+#latest_news
+  %h3.title Latest News
+  #big_news_item
+    -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+      =image_tag "/images/big_news.jpg"
+    %h4 
+      =link_to "Marie and Jack Shapiro Prize Winner Announced ", "#"  
+    %p
+      Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.      
+
+  %ul.lst
+    %li
+      -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+        =image_tag "/images/news_img.jpg"
+      %h4 
+        =link_to "News item ", "#"
+      %p
+        Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.  
+    %li
+      -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+        =image_tag "/images/news_img.jpg"
+      %h4 
+        =link_to "News item ", "#"
+      %p
+        Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.
+#community_row
+  #forum_box
+    %h3.title
+      =link_to "BTA forum ", "#"
+  #facebook_box
+    %h3.title
+      =link_to "Facebook ", "#"
+  #twitter_box
+    %h3.title
+      =link_to "Twitter ", "#"
+    %p.tweet  
+      Only a week to go until the BTA Annual Conference 
+      -link_to 'http://bit.ly/cpbqWX', 'http://bit.ly/cpbqWX'
+    =link_to "Follow us ", "#", :class=>'bttn_round'      
+    
