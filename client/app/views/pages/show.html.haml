@@ -3,18 +3,37 @@
   %p#page_status
     =@page.status_string
 #page_content
+  #subnav
+    %ul.lst
+      %li
+        =link_to "About Tinnitus", "#", :class=>'active'
+      %li
+        =link_to "Prevention", "#"
+      %li
+        =link_to "Treatment", "#"
+      %li
+        =link_to "Tinnitus & hearing loss", "#"
+      %li
+        =link_to "About the BTA", "#"
+      %li
+        =link_to "BTA supported research", "#"
+      %li
+        =link_to "BTA forum", "#"
+
   #page_left_col
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col
-    =photo_for(@page, "280x")
+    #article_image
+      =photo_for(@page, "280x")
     .summary_wrapper
       =snippet(@page, :summary)  
     =snippet(@page, :pull_quote)
     .call_to_action_wrapper
       =snippet(@page, :call_to_action)
-    -if @page.has_image?
-      #article_image
-        = photo_for(@page, '140x')
+    -if false  
+      -if @page.has_image?
+        #article_image
+          = photo_for(@page, '140x')
 %br.clear        
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
