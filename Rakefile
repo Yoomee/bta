@@ -5,6 +5,6 @@ require 'rake/rdoctask'
 require 'tasks/rails'
 begin
   require 'thinking_sphinx/tasks'
-rescue
+rescue LoadError
   # May need installing
 end
