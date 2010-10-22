@@ -1,0 +1,67 @@
+-title 'Dashboard'
+#admin_dashboard
+  #admin_content.dash_col
+    %h2
+      Content
+    #dash_sections_and_pages.dash_item
+      %h3
+        Sections &amp; pages
+      %ul
+        %li
+          %a{ :href => "/sections" }
+            List sections
+        %li
+          %a{ :href => "/sections/new" }
+            Add a section          
+        %li
+          %a{ :href => "/pages/new" }
+            Add a page
+    #dash_images.dash_item
+      %h3
+        Images
+      %ul
+        %li
+          %a{ :href => "/photo_albums" }
+            List photo albums
+        %li
+          %a{ :href => "/photo_albums/new" }
+            Add a photo album
+        %li
+          %a{ :href => "/photos/new" }
+            Add an image
+    #dash_sections_and_pages.dash_item
+      %h3
+        Events
+      %ul
+        %li
+          %a{ :href => "/calendar" }
+            View calendar      
+        %li
+          %a{ :href => "/events" }
+            List all events
+        %li
+          %a{ :href => "/events/new" }
+            Add an event    
+        %li
+          %a{ :href => "/event_categories" }
+            Edit event categories
+  #dash_technical_stuff.dash_col
+    %h2
+      Technical stuff
+    #dash_enquiries.dash_item
+      %h3
+        Enquiries
+      %ul
+        %li
+          %a{ :href => "/enquiries" }
+            List enquiries                                
+  #dash_membership.dash_col
+    %h2
+      Membership
+    #dash_members.dash_item
+      %h3
+        Members
+      %ul
+        %li
+          %a{ :href => "/members" }
+            List members
