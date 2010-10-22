@@ -3113,4 +3113,16 @@ h3.blog_post_date{
 .ec-view-event {
   float: right;
 }
-
+#previous_next_day_links {
+  margin-bottom: 10px;
+}
+#previous_day_link {
+  float: left;
+}
+#next_day_link {
+  float: right;
+}
+li.event_list_item {
+  list-style-type: none;
+  margin: 15px 0 15px 0;
+}
