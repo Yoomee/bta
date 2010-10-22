@@ -16,6 +16,7 @@
     = google_javascripts :jquery, :jqueryui
     = javascript_include_tag 'jrails'
     = javascript_include_tag 'jquery.cycle'
+    = javascript_include_tag 'tramlines'
     
     = stylesheet_link_tag 'client/styles'
     = stylesheet_link_tag 'jquery-ui'
@@ -45,16 +46,10 @@
       #lower_wrapper 
         #lower_wrapper_inside
           #main.content
-            -if flash[:notice]
-              %p#flash_notice
-                =flash[:notice]
-            -if flash[:error]
-              %p#flash_error
-                =flash[:error]
-            -if !is_home?    
-              %h1
-                = page_title
-            = @content_for_layout
+            =render_flash
+            -unless hide_page_title?
+              %h1#page_title=page_title
+            =@content_for_layout
             %br.clear
         #footer
           =render :partial => 'layouts/footer'
