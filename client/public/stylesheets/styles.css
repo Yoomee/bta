@@ -3138,3 +3138,7 @@ li.event_list_item {
   float: right;
   margin:10px;  
 }
+.ec-calendar td.ec-event-cell {
+  border:none;
+  padding:0;
+}
