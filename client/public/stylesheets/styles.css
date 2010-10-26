@@ -3441,6 +3441,43 @@ h3.blog_post_date{
 	margin-bottom:5px;
 	margin-top:-10px;
 }
+#blog_share_links {
+	float:left;
+  margin:10px 0 20px;
+	width:290px;
+}
+#blog_share_links .digg a {
+	background-image:url(/images/icons/digg.gif);
+}
+#blog_share_links .twitter a {
+	background-image:url(/images/icons/twitter.gif);
+}
+#blog_share_links .reddit a {
+	background-image:url(/images/icons/reddit.gif);
+}
+#blog_share_links .facebook a {
+	background-image:url(/images/icons/facebook.gif);
+}
+#blog_share_links .stumbleupon a {
+	background-image:url(/images/icons/stumbleupon.gif);
+}
+#blog_share_links ul {
+	margin:0;
+}
+#blog_share_links li {
+	float:left;
+	list-style-type:none;
+	margin:0;
+	width:95px;
+}
+#blog_share_links a {
+	background:transparent url(/images/icons/delicious.gif) no-repeat scroll 0 5px;
+	display:block;
+	float:left;
+	margin:0;
+	padding:4px 23px 4px 20px;
+}
+
 /* ====================  blog comments  ===================== */
 .comment_wrapper {
 	background:#F5F5F5 none repeat scroll 0 0;
@@ -3704,3 +3741,26 @@ div.color_swatch {
   line-height: 12px;
 }
 
+/* ========== Wall and Comments ========== */
+
+.wall_form textarea {
+  width:510px;
+}
+.wall_body {
+  float: left;
+  clear: both;
+  margin-top: 10px;
+}
+.wall_post_list {
+  float: left;
+  clear: both;
+  margin-top: 10px;  
+}
+.wall_post {
+  float: left;
+  clear: both;  
+}
+.wall_post .wall_post_left {
+  float: left;
+  margin-right:10px;
+}

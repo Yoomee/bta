@@ -13,7 +13,7 @@
     %strong
       =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
   - elsif !current_page?(new_session_path)
-    %p=link_to('login', new_session_path, :id => 'member_login_bttn')
+    %p=link_to('login', '#', :id => 'member_login_bttn')
 -if is_home?
   #home_header
     #case_study_carousel
