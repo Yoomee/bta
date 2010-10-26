@@ -3,23 +3,7 @@
   %p#page_status
     =@page.status_string
 #page_content
-  #subnav
-    %ul.lst
-      %li
-        =link_to "About Tinnitus", "#", :class=>'active'
-      %li
-        =link_to "Prevention", "#"
-      %li
-        =link_to "Treatment", "#"
-      %li
-        =link_to "Tinnitus & hearing loss", "#"
-      %li
-        =link_to "About the BTA", "#"
-      %li
-        =link_to "BTA supported research", "#"
-      %li
-        =link_to "BTA forum", "#"
-
+  =render("pages/subnav", :page => @page)
   #page_left_col
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col

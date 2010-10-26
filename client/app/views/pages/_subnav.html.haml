@@ -1,0 +1,20 @@
+#subnav
+  %ul.lst
+    -page.section.pages.each do |sibling|
+      -li_with_active(current_page?(:controller => "pages", :action => "show", :id => sibling)) do
+        =link_to(sibling.title, sibling)
+    -if false
+      %li
+        =link_to "About Tinnitus", "#", :class=>'active'
+      %li
+        =link_to "Prevention", "#"
+      %li
+        =link_to "Treatment", "#"
+      %li
+        =link_to "Tinnitus & hearing loss", "#"
+      %li
+        =link_to "About the BTA", "#"
+      %li
+        =link_to "BTA supported research", "#"
+      %li
+        =link_to "BTA forum", "#"
