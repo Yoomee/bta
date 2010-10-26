@@ -1,0 +1,25 @@
+-content_for :head do
+  =javascript_include_tag :ckeditor
+  =javascript_include_tag "client/jquery.labelify"
+  :javascript
+    $(document).ready(function(){
+      $('.labelify').labelify({ labelledClass: 'labelified' });
+    });
+-semantic_form_for contact, :html => {:multipart => true} do |form|
+  -form.inputs do
+    =form.input :category_id, :as => :select, :collection => ContactCategory.select_options, :include_blank => false
+    =form.input :name
+    =form.input :description, :as => :ck_text
+    -form.semantic_fields_for :location do |fields|
+      -fields.inputs do
+        =fields.input :address1, :label => "Address", :input_html => {:title => "Address Line 1", :class=>"labelify"}, :wrapper_html => {:class => "address"}, :required => false
+        =fields.input :address2, :label => false, :input_html => {:title => "Address Line 2", :class=>"labelify"}, :wrapper_html => {:class => "address"}
+        =fields.input :city, :label => false, :input_html => {:title => "City", :class=>"labelify"}, :wrapper_html => {:class => "city"}
+        =fields.input :postcode, :label => false, :input_html => {:title => "Postcode", :class=>"labelify"}, :wrapper_html => {:class => "postcode"}
+        =fields.input :country, :as => :country,  :label => false, :priority_countries => ["United Kingdom"], :wrapper_html => {:class => "country"}
+    =form.input :phone_number
+    =form.input :email, :label => "Email address"
+    =form.input :website
+    =form.input :image, :as => :file
+    -form.buttons do
+      =form.commit_button "Submit"

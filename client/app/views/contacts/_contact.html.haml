@@ -1,0 +1,7 @@
+.contact{:id => "contact_#{contact.id}"}
+  .list_image
+    =link_to(image_for(contact, "50x50#", :class => 'contact_image'), contact)
+  %h3.contact_name=link_to(contact.full_name, contact)
+  .category
+    =link_to(contact.category.name, contact.category, :style => "background-color:#{contact.category.color}")
+  

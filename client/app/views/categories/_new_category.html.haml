@@ -1,0 +1,9 @@
+-unique_id = category.id.to_s
+%div{:id => "new_category", :class => "category_wrapper"}
+  =link_to_function "Add a new #{category.class.name.titleize.downcase}","CategoryForm.show_new_form();", :id => "new_category_link", :style => "#{'display:none' if show_form}"
+  #new_category_form{:style => "#{'display:none' unless show_form}"}
+    %div{:id => "#{unique_id}_category_ajax_loader", :class => "ajax_category_form_loader", :style => "display:none"}
+      =image_tag('ajax-loader_long_bar.gif')
+    =render 'categories/form', :category => category, :method => :post, :show_form => true  
+    =link_to_function "cancel", "CategoryForm.hide_new_form()", :id => "#{unique_id}_category_edit_link", :class => "category_function_link"
+    =link_to_function "save", "$('##{unique_id}_category_form_submit').click()", :id => "#{unique_id}_category_save_link", :class => "category_function_link"

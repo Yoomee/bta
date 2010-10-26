@@ -1,0 +1,9 @@
+- title "Directory"
+
+#directory_a2z
+  -('A'..'Z').each do |letter|
+    = link_to_unless_current letter, contacts_path(:letter => letter)
+    |
+  =link_to_unless_current '#', contacts_path(:letter => '#')
+  =render :partial => 'contacts/directory', :contacts => @contacts
+  =(will_paginate @contacts, :params => {:letter => params[:letter] })
