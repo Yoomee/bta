@@ -417,6 +417,9 @@ html body.controller_enquiries form {
 	margin: 0 0 20px 0;
 }
 
+fieldset.inputs {
+  clear:both;
+}
 
 
 

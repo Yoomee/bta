@@ -1,0 +1,10 @@
+%h1=@contact.full_name
+%h4="Raised £150"
+.my_events
+  %h2 My Events
+  -@contact.event_bookings.sponsored.each do |event_booking|
+    =render("contacts/event", :event_booking => event_booking)
+    
+-options_panel do
+  =back_link
+  =link_to("Edit this page", edit_contact_path(@contact))
