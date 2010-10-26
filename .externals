@@ -70,3 +70,13 @@ repository = git://git.yoomee.com:4321/plugins/tramlines_locations.git
 repository = git://git.yoomee.com:4321/plugins/tramlines_forum.git
 path = vendor/plugins/tramlines_forum
 scm = git
+
+[vendor/plugins/facebooker]
+path = vendor/plugins/facebooker
+scm = git
+repository = http://github.com/mmangino/facebooker.git
+
+[vendor/plugins/tramlines_facebook_connect]
+path = vendor/plugins/tramlines_facebook_connect
+scm = git
+repository = git://git.yoomee.com:4321/plugins/tramlines_facebook_connect.git

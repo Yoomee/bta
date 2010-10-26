@@ -13,3 +13,5 @@
 /vendor/plugins/event_calendar
 /vendor/plugins/tramlines_locations
 /vendor/plugins/tramlines_forum
+/vendor/plugins/facebooker
+/vendor/plugins/tramlines_facebook_connect
