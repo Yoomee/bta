@@ -1,10 +1,18 @@
-- title "Directory"
+- title "Directory#{" > #{@category.name}" unless @category.blank?}"
 #directory_search
   =render("search/autocomplete_form", :class_name => %w{contact})
-#directory_a2z
-  -('A'..'Z').each do |letter|
-    = link_to_unless_current letter, directory_path(:id => letter)
-    |
-  =link_to_unless_current '#', directory_path(:id => '#')
-  =render :partial => 'contacts/directory', :contacts => @contacts
-  =(will_paginate @contacts, :params => {:letter => params[:letter] })
+-if @a_to_z
+  #directory_a2z
+    -('A'..'Z').each do |letter|
+      = link_to_unless_current letter, directory_path(:id => letter)
+      |
+    =link_to_unless_current '#', directory_path(:id => '#')
+=render :partial => 'contacts/directory', :contacts => @contacts
+=(will_paginate @contacts, :params => {:letter => params[:letter] })
+  
+-options_panel do
+  =back_link
+  =link_to "A to Z listings", directory_path(:id=>nil) unless @a_to_z
+  =link_to "Contact categories", contact_categories_path
+  =link_if_allowed "New contact", new_contact_proc
+  

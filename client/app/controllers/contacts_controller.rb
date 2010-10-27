@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
     
-  admin_only :create, :destroy, :index, :new, :show, :update
+  admin_only :create, :destroy, :new, :update, :edit
   
   before_filter :get_contact, :only => %w{show edit update destroy}
   

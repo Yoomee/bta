@@ -1,5 +1,7 @@
 class ContactCategoriesController < ApplicationController
-    
+  
+  admin_only :create, :destroy, :update
+  
   def index
     @categories = ContactCategory.all(:order => :name)
     render :template => 'categories/index'
@@ -45,8 +47,9 @@ class ContactCategoriesController < ApplicationController
   
   def show
     @category = ContactCategory.find(params[:id])
-    @contacts = @category.contacts.paginate(:page => params[:page], :per_page => 20)
+    @contacts = @category.contacts.paginate(:page => params[:page], :per_page => 50)
     @title = @category.name
+    @a_to_z = false
     render :template => 'contacts/index'
   end
 end
