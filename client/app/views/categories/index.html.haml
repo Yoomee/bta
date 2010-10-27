@@ -66,7 +66,7 @@
 
 .crm_left_col
   #categories_list
-    =render 'categories/new_category', :category => model_class.new, :show_form => false
+    =render 'categories/new_category', :category => model_class.new, :show_form => false if admin_logged_in?
     -@categories.each do |category|
       =render 'categories/category', :category => category, :show_form => false
 .crm_right_col

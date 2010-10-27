@@ -1,3 +1,8 @@
+-content_for :head do
+  -unless (@contact.lat.nil? && @contact.lng.nil?)
+    =GMap::header(:version => '2')
+    =@contact.map.to_html
+
 - title @contact.name
 
 =image_for(@contact, "100x100")
@@ -9,9 +14,11 @@
 %p=@contact.email unless @contact.email.blank?
 %p=@contact.phone_number unless @contact.phone_number.blank?
 %p=link_to_url(@contact.website) unless @contact.website.blank?
+=@contact.map_div(:width => 300, :height => 300)				
+
 
 
 -options_panel do
-  =back_link
+  =link_to("Back to the directory", directory_path(:id=>nil))
   =link_if_allowed("Edit", edit_contact_proc)
   =link_if_allowed("Delete", @contact, :method => :delete, :confirm => "Are you sure?")

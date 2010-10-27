@@ -8,6 +8,7 @@
 -semantic_form_for contact, :html => {:multipart => true} do |form|
   -form.inputs do
     =form.input :category_id, :as => :select, :collection => ContactCategory.select_options, :include_blank => false
+    %li=link_to("Edit Contact Categories", contact_categories_path)
     =form.input :name
     =form.input :description, :as => :ck_text
     -form.semantic_fields_for :location do |fields|

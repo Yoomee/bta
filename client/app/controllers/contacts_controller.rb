@@ -1,15 +1,15 @@
 class ContactsController < ApplicationController
     
-  admin_only :create, :destroy, :index, :new, :show, :update
+  admin_only :create, :destroy, :new, :update, :edit
   
   before_filter :get_contact, :only => %w{show edit update destroy}
   
   def index
-    if params[:letter] == '#'
+    if params[:id] == '#'
       @contacts = Contact.find(:all, :conditions => "name BETWEEN '0%' AND '9%'", :order=>'name').paginate :page => params[:page], :per_page => 50
     else
-      params[:letter] ||= 'A'
-      @contacts = Contact.name_like(params[:letter]).descend_by_name.paginate :page => params[:page], :per_page => 50
+      params[:id] ||= 'A'
+      @contacts = Contact.name_begins_with(params[:id]).ascend_by_name.paginate :page => params[:page], :per_page => 50
     end
     @a_to_z = true
   end

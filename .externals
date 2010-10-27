@@ -80,3 +80,8 @@ repository = http://github.com/mmangino/facebooker.git
 path = vendor/plugins/tramlines_facebook_connect
 scm = git
 repository = git://git.yoomee.com:4321/plugins/tramlines_facebook_connect.git
+
+[vendor/plugins/ym4r_gm]
+repository = svn://rubyforge.org/var/svn/ym4r/Plugins/GM/trunk/ym4r_gm
+path = vendor/plugins/ym4r_gm
+scm = svn
