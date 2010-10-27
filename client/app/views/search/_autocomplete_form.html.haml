@@ -1,0 +1,20 @@
+-class_name ||= nil
+-content_for :head do
+  :javascript
+    $(document).ready(function() {
+      $('#search_term').autocomplete({
+        source: "#{autocomplete_new_search_path(:models => class_name)}",
+        delay: 500,
+        minLength: 2,
+        select: function(event, ui) {
+          window.location = ui.item.url;
+        }
+      });
+    });
+/ .crm_search_form{:id => "crm_search_form_#{class_name ? class_name : 'all'}"}
+/   %p=crm_search_intro(class_name)
+/   .search_icon  
+/ =text_field :search, :term, :autocomplete => "off"
+.search_box
+  %input#search_term.search_field{:name => "term", :type => "text", :value => "Search the directory", :autocomplete => "off",:onfocus => "var element = document.getElementById('search_term');element.value='';"}
+  %input.search_icon{ :name => "commit", :title => "search", :value => "search" }

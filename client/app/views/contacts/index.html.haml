@@ -1,9 +1,10 @@
 - title "Directory"
-
+#directory_search
+  =render("search/autocomplete_form", :class_name => %w{contact})
 #directory_a2z
   -('A'..'Z').each do |letter|
-    = link_to_unless_current letter, contacts_path(:letter => letter)
+    = link_to_unless_current letter, directory_path(:id => letter)
     |
-  =link_to_unless_current '#', contacts_path(:letter => '#')
+  =link_to_unless_current '#', directory_path(:id => '#')
   =render :partial => 'contacts/directory', :contacts => @contacts
   =(will_paginate @contacts, :params => {:letter => params[:letter] })

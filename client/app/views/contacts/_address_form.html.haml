@@ -1,9 +1,0 @@
--parent_name ||= "Contact"
--hide_delete_link ||= false
--form.semantic_fields_for :addresses, address do |fields|
-  -fields.inputs do
-    =fields.input :address1, :label => false, :input_html => {:title => "Address", :class=>"labelify", :rows=>3}, :wrapper_html => {:class => "address"}
-    =fields.input :city, :label => false, :input_html => {:title => "City", :class=>"labelify"}, :wrapper_html => {:class => "city"}
-    =fields.input :postcode, :label => false, :input_html => {:title => "Postcode", :class=>"labelify"}, :wrapper_html => {:class => "postcode"}
-    =fields.input :country, :as => :country,  :label => false, :priority_countries => ["United Kingdom"], :wrapper_html => {:class => "country"}
-    =multiple_nested_delete_link_for(:address, :form => fields, :parent_name => parent_name) unless hide_delete_link

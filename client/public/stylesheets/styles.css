@@ -30,7 +30,7 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, 
 
 /* ======================  CSS3 regularly used stuff ================== */
 
-#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, #search_box, #nav ul li a {
+#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box, #nav ul li a {
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -1247,7 +1247,7 @@ span.fb {
 fb.fb_login_not_logged_in.FB_login_button {
 	float: right;	
 }
-#search_box {
+.search_box {
 	float:right;
 	height:26px;
 	margin:9px 5px 0 0;
@@ -1256,7 +1256,7 @@ fb.fb_login_not_logged_in.FB_login_button {
 	padding: 0;
 	color: #666;
 }
-input#search_field {
+input.search_field {
 	background:none repeat scroll 0 0 #FFFFFF;
 	border:medium none;
 	float:left;
@@ -1268,7 +1268,7 @@ input#search_field {
 	color: #999;
 	
 }
-input#search_icon {
+input.search_icon {
 	background:url("/images/sprite.png") no-repeat scroll 0 -1320px transparent;
 	border:medium none;
 	display:block;
@@ -3774,3 +3774,31 @@ div.color_swatch {
   clear: both;
   width:100%;  
 }
+
+
+/* ======== Autocomplete ===== */
+
+.ui-autocomplete {
+	float: left;
+	clear: both;
+	list-style-type: none;
+	padding: 5px;
+}
+.ui-autocomplete li {
+	margin: 0 0 5px 0;
+}
+
+/* ======== Directory ===== */
+#directory_a2z {
+  clear:both;
+}
+#directory_search .search_box {
+  border:solid 1px gray;
+}
+#directory_search #search_term{
+  width:159px;
+}
+
+
+
+

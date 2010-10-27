@@ -3,10 +3,10 @@
     =link_to site_name, :home
   %p The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.  
 #user_links
-  #search_box
+  .search_box
     %form{ :action => "/search/results", :method => "post" }
-      %input#search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('search_field');element.value='';" }
-      %input#search_icon{ :name => "commit", :title => "search", :value => "search" }  
+      %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('header_search_field');element.value='';" }
+      %input.search_icon{ :name => "commit", :title => "search", :value => "search" }  
   - if logged_in?
     =link_to('Logout', session_path, :method => :delete)
     =link_if_allowed 'Site settings', admin_proc
