@@ -1,5 +1,5 @@
 !!! Strict
-%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml" }
   %head
     %title
       = site_name
@@ -32,7 +32,6 @@
           });
         });
   - body_tag do
-    -#<body id='= is_home? ? 'home' : 'inside''>
     #wrapper  
       #top
         =render :partial => 'layouts/nav'
@@ -54,3 +53,4 @@
             %br.clear
         #footer
           =render :partial => 'layouts/footer'
+    =tramlines_facebook_connect_receiver
