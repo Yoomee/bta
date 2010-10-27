@@ -1,6 +1,6 @@
 #subnav
   %ul.lst
-    =link_to("<b>#{section.parent.title}</b>", section.parent) if section.parent
+    %li=link_to("<b>#{section.parent.title}</b>", section.parent) if section.parent
     -(section.pages + section.children).each do |sibling|
       -li_with_active(current_page?(:controller => "pages", :action => "show", :id => sibling)) do
         =link_to(sibling.title, sibling)
