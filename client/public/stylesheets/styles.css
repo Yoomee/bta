@@ -1286,7 +1286,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 #user_links {
 	float:right;
 	margin:0px 0;
-	width:640px;
+	width:740px;
 	padding: 15px 0;
 	
 
@@ -1856,7 +1856,7 @@ h1.page_title {
 }
 
 h5.article_intro {
-	font-weight: normal;
+	font-weight: 200;
 	font-size: 18px;
 	line-height: 140%;
 	color: #333;
@@ -3558,13 +3558,14 @@ h3.blog_date{
 .blog_post_image{
 	float:left;
 	margin-top:10px;
-	text-align:center;
-	width:110px;
+
+	width:730px;
+	background: #333;
 }
 .blog_post_details{
 	float:left;
 	margin-left:15px;
-	width:580px;
+	width:540px;
 }
 h3.blog_post_date{
 	color:#666666;
@@ -3575,8 +3576,11 @@ h3.blog_post_date{
 }
 #blog_share_links {
 	float:left;
-  margin:10px 0 20px;
-	width:290px;
+  margin:20px 0 20px -10px;
+  padding: 10px;
+	width:590px;
+	border-top: 2px solid #999;
+	background: #f0f3f7;
 }
 #blog_share_links .digg a {
 	background-image:url(/images/icons/digg.gif);
@@ -3610,6 +3614,30 @@ h3.blog_post_date{
 	padding:4px 23px 4px 20px;
 }
 
+.wall {
+	background: #054E77; /* old browsers */
+background: -moz-linear-gradient(top, #054E77 0%, #0870AD 100%); /* firefox */
+
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#054E77), color-stop(100%,#0870AD)); /* webkit */
+
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#054E77', endColorstr='#0870AD',GradientType=0 ); /* ie */
+	width: 570px;
+	color: #fff;
+	padding: 20px;
+	
+}
+.wall .bx_h {
+	background: none;
+	padding: 0;
+}
+
+.wall textarea {
+	border-color: #fff;
+}
+.wall a {
+	color: #fff;
+	text-decoration: underline;
+}
 /* ====================  blog comments  ===================== */
 .comment_wrapper {
 	background:#F5F5F5 none repeat scroll 0 0;
