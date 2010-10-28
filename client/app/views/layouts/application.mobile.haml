@@ -33,9 +33,9 @@
         });
   - body_tag do
     #wrapper  
-      %h1 MOBILE SITE
+      %p=link_to_remote "View standard site", :url =>{:controller => 'mobile', :action => 'toggle'}
       #top
-        =render :partial => 'layouts/nav.html'
+        =render :partial => 'layouts/nav'
       -unless current_page?(new_session_path)
         #login_slide_bar
           #login_slide_bar_inside
