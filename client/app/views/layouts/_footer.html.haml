@@ -1,20 +1,17 @@
-#footer_links
-  %p#copyright
-    %strong
-      &copy; The British Tinnitus Association 
-    %br
-    Ground Floor, Unit 5 
-    %br
-    Acorn Business Park, Woodseats Close 
-    %br
-    Sheffield, S8 0TB
-    %br
-    Telephone: 0800 018 0527
-    %br
-    Email: info@tinnitus.org.uk
-    
-  %a#siteby{ :href => "http://www.yoomee.com" }
-    site by
+%p#copyright
+  %strong
+    &copy; The British Tinnitus Association 
+  %br
+  Ground Floor, Unit 5 
+  %br
+  Acorn Business Park, Woodseats Close 
+  %br
+  Sheffield, S8 0TB
+  %br
+  Telephone: 0800 018 0527
+  %br
+  Email: info@tinnitus.org.uk
+#footer_links    
   %ul
     - if @is_sys_admin
       %li
@@ -26,4 +23,11 @@
         legal
     %li
       %a{ :href => "link2" }
-        another link
+        Website credits
+    %li
+      %a{ :href => "link2" }
+        Accessibility options        
+    %li
+      %a{ :href => "link2" }
+        Site map
+=link_to 'Lottery Funded', 'http://www.biglotteryfund.co.uk', :id=>'lottery_funded', :target=>'_blank'        

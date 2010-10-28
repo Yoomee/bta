@@ -19,7 +19,6 @@
         =link_to "BTA supported research", "#"
       %li
         =link_to "BTA forum", "#"
-
   #page_left_col
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col
@@ -34,6 +33,8 @@
       -if @page.has_image?
         #article_image
           = photo_for(@page, '140x')
+  #related_content
+    %h2.title Related Content
 %br.clear        
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
