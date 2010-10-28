@@ -8,7 +8,7 @@
       %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('header_search_field');element.value='';" }
       %input.search_icon{ :name => "commit", :title => "search", :value => "search" }  
   - if logged_in?
-    =link_to('Logout', session_path, :method => :delete)
+    =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
     =link_if_allowed 'Site settings', admin_proc
     %strong
       =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
