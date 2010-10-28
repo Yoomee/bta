@@ -1991,6 +1991,11 @@ span.cal_sheet span.day {
 #login_form p label {
 	font-weight: bold;
 }
+#fb_connect_login {
+  float: left;
+  clear: both;
+  margin-left: 40px;
+}
 #login_email_or_username, #login_password {
 	float: left;
 	clear: both;
