@@ -3,11 +3,11 @@
     =link_to site_name, :home
   %p The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.  
 #user_links
-  #search_box
+  .search_box
     %form{ :action => "/search/results", :method => "post" }
-      %input#search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('search_field');element.value='';" }
-      %input#search_icon{ :name => "commit", :title => "search", :value => "search" }
-  =link_to 'Shop <span></span>', '#', :id=>'shop_link'
+      %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('header_search_field');element.value='';" }
+      %input.search_icon{ :name => "commit", :title => "search", :value => "search" }
+    =link_to 'Shop <span></span>', '#', :id=>'shop_link'        
   - if logged_in?
     =link_to('Logout', session_path, :method => :delete)
     =link_if_allowed 'Site settings', admin_proc
@@ -16,7 +16,7 @@
   - elsif !current_page?(new_session_path)
     %p=link_to('login / sign up', '#', :id => 'member_login_bttn')
   =link_to 'Mobile site', '#'
-  
+
 -if is_home?
   #home_header
     #case_study_carousel

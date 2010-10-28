@@ -1,0 +1,75 @@
+-content_for :head do
+  =javascript_include_tag "client/jquery.colorPicker"
+
+:javascript
+  var CategoryForm = {
+    complete: function(unique_id) {
+      $('#' + unique_id + '_category_ajax_loader').hide();
+      $('#' + unique_id + '_category_edit_link').show();
+    },
+    hide_form: function (unique_id) {
+      $('#' + unique_id + '_category_form').hide(0, function() {
+        $('#' + unique_id + '_category_display').show();
+        $('#' + unique_id + '_category_edit_link').html('edit');
+        $('#' + unique_id + '_category_delete_link').show();
+        $('#' + unique_id + '_category_save_link').hide();
+      });
+    },
+    loading: function(unique_id) {
+      $('#' + unique_id + '_category_form').hide(0, function() {
+        $('#' + unique_id + '_category_display').hide();
+        $('#' + unique_id + '_category_ajax_loader').show();
+        $('#' + unique_id + '_category_edit_link').hide();
+        $('#' + unique_id + '_category_delete_link').hide();
+        $('#' + unique_id + '_category_save_link').hide();
+      })
+    },
+    show_form: function(unique_id) {
+        $('#' + unique_id + '_category_form').show(0, function() {
+          $('#' + unique_id + '_category_display').hide();
+          $('#' + unique_id + '_category_edit_link').html('cancel');
+          $('#' + unique_id + '_category_delete_link').hide();
+          $('#' + unique_id + '_category_save_link').show();
+          $('#' + unique_id + '_category_form .category_name_input').focus();
+        });
+    },
+    toggle_form: function(unique_id) {
+      $('#' + unique_id + '_category_ajax_loader').hide(0, function() {
+        if ($('#' + unique_id + '_category_form').is(':visible')) {
+          CategoryForm.hide_form(unique_id);
+        } else {
+          CategoryForm.show_form(unique_id);
+        }
+      });
+    },
+    show_new_form: function() {
+      $('#new_category_form').show(0,function() {
+        $('#new_category_link').hide();
+        $('#new_category_form .category_name_input').focus();
+      });
+    },
+    hide_new_form: function() {
+      $('#new_category_form').hide(0,function() {
+        $('#new_category_link').show();
+      });
+    },
+    toggle_new_form: function() {
+      if ($('#new_category_form').is(':visible')) {
+        CategoryForm.hide_new_form();
+      } else {
+        CategoryForm.show_new_form();
+      }
+    }
+  };
+- model_class = controller_name.classify.constantize
+- title model_class.name.titleize.pluralize
+
+.crm_left_col
+  #categories_list
+    =render 'categories/new_category', :category => model_class.new, :show_form => false if admin_logged_in?
+    -@categories.each do |category|
+      =render 'categories/category', :category => category, :show_form => false
+.crm_right_col
+
+-options_panel do
+  =back_link

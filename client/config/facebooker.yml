@@ -1,0 +1,43 @@
+# The api key, secret key, and canvas page name are required to get started
+# Tunnel configuration is only needed if you are going to use the facebooker:tunnel Rake tasks
+# Your callback url in Facebook should be set to http://public_host:public_port
+
+# rob
+# development:
+#  api_key: 79eb7f5db898700b86526116a7c6f117
+#  secret_key: 2d60b8f41650398185a5fdb50768cc01
+#  pretty_errors: false
+
+# si
+# development:
+#   api_key: 837c8cdbefac6f5646968c06ef99c07f
+#   secret_key: 54f4c83ad90973e26f73f3d39c916c09
+#   pretty_errors: true
+
+#ian
+development:
+  api_key: 56e460da053a913c43817c3b126be55c
+  secret_key: 85c4852e799ccd5e4062024ec83ae552
+  pretty_errors: false
+ 
+#rich
+# development:
+#   api_key: bfc4bc8139e516d97d227b883629a6bc
+#   secret_key: eae4bcb94faebc89bf40158099df43d3
+#   pretty_errors: false 
+
+# si home
+#development:
+#  api_key: 1fb799b69683d81cfaac0a90830c9694 
+#  secret_key: 64360c7592ab02f9bc08b91346426725 
+#  pretty_errors: false
+
+test:
+  api_key: f71b1d98c870c8b6c3f911eadc598026
+  secret_key: ace89ed0b0cdd0b2f42458e1f066590e
+  pretty_errors: false
+
+production:
+  api_key: db9ee33aa67db910ea47dd20cc13cb20
+  secret_key: 93d369dd5d02aae343c08fae6c30533b
+  pretty_errors: false

@@ -43,7 +43,7 @@
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
   #box_shop.h_box
-    %h3.title The BTA shop    
+    %h3.title The BTA shop
     %ul.lst
       %li
         -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
@@ -62,29 +62,19 @@
             Deep Relaxation: A Journey CD
 #latest_news
   %h3.title Latest News
-  #big_news_item
-    -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-      =image_tag "/images/big_news.jpg"
-    %h4 
-      =link_to "Marie and Jack Shapiro Prize Winner Announced ", "#"  
-    %p
-      Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.      
-
-  %ul.lst
-    %li
-      -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-        =image_tag "/images/news_img.jpg"
-      %h4 
-        =link_to "News item ", "#"
-      %p
-        Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.  
-    %li
-      -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-        =image_tag "/images/news_img.jpg"
-      %h4 
-        =link_to "News item ", "#"
-      %p
-        Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris.
+  -if @latest_news_item.nil?
+    %p No news at the moment. Check back later.
+  -else
+    #big_news_item
+      =link_to(photo_for(@latest_news_item), @latest_news_item, :class => "h_image")
+      %h4=link_to(@latest_news_item, @latest_news_item.title)
+      %p=@latest_news_item.summary
+    %ul.lst
+      -@news_items.each do |news|
+        %li
+          =link_to(photo_for(news), news, :class => "h_image")
+          %h4=link_to(news, news.title)
+          %p=news.summary
 #community_row
   #forum_box
     %h3.title

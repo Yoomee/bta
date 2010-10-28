@@ -1,0 +1,12 @@
+#contacts_directory
+  -if @contacts.blank?
+    No contacts
+  -else
+    %table
+      %tr
+        %th Name
+        %th Description
+      -@contacts.each do |contact|
+        %tr{:class => cycle("even", "odd")}
+          %td.name=link_to contact.name, contact
+          %td.description= truncate(strip_tags(contact.description),100)
