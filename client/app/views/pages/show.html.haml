@@ -18,6 +18,8 @@
       -if @page.has_image?
         #article_image
           = photo_for(@page, '140x')
+  #related_content
+    %h2.title Related Content
 %br.clear        
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?

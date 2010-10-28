@@ -30,7 +30,7 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, 
 
 /* ======================  CSS3 regularly used stuff ================== */
 
-#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box, #nav ul li a {
+#main, input, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box {
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -75,7 +75,7 @@ body {
 	clear: both;
 	float: right;
 	width: 735px;
-	margin: 0px 0 0 0;
+	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
 	padding: 20px;
@@ -120,7 +120,7 @@ a:hover {
 #lower_wrapper_inside {
 	width: 100%;
 	float: left;
-	margin: -140px 0 0 0;
+	margin: -160px 0 0 0;
 	
 }
 
@@ -1022,7 +1022,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2795E4', end
 }
 #header_inside {
 	clear: both;
-	height: 120px;
+	height: 50px;
 	position: relative;
 
 }
@@ -1090,7 +1090,7 @@ div#home_header {
 #case_study_image {
 	background: url(/images/carousel_image.jpg) no-repeat -1px -1px;
 	float: left;
-	width: 450px;
+	width: 480px;
 	margin: 0px;
 	height: 360px;
 	position: absolute;
@@ -1101,15 +1101,15 @@ div#home_header {
 }
 
 #case_study_quote {
-	background: rgba(21, 22, 123, 0.820);
+	background: rgba(26, 70, 102, 0.810);
 	position: absolute;
-	z-index: 15;
-	width: 180px;
+	z-index: 65;
+	width: 160px;
 	height: 220px;
 	color: #fff;
 	padding: 20px;
-	top: 40px;
-	right: -20px;
+	bottom: 70px;
+	right: 0px;
 
 	
 }
@@ -1118,8 +1118,43 @@ div#home_header {
 	font-weight: 300;
 	letter-spacing: normal;
 	font-size: 18px;
+	float: left;
+	text-indent: 26px;
+
 }
 
+#case_study_quote h3 span#quote_start {
+	position: absolute;
+	background: url(/images/sprite_bta.png) no-repeat -180px 0;
+	text-indent: -9000em;
+	width: 20px;
+	height: 20px;
+	left: 20px;
+	top: 20px;
+	display: block;
+	
+}
+#case_study_quote h3 span#quote_end {
+
+	background: url(/images/sprite_bta.png) no-repeat -180px -20px;
+	text-indent: -9000em;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: right;
+	
+}
+
+#learn_more_bttn {
+	width: 140px;
+	font-weight: bold;
+	font-size: 14px;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	
+	
+}
 
 #other_case_studies {
 	color: #fff;
@@ -1129,44 +1164,90 @@ div#home_header {
 	width: 480px;
 	bottom: 0;
 	height: 70px;
-	
-	background: #545454; /* old browsers */
-background: -moz-linear-gradient(top, #545454 0%, #383838 100%); /* firefox */
+/*	
+	background: #545454;	
+	background: -moz-linear-gradient(top, #545454 0%, #383838 100%);
 
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#383838)); /* webkit */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#383838)); 
 
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 ); /* ie */
-
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 );
+*/
+	background: url(/images/other_stories.jpg);	
 
 	
 }
+#other_case_studies h4 {
+	float: right;
+	display: none;
 
+	font-size: 12px;
+	margin: 10px;
+}
 #get_suppport {
 	float: right;
 	width: 240px;
-	padding: 20px 20px 20px 40px;
+	height: 330px;
+	padding: 30px;
 	background: #D5DEE5; /* old browsers */	
 background: -moz-linear-gradient(top, #D5DEE5 0%, #E3EBF2 65%); /* firefox */
 
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D5DEE5), color-stop(65%,#E3EBF2)); /* webkit */
 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', endColorstr='#E3EBF2',GradientType=0 ); /* ie */
-	height: 350px;
+	
 	
 }
 
 #get_suppport h2 {
-	font-weight: 200;
+
 	color: #184f7b;
-	font-size: 17px;
+	font-size: 21px;
+	line-height: 25px;
+	float: left;
+	margin: 0 0 10px 0;
 	
 }
-
+#get_suppport h2 strong {
+	float: left;
+}
 #get_suppport h2 span {
 	font-weight: bold;
+	float: left;
 }
+#get_suppport ul li:last-child a {
+	border: none;
+}
+#get_suppport ul li a {
+	background: url(/images/sprite_bta.png) no-repeat -1450px 15px;
+	float: left;
+	padding: 15px 10px 15px 60px;
+	margin: 0 0 0px -10px;
+	border-bottom: 1px solid #B5CBDB;
+	width: 190px;
 
-
+}
+#get_suppport ul li a h5 {
+	color: #184f7b;
+	margin: 0;
+}
+#get_suppport ul li a p {
+	color: #333;
+	margin: 0;
+}
+#get_suppport ul li a p.phone_number {
+	font-size: 14px;
+	font-weight: bold;
+} 
+#get_suppport ul li a:hover {
+	background-color:#C2D0DA;
+	text-decoration: none;
+}
+#get_suppport ul li a#support_shop {
+	background-position: -1430px -145px;
+} 
+#get_suppport ul li a#support_forum {
+	background-position: -1440px -280px;
+} 
 /* =======  cycle  ====== */
 .cycle_frame {
 	position:relative;
@@ -1206,29 +1287,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	float:right;
 	margin:0px 0;
 	width:640px;
+	padding: 15px 0;
 	
-	border-bottom: 1px dashed rgba(255,255,255,0.3);
+
 }
-#home #user_links {
-	margin: 10px 0px 0 0;
-}
+
 #user_links p {
 	margin:0;
 }
 #user_links a {
 	display: block;
-	padding: 10px;
+	padding: 3px 10px;
+	margin: 0px 12px 0 0;
 	float: right;
+
 	color: #fff;
+	
+	border-radius:30px;
 }
 
 #member_login_bttn {
-	float: right;
-	display: block;
-	padding: 12px 7px 11px;
-	font-size: 15px;
-	margin: 0 15px 0 0;
-	color: #fff;
+
 	
 }
 
@@ -1250,7 +1329,7 @@ fb.fb_login_not_logged_in.FB_login_button {
 .search_box {
 	float:right;
 	height:26px;
-	margin:9px 5px 0 0;
+	margin:0px 5px 0 0;
 	width:220px;
 	background: #fff;
 	padding: 0;
@@ -1307,8 +1386,8 @@ input.search_icon {
 	color:#fff;
 	display:block;
 	float:left;
-	margin:5px 5px 5px 0;
-	padding:3px 7px 3px;
+	margin:5px 5px 2px 0;
+	padding:3px 7px 7px;
 	font: 16px/27px Arial, sans-serif;
 	font-weight: bold;
 	
@@ -1316,11 +1395,12 @@ input.search_icon {
 }
 #nav ul li a:hover, .section_2 #nav ul li#link_news a, .controller_enquiries.action_new #nav ul li#link_contact_us a {	
 	text-decoration:none;
-	color: #D4205D;
+	background: rgb(0, 91, 142);
 }
 #nav ul li.active a, #home #nav ul li#link_home a, .controller_pages.action_show #nav ul li#link_about a {
-	background: #f6f9fd;
+	background: url(/images/nav_active.png) top center;
 	color: #000;
+
 }
 
 /* ====================  homepage  ===================== */
@@ -1443,7 +1523,7 @@ a#facebook_link {
 }
 #home_left_col {
 	width: 140px;
-	margin: 0 20px 0 0;
+	margin: 20px 20px 0 0;
 	float: left;
 	position: relative;
 	
@@ -1486,9 +1566,9 @@ div#home_box_center {
 
 
 	
-	 -webkit-box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 3px #999;
-     -moz-box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 1px #ccc;
-     box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 1px #ccc;
+	 -webkit-box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 3px rgba(0,0,0,0.5);
+     box-shadow:inset 0 0 19px #e8e8e8, 1px 1px 3px rgba(0,0,0,0.5);
 
 	
 	background: #ffffff; /* old browsers */
@@ -1499,13 +1579,14 @@ div#home_box_center {
 
 #campaign_box {
 	float: left;
-	background: #d5dee5;
+	background: url(/images/campaign.jpg) no-repeat 0 -10px;
 	width: 140px;
-	height: 260px;
+	height: 245px;
 	text-indent: -9900em;
-	margin: 380px 0 0;
+	margin: 450px 0 0;
 	
 }
+
 .title, #latest_news h4  {
 	font-weight: 200;
 	color: #184f7b;
@@ -1545,6 +1626,7 @@ a.h_image {
 	background: #fff;
 	width: 280px;
 	padding: 10px;
+	height: 540px;
 	
 }
 #latest_news li {
@@ -1599,13 +1681,14 @@ a.h_image {
 	
 }
 #box_shop ul {
-
+	float: left;
+	margin: 0 0 0 4px;
 }
 #box_shop li {
 	width: 139px;
 	margin: 0 0px 0;
-	padding: 0 10px 0 10px;
-	border-right: 1px solid rgba(255,255,255,0.3);
+	padding: 0 7px 0 10px;
+
 }
 
 #box_shop li:last-child {
@@ -1618,7 +1701,10 @@ a.h_image {
 #box_shop li a {
 	color: #fff;
 }
-
+#box_shop li a h4 {
+	color: #fff;
+	font-size: 14px;
+}
 a.our_ambassador {
 	background: url(/images/our_ambassador.jpg) no-repeat 0 0;
 	width: 225px;
@@ -1627,7 +1713,7 @@ a.our_ambassador {
 	text-indent: -9000em;
 	float: left;
 	position: absolute;
-	top: 300px;
+	top: 360px;
 	left: -70px;
 	
 }
@@ -1635,7 +1721,7 @@ a.our_ambassador {
 div#community_row {
 	float: left;
 	width: 780px;
-	border-top: 2px solid #0870ad;
+	border-top: 5px solid #0870ad;
 	padding: 15px 0;
 	
 }
@@ -1643,24 +1729,48 @@ div#community_row {
 div#forum_box {
 	float: left;
 	width: 280px;
-	height: 160px;
+
 	margin: 0 20px 0 0;
 	padding: 10px;
+	background: #d5dee5;
 	
 }
 div#forum_box h3, div#twitter_box h3 {
 	margin: 0 0 10px;
 
 }
-div#forum_box h3 a, div#twitter_box h3 a {
+div#forum_box ul li {
+	border-bottom: 1px solid #BDCFDC;
+	padding: 5px 0;
+}
+div#forum_box ul li a {
+	font-weight: bold;
+	font-size: 14px;
+}
+div#forum_box ul li p {
+	font-size: 12px;
+	color: #999;
+	margin: 0;
+}
+div#forum_box ul li p span {
+	color: #333;}
+div#forum_box h3 a {
 	color: #184f7b;	
+}
+div#twitter_box h3 a {
+	background: url(/images/sprite_bta.png) no-repeat -220px 0;
+	display: block;
+	text-indent: -9000em;
+	width: 100%;
+	height: 22px;
 }
 div#facebook_box {
 	float: left;
-	background: url(/images/facebook_box.jpg) no-repeat 0 0;
-	width: 300px;
-	height: 180px;
+	background: #fff url(/images/facebook_box.jpg) no-repeat 0 0;
+	width: 294px;
+	height: 244px;
 	margin: 0 20px 0 0;
+	border: 3px solid #d5dee5;
 	
 }
 div#facebook_box h3 {
@@ -1671,13 +1781,18 @@ div#twitter_box {
 	position: relative;
 
 	width: 140px;
-	height: 180px;
+
 	
+}
+p.tweet {
+	float: left;
+	margin: 0 0 40px;
 }
 div#twitter_box .bttn_round {
 	position: absolute;
 	bottom: 0;
 	width: 110px;
+	font-weight: bold;
 }
 
 
@@ -2254,21 +2369,23 @@ ul.action_links li {
 	float: left;
 	width: 100%;
 	border-top: 2px solid #d5dee5;
+	position: relative;
 }
 #copyright {
-
+	float: left;
+	margin: 20px 0 20px;
 }
 div#footer_links {
-	float:left;
+	float:right;
 	margin:0px 0px 0;
 	padding:10px 0px;
-	width: 830px;
+	width: 530px;
 }
 #footer_links ul {
 	margin:0px;
 	padding:0px;
 	text-indent:0;
-	float:left;
+	float:right;
 	clear:left;
 }
 #footer_links ul li {
@@ -2276,7 +2393,7 @@ div#footer_links {
 	text-indent:0px;
 	margin:0px;
 	padding:0px;
-	float:left;
+	float:right;
 }
 #footer_links ul li a {
 	float: left;
@@ -2287,6 +2404,18 @@ div#footer_links {
 	background: url(/images/site_feedback.png) no-repeat;
 	padding: 0 0 0 20px;
 }
+
+#lottery_funded {
+	position: absolute;
+	right: 0px;
+	top: 50px;
+	background: url(/images/sprite_bta.png) no-repeat -220px -60px;
+	width: 90px;
+	height: 70px;
+	text-indent: -9000em;
+	
+}
+
 #siteby {
 	background-image:url("/images/yoomee_black.png");
 	background-position:right top;
@@ -3369,7 +3498,7 @@ background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BED3E
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', endColorstr='#D5DEE5',GradientType=0 ); /* ie */
 	position: absolute;
 	left: -180px;
-	top: 140px;
+	top: 160px;
 	padding: 20px;
 	font-size: 14px;
 	line-height: 100%;
@@ -3509,6 +3638,16 @@ h3.blog_post_date{
 .comment_wrapper form textarea {
 	height:100px;
 	width:505px;
+}
+
+#related_content {
+	float: left;
+	clear: both;
+	width: 100%;
+	border-top: 2px solid #d5dee5;
+	padding: 10px 0;
+	height: 120px;
+	
 }
 
 
