@@ -86,12 +86,13 @@ path = vendor/plugins/facebooker
 scm = git
 repository = git://github.com/mmangino/facebooker.git
 
-[vendor/plugins/mobile-fu]
-repository = git://github.com/brendanlim/mobile-fu.git
-path = vendor/plugins/mobile-fu
-scm = git
-
 [vendor/plugins/tramlines_mobile]
 repository = git://git.yoomee.com:4321/plugins/tramlines_mobile.git
 path = vendor/plugins/tramlines_mobile
+scm = git
+
+[vendor/plugins/mobile-fu]
+branch = 2.x
+repository = git://github.com/brendanlim/mobile-fu.git
+path = vendor/plugins/mobile-fu
 scm = git
