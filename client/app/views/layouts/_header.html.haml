@@ -9,13 +9,13 @@
       %input.search_icon{ :name => "commit", :title => "search", :value => "search" }
   =link_to 'Shop <span></span>', '#', :id=>'shop_link' 
   - if logged_in?
-    =link_to('Logout', session_path, :method => :delete)
+    =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
     =link_if_allowed 'Site settings', admin_proc
     %strong
       =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
   - elsif !current_page?(new_session_path)
     %p=link_to('login / sign up', '#', :id => 'member_login_bttn')
-  =link_to 'Mobile site', '#'
+  =link_to_remote "#{in_mobile_view? ? 'Standard site' : 'Mobile site'}", :url =>{:controller => 'mobile', :action => 'toggle'}
 
 -if is_home?
   #home_header
