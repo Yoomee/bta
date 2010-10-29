@@ -74,7 +74,7 @@ body {
 #main {
 	clear: both;
 	float: right;
-	width: 735px;
+	width: 320px;
 	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
@@ -429,7 +429,7 @@ ul.tabs_container{
 	float:left;
 	height:46px;
 	margin:0 0 0 0;
-	width:700px;
+	width:320px;
 }
 ul.tabs_container li {
 	float:left;
@@ -504,7 +504,7 @@ ul.tabs_container li a:hover{
 	background: url(/images/smoke_gradient_w.png)
 }
 .formtastic textarea {
-	width: 400px;
+	width: 320px;
 	
 }
 input#page_title {
@@ -524,7 +524,7 @@ fieldset.buttons {
 	padding: 20px;
 	color: #fff;
 	float: left;
-	width: 730px;
+	width: 320px;
 	position: relative;
 	z-index: 12;
 	margin: 0 0 20px;
@@ -562,7 +562,7 @@ br#pages_tab_links_break, br#sections_tab_links_break {
 }
 
 #admin_tab_content {
-	width: 600px;
+	width: 320px;
 }
 
 .pages_tab p, #admin_tab_content p, .sections_tab p {
@@ -746,7 +746,7 @@ div.related_result_links a {
 	float: left;
 }
 #pages_related_items_tab #ajax_search_form {
-	width: 340px;
+	width: 320px;
 	margin-right: 20px;
 
 }
@@ -754,7 +754,7 @@ div.related_result_links a {
 	margin-bottom: 0;
 }
 ul#selected_items{
-	width: 330px;
+	width: 320px;
 	display: block;
 	background: #4d7183;
 	background: rgba(0,0,0,0.2);
@@ -1073,7 +1073,7 @@ h1#site_logo a:active {
 div#home_header {
 	float: right;
 	background: #fff;
-	width: 780px;
+	width:320px;
 	height: 390px;
 	margin: 20px 0 0 20px;
 	
@@ -1084,13 +1084,13 @@ div#home_header {
 	float: left;
 	height: 390px;
 	position: relative;
-	width: 480px;
+	width: 320px;
 	background: #333 ;
 }
 #case_study_image {
 	background: url(/images/carousel_image.jpg) no-repeat -1px -1px;
 	float: left;
-	width: 480px;
+	width: 320px;
 	margin: 0px;
 	height: 360px;
 	position: absolute;
@@ -1161,7 +1161,7 @@ div#home_header {
 	position: absolute;
 	z-index: 18;
 	background:;
-	width: 480px;
+	width: 320px;
 	bottom: 0;
 	height: 70px;
 /*	
@@ -1286,7 +1286,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 #user_links {
 	float:right;
 	margin:0px 0;
-	width:640px;
+	width:320px;
 	padding: 15px 0;
 	
 
@@ -1422,10 +1422,10 @@ div.big_message {
 #big_message_right {
 	float:right;
 	height:260px;
-	width:640px;
+	width:320px;
 }
 #big_message_right img {
-	width:640px;
+	width:320px;
 	float:left;
 }
 #big_message_right div {
@@ -1435,7 +1435,7 @@ div.big_message {
 	float:left;
 	height:260px;
 	overflow:hidden;
-	width:640px;
+	width:320px;
 }
 div.home_bx {
 	clear:none;
@@ -1447,7 +1447,7 @@ div.home_bx .bx_h, div.home_bx .bx_in {
 div.home_page {
 	float:left;
 	margin:0 0 30px;
-	width: 945px;
+	width: 320px;
 }
 #main .home_page h1 {
 	font-size:22px;
@@ -1461,7 +1461,7 @@ div.home_page {
 	float:left;
 	font-size:15px;
 	margin:0 15px 0 0;
-	width:465px;
+	width:320px;
 }
 .home_page .home_page_left, .home_page .home_page_left {
 	color: #D4205D;
@@ -1469,7 +1469,7 @@ div.home_page {
 
 .home_page_right {
 	float:left;
-	width:445px;
+	width:320px;
 	padding: 0 10px;
 }
 .intro_text {
@@ -1481,7 +1481,7 @@ div.home_page {
 	list-style: none;
 	float: left;
 	display: block;
-	width: 445px;
+	width: 320px;
 	
 }
 
@@ -1531,11 +1531,11 @@ a#facebook_link {
 
 div#home_box_center {
 	float: left;
-	width: 480px;
+	width: 320px;
 }
 
 #box_professionals {
-	width: 480px;
+	width: 320px;
 	padding: 10px 0 0 0;
 	float: left;
 	
@@ -1673,7 +1673,7 @@ a.h_image {
 
 #box_shop {
 	float: left;
-	width: 480px;
+	width:320px;
 	height: 260px;
 	background: #2795e4;
 	color: #fff;
@@ -1720,7 +1720,7 @@ a.our_ambassador {
 
 div#community_row {
 	float: left;
-	width: 780px;
+	width:320px;
 	border-top: 5px solid #0870ad;
 	padding: 15px 0;
 	
@@ -1838,7 +1838,7 @@ h1.page_title {
 .main_col{
 	border-top:3px solid #E5E5E5;
 	float: left;
-	width: 445px;
+	width: 320px;
 	margin-right: 15px;
 	padding: 10px;
 	color: #333;
@@ -1972,7 +1972,7 @@ span.cal_sheet span.day {
 /* ==================== login form ===================== */
 
 #login_wrapper {
-	width: 800px;
+	width: 320px;
 	margin: 20px 0 0;
 }
 #login_intro h2 {
@@ -2070,11 +2070,11 @@ input#login_bttn {
 /* ====== structure ====== */
 #left_column {
 	float:left;
-	width:540px;
+	width:320px;
 }
 #right_column {
 	float:right;
-	width:380px;
+	width:320px;
 }
 /* ====== .bx- standard box style ====== */
 .bx {
@@ -2083,7 +2083,7 @@ input#login_bttn {
 	margin:0 0 20px;
 }
 .bx_in, .bx_h {
-	width:350px;
+	width:320px;
 	float:left;
 	clear:both;
 	margin:0; 
@@ -2106,7 +2106,7 @@ input#login_bttn {
 }
 
 #left_column .bx_in, #left_column .bx_h {
-	width:480px;
+	width:320px;
 }
 
 /* ====== friends/people box ====== */
@@ -2190,7 +2190,7 @@ ul#news_feed li, .wall_post_list li {
 	list-style-type:none;
 	margin:0 0 10px;
 	padding:0 0 10px;
-	width:510px;
+	width:320px;
 }
 img.wall_profile_img, .news_item img {
 	float:left;
@@ -2228,7 +2228,7 @@ p.nothing_yet, .intro, #intro, #flash_notice {
 	font-size: 16px;
 	clear:left;
 	float: left;
-	width: 920px;
+	width: 320px;
     
 }
 
@@ -2247,7 +2247,7 @@ p.nothing_yet, .intro, #intro, #flash_notice {
 }
 .profile_info {
 	float:right;
-	width:380px;
+	width:320px;
 }
 .profile_photo img {}
 
@@ -2259,13 +2259,13 @@ p.nothing_yet, .intro, #intro, #flash_notice {
 }
 #status_box {
 	float:left;
-	width:360px;
+	width:320px;
 	padding:5px 10px 19px 10px;
 	margin:10px 0;
 }
 #status_box_top {
 	background:transparent url(/images/status.png) no-repeat scroll left top;
-	width:380px;
+	width:320px;
 }
 #status_box #show_link {
 	font-weight:bold;
@@ -2345,7 +2345,7 @@ p.nothing_yet, .intro, #intro, #flash_notice {
 #wall .bx_in textarea {
 	border:1px solid #CCCCCC;
 	padding:10px;
-	width:490px;
+	width:4320px;
 	
 	-moz-border-radius:4px;
     -webkit-border-radius:4px;
@@ -2384,7 +2384,7 @@ div#footer_links {
 	float:right;
 	margin:0px 0px 0;
 	padding:10px 0px;
-	width: 530px;
+	width: 320px;
 }
 #footer_links ul {
 	margin:0px;
@@ -2449,7 +2449,7 @@ div#footer_links {
 	float:left;
 	margin:15px 0 20px;
 	padding:10px;
-	width:880px;
+	width:320px;
 	
 	-moz-border-radius:5px;
     -webkit-border-radius:5px;
@@ -2486,7 +2486,7 @@ div#footer_links {
 	float:right;
 	font-size:13px;
 	padding:5px;
-	width:450px;
+	width:320px;
 	
 	-moz-border-radius:4px;
   -webkit-border-radius:4px;
@@ -2585,7 +2585,7 @@ table.calendar_month  {
 	width:76px;
 }
 #calendar_content {
-	width:900px;
+	width:320px;
 }
 p.previousLink {
 	float:left;
@@ -2598,7 +2598,7 @@ p.nextLink {
 	font-weight:bold;
 	margin:0 0 10px;
 	padding:0 0 10px;
-	width:880px;
+	width:320px;
 
 }
 #day_content {
@@ -2616,7 +2616,7 @@ p.nextLink {
 	float:left;
 	margin:0;
 	padding:10px 0;
-	width:670px;
+	width:320px;
 }
 #week_content h3 {
 	font-size:18px;
@@ -2633,7 +2633,7 @@ h3#latest_stories_intro {
 	font-size:17px;
 	font-weight:normal;
 	margin:0 0 25px;
-	width:700px;
+	width:320px;
 }
 .item {
 	border-bottom:1px solid #CCCCCC;
@@ -2641,11 +2641,11 @@ h3#latest_stories_intro {
 	float:left;
 	margin:0 0 17px;
 	padding:0 0 17px;
-	width:750px;
+	width:320px;
 }
 .text {
 	float:right;
-	width:540px;
+	width:320px;
 	margin: 0 0 10px;
 }
 .text h3 {
@@ -2686,11 +2686,11 @@ a.item_img img {
 
 /* ============================= Message inbox ========================== */
 .messaging_section #page {
-	width:750px;
+	width:320px;
 }
 table.inbox {
 	margin:10px 0 0;
-	width:750px;
+	width:320px;
 }
 ul#group_tabs {
 	clear:both;
@@ -2834,7 +2834,7 @@ form#reply_form_tag {
 .message_strip {
   display: block;
   margin: 0 0;
-  width: 830px;
+  width: 320px;
 }
 
 #messages_to_view_form {
@@ -2849,11 +2849,11 @@ form#reply_form_tag {
 
 #new_message_subject {
   height: 18px;
-  width: 349px;
+  width: 320px;
 }
 
 #new_message_text {
-  width: 349px;
+  width: 320px;
 }
 
 #delete_msg {
@@ -2939,7 +2939,7 @@ input.submit_msg_button {
 #attach {
 	float:left;
 	margin:20px 0 20px 71px;
-	width:578px;
+	width:320px;
 }
 .msg_items {}
 .msg_items {}
@@ -2970,7 +2970,7 @@ input.submit_msg_button {
 	height:33px;
 	margin:0 0 10px;
 	padding-top:12px;
-	width:750px;
+	width:320px;
 }
 
   .under_tab a {
@@ -2987,7 +2987,7 @@ input.submit_msg_button {
 div.message_panel .message_strip {
   display: block;
   margin: 0 0;
-  width: 450px;
+  width: 320px;
 }
 div#subject {
 	margin-top: 5px;
@@ -3105,7 +3105,7 @@ span.cal_icon span.day {
 #event_left_col{
 	float:left;
 	margin:20px 30px 0 0;
-	width:451px;
+	width:320px;
 }
 #event_left_col h3 {
 	color:#999999;
@@ -3170,7 +3170,7 @@ span.cal_icon span.day {
 	float:left;
 	margin:20px 0;
 	padding:20px;
-	width:410px;
+	width:320px;
 	
 	
    -moz-border-radius:10px;
@@ -3245,7 +3245,7 @@ li.news_feed_item_hovering a.trash {
 
 }
 #page_content #page_left_col{
-	width: 430px;
+	width:320px;
 	float: left;
 	margin: 0 0 30px 0px;
 	clear: both;
@@ -3333,10 +3333,10 @@ div.photo_holder {
 	float:left;
 	height:220px;
 	margin:0 0 20px;
-	width:620px;
+	width:320px;
 }
 #page_full_width div#photo_holder img {
-	width:590px;	
+	width:320px;	
 }
 
 #page_right_col {	
@@ -3546,7 +3546,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .blog_details{
 	float:left;
 	margin-left:15px;
-	width:580px;
+	width:320px;
 }
 h3.blog_date{
 	color:#666666;
@@ -3569,7 +3569,7 @@ h3.blog_date{
 .blog_post_details{
 	float:left;
 	margin-left:15px;
-	width:580px;
+	width:320px;
 }
 h3.blog_post_date{
 	color:#666666;
@@ -3642,7 +3642,7 @@ h3.blog_post_date{
 }
 .comment_wrapper form textarea {
 	height:100px;
-	width:505px;
+	width:320px;
 }
 
 #related_content {
@@ -3750,7 +3750,7 @@ li.event_list_item {
 	clear:both;
 	height:37px;
 	margin-bottom:5px;
-	width:500px;
+	width:320px;
 }
 
 #categories_list .category_wrapper ol li {
@@ -3891,7 +3891,7 @@ div.color_swatch {
 /* ========== Wall and Comments ========== */
 
 .wall_form textarea {
-  width:510px;
+  width:320px;
 }
 .wall_body {
   float: left;
