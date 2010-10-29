@@ -1,0 +1,8 @@
+-semantic_fields_for page do |fields|
+  -fields.semantic_fields_for :event, :as => :event_attributes do |event|
+    -event.semantic_fields_for :location do |location|
+      -location.inputs do
+        =location.input :address1
+        =location.input :address2
+        =location.input :city
+        =location.input :postcode

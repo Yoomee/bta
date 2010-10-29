@@ -97,7 +97,7 @@ path = vendor/plugins/tramlines_walls
 repository = git://git.yoomee.com:4321/plugins/tramlines_walls
 scm = git
 
-[vendor/plugins/ym4r_gm]
-repository = svn://rubyforge.org/var/svn/ym4r/Plugins/GM/trunk/ym4r_gm
-path = vendor/plugins/ym4r_gm
-scm = svn
+[vendor/plugins/ym4r-gm]
+path = vendor/plugins/ym4r-gm
+scm = git
+repository = git://github.com/queso/ym4r-gm.git

@@ -9,12 +9,21 @@
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col
     #article_image
-      =photo_for(@page, "280x")
-    .summary_wrapper
-      =snippet(@page, :summary)  
-    =snippet(@page, :pull_quote)
-    .call_to_action_wrapper
-      =snippet(@page, :call_to_action)
+      =photo_for(@page, "280x") if @page.has_photo?
+    -if @page.is_event?
+      .event_when
+        %h3 When
+        =date_description(@page)
+      .event_where
+        %h3 Where
+        =render_address(@page.event_location)
+        =render_google_map_for(@page.event, :width => 275, :height => 300)
+    -else
+      .summary_wrapper
+        =snippet(@page, :summary)
+      =snippet(@page, :pull_quote)
+      .call_to_action_wrapper
+        =snippet(@page, :call_to_action)
   -if @page.has_related_items?
     #related_content
       %h2.title Related Content
