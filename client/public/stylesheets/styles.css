@@ -4027,5 +4027,27 @@ div.color_swatch {
 	line-height: 100%;
 }
 
+/* ========= News and Events ========== */
 
-
+body.section_news_and_events #latestStoriesList .item {
+  width: 400px;
+}
+body.section_news_and_events #latestStoriesList .item .text {
+  width:280px;
+}
+body.section_news_and_events #latestStoriesList .item .item_img {
+  width: 100px;
+}
+body.section_news_and_events #latestStoriesList .item .item_img img {
+  margin: 0;
+}
+body.section_news_and_events #latest_events {
+  float:left;
+  margin-left:20px;
+  width:310px;
+}
+body.section_news_and_events #latest_events .event_list_item {
+  height:60px;
+  margin-bottom:20px;
+  overflow:hidden;
+}

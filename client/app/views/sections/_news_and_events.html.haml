@@ -1,0 +1,20 @@
+-hide_page_title
+-unless @section.description.nil?
+  %p.section_description
+    =@section.description
+#latestStoriesList
+  %h2 News
+  -@pages_sections.each do |page_section|
+    .item
+      .text
+        %h3=link_to(page_section, page_section)
+        %p=strip_tags description_for(page_section, :length => 150)
+      =link_to(photo_for(page_section, "100x100#"), page_section, :class => 'item_img')
+      =link_to 'More', page_section, :class => 'bttn'
+  %br.clear
+  =will_paginate @pages_sections
+#latest_events
+  %h2 Events
+  %ul.event_list
+    =event_list(Event.latest.limit(5), :description_length => 80)
+  =link_to("View the calendar", "/calendar", :id => "calendar_link")
