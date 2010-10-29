@@ -3,15 +3,15 @@
     %li#link_home
       =link_to 'Home', {:controller => '/home'}
     %li#link_about
-      =link_to 'About tinnitus', page_path(1)
+      =link_to 'About tinnitus', section_path(4)
     %li
-      =link_to 'Get support', {:controller => 'blog'}
+      =link_to 'Get support', section_path(5)
     %li
-      =link_to 'For health professionals', calendar_path
+      =link_to 'For health professionals', section_path(6)
     %li
-      =link_to 'For researchers', calendar_path
+      =link_to 'For researchers', section_path(7)
     %li
-      =link_to 'For policy makers', calendar_path
+      =link_to 'For policy makers', section_path(8)
     %li
       =link_to 'Events', '/calendar'
     %li

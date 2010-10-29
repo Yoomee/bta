@@ -9,11 +9,13 @@
 /vendor
 /vendor/plugins/event_calendar
 /vendor/plugins/facebooker
-/vendor/plugins/tramlines_facebook_connect
+/vendor/plugins/mobile-fu
 /vendor/plugins/tramlines_blog
 /vendor/plugins/tramlines_events
+/vendor/plugins/tramlines_facebook_connect
 /vendor/plugins/tramlines_forum
 /vendor/plugins/tramlines_locations
+/vendor/plugins/tramlines_mobile
 /vendor/plugins/tramlines_shop
 /vendor/plugins/tramlines_walls
-/vendor/plugins/ym4r_gm
+/vendor/plugins/ym4r-gm

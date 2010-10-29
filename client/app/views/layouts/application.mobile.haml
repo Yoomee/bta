@@ -1,0 +1,56 @@
+!!! Strict
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml" }
+  %head
+    %title
+      = site_name
+      \:
+      = site_slogan
+      \//
+      = page_title
+      = page_subtitle
+    %meta{ :name => "Generator", :content => "Yoomee (Ruby on Rails)" }
+    %meta{ :name => "robots", :content => "index, follow" }
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
+    %meta{ :name => "info", :content => "#{page_title}#{page_subtitle}" }
+    %link{ :href => "/images/favicon.ico", :rel => "shortcut icon" }
+    = google_javascripts :jquery, :jqueryui
+    = javascript_include_tag 'jrails'
+    = javascript_include_tag 'jquery.cycle'
+    = javascript_include_tag 'tramlines'
+    = javascript_include_tag "client/autoresize.jquery.min.js"
+    
+    = stylesheet_link_tag 'client/mobile'
+    = stylesheet_link_tag 'jquery-ui'
+    = formtastic_stylesheet_link_tag
+    =yield :head
+    -unless current_page?(new_session_path)
+      :javascript
+        $(document).ready(function(){    
+          $("#member_login_bttn").click(function () {
+            $("#login_slide_bar").slideToggle("slow");
+            $("#member_login_bttn").toggleClass("open");
+          });
+        });
+  - body_tag do
+    #wrapper  
+      %p=link_to_remote "View standard site", :url =>{:controller => 'mobile', :action => 'toggle'}
+      #top
+        =render :partial => 'layouts/nav'
+      -unless current_page?(new_session_path)
+        #login_slide_bar
+          #login_slide_bar_inside
+            =render :partial=>'sessions/form.html'
+      #header
+        #header_inside
+          =render :partial => 'layouts/header.html'
+          
+      #lower_wrapper 
+        #lower_wrapper_inside
+          #main.content
+            =render_flash
+            -unless hide_page_title?
+              %h1#page_title=page_title
+            =@content_for_layout
+            %br.clear
+        #footer
+          =render :partial => 'layouts/footer.html'

@@ -51,6 +51,12 @@ path = vendor/plugins/facebooker
 scm = git
 repository = http://github.com/mmangino/facebooker.git
 
+[vendor/plugins/mobile-fu]
+branch = 2.x
+repository = git://github.com/brendanlim/mobile-fu.git
+path = vendor/plugins/mobile-fu
+scm = git
+
 [vendor/plugins/tramlines_blog]
 path = vendor/plugins/tramlines_blog
 repository = git://git.yoomee.com:4321/plugins/tramlines_blog
@@ -76,6 +82,11 @@ path = vendor/plugins/tramlines_locations
 scm = git
 repository = git://git.yoomee.com:4321/plugins/tramlines_locations.git
 
+[vendor/plugins/tramlines_mobile]
+repository = git://git.yoomee.com:4321/plugins/tramlines_mobile.git
+path = vendor/plugins/tramlines_mobile
+scm = git
+
 [vendor/plugins/tramlines_shop]
 scm = git
 path = vendor/plugins/tramlines_shop
@@ -90,4 +101,3 @@ scm = git
 repository = svn://rubyforge.org/var/svn/ym4r/Plugins/GM/trunk/ym4r_gm
 path = vendor/plugins/ym4r_gm
 scm = svn
-
