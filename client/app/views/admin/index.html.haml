@@ -65,3 +65,14 @@
         %li
           %a{ :href => "/members" }
             List members
+  #dash_shop.dash_col
+    %h2
+      Shop
+    #dash_departments.dash_item
+      %h3
+        Departments
+      %ul
+        %li
+          =link_to 'List departments', departments_path
+        %li
+          =link_to 'New department', new_department_path

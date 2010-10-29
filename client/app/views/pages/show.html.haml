@@ -1,9 +1,10 @@
+-content_for :sidebar do
+  =render("pages/subnav", :page_or_section => @page)
 -title @page.title
 -unless @page.published?
   %p#page_status
     =@page.status_string
 #page_content
-  =render("pages/subnav", :page => @page)
   #page_left_col
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col
