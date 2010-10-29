@@ -18,3 +18,9 @@
   %ul.event_list
     =event_list(Event.latest.limit(5), :description_length => 80)
   =link_to("View the calendar", "/calendar", :id => "calendar_link")
+-options_panel do
+  =back_link
+  =link_if_allowed 'Add news item', new_section_page_proc(@section)
+  =link_if_allowed 'Add event', new_event_proc
+  =link_if_allowed 'Edit section', edit_section_proc(@section)
+  =link_if_allowed 'Delete', @section, :method => :delete, :confirm => "Are you sure you want to delete this section? (its subsections and pages will also be deleted)"

@@ -16,9 +16,9 @@
         =link_to 'More', page_section, :class => 'bttn'
   %br.clear
   =will_paginate @pages_sections
--options_panel do
-  =back_link
-  =link_if_allowed 'Edit', edit_section_proc(@section)
-  =link_if_allowed 'Delete', @section, :method => :delete, :confirm => "Are you sure you want to delete this section? (its subsections and pages will also be deleted)"
-  =link_if_allowed "New subsection", new_section_section_proc(@section)
-  =link_if_allowed 'New page', new_section_page_proc(@section)
+  -options_panel do
+    =back_link
+    =link_if_allowed 'Edit', edit_section_proc(@section)
+    =link_if_allowed "New subsection", new_section_section_proc(@section)
+    =link_if_allowed 'New page', new_section_page_proc(@section)
+    =link_if_allowed 'Delete', @section, :method => :delete, :confirm => "Are you sure you want to delete this section? (its subsections and pages will also be deleted)"
