@@ -45,7 +45,8 @@
           
       #lower_wrapper
         #lower_wrapper_inside
-          #sidebar_col=yield :sidebar
+          -unless @content_for_sidebar.blank?
+            #sidebar_col= yield :sidebar 
           #main.content
             =render_flash
             -unless hide_page_title?

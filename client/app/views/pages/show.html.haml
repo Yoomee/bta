@@ -1,5 +1,6 @@
 -content_for :sidebar do
-  =render("pages/subnav", :page_or_section => @page)
+  #subnav=render_subnav(@page.section.absolute_root, @page)
+
 -title @page.title
 -unless @page.published?
   %p#page_status
