@@ -5,8 +5,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.directory '/directory/:id', :controller => 'contacts', :action => 'index'
   
-  map.resources :searches, :controller => :search, :as => :search, :new => {:autocomplete => :get}
-  
-  
+  map.resources :searches, :controller => :search, :as => :search, :new => {:autocomplete => :get}, :collection => {:jquery_autocomplete => :get}
   
 end

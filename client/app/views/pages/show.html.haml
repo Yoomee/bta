@@ -15,13 +15,10 @@
     =snippet(@page, :pull_quote)
     .call_to_action_wrapper
       =snippet(@page, :call_to_action)
-    -if false  
-      -if @page.has_image?
-        #article_image
-          = photo_for(@page, '140x')
-  #related_content
-    %h2.title Related Content
-%br.clear        
+  -if @page.has_related_items?
+    #related_content
+      %h2.title Related Content
+      =render_related_items(@page, :image_size => "145x75#")
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
   =link_if_allowed 'Edit', edit_page_proc(@page)

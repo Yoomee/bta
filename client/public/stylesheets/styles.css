@@ -3681,17 +3681,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#054E77', end
 	width:505px;
 }
 
-#related_content {
-	float: left;
-	clear: both;
-	width: 100%;
-	border-top: 2px solid #d5dee5;
-	padding: 10px 0;
-	height: 120px;
-	
-}
-
-
 /*================ Share Page ======================*/
 .share{
 	float:left;
@@ -3979,6 +3968,64 @@ div.color_swatch {
   width:159px;
 }
 
+/* ====================  Related Content ===================== */
+
+#related_content {
+	float: left;
+	clear: both;
+	width: 100%;
+	border-top: 2px solid #d5dee5;
+}
+
+#related_content h2{
+	margin: 10px;
+}
+#related_content ul {
+	float: left;
+	margin: 0;
+}
+#related_content ul li{
+	float:left;
+	list-style:none outside none;
+  margin:10px 10px 0;
+  width:175px;
+  height:165px;  
+	display: block;
+}
+.item_image {
+	float:left;
+/*  margin:5px 15px 0 0;*/
+	width: 145px;
+}
+.item_image img{
+	width: 145px;
+}
+.item_info{
+	float: left;
+	width: 285px;
+}
+#related_content a.more_link {
+	display: none;
+}
+.item_info p {
+	
+}
+.item_info h3 {
+	font-size: 15px;
+	line-height: 15px;	
+}
+#related_content .item_image {
+	width: 145px;
+	margin: 0 15px 0 0;
+}
+#related_content .item_image img {}
+#related_content .item_info {
+	width: 135px;}
+#related_content .item_info h3 {
+	margin: 0 0 5px;
+	font-size: 14px;
+	line-height: 100%;
+}
 
 
 
