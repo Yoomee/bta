@@ -46,11 +46,6 @@ path = vendor/plugins/event_calendar
 repository = git://github.com/elevation/event_calendar.git
 scm = git
 
-[vendor/plugins/facebooker]
-path = vendor/plugins/facebooker
-scm = git
-repository = http://github.com/mmangino/facebooker.git
-
 [vendor/plugins/mobile-fu]
 branch = 2.x
 repository = git://github.com/brendanlim/mobile-fu.git
@@ -101,3 +96,8 @@ scm = git
 path = vendor/plugins/ym4r-gm
 scm = git
 repository = git://github.com/queso/ym4r-gm.git
+
+[vendor/plugins/facebooker]
+path = vendor/plugins/facebooker
+scm = git
+repository = git://github.com/mmangino/facebooker.git

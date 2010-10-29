@@ -8,7 +8,6 @@
 /test
 /vendor
 /vendor/plugins/event_calendar
-/vendor/plugins/facebooker
 /vendor/plugins/mobile-fu
 /vendor/plugins/tramlines_blog
 /vendor/plugins/tramlines_events
@@ -19,3 +18,4 @@
 /vendor/plugins/tramlines_shop
 /vendor/plugins/tramlines_walls
 /vendor/plugins/ym4r-gm
+/vendor/plugins/facebooker
