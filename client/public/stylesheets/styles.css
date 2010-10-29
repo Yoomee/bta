@@ -72,7 +72,7 @@ body {
 
 }
 #main {
-	clear: both;
+	clear: right;
 	float: right;
 	width: 735px;
 	margin: 0px 0 20px 0;
@@ -122,6 +122,12 @@ a:hover {
 	float: left;
 	margin: -160px 0 0 0;
 	
+}
+
+#sidebar_col {
+  float: left;
+  margin-top: 160px;
+  width: 89px;
 }
 
 table {}
@@ -3501,12 +3507,10 @@ background: -moz-linear-gradient(top, #BED3E2 0%, #D5DEE5 100%); /* firefox */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BED3E2), color-stop(100%,#D5DEE5)); /* webkit */
 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', endColorstr='#D5DEE5',GradientType=0 ); /* ie */
-	position: absolute;
-	left: -180px;
-	top: 160px;
 	padding: 20px;
 	font-size: 14px;
 	line-height: 100%;
+	float:left;
 
 }
 #subnav a {
@@ -3532,6 +3536,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	width: 160px;
 	border-bottom: 1px solid rgba(0,0,0,0.3);
 	
+}
+
+#subnav ul.level2, #subnav ul.level3 {
+  padding-left: 8px;
 }
 /* ===================================  Blog ======================================== */
 .blog{

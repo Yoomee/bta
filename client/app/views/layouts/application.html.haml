@@ -43,8 +43,9 @@
         #header_inside
           =render :partial => 'layouts/header'
           
-      #lower_wrapper 
+      #lower_wrapper
         #lower_wrapper_inside
+          #sidebar_col=yield :sidebar
           #main.content
             =render_flash
             -unless hide_page_title?

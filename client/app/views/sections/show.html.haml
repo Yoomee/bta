@@ -1,5 +1,6 @@
+-content_for :sidebar do
+  =render("pages/subnav", :page_or_section => @section)
 -@page_title = @section.name
-=render("sections/subnav", :section => @section)
 =photo_for(@section, "140x") if @section.has_photo?
 -unless @section.description.nil?
   %p.section_description
