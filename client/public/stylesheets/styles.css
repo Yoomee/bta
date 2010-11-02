@@ -4058,8 +4058,7 @@ body.section_events #page_right_col * {
   color: black;
 }
 
-
-/* =============== Shop Cart ================ */
+/* ============= Shop =============== */
 
 .cart_list {
   float: left;
@@ -4078,4 +4077,16 @@ body.section_events #page_right_col * {
   clear: none;
   margin: 0;
   padding: 0;
+}
+.product {
+  padding:5px;
+  border-top:1px solid gray;
+  float:left;
+}
+.product .product_thumbnail{
+  float:left;
+  margin-right:5px;
+}
+.product .product_details{
+  float:left;
 }
