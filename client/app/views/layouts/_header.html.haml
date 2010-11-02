@@ -7,7 +7,8 @@
     %form{ :action => "/search/results", :method => "post" }
       %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('header_search_field');element.value='';" }
       %input.search_icon{ :name => "commit", :title => "search", :value => "search" }
-  =link_to 'Shop <span></span>', '#', :id=>'shop_link' 
+  =link_to "Cart #{find_existing_cart.items.count}<span></span>", cart_path, :id=>'cart_link'  unless find_existing_cart.nil?
+  =link_to 'Shop <span></span>', shop_path, :id=>'shop_link'
   - if logged_in?
     =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
     =link_if_allowed 'Site settings', admin_proc
@@ -43,7 +44,7 @@
             %p Call our confidential helpline
             %p.phone_number 0800 018 0527
         %li
-          -link_to("#", :id => "support_shop") do
+          -link_to(shop_path, :id => "support_shop") do
             %h5 Visit our shop
             %p Find products that can help you
         %li
