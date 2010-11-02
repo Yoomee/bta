@@ -1,7 +1,7 @@
+run "cd #{release_path} && sudo rake gems:install RAILS_ENV=production -t"
 run "cd #{release_path} && sudo ext update"
 run "sudo touch #{shared_path}/log/production.log"
 run "sudo chown deploy:deploy #{shared_path}/log/production.log"
-run "cd #{release_path} && sudo rake gems:install RAILS_ENV=production -t"
 
 db_yaml_path = "#{shared_path}/config/database.yml"
 db_yaml = YAML.load_file(db_yaml_path)
