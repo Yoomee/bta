@@ -4060,24 +4060,33 @@ body.section_events #page_right_col * {
 
 /* ============= Shop =============== */
 
+.cart_list {
+  float: left;
+  clear: both;
+}
+#cart_form fieldset.inputs {
+  float: none;
+  clear: none;  
+  margin-bottom: 0;
+}
+#cart_form fieldset.inputs ol {
+  margin-bottom: 0;
+}
+#cart_form fieldset.inputs li, #cart_form fieldset.inputs li input {
+  float: none;
+  clear: none;
+  margin: 0;
+  padding: 0;
+}
 .product {
   padding:5px;
   border-top:1px solid gray;
   float:left;
 }
-
 .product .product_thumbnail{
   float:left;
   margin-right:5px;
 }
-
 .product .product_details{
   float:left;
 }
-
-
-
-
-
-
-
