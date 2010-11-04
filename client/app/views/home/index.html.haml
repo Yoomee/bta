@@ -67,7 +67,7 @@
   -else
     #big_news_item
       =link_to(photo_for(@latest_news_item), @latest_news_item, :class => "h_image")
-      %h4=link_to(@latest_news_item, @latest_news_item.title)
+      %h4=link_to(@latest_news_item.title, @latest_news_item)
       %p=@latest_news_item.summary
     %ul.lst
       -@news_items.each do |news|
