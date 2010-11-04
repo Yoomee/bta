@@ -4200,4 +4200,5 @@ body.section_events #page_right_col * {
 
 .product_image {
   float: left;
+  margin-right: 20px;
 }
