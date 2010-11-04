@@ -7,14 +7,15 @@
     %li
       =link_to 'Get support', section_path(5)
     %li
-      =link_to 'For health professionals', section_path(6)
+      =link_to 'Forum', forum_path(1) 
     %li
-      =link_to 'For researchers', section_path(7)
-    %li
-      =link_to 'For policy makers', section_path(8)
+      =link_to 'Shop', shop_path, :id=>'shop_link'
     %li
       =link_to 'News & Events', Section.find_by_slug("news_and_events")
-    %li
-      =link_to 'Blog', blog_path(1)
-    %li
-      =link_to 'Forum', forum_path(1)
+    %li.smaller
+      =link_to 'For health professionals', section_path(6)
+    %li.smaller
+      =link_to 'For researchers', section_path(7)
+    %li.smaller
+      =link_to 'Policy', section_path(8)
+

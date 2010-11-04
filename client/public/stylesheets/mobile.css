@@ -1,4 +1,7 @@
-/* @override http://localhost:3000/stylesheets/client/styles.css */
+/* @override 
+	http://localhost:3000/stylesheets/client/styles.css
+	http://localhost:3000/stylesheets/client/mobile.css
+*/
 
 /* the tramlines vanilla stylesheet */
 
@@ -66,15 +69,11 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	color:#333;
 	margin:0;
-	float:left;
-	width:100%;
 	background:#F0F3F7;
 
 }
 #main {
 	clear: both;
-	float: right;
-	width: 320px;
 	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
@@ -88,9 +87,7 @@ body {
 }
 #home #main {
 	background: none;
-	width: 100%;
 	padding: 0;
-	float: left;
 
 }
 #home #lower_wrapper_inside {
@@ -119,7 +116,7 @@ a:hover {
 
 #lower_wrapper_inside {
 	width: 100%;
-	float: left;
+
 	margin: -160px 0 0 0;
 	
 }
@@ -1005,7 +1002,7 @@ div#top {
 
 }
 #header {
-	width:100%;
+	width:300px;
 	margin: 0;
 	background: #2795E4; /* old browsers */
 	float: left;
@@ -1369,14 +1366,12 @@ input.search_icon {
 }
 #nav ul {
 	display:block;
-	float:left;
 	list-style-type:none;
 	margin:0;
 	padding:0;
 	text-indent:0;
 }
 #nav ul li {
-	float:left;
 	margin:0;
 	text-indent:0;
 	
@@ -1385,7 +1380,6 @@ input.search_icon {
 #nav ul li a {
 	color:#fff;
 	display:block;
-	float:left;
 	margin:5px 5px 2px 0;
 	padding:3px 7px 7px;
 	font: 16px/27px Arial, sans-serif;

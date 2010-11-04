@@ -6,6 +6,8 @@
   %p#page_status
     =@page.status_string
 #page_content
+  #page_big_image
+    =snippet(@page, :big_image)
   #page_left_col
     =render :partial => 'content', :locals => {:page => @page}
   #page_right_col
@@ -20,8 +22,6 @@
         =render_address(@page.event_location)
         =render_google_map_for(@page.event, :width => 275, :height => 300)
     -else
-      .summary_wrapper
-        =snippet(@page, :summary)
       =snippet(@page, :pull_quote)
       .call_to_action_wrapper
         =snippet(@page, :call_to_action)

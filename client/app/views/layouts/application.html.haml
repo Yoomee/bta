@@ -26,14 +26,31 @@
     -unless current_page?(new_session_path)
       :javascript
         $(document).ready(function(){    
+          $('.cycle').cycle({
+            fx: 'fade',
+            speed: 'slow',
+            timeout: 15000,
+            easing: 'easeOutQuint',
+            pager:  '#other_case_studies ul', 
+                pagerAnchorBuilder: function(idx, slide) { 
+                    // return selector string for existing anchor 
+                    return '#other_case_studies ul li:eq(' + idx + ') a';
+                }     
+          });  
+          $('#direct').click(function() { 
+              $('#other_case_studies ul li:eq(2) a').trigger('click'); 
+              return false; 
+          });      
           $("#member_login_bttn").click(function () {
             $("#login_slide_bar").slideToggle("slow");
             $("#member_login_bttn").toggleClass("open");
           });
         });
+         
   - body_tag do
     #wrapper  
       #top
+        =render_flash
         =render :partial => 'layouts/nav'
       -unless current_page?(new_session_path)
         #login_slide_bar
@@ -47,11 +64,12 @@
         #lower_wrapper_inside
           -unless @content_for_sidebar.blank?
             #sidebar_col= yield :sidebar 
-          #main.content
-            =render_flash
+          #main.content            
             -unless hide_page_title?
               %h1#page_title=page_title
-            =render_breadcrumb
+            -unless is_home?
+              .breadcrumbs
+                =render_breadcrumb
             =@content_for_layout
             %br.clear
         #footer
