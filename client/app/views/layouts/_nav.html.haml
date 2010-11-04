@@ -3,19 +3,19 @@
     %li#link_home
       =link_to 'Home', {:controller => '/home'}
     %li#link_about
-      =link_to 'About tinnitus', section_path(4)
+      =link_to 'About tinnitus', section_slug_path("about-tinnitus")
     %li
-      =link_to 'Get support', section_path(5)
+      =link_to 'Get support', section_slug_path("for-people-with-tinnitus")
     %li
       =link_to 'Forum', forum_path(1) 
     %li
       =link_to 'Shop', shop_path, :id=>'shop_link'
     %li
-      =link_to 'News & Events', Section.find_by_slug("news_and_events")
+      =link_to 'News & Events', section_slug_path("news_and_events")
     %li.smaller
-      =link_to 'For health professionals', section_path(6)
+      =link_to 'For health professionals', section_slug_path("for-health-professionals")
     %li.smaller
-      =link_to 'For researchers', section_path(7)
+      =link_to 'For researchers', section_slug_path("for-researchers")
     %li.smaller
-      =link_to 'Policy', section_path(8)
+      =link_to 'Policy', section_slug_path("for-policy-makers")
 
