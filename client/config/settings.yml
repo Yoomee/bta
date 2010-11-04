@@ -6,3 +6,6 @@ site_email: info@yoomee.com
 webthumb_key: ff1e5c1f36807f9e87868f9c01c33dbb
 development:
   site_name: British Tinnitus Association
+production:
+  # This needs changing before go-live
+  paypal_business_email: seller_1279274874_biz@yoomee.com

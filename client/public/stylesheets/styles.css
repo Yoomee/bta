@@ -4197,3 +4197,7 @@ body.section_events #page_right_col * {
 .product .product_details{
   float:left;
 }
+
+.product_image {
+  float: left;
+}
