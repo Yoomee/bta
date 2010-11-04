@@ -76,7 +76,7 @@ body {
 #main {
 	clear: right;
 	float: right;
-	width: 735px;
+	width: 720px;
 	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
@@ -250,7 +250,7 @@ a.bttn_l:hover, .join_activity_link:hover {
 
 /* general small button */
 #news_feed_older_btn, .bx_h a, button, html body .bttn {
-	background:#FCFCFC url(/images/bttn_small.png) repeat-x scroll 0 0;
+	background:#FCFCFC url(/images/sprite.png) repeat-x scroll 0 0;
 	border:1px solid #d6d6d6;
 	color:#333333;
 	display:block;
@@ -1060,11 +1060,12 @@ h1#site_logo a {
 	background:url("/images/bta_logo.png") no-repeat scroll -3px 0 transparent;
 	display:block;
 	height:201px;
-	margin:15px 0 20px 0px;
+	margin:20px 0 20px 15px;
 	width: 131px;
 	text-indent:-9000em;
 }
 #home h1#site_logo a {
+	margin:15px 0 20px 0px;
 }
 h1#site_logo a:active {
 }
@@ -2719,6 +2720,12 @@ p.nextLink {
 	margin:0 0 5px;
 }
 #all_content ul li a {}
+/* =======================  section/show  ======================== */
+
+p.section_description {
+	float: left;
+	margin: 0 0 20px;
+}
 
 /* ====================  latest stories  ===================== */
 #latestStoriesList {
@@ -2737,11 +2744,11 @@ h3#latest_stories_intro {
 	float:left;
 	margin:0 0 17px;
 	padding:0 0 17px;
-	width:750px;
+	width:740px;
 }
 .text {
-	float:right;
-	width:540px;
+	float:left;
+	width:440px;
 	margin: 0 0 10px;
 }
 .text h3 {
@@ -2768,17 +2775,18 @@ a.moreLink:hover {
 a.item_img {
 	display:block;
 	float:left;
-	height:140px;
 	margin:0 20px 0 0;
 	overflow:hidden;
 	padding:0;
 	text-indent:-9000em;
-	width:190px;
+	width:220px;
 }
 a.item_img img {
 	float:left;
-	margin:  0 0 0 -40px;
+	margin:  0 0 0 0px;
 }
+
+
 
 /* ============================= Message inbox ========================== */
 .messaging_section #page {
@@ -3429,7 +3437,7 @@ a.backto {
 	padding:6px 10px;
 	
 }
-#page_content h5 {
+#page_content h5, p.section_description {
 	font-size:19px;
 	font-weight:200;
 	padding:0;
@@ -3607,14 +3615,15 @@ div.article_image {
 }
 
 #subnav {
-	width: 140px;
+	width: 180px;
 background: #BED3E2; /* old browsers */
 background: -moz-linear-gradient(top, #BED3E2 0%, #D5DEE5 100%); /* firefox */
 
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#BED3E2), color-stop(100%,#D5DEE5)); /* webkit */
 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', endColorstr='#D5DEE5',GradientType=0 ); /* ie */
-	padding: 20px;
+
+	padding: 20px 0px 20px 0px;
 	font-size: 14px;
 	line-height: 100%;
 	float:left;
@@ -3625,28 +3634,56 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 }
 #subnav li a {
 	float: left;
-	width: 100%;
+	width: 150px;
 	border-bottom: 1px solid rgba(255,255,255,0.4);
-	padding: 9px 0;
+	padding: 10px 10px 10px 20px;
 }
-#subnav li a.active {
-	background: #ffffff; /* old browsers */
-background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* firefox */
+#subnav li.active a, #subnav ul.level2 li.active a {
 
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* webkit */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* ie */
-	
 	font-weight: bold;
-	padding-left: 10px;
-	margin-left: -10px;
-	width: 160px;
-	border-bottom: 1px solid rgba(0,0,0,0.3);
+	width: 150px;
+	color: #333;
+	
+
+
 	
 }
+#subnav li.has_children a {
 
-#subnav ul.level2, #subnav ul.level3 {
-  padding-left: 8px;
+	background: url(/images/sprite.png) no-repeat 8px -4563px;
+	
+}
+#subnav li.has_children.active_parent a {
+	border-bottom: 2px solid #0870ad;
+	font-weight: normal;
+	background: url(/images/sprite.png) no-repeat 8px -4635px;
+
+
+}
+#subnav ul.level2 li a{
+	float: left;
+	width: 140px;
+	margin-left:10px;
+	font-size: 13px;
+
+
+ 
+}
+#subnav ul.level2 li a, #subnav ul.level2 li.has_children.active_parent a, #subnav ul.level2 li.has_children.active_parent a {
+	background-color: #d6e2eb;
+}
+#subnav ul.level3 li a {
+	float: left;
+	width: 130px;
+	margin-left:20px;
+	font-size: 13px;
+	background: #D7E4EE;
+
+  
+}
+#subnav ul.level1 {
+
+
 }
 /* ===================================  Blog ======================================== */
 .blog{

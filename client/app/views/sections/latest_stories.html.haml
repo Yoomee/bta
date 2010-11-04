@@ -1,3 +1,5 @@
+-content_for :sidebar do
+  #subnav=render_subnav(@section.absolute_root, @section)
 -if @section.slug_is(:news_and_events)
   =render("news_and_events")
 -else
@@ -9,11 +11,11 @@
   #latestStoriesList
     -@pages_sections.each do |page_section|
       .item
+        =link_to(photo_for(page_section, "220x160#"), page_section, :class => 'item_img')
         .text
           %h3=link_to(page_section, page_section)
-          %p=strip_tags description_for(page_section, :length => 230)
-        =link_to(photo_for(page_section, "140x140#"), page_section, :class => 'item_img')
-        =link_to 'More', page_section, :class => 'bttn'
+          %p=strip_tags description_for(page_section, :length => 230)        
+          =link_to 'More', page_section, :class => 'bttn'
   %br.clear
   =will_paginate @pages_sections
   -options_panel do
