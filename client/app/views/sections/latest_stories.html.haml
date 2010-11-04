@@ -1,3 +1,6 @@
+-content_for :sidebar do
+  #subnav=render_subnav(@section.absolute_root, @section)
+
 -if @section.slug_is(:news_and_events)
   =render("news_and_events")
 -else
