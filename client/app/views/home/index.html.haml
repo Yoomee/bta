@@ -73,7 +73,7 @@
       -@news_items.each do |news|
         %li
           =link_to(photo_for(news), news, :class => "h_image")
-          %h4=link_to(news, news.title)
+          %h4=link_to(news.title, news)
           %p=news.summary
 #community_row
   #forum_box
