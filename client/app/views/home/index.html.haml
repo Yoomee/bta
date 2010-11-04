@@ -2,7 +2,7 @@
 #home_left_col.h_box
   %ul.lst
     %li
-      =link_to "About us", "#", :class=>'about_link'
+      =link_to "About us", page_slug_path("about-the-bta"), :class=>'about_link'
     %li
       =link_to "Contact us", "#", :class=>'contact_link'
     %li
@@ -16,29 +16,29 @@
     %ul.lst
       %li
         %h4.title 
-          =link_to "For researchers", "#"
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =link_to "For researchers", section_slug_path("for-researchers")
+        -link_to(section_slug_path("for-researchers"), :class => "h_image") do
           =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
       %li
         %h4.title 
-          =link_to "For health professionals", "#"
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =link_to "For health professionals", section_slug_path("for-health-professionals")
+        -link_to(section_slug_path("for-health-professionals"), :class => "h_image") do
           =image_tag "/images/professional_img2.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
       %li
         %h4.title  
-          =link_to "For policy makers", "#"
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+          =link_to "For policy makers", section_slug_path("for-policy-makers")
+        -link_to(section_slug_path("for-policy-makers"), :id => "1"}, :class => "h_image") do
           =image_tag "/images/professional_img3.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
       %li
         %h4.title  
           =link_to "Latest medical advances ", "#"
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
+        -link_to("#", :class => "h_image") do
           =image_tag "/images/professional_img4.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
@@ -78,7 +78,7 @@
 #community_row
   #forum_box
     %h3.title
-      =link_to "BTA forum ", "#"
+      =link_to "BTA forum ", forum_path(1)
     %ul.lst
       %li
         =link_to "Tinnitus and thyroid disorders", "#"
