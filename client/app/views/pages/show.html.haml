@@ -17,10 +17,11 @@
       .event_when
         %h3 When
         =date_description(@page)
-      .event_where
-        %h3 Where
-        =render_address(@page.event_location)
-        =render_google_map_for(@page.event, :width => 275, :height => 300)
+      -if @page.event_has_location?
+        .event_where
+          %h3 Where
+          =render_address(@page.event_location)
+          =render_google_map_for(@page.event, :width => 275, :height => 300)
     -else
       =snippet(@page, :pull_quote)
       -if @page.has_snippet?(:call_to_action)
