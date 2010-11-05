@@ -11,10 +11,11 @@ module SubnavHelper
     end
     html << "</ul>"  
   end
-  
+
   def render_shop_subnav(department, product_or_department, level=1)
     html = "<ul class='lst level#{level}'>"
-    department.all_children.each do |child|
+    children = (level == 1 && department.is_root?) ? Department.roots : department.all_children
+    children.each do |child|
       html << li_with_active(current_page?(:controller => "#{child.is_a?(Product) ? 'products' : 'departments'}", :action => "show", :id => child), :class => "#{'has_children' if child.is_a?(Department) && !child.all_children.empty?}#{' active_parent' if child.is_a?(Department) && child.has_descendant?(product_or_department)}") do
         link_to(child.name, child)
       end
@@ -22,5 +23,6 @@ module SubnavHelper
         html << render_shop_subnav(child, product_or_department, level + 1)
       end
     end
-    html << "</ul>"  end
+    html << "</ul>" 
+  end
 end
