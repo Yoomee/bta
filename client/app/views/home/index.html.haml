@@ -45,21 +45,11 @@
   #box_shop.h_box
     %h3.title The BTA shop
     %ul.lst
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product.jpg"
-          %h4.title 
-            Sound Therapy System - Sound Oasis S-650
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class=> "h_image") do
-          =image_tag "/images/product2.jpg"
-          %h4.title 
-            Roberts Pillowtalk Pillow Speaker
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product3.jpg"
-          %h4.title 
-            Deep Relaxation: A Journey CD
+      -@products.each do |product|
+        %li
+          -link_to(product, :class => "h_image") do
+            =image_for(product, "200x200#")
+            %h4.title=product.name
 #latest_news
   %h3.title Latest News
   -if @latest_news_item.nil?
@@ -108,11 +98,11 @@
   #facebook_box
     %h3.title
       =link_to "Facebook ", "#"
+    =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation")
   #twitter_box
     %h3.title
-      =link_to "Twitter ", "#"
+      =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
     %p.tweet  
-      The BTA is supporting Ménière’s Awareness Week which is taking place from the 9 – 15 October - http://bit.ly/c7ftI7 
-      -link_to 'http://bit.ly/cpbqWX', 'http://bit.ly/cpbqWX'
-    =link_to "Follow us ", "#", :class=>'bttn_round'      
+      =highlight_tweet_links(@latest_tweet)
+    =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'      
     
