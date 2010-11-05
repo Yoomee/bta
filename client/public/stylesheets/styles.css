@@ -2,6 +2,8 @@
 	http://localhost:3000/stylesheets/client/styles.css
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288892663
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288954595
+	http://bta.yoomee.com/stylesheets/client/styles.css?1288962407
+	http://bta.yoomee.com/stylesheets/client/styles.css?1288964225
 */
 
 /* the tramlines vanilla stylesheet */
@@ -147,7 +149,7 @@ td, th {
   padding: 5px;
 }
 div.details {
-	border-top:1px dashed #BBBBBB;
+	border-top:1px solid #d5dee5;
 	clear:left;
 	color:#666666;
 	font-size:11px;
@@ -3748,25 +3750,26 @@ h3.blog_date{
 .blog_post_image{
 	float:left;
 	margin-top:10px;
+	margin-bottom: 20px;
 
-	width:730px;
+	width:720px;
 	background: #333;
 }
 .blog_post_details{
 	float:left;
-	margin-left:15px;
-	width:540px;
+	margin-left:0px;
+	width:600px;
 }
 h3.blog_post_date{
-	color:#666666;
-	font-size:20px;
+	color:#999;
+	font-size:16px;
 	font-weight:normal;
 	margin-bottom:5px;
 	margin-top:-10px;
 }
 #blog_share_links {
 	float:left;
-  margin:20px 0 20px -10px;
+  margin:20px 0 20px 0px;
   padding: 10px;
 	width:590px;
 	border-top: 2px solid #999;
@@ -4121,6 +4124,49 @@ div.color_swatch {
   clear: both;
   width:100%;  
 }
+table.forum{
+	border: none;
+}
+.forum td {
+	border: none;
+	padding: 10px;
+}
+
+tr.forum_row_even td {
+	background: #f0f3f7;
+	
+}
+
+span.light_text {
+	color: #999;
+	
+}
+
+p#forum_intro {
+	background: #666;
+	color: #fff;
+	padding: 10px;
+	margin: 0;
+	
+	
+	     -moz-border-radius-topleft:5px;
+    -moz-border-radius-topright:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+
+	
+	
+	background: #545454;	
+	background: -moz-linear-gradient(top, #545454 0%, #383838 100%);
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#383838)); 
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 );
+}
+
+
 
 
 /* ======== Autocomplete ===== */
@@ -4138,12 +4184,64 @@ div.color_swatch {
 /* ======== Directory ===== */
 #directory_a2z {
   clear:both;
+  padding: 10px 20px;
+  color: #666;
+  font-size: 17px;
+  margin: 0 0 20px;
+  	background: #545454;	
+	background: -moz-linear-gradient(top, #545454 0%, #383838 100%);
+
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#545454), color-stop(100%,#383838)); 
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 );
+	
+	    -moz-border-radius:5px;
+     -webkit-border-radius:5px;
+     border-radius:5px;
+
+}
+#directory_a2z a {
+	color: #fff;
+}
+#directory_search {
+	padding: 10px;
+	float: right;
+	margin: -50px 0 0 ;
 }
 #directory_search .search_box {
   border:solid 1px gray;
 }
 #directory_search #search_term{
   width:159px;
+}
+
+#contacts_directory {
+	
+}
+#contacts_directory table {
+	width: 100%;
+}
+#contacts_directory table td {
+	border: none;
+}
+#contacts_directory table th {
+	border:none;
+	text-align: left;
+	border-bottom: 2px solid #2795e4;
+}
+#contacts_directory td.name {
+	border-right: 1px solid #d5dee5;
+	width: 50%;
+}
+
+#contact_top {
+	float: left;
+	width: 300px;
+	
+}
+#contact_map {
+	float: right;
+
 }
 
 /* ====================  Related Content ===================== */
@@ -4270,6 +4368,7 @@ body.section_events #page_right_col * {
   padding:5px;
   border-top:1px solid gray;
   float:left;
+  width: 100%;
 }
 .product .product_thumbnail{
   float:left;
