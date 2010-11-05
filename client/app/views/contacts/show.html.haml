@@ -6,16 +6,18 @@
 
 - title @contact.name
 
-=image_for(@contact, "100x100")
-=contentize(@contact.description)
-%p
-  Category:
-  =link_to(@contact.category,@contact.category)
-=render_address(@contact.address, :multi_line => true)
-%p=@contact.email unless @contact.email.blank?
-%p=@contact.phone_number unless @contact.phone_number.blank?
-%p=link_to_url(@contact.website) unless @contact.website.blank?
-=render_google_map_for(@contact)
+#contact_top
+  =image_for(@contact, "100x100")
+  =contentize(@contact.description)
+  %p
+    Category:
+    =link_to(@contact.category,@contact.category)
+  =render_address(@contact.address, :multi_line => true)
+  %p=@contact.email unless @contact.email.blank?
+  %p=@contact.phone_number unless @contact.phone_number.blank?
+  %p=link_to_url(@contact.website) unless @contact.website.blank?
+#contact_map
+  =render_google_map_for(@contact)
 =#@contact.map_div(:width => 300, :height => 300)
 
 -options_panel do
