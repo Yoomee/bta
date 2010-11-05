@@ -1712,8 +1712,10 @@ a.h_image {
 	background: #fff;
 	width: 280px;
 	padding: 10px;
-	height: 540px;
-	
+	height: 540px;	
+}
+#latest_news .title a {
+  color: #133D5C;
 }
 #latest_news li {
 	margin: 0 0 6px;
@@ -1763,8 +1765,10 @@ a.h_image {
 	height: 260px;
 	background: #2795e4;
 	color: #fff;
-	margin: 10px 0 0;
-	
+	margin: 10px 0 0;	
+}
+#box_shop .title a {
+  color: #fff;
 }
 #box_shop ul {
 	float: left;
