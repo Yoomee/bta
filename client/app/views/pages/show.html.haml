@@ -29,7 +29,7 @@
   -if @page.has_related_items?
     #related_content
       %h2.title Related Content
-      =render_related_items(@page, :image_size => "145x75#", :limit => 4)
+      =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
   =back_link
