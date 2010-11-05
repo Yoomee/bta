@@ -2,7 +2,7 @@
 #home_left_col.h_box
   %ul.lst
     %li
-      =link_to "About us", page_slug_path("about-the-bta"), :class=>'about_link'
+      =link_to "About us", slug_path("about-the-bta"), :class=>'about_link'
     %li
       =link_to "Contact us", "#", :class=>'contact_link'
     %li
@@ -72,12 +72,14 @@
     %h3.title
       =link_to "BTA forum ", forum_path(1)
     %ul.lst
-      %li
-        =link_to "Tinnitus and thyroid disorders", "#"
-        %p
-          %span
-            3 posts.
-          Created at 07:28 on 26 August
+      -if false
+        -@forum_posts.each do |post|
+          %li
+            =link_to post.name, post
+            %p
+              %span
+                3 posts.
+              Created at 07:28 on 26 August
       %li
         =link_to "Potential treatments", "#"
         %p
