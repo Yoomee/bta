@@ -62,7 +62,10 @@
           
       #lower_wrapper
         #lower_wrapper_inside
-          -unless @content_for_sidebar.blank?
+          -if viewing_blog?
+            #sidebar_col
+              #subnav=render_blog_sidebar
+          -elsif !@content_for_sidebar.blank?
             #sidebar_col= yield :sidebar 
           #main.content            
             -unless hide_page_title?
