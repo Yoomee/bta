@@ -45,21 +45,11 @@
   #box_shop.h_box
     %h3.title The BTA shop
     %ul.lst
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product.jpg"
-          %h4.title 
-            Sound Therapy System - Sound Oasis S-650
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class=> "h_image") do
-          =image_tag "/images/product2.jpg"
-          %h4.title 
-            Roberts Pillowtalk Pillow Speaker
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product3.jpg"
-          %h4.title 
-            Deep Relaxation: A Journey CD
+      -@products.each do |product|
+        %li
+          -link_to(product, :class => "h_image") do
+            =image_for(product, "200x200#")
+            %h4.title=product.name
 #latest_news
   %h3.title Latest News
   -if @latest_news_item.nil?
