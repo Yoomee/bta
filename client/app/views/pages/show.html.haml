@@ -23,8 +23,9 @@
         =render_google_map_for(@page.event, :width => 275, :height => 300)
     -else
       =snippet(@page, :pull_quote)
-      .call_to_action_wrapper
-        =snippet(@page, :call_to_action)
+      -if @page.has_snippet?(:call_to_action)
+        .call_to_action_wrapper
+          =snippet(@page, :call_to_action)
   -if @page.has_related_items?
     #related_content
       %h2.title Related Content

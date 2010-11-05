@@ -1470,7 +1470,7 @@ input.search_icon {
      border-radius:5px;
 
 }
-#nav ul li.active a, #home #nav ul li#link_home a, .controller_pages.action_show #nav ul li#link_about a {
+#nav ul li.active a, #home #nav ul li#link_home a {
 	background: url(/images/nav_active.png) center -4px repeat-x;
 	color: #000;
 	padding-bottom: 7px;
