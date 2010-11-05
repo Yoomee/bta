@@ -58,15 +58,15 @@
     %p No news at the moment. Check back later.
   -else
     #big_news_item
-      =link_to(photo_for(@latest_news_item), @latest_news_item, :class => "h_image")
+      =link_to(photo_for(@latest_news_item, "280x160#"), @latest_news_item, :class => "h_image")
       %h4=link_to(@latest_news_item.title, @latest_news_item)
-      %p=@latest_news_item.summary
+      %p=strip_tags @latest_news_item.summary
     %ul.lst
       -@news_items.each do |news|
         %li
-          =link_to(photo_for(news), news, :class => "h_image")
+          =link_to(photo_for(news, "60x60#"), news, :class => "h_image")
           %h4=link_to(news.title, news)
-          %p=news.summary
+          %p=strip_tags news.summary
 #community_row
   #forum_box
     %h3.title
