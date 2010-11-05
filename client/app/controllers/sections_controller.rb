@@ -4,7 +4,7 @@ SectionsController.class_eval do
     case @section.view
       when 'latest_stories'
         @pages_sections = @section.pages.published.latest + @section.children
-        @pages_sections.extend(SectionsContoller::SortByWeightAndLatest)
+        @pages_sections.extend(SectionsController::SortByWeightAndLatest)
         @pages_sections = @pages_sections.sort_by_weight_and_latest.paginate(:page => params[:page], :per_page => (APP_CONFIG[:latest_stories_items_per_page] || 6))
         render :action => 'latest_stories'
       when 'first_page'
