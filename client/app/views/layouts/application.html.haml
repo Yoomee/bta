@@ -19,10 +19,10 @@
     = javascript_include_tag 'tramlines'
     = javascript_include_tag "client/autoresize.jquery.min.js"
     
-    = stylesheet_link_tag 'client/styles'
     = stylesheet_link_tag 'jquery-ui'
     = formtastic_stylesheet_link_tag
     =yield :head
+    = stylesheet_link_tag 'client/styles'
     -unless current_page?(new_session_path)
       :javascript
         $(document).ready(function(){    

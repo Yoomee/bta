@@ -8,14 +8,14 @@
       =link_to 'Get support', slug_path("for-people-with-tinnitus")
     -li_with_active(viewing_forum?) do
       =link_to 'Forum', forum_path(1)
+    -if !Blog.count.zero?
+      -li_with_active(viewing_blog?) do
+        =link_to 'Blog', blog_path(Blog.first)
     -li_with_active(viewing_shop?) do
       =link_to 'Shop', shop_path, :id => 'shop_link'
     -li_with_active_slug("news_and_events", :class => viewing_events? ? "active" : "") do
       =link_to 'News & Events', slug_path("news_and_events")
     -li_with_active_slug("for-health-professionals", :class => "smaller") do
-      =link_to 'For health professionals', slug_path("for-health-professionals")
-    -li_with_active_slug("for-researchers", :class => "smaller") do
-      =link_to 'For researchers', slug_path("for-researchers")
-    -li_with_active_slug("for-policy-makers", :class => "smaller") do
-      =link_to 'Policy', slug_path("for-policy-makers")
-
+      =link_to 'For Professionals', slug_path("for-health-professionals")
+    -li_with_active_slug("about-s", :class => "smaller") do
+      =link_to 'About us', slug_path("about-us")

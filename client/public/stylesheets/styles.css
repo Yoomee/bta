@@ -1130,7 +1130,7 @@ div#home_header {
 	position: absolute;
 	z-index: 65;
 	width: 160px;
-	height: 220px;
+	height: 180px;
 	color: #fff;
 	padding: 20px;
 	bottom: 0px;
@@ -1458,7 +1458,7 @@ input.search_icon {
 	display:block;
 	float:left;
 	margin:5px 5px 6px 0;
-	padding:2px 8px 3px;
+	padding:2px 14px 3px;
 	font: 15px/27px Arial, sans-serif;
 	font-weight: bold;
 	
@@ -1624,7 +1624,7 @@ div#home_box_center {
 
 #box_professionals {
 	width: 480px;
-	padding: 10px 0 0 0;
+	padding: 30px 0 30px 0;
 	float: left;
 	
 }
@@ -1742,7 +1742,6 @@ a.h_image {
 	margin: 0 0 10px;
 }
 #big_news_item p {
-	font-size: 14px;
 }
 
 #latest_news li img {
@@ -2494,6 +2493,7 @@ ul.action_links li {
 #copyright {
 	float: left;
 	margin: 20px 0 20px;
+	width: 300px;
 }
 div#footer_links {
 	float:right;
@@ -3939,10 +3939,11 @@ li.event_list_item {
   float: right;
   margin:10px;  
 }
-.ec-calendar td.ec-event-cell {
-  border:none;
-  padding:0;
+
+.ec-day-names {
+  background:#005B8E;
 }
+
 
 
 /* ==================  Event Categories Lists ==================== */
@@ -4151,23 +4152,29 @@ div.color_swatch {
 	float: left;
 	clear: both;
 	width: 100%;
-	border-top: 2px solid #d5dee5;
+	border-top: 2px solid #bfd4e2;
+
 }
 
 #related_content h2{
-	margin: 10px;
+	margin: 10px 10px 0;
+
 }
 #related_content ul {
 	float: left;
 	margin: 0;
 }
+#related_content h3 a {
+
+}
 #related_content ul li{
 	float:left;
 	list-style:none outside none;
-  margin:10px 10px 0;
-  width:175px;
-  height:165px;  
+ 	 margin:10px;
+ 	 width:155px;
+
 	display: block;
+
 }
 .item_image {
 	float:left;
@@ -4179,7 +4186,7 @@ div.color_swatch {
 }
 .item_info{
 	float: left;
-	width: 285px;
+
 }
 #related_content a.more_link {
 	display: none;
@@ -4197,7 +4204,9 @@ div.color_swatch {
 }
 #related_content .item_image img {}
 #related_content .item_info {
-	width: 135px;}
+	width: 100%;
+	font-size: 12px;
+}
 #related_content .item_info h3 {
 	margin: 0 0 5px;
 	font-size: 14px;

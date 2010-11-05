@@ -30,6 +30,10 @@
   table-layout: fixed;
 }
 
+.ec-calendar-header th {
+  border:none;
+}
+
 .ec-month-name {
   font-size: 16px;
   font-weight: bold;
@@ -58,8 +62,13 @@
   color: white;
 }
 
+.ec-day-names th{
+  border: none;
+  padding-top: 3px;
+}
+
 .ec-day-name {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 /* Rows container and Row */
@@ -137,10 +146,10 @@ a.ec-day-link {
 
 /* Event cell and container */
 .ec-event-cell {
+  border:none;
   cursor: pointer;
   vertical-align: top;
-  padding-right: 1px;
-  padding-left: 2px;
+  padding:0px;
 }
 
 .ec-event-cell a {

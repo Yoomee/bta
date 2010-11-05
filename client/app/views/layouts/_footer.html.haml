@@ -11,6 +11,8 @@
   Telephone: 0800 018 0527
   %br
   Email: info@tinnitus.org.uk
+  %br
+  Registered charity no. 1011145 Company limited by guarantee no. 2709302, registered in England.
 #footer_links    
   %ul
     - if @is_sys_admin
@@ -19,7 +21,10 @@
           %strong
             admin
     %li=link_to_slug("Legal", "legal")
+    %li=link_to_slug("Contact us", "contact-us")
     %li=link_to_slug("Website credits", "website-credits")
-    %li=link_to_slug("Accessibility options ", "accessibility-options")      
+    %li=link_to_slug("Accessibility options ", "accessibility-options")
+    %li=link_to_slug("Website feedback ", "website-feedback")
     %li=link_to("Sitemap", sections_path)
+
 =link_to 'Lottery Funded', 'http://www.biglotteryfund.co.uk', :id=>'lottery_funded', :target=>'_blank'        
