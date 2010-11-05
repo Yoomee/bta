@@ -1,21 +1,21 @@
 #nav
   %ul
-    %li#link_home
-      =link_to 'Home', {:controller => '/home'}
-    %li#link_about
-      =link_to 'About tinnitus', section_slug_path("about-tinnitus")
-    %li
-      =link_to 'Get support', section_slug_path("for-people-with-tinnitus")
-    %li
-      =link_to 'Forum', forum_path(1) 
-    %li
-      =link_to 'Shop', shop_path, :id=>'shop_link'
-    %li
-      =link_to 'News & Events', section_slug_path("news_and_events")
-    %li.smaller
-      =link_to 'For health professionals', section_slug_path("for-health-professionals")
-    %li.smaller
-      =link_to 'For researchers', section_slug_path("for-researchers")
-    %li.smaller
-      =link_to 'Policy', section_slug_path("for-policy-makers")
+    -li_with_active(current_page?(home_path), :id => "link_home") do
+      =link_to 'Home', home_path
+    -li_with_active_slug("about-tinnitus", :id => "link_about") do
+      =link_to 'About tinnitus', slug_path("about-tinnitus")
+    -li_with_active_slug("for-people-with-tinnitus") do
+      =link_to 'Get support', slug_path("for-people-with-tinnitus")
+    -li_with_active(viewing_forum?) do
+      =link_to 'Forum', forum_path(1)
+    -li_with_active(viewing_shop?) do
+      =link_to 'Shop', shop_path, :id => 'shop_link'
+    -li_with_active_slug("news_and_events") do
+      =link_to 'News & Events', slug_path("news_and_events")
+    -li_with_active_slug("for-health-professionals", :class => "smaller") do
+      =link_to 'For health professionals', slug_path("for-health-professionals")
+    -li_with_active_slug("for-researchers", :class => "smaller") do
+      =link_to 'For researchers', slug_path("for-researchers")
+    -li_with_active_slug("for-policy-makers", :class => "smaller") do
+      =link_to 'Policy', slug_path("for-policy-makers")
 

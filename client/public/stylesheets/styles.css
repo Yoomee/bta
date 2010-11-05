@@ -1,6 +1,7 @@
 /* @override 
 	http://localhost:3000/stylesheets/client/styles.css
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288892663
+	http://bta.yoomee.com/stylesheets/client/styles.css?1288954595
 */
 
 /* the tramlines vanilla stylesheet */
@@ -805,6 +806,7 @@ ul#selected_items li span.related_title{
 	font-size:16px;
 	font-weight:bold;
 	float: left;
+	color: #fff;
 }
 
 /* ============ Photo browser input ========= */
@@ -1473,7 +1475,7 @@ input.search_icon {
      border-radius:5px;
 
 }
-#nav ul li.active a, #home #nav ul li#link_home a, .controller_pages.action_show #nav ul li#link_about a {
+#nav ul li.active a, #home #nav ul li#link_home a {
 	background: url(/images/nav_active.png) center -4px repeat-x;
 	color: #000;
 	padding-bottom: 7px;
@@ -1712,8 +1714,10 @@ a.h_image {
 	background: #fff;
 	width: 280px;
 	padding: 10px;
-	height: 540px;
-	
+	height: 540px;	
+}
+#latest_news .title a {
+  color: #133D5C;
 }
 #latest_news li {
 	margin: 0 0 6px;
@@ -1748,7 +1752,10 @@ a.h_image {
 	float: left;
 	margin: 0 0 5px;
 	font-size: 14px;
+	line-height
 	font-weight: normal;
+	display: block;
+	width: 200px;
 }
 
 #latest_news .lst p {
@@ -1763,8 +1770,10 @@ a.h_image {
 	height: 260px;
 	background: #2795e4;
 	color: #fff;
-	margin: 10px 0 0;
-	
+	margin: 10px 0 0;	
+}
+#box_shop .title a {
+  color: #fff;
 }
 #box_shop ul {
 	float: left;
@@ -3674,13 +3683,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 }
 #subnav li.has_children a {
 
-	background: url(/images/sprite.png) no-repeat 8px -4563px;
+	background: url(/images/sprite.png) no-repeat 8px -3645px;
 	
 }
 #subnav li.has_children.active_parent a {
 	border-bottom: 2px solid #0870ad;
 	font-weight: normal;
-	background: url(/images/sprite.png) no-repeat 8px -4635px;
+	background: url(/images/sprite.png) no-repeat 8px -3705px;
 
 
 }
@@ -4212,7 +4221,9 @@ body.section_news_and_events #latestStoriesList .item .item_img img {
 body.section_news_and_events #latest_events {
   float:left;
   margin-left:20px;
-  width:310px;
+  width:280px;
+  background: #d3dde5;
+  padding: 10px;
 }
 body.section_news_and_events #latest_events .event_list_item {
   height:60px;

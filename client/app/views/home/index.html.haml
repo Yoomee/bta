@@ -43,38 +43,30 @@
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
   #box_shop.h_box
-    %h3.title The BTA shop
+    %h3.title
+      =link_to "The BTA shop", shop_path
     %ul.lst
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product.jpg"
-          %h4.title 
-            Sound Therapy System - Sound Oasis S-650
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class=> "h_image") do
-          =image_tag "/images/product2.jpg"
-          %h4.title 
-            Roberts Pillowtalk Pillow Speaker
-      %li
-        -link_to({:controller => "pages", :action => "show", :id => "1"}, :class => "h_image") do
-          =image_tag "/images/product3.jpg"
-          %h4.title 
-            Deep Relaxation: A Journey CD
+      -@products.each do |product|
+        %li
+          -link_to(product, :class => "h_image") do
+            =image_for(product, "200x200#")
+            %h4.title=product.name
 #latest_news
-  %h3.title Latest News
+  %h3.title
+    =link_to "Latest News", slug_path(:news_and_events)
   -if @latest_news_item.nil?
     %p No news at the moment. Check back later.
   -else
     #big_news_item
-      =link_to(photo_for(@latest_news_item), @latest_news_item, :class => "h_image")
+      =link_to(photo_for(@latest_news_item, "280x160#"), @latest_news_item, :class => "h_image")
       %h4=link_to(@latest_news_item.title, @latest_news_item)
-      %p=@latest_news_item.summary
+      %p=strip_tags @latest_news_item.summary
     %ul.lst
       -@news_items.each do |news|
         %li
-          =link_to(photo_for(news), news, :class => "h_image")
+          =link_to(photo_for(news, "60x60#"), news, :class => "h_image")
           %h4=link_to(news.title, news)
-          %p=news.summary
+          %p=strip_tags news.summary
 #community_row
   #forum_box
     %h3.title
