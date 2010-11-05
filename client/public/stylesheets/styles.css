@@ -4152,20 +4152,20 @@ div.color_swatch {
 	float: left;
 	clear: both;
 	width: 100%;
+	border-top: 2px solid #bfd4e2;
 
-	background: #005b8e;
 }
 
 #related_content h2{
 	margin: 10px 10px 0;
-	color: #fff;
+
 }
 #related_content ul {
 	float: left;
 	margin: 0;
 }
 #related_content h3 a {
-	color: #fff;
+
 }
 #related_content ul li{
 	float:left;
@@ -4174,7 +4174,7 @@ div.color_swatch {
  	 width:155px;
 
 	display: block;
-	color: #fff;
+
 }
 .item_image {
 	float:left;
