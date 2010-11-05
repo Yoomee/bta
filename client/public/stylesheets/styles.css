@@ -3939,6 +3939,16 @@ li.event_list_item {
   float: right;
   margin:10px;  
 }
+.ec-calendar-header th {
+  border:none;
+}
+.ec-day-names th {
+  border:none;
+}
+.ec-day-names {
+  background-color:#005B8E;
+}
+
 .ec-calendar td.ec-event-cell {
   border:none;
   padding:0;
