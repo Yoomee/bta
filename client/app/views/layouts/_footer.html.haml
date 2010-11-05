@@ -18,16 +18,8 @@
         %a{ :href => "/admin" }
           %strong
             admin
-    %li
-      %a{ :href => "legal" }
-        legal
-    %li
-      %a{ :href => "link2" }
-        Website credits
-    %li
-      %a{ :href => "link2" }
-        Accessibility options        
-    %li
-      %a{ :href => "link2" }
-        Site map
+    %li=link_to_slug("Legal", "legal")
+    %li=link_to_slug("Website credits", "website-credits")
+    %li=link_to_slug("Accessibility options ", "accessibility-options")      
+    %li=link_to("Sitemap", sections_path)
 =link_to 'Lottery Funded', 'http://www.biglotteryfund.co.uk', :id=>'lottery_funded', :target=>'_blank'        

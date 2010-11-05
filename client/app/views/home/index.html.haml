@@ -2,7 +2,7 @@
 #home_left_col.h_box
   %ul.lst
     %li
-      =link_to "About us", page_slug_path("about-the-bta"), :class=>'about_link'
+      =link_to "About us", slug_path("about-the-bta"), :class=>'about_link'
     %li
       =link_to "Contact us", "#", :class=>'contact_link'
     %li
@@ -16,22 +16,22 @@
     %ul.lst
       %li
         %h4.title 
-          =link_to "For researchers", section_slug_path("for-researchers")
-        -link_to(section_slug_path("for-researchers"), :class => "h_image") do
+          =link_to "For researchers", slug_path("for-researchers")
+        -link_to(slug_path("for-researchers"), :class => "h_image") do
           =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
       %li
         %h4.title 
-          =link_to "For health professionals", section_slug_path("for-health-professionals")
-        -link_to(section_slug_path("for-health-professionals"), :class => "h_image") do
+          =link_to "For health professionals", slug_path("for-health-professionals")
+        -link_to(slug_path("for-health-professionals"), :class => "h_image") do
           =image_tag "/images/professional_img2.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
       %li
         %h4.title  
-          =link_to "For policy makers", section_slug_path("for-policy-makers")
-        -link_to(section_slug_path("for-policy-makers"), :class => "h_image") do
+          =link_to "For policy makers", slug_path("for-policy-makers")
+        -link_to(slug_path("for-policy-makers"), :class => "h_image") do
           =image_tag "/images/professional_img3.jpg", :width=>'60px', :alt=>'proff'
         %p
           Details of three PhD studentships, funded by Deafness Research UK are now available on the 
