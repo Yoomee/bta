@@ -19,10 +19,10 @@
     = javascript_include_tag 'tramlines'
     = javascript_include_tag "client/autoresize.jquery.min.js"
     
-    = stylesheet_link_tag 'client/styles'
     = stylesheet_link_tag 'jquery-ui'
     = formtastic_stylesheet_link_tag
     =yield :head
+    = stylesheet_link_tag 'client/styles'
     -unless current_page?(new_session_path)
       :javascript
         $(document).ready(function(){    
@@ -62,7 +62,10 @@
           
       #lower_wrapper
         #lower_wrapper_inside
-          -unless @content_for_sidebar.blank?
+          -if viewing_blog?
+            #sidebar_col
+              #subnav=render_blog_sidebar
+          -elsif !@content_for_sidebar.blank?
             #sidebar_col= yield :sidebar 
           #main.content            
             -unless hide_page_title?
