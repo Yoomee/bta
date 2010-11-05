@@ -1,0 +1,20 @@
+-content_for :sidebar do
+  #subnav=render_shop_subnav(@product.department.root, @product)
+
+-title @product
+-if @product.deleted?
+  %p.deleted_notice
+    This product has been deleted
+-unless @product.sku.blank?
+  %p
+    Product code:
+    =@product.sku
+=image_for(@product, '250x250', :class => 'product_image')
+=@product.description
+=render :partial => 'cart_items/form', :locals => {:product => @product}
+-options_panel do
+  =back_link
+  -if @product.active?
+    =link_if_allowed 'Edit', edit_product_proc(@product)
+    =link_if_allowed 'Delete', @product, :method => :delete, :confirm => 'Are you sure?'
+    TODO - add image link
