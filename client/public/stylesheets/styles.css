@@ -1,4 +1,7 @@
-/* @override http://localhost:3000/stylesheets/client/styles.css */
+/* @override 
+	http://localhost:3000/stylesheets/client/styles.css
+	http://bta.yoomee.com/stylesheets/client/styles.css?1288892663
+*/
 
 /* the tramlines vanilla stylesheet */
 
@@ -541,7 +544,7 @@ fieldset.buttons {
 }
 
 span.cke_wrapper.cke_ltr {
-	background: #c7c7c7 url(/images/sprite.png) repeat-x 0 -3985px;
+	background: #d4d4d4 url(/images/sprite.png) repeat-x 0 -3985px;
 	margin-bottom: 20px;
 	width: 700px;
 
@@ -2727,6 +2730,21 @@ p.section_description {
 	margin: 0 0 20px;
 }
 
+div.grid_item {
+	float: left;
+	width: 220px;
+	height: 400px;
+	padding: 0px;
+	margin: 0 20px 0 0;
+}
+div.grid_item h3 {
+	font-size: 18px;
+}
+div.grid_item a.item_img {
+	margin-bottom: 10px;
+	float: left;
+}
+
 /* ====================  latest stories  ===================== */
 #latestStoriesList {
 	float: left;
@@ -3359,14 +3377,14 @@ li.news_feed_item_hovering a.trash {
 	margin: 0 0 20px;
 }
 #page_big_image img {
-	max-width: 735px;
+	max-width: 720px;
 }
 #page_big_image * {
 	margin: 0;
 	padding: 0;
 }
 #page_content #page_left_col{
-	width: 430px;
+	width: 420px;
 	float: left;
 	margin: 0 0 30px 0px;
 	clear: both;
