@@ -1861,13 +1861,19 @@ div#twitter_box h3 a {
 }
 div#facebook_box {
 	float: left;
-/*  background: #fff url(/images/facebook_box.jpg) no-repeat 0 0;
-*/	width: 294px;
+  width: 294px;
 	height: 244px;
 	margin: 0 20px 0 0;
 	border: 3px solid #d5dee5;
-	
+	overflow:hidden;
 }
+
+div#facebook_box iframe{
+	float: left;
+	margin: -1px;
+}
+
+
 div#facebook_box h3 {
 	display: none;
 }
