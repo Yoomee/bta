@@ -1,0 +1,44 @@
+-title @forum.title
+
+%p=@forum.description
+
+-if !@topics.blank?
+  %p#forum_intro
+    Click on the topic that you're interested and see what's being discussed. If you want to discuss something else, why not start your own topic?
+  #forums
+    %table.forum
+      - @topics.each do |topic|
+        %tr{:class => "forum_row_#{cycle("even", "odd")}"}
+          %td{:width => "70%"}
+            %strong= link_to(topic.subject, topic)
+            / = get_image topic
+            /  = link_if_allowed("Edit", edit_topic_proc(topic))
+            /  |
+            /  =link_if_allowed('Delete', topic, :method => :delete, :confirm => 'Are you sure you want to delete this topic?')
+            %br
+            %span.light_text
+              ="Started by #{link_to topic.get_poster_name, topic.member} | #{pluralize(topic.get_replies, 'reply')} and #{pluralize(topic.get_views, 'view')}"
+          %td
+            =link_to_last_post(topic)
+  =will_paginate @topics
+  
+-else
+  %p.intro No one wants to be the first to post in a new forum. If you have something to say be the first and have your say.
+  %i No Topics have been posted yet!
+  
+#facebook_box
+  %h3.title
+    =link_to "Facebook ", "#"
+  =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation")
+#twitter_box
+  %h3.title
+    =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
+  %p.tweet  
+    =highlight_tweet_links(@latest_tweet)
+  =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'
+
+-options_panel do
+  =back_link
+  =link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
+  =link_if_allowed "Edit forum", edit_forum_proc(@forum)
+  =link_if_allowed 'Delete forum', @forum, :method => :delete, :confirm => "Are you sure?"
