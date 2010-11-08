@@ -1,21 +1,25 @@
-#logo_box
-  %h1#site_logo
-    =link_to site_name, :home
-  %p The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.  
-#user_links
-  .search_box
-    %form{ :action => "/search/results", :method => "post" }
-      %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element = document.getElementById('header_search_field');element.value='';" }
-      %input.search_icon{ :name => "commit", :title => "search", :value => "search" }
-  =link_to "Cart (#{find_existing_cart.items.count})<span></span>", cart_path, :id=>'cart_link'  if !find_existing_cart.nil? && !find_existing_cart.items.count.zero? 
-  - if logged_in?
-    =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
-    =link_if_allowed 'Site settings', admin_proc
-    %strong
-      =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
-  - elsif !current_page?(new_session_path)
-    %p=link_to('login / sign up', '#', :id => 'member_login_bttn')
-  =link_to_remote "#{in_mobile_view? ? 'Standard site' : 'Mobile site'}", :url =>{:controller => 'mobile', :action => 'toggle'}
+- page_or_section = @section.nil? ? (@page.nil? ? nil : @page.section) : @section
+-if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'
+  
+-else
+  #logo_box
+    %h1#site_logo
+      =link_to site_name, :home
+    %p The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.  
+  #user_links
+    .search_box
+      %form{ :action => "/search/results", :method => "post" }
+        %input.search_field#header_search_field{ :name => "term", :type => "text", :value => "Search", :onfocus => "var element =   document.getElementById('header_search_field');element.value='';" }
+        %input.search_icon{ :name => "commit", :title => "search", :value => "search" }
+    =link_to "Cart (#{find_existing_cart.items.count})<span></span>", cart_path, :id=>'cart_link'  if !find_existing_cart.nil? &&   !find_existing_cart.items.count.zero? 
+    - if logged_in?
+      =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
+      =link_if_allowed 'Site settings', admin_proc
+      %strong
+        =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
+    - elsif !current_page?(new_session_path)
+      %p=link_to('login / sign up', '#', :id => 'member_login_bttn')
+    =link_to_remote "#{in_mobile_view? ? 'Standard site' : 'Mobile site'}", :url =>{:controller => 'mobile', :action => 'toggle'}
 
 -if is_home?
   #home_header
