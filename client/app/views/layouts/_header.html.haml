@@ -21,74 +21,18 @@
   #home_header
     #case_study_carousel
       .cycle
-        .slide
-          #case_study_image
-            =image_tag '/images/carousel_image.jpg'
-          #case_study_quote
-            %h3
-              %span#quote_start
-                &quot;
-              My message to anyone who thinks they may have tinnitus is 'you are not alone'
-              %span#quote_end
-                &quot;          
-            =link_to "Read Nicola's story", "#", :id=>'learn_more_bttn', :class=>'bttn_round'
-        .slide
-          #case_study_image
-            =image_tag '/images/carousel_image2.jpg'
-          #case_study_quote
-            %h3
-              %span#quote_start
-                &quot;
-              My message to anyone who thinks they may have tinnitus is 'you are not alone'
-              %span#quote_end
-                &quot;          
-            =link_to "Read Sharon's story", "#", :id=>'learn_more_bttn', :class=>'bttn_round'
-        .slide
-          #case_study_image
-            =image_tag '/images/carousel_image3.jpg'
-          #case_study_quote
-            %h3
-              %span#quote_start
-                &quot;
-              My message to anyone who thinks they may have tinnitus is 'you are not alone'
-              %span#quote_end
-                &quot;          
-            =link_to "Read David's story", "#", :id=>'learn_more_bttn', :class=>'bttn_round'
-        .slide
-          #case_study_image
-            =image_tag '/images/carousel_image4.jpg'
-          #case_study_quote
-            %h3
-              %span#quote_start
-                &quot;
-              My message to anyone who thinks they may have tinnitus is 'you are not alone'
-              %span#quote_end
-                &quot;          
-            =link_to "Read Matt's story", slug_path("about-tinnitus"), :id=>'learn_more_bttn', :class=>'bttn_round'
-        .slide
-          #case_study_image
-            =image_tag '/images/carousel_image5.jpg'
-          #case_study_quote
-            %h3
-              %span#quote_start
-                &quot;
-              My message to anyone who thinks they may have tinnitus is 'you are not alone'
-              %span#quote_end
-                &quot;          
-            =link_to "Read Nathan's story", "#", :id=>'learn_more_bttn', :class=>'bttn_round'            
+        -@carousel_pages.each do |page|
+          .slide
+            #case_study_image
+              =photo_for(page, '525x351')
+            #case_study_quote
+              =render_carousel_quote(page)    
+              =link_to snippet(page, :carousel_button_text), page, :id=>'learn_more_bttn', :class=>'bttn_round'
       #other_case_studies
         %h4 Other Stories
         %ul.lst
-          %li
-            =link_to image_tag("carousel_image.jpg"), "#"
-          %li
-            =link_to image_tag("carousel_image2.jpg"), "#"
-          %li
-            =link_to image_tag("carousel_image3.jpg"), "#"
-          %li
-            =link_to image_tag("carousel_image4.jpg"), "#"
-          %li
-            =link_to image_tag("carousel_image5.jpg"), "#"                                                
+          -@carousel_pages.each do |page|
+            %li=link_to photo_for(page, '525x351'), "#"                                          
     #get_suppport
       %h2
         Get support
