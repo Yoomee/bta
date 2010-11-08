@@ -1,0 +1,6 @@
+-semantic_form_for CartItem.new(:product_id => product.id), :url => cart_items_path do |form|
+  -form.inputs do
+    =form.input :quantity, :input_html => {:size => 2}, :as => :hidden
+    =form.input :product_id, :as => :hidden
+  -form.buttons do
+    =form.submit 'Add to basket'

@@ -8,6 +8,8 @@
 
 /* the tramlines vanilla stylesheet */
 
+
+
 /* ===============================  Reset styles ================================ */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
@@ -36,7 +38,7 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, 
 
 /* ======================  CSS3 regularly used stuff ================== */
 
-#main, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box {
+#footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box {
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -79,10 +81,11 @@ body {
 	background:#F0F3F7;
 
 }
+
 #main {
 	clear: right;
 	float: right;
-	width: 720px;
+	width: 760px;
 	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
@@ -121,7 +124,7 @@ a:hover {
 	visibility:hidden;
 }
 #nav, #login_slide_bar_inside, #header_inside, #lower_wrapper, #footer {
-	width:940px;
+	width:980px;
 	margin:0 auto;
 }
 
@@ -132,10 +135,14 @@ a:hover {
 	
 }
 
+#lower_wrapper {
+
+	
+}
+
 #sidebar_col {
   float: left;
   margin-top: 160px;
-  width: 89px;
 }
 
 table {}
@@ -537,9 +544,9 @@ fieldset.buttons {
 
 .tramlines_tab, #admin_tab_content, #tab_loader {
 	background: #f0f3f7;
-	padding: 20px 10px;
+	padding: 20px;
 	float: left;
-	width: 710px;
+	width: 720px;
 	position: relative;
 	z-index: 12;
 	margin: 0 0 20px;
@@ -553,7 +560,7 @@ fieldset.buttons {
 span.cke_wrapper.cke_ltr {
 	background: #d4d4d4 url(/images/sprite.png) repeat-x 0 -3985px;
 	margin-bottom: 20px;
-	width: 700px;
+	width: 710px;
 
 
 
@@ -1040,8 +1047,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2795E4', end
 }
 #header_inside {
 	clear: both;
-	height: 50px;
 	position: relative;
+	
 
 }
 #home #header_inside {
@@ -1071,7 +1078,7 @@ h1#site_logo a {
 	background:url("/images/bta_logo.png") no-repeat scroll -3px 0 transparent;
 	display:block;
 	height:201px;
-	margin:20px 0 20px 15px;
+	margin:20px 0 20px 0px;
 	width: 131px;
 	text-indent:-9000em;
 }
@@ -1085,6 +1092,7 @@ h1#site_logo a:active {
 	float: left;
 	width: 140px;
 	color: #fff;
+	margin: 0 0 0 20px;
 	
 }
 #inside #logo_box p {
@@ -1093,13 +1101,19 @@ h1#site_logo a:active {
 div#home_header {
 	float: right;
 	background: #fff;
-	width: 780px;
+	width: 800px;
 	height: 390px;
 	margin: 20px 0 0 20px;
+	position: relative;
+	z-index: 116;
 	
-	-webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-	-moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-	box-shadow: 0 0 7px rgba(0,0,0,0.3);
+	
+     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+     box-shadow: 0 0 7px rgba(0,0,0,0.3);
+
+	
+
 	
 }
 #case_study_carousel {
@@ -1107,7 +1121,7 @@ div#home_header {
 	height: 390px;
 	position: relative;
 	width: 480px;
-	background: #333 ;
+	background: #333;
 }
 #case_study_carousel .cycle, #case_study_carousel .slide {
 	position: relative;
@@ -1215,7 +1229,7 @@ div#home_header {
 
 	font-size: 14px;
 	line-height: 18px;
-	margin: 10px 5px 10px 15px;
+	margin: 10px 5px 10px 20px;
 }
 #other_case_studies li {
 	float: left;
@@ -1245,9 +1259,10 @@ div#home_header {
 }
 #get_suppport {
 	float: right;
-	width: 240px;
-	height: 330px;
-	padding: 30px;
+	width: 280px;
+	height: 350px;
+
+	padding: 40px 20px 0;
 	background: #D5DEE5; /* old browsers */	
 background: -moz-linear-gradient(top, #D5DEE5 0%, #E3EBF2 65%); /* firefox */
 
@@ -1264,7 +1279,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	font-size: 21px;
 	line-height: 25px;
 	float: left;
-	margin: 0 0 10px 0;
+	font-weight: normal;
+	margin: 0 0 0px 0;
 	
 }
 #get_suppport h2 strong {
@@ -1280,10 +1296,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 #get_suppport ul li a {
 	background: url(/images/sprite_bta.png) no-repeat -1450px 15px;
 	float: left;
-	padding: 15px 10px 15px 60px;
-	margin: 0 0 0px -10px;
-	border-bottom: 1px solid #B5CBDB;
-	width: 190px;
+	padding: 15px 10px 20px 60px;
+	margin: 0 0 0px 0px;
+	border-bottom: 1px solid #C0D0DB;
+	width: 210px;
 
 }
 #get_suppport ul li a h5 {
@@ -1307,6 +1323,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 } 
 #get_suppport ul li a#support_forum {
 	background-position: -1440px -280px;
+} 
+#get_suppport ul li a#find_out_more {
+	background-position: -1453px -400px;
 } 
 /* =======  cycle  ====== */
 .cycle_frame {
@@ -1345,7 +1364,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 
 #user_links {
 	float:right;
-	margin:0px 0;
+	margin:0px 20px;
 	width:740px;
 	padding: 15px 0;
 	
@@ -1490,6 +1509,7 @@ input.search_icon {
 	padding-top: 0;
 	margin-bottom: 2px;
 	margin-top: 7px;
+	margin-left: 20px;
 	
 	-moz-border-radius:0px;
      -webkit-border-radius:0px;
@@ -1618,22 +1638,41 @@ a#facebook_link {
 	
 }
 #home_left_col {
-	width: 140px;
-	margin: 20px 20px 0 0;
+	width: 180px;
+	margin: 0px 0px 0 0px;
+	padding: 20px 0;
 	float: left;
 	position: relative;
+	background: #c0d4e2;
+	
 	
 }
-
+#home_left_col li {
+	border-bottom: 1px solid #e1e9ee;
+	padding: 0 20px;
+	width: 140px;
+	
+}
 div#home_box_center {
 	float: left;
-	width: 480px;
+	width: 100%;
+	
 }
+div#home_box_right {
+	float: right;
+	position: relative;
+	z-index: 10;
+	
 
+	
+
+}
 #box_professionals {
-	width: 480px;
-	padding: 30px 0 30px 0;
+	width: 460px;
+	padding: 20px 0px 0px 20px;
 	float: left;
+
+
 	
 }
 #box_professionals h3, #box_shop h3 {
@@ -1647,9 +1686,9 @@ div#home_box_center {
 	font-weight: bold;
 	float: left;
 	margin: 0 0 0px;
-	padding: 5px 10px;
+	padding: 5px 0px;
 }
-#home_left_col ul.lst li a.donate_link, .bttn_round {
+.bttn_round {
 	padding: 5px 15px;
 	display: block;
 	color: #333;
@@ -1679,7 +1718,7 @@ div#home_box_center {
 	width: 140px;
 	height: 245px;
 	text-indent: -9900em;
-	margin: 450px 0 0;
+	margin: 0px 20px 0 0;
 	
 }
 
@@ -1687,49 +1726,58 @@ div#home_box_center {
 	font-weight: 200;
 	color: #184f7b;
 	font-size: 17px;
-	margin: 0 0 7px;
+	margin: 0 0 10px;
 	line-height: 100%;
 }
 h3.title  {
 	font-size: 20px;
-	margin: 15px 0;
+	margin: 0px 0 20px;
 	font-weight: normal;
 }
 #box_professionals li {
-	width: 220px;
-	margin: 0 10px 15px;
+	width: 210px;
+	margin: 0 20px 15px 0;
+	padding: 0 0 20px;
+	border-bottom: 1px solid #C0D0DB;
 	
+}
+#box_professionals li:nth-child(3n), #box_professionals li:nth-child(4n) {
+	border: none;
 }
 a.h_image {
 	float: left;
 	display: block;
-	margin: 4px 10px 0 0;
+	margin: 0px 20px 0 0;
 }
 #box_professionals li img {
-	width: 60px;
+	width: 210px;
+	height: 90px;
 	float: left;
+	margin: 0px 0 10px 0;
 
 }
 #box_professionals li p {
 	float: left;
-	width: 150px;
+	width: 200px;
 	margin: 0;
 
 }
 
 #latest_news {
 	float: left;
-	background: #fff;
 	width: 280px;
-	padding: 10px;
-	height: 540px;	
+	background: #fff url(/images/latest_news.png) repeat-x 0 0;
+	padding: 20px;
+	position: relative;
+	z-index: 10;
 }
 #latest_news .title a {
   color: #133D5C;
 }
 #latest_news li {
-	margin: 0 0 6px;
-	border-bottom: 1px solid #e8e8e8;
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #C0D0DB;
 }
 #latest_news li:last-child {
 	margin: 0;
@@ -1767,8 +1815,9 @@ a.h_image {
 
 #latest_news .lst p {
 	float: left;
-	width: 210px;
-	font-size: 12px;
+	width: 200px;
+	margin: 0;
+
 }
 
 #box_shop {
@@ -1822,15 +1871,17 @@ a.our_ambassador {
 
 div#community_row {
 	float: left;
-	width: 780px;
+	width: 940px;
+	
+	padding: 20px;
 	border-top: 5px solid #0870ad;
-	padding: 15px 0;
 	
 }
 
 div#forum_box {
 	float: left;
 	width: 280px;
+	height: 230px;
 
 	margin: 0 20px 0 0;
 	padding: 10px;
@@ -2500,14 +2551,14 @@ ul.action_links li {
 }
 #copyright {
 	float: left;
-	margin: 20px 0 20px;
+	margin: 20px 0 20px 20px;
 	width: 300px;
 }
 div#footer_links {
 	float:right;
-	margin:0px 0px 0;
+	margin:0px 20px 0 0;
 	padding:10px 0px;
-	width: 530px;
+	width: 590px;
 }
 #footer_links ul {
 	margin:0px;
@@ -2535,7 +2586,7 @@ div#footer_links {
 
 #lottery_funded {
 	position: absolute;
-	right: 0px;
+	right: 20px;
 	top: 50px;
 	background: url(/images/sprite_bta.png) no-repeat -220px -60px;
 	width: 90px;
@@ -3383,9 +3434,17 @@ li.news_feed_item_hovering a.trash {
 }
 /* ====================  page show ===================== */
 .breadcrumbs {
-	float: left;
-	width: 100%;
-	margin: 5px 0 10px;
+  float: left;
+  width: 100%;
+  margin: 5px 0 10px;
+}
+#breadcrumb {
+  float: left;
+  width:100%;
+}
+#breadcrumb a.breadcrumb{
+  float: left;
+  padding: 5px;
 }
 .page #page_title {
 	display:block;
@@ -3400,14 +3459,14 @@ li.news_feed_item_hovering a.trash {
 	margin: 0 0 20px;
 }
 #page_big_image img {
-	max-width: 720px;
+	max-width: 760px;
 }
 #page_big_image * {
 	margin: 0;
 	padding: 0;
 }
 #page_content #page_left_col{
-	width: 420px;
+	width: 440px;
 	float: left;
 	margin: 0 0 30px 0px;
 	clear: both;
@@ -3676,7 +3735,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 #subnav li a {
 	float: left;
 	width: 150px;
-	border-bottom: 1px solid rgba(255,255,255,0.4);
+	border-bottom: 1px solid #e1e9ee;
 	padding: 10px 10px 10px 20px;
 }
 #subnav li.active a, #subnav ul.level2 li.active a {
@@ -4410,6 +4469,37 @@ body.section_events #page_right_col * {
   margin-right: 20px;
 }
 
+/* ======== Product/show ========= */
+#product_info {
+  float:left;
+}
+#product_info .product_left_col{
+  height:100%;
+  width:300px;
+  float:left;
+}
+#product_info .product_right_col{
+  float:left;
+  width:440px;
+}
+#product_price {
+  clear:both;
+  float:left;
+  width:100%;
+  background-color:#EFF2F6;
+  margin-bottom:20px;
+}
+
+#product_price .price_left_col {
+  float:left;
+  width:300px;
+}
+
+#product_price .price_right_col {
+  float:left;
+  width:440px;
+}
+
 /* ======== Ratings ========= */
 
 #wall_rating_form {
@@ -4469,4 +4559,49 @@ a.wall_rating_star:hover {
 
 .doc h4 {
   float:left;
+}
+#page_right_col a.audio_download {
+  color: #2795e4;
+}
+/* ================================ campaign microsite ===================================== */
+.campaigns #lower_wrapper_inside {
+	margin: 0;
+	background: #fff;
+
+}
+
+.campaigns #sidebar_col {
+	margin: 0;
+}
+.campaigns #user_links {
+	display: none;
+}
+
+.campaigns div#top {
+	display: none;
+}
+.campaigns #header {
+	height: 200px;
+	background: none;
+}
+body.campaigns {
+	background: #000;
+}
+.campaigns #footer {
+	background: #000;
+	color: #fff;
+}
+div.campaign_header {
+position: absolute;
+top: 0;
+background: #000;
+padding: 10px;
+right: 0;	
+}
+.campaigns #subnav {
+	background: none;
+	
+}
+.campaigns #header_inside {
+	overflow: hidden;
 }

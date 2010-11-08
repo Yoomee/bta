@@ -2,6 +2,7 @@
   #subnav=render_shop_subnav(@product.department.root, @product)
 
 -title @product
+=render_breadcrumb(@product)
 -if @product.deleted?
   %p.deleted_notice
     This product has been deleted
@@ -9,9 +10,24 @@
   %p
     Product code:
     =@product.sku
-=image_for(@product, '250x250', :class => 'product_image')
-=@product.description
-=render :partial => 'cart_items/form', :locals => {:product => @product}
+#product_info
+  .product_left_col
+    =image_for(@product, '300x300', :class => 'product_image')
+  .product_right_col
+    =@product.description
+#product_price
+  .price_left_col
+    -unless @product.member_special_offer.blank?
+      #member_special_offer
+        %h4 Member offer
+        =@product.member_special_offer
+  .price_right_col
+    -if @product.member_price_in_pounds
+      %p.main_price="£#{@product.member_price_in_pounds} members"
+      %p.price="£#{@product.price_in_pounds} non-members"
+    -else 
+      %p.main_price="£#{@product.price_in_pounds}"
+    =render :partial => 'cart_items/form', :locals => {:product => @product}
 =render_ratings_wall(@product.wall, :fb_connect => true)
 -options_panel do
   =back_link
