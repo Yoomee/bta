@@ -1,6 +1,25 @@
+:javascript
+  var SnippetsForm = {
+    toggle_carousel_fields: function() {
+      if ($('#page_show_in_carousel').is(':checked')) {
+        $('#page_snippet_carousel_quote_input').show();
+        $('#page_snippet_carousel_button_text_input').show();
+      } else {
+        $('#page_snippet_carousel_quote_input').hide();
+        $('#page_snippet_carousel_button_text_input').hide();
+      }
+    }
+  };
+  $(document).ready(function(){
+    SnippetsForm.toggle_carousel_fields();
+  });
+
 -semantic_fields_for page do |fields|
   -fields.inputs do
     =fields.input :snippet_summary, :as => :ck_text, :label => 'Summary (overriding intro text for page section)', :input_html => {:height => 100}
     =fields.input :snippet_big_image, :as => :ck_text, :label => 'Big image', :input_html => {:height => 100}
     =fields.input :snippet_pull_quote, :as => :ck_text, :label => 'Pull quote', :input_html => {:height => 100}
     =fields.input :snippet_call_to_action, :as => :ck_text, :label => 'Call to action', :input_html => {:height => 100}
+    =fields.input :show_in_carousel, :as => :boolean, :label => "Show in front page carousel", :input_html => {:onclick => "SnippetsForm.toggle_carousel_fields()"}
+    =fields.input :snippet_carousel_quote, :as => :text, :label => 'Carousel quote', :input_html => {:rows => 2}, :wrapper_html => { :style => "display:none"}, :help => "Enter text to be displayed on the front page. Wrap the text in double quotes \" to have it displayed as a quotation."
+    =fields.input :snippet_carousel_button_text, :label => 'Button text', :wrapper_html => {:style => "display:none"}

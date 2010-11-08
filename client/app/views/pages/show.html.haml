@@ -27,10 +27,14 @@
       -if @page.has_snippet?(:call_to_action)
         .call_to_action_wrapper
           =snippet(@page, :call_to_action)
-  -if @page.has_related_items?
+  -if @page.has_related_documents?
+    #documents
+    -@page.related_documents.each do |document|
+      =render 'documents/document', :document => document
+  -if @page.has_related_items?(:excluded_types => %w{Document})
     #related_content
       %h2.title Related Content
-      =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
+      =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100, :exclude_types => %w{Document})
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
   =back_link

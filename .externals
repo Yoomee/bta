@@ -101,3 +101,8 @@ repository = git://github.com/queso/ym4r-gm.git
 path = vendor/plugins/facebooker
 scm = git
 repository = git://github.com/mmangino/facebooker.git
+
+[vendor/plugins/tramlines_ratings]
+path = vendor/plugins/tramlines_ratings
+scm = git
+repository = git://git.yoomee.com:4321/plugins/tramlines_ratings.git

@@ -202,6 +202,10 @@ p.flash_error {
 	margin: 0;
 	width: 100%;
 }
+.labelified {
+	color:gray;
+}
+
 /* =============================  button styles ============================= */
 /* general large button*/
 input[type="submit"], a.bttn_l, .formtastic input[type="submit"], .formtastic  a.bttn_l {
@@ -1154,8 +1158,10 @@ div#home_header {
 	letter-spacing: normal;
 	font-size: 18px;
 	float: left;
-	text-indent: 26px;
+}
 
+#case_study_quote h3.quote {
+	text-indent: 26px;
 }
 
 #case_study_quote h3 span#quote_start {
@@ -4160,7 +4166,28 @@ div.color_swatch {
   float: left;
   margin-right:10px;
 }
-
+.wall_post .wall_post_right {
+  float: left;
+  width: 450px;
+}
+.wall_post .wall_post_member_link {
+  float: left;
+}
+.wall_post .time_ago {
+  float: left;
+  margin-left:5px;  
+}
+.wall_post .wall_post_content {
+  float: left;
+  clear: both;
+}
+.wall_post .wall_post_options {
+  float: left;
+  clear: both;
+}
+.wall .wall_content .bx_h {
+  width: 100%;
+}
 /* ========== Forum ============ */
 #forums {
   float: left;
@@ -4424,4 +4451,65 @@ body.section_events #page_right_col * {
 .product_image {
   float: left;
   margin-right: 20px;
+}
+
+/* ======== Ratings ========= */
+
+#wall_rating_form {
+	float:left;
+	margin:10px 0;
+}
+.wall_rating_star {
+	background:url("/images/rating_star.png") no-repeat scroll 0 -23px transparent;
+	display:block;
+	float:left;
+	height:23px;
+	margin:0 5px 0 0;
+	text-indent:-9000em;
+	width:23px;
+}
+.wall_rating_star.active {
+	background-position:0 0;
+}
+a.wall_rating_star:hover {
+	filter:alpha(opacity=80); 
+    -moz-opacity:0.8; 
+   -khtml-opacity: 0.8; 
+     opacity: 0.8; 
+}
+#wall_rating_form .your_rating {
+	float:left;
+	margin:0 10px 0 0;
+	cursor: default;	
+}
+.wall_post_rating_stars {
+  clear:both;
+  float:left;
+  margin:5px 0;
+}
+.average_rating {
+  float: right;
+}
+.average_rating span {
+  float: left;
+  line-height:28px;
+}
+.average_rating .wall_post_rating_stars {
+  clear:none;
+  float:left;
+  margin-left:10px;
+}
+
+/* ============= Documents =============== */
+.doc{
+	display:block;
+	float:left;
+	font-size:12px;
+}
+.doc .doc_icon {
+  float:left;
+}
+
+.doc h4 {
+  float:left;
 }
