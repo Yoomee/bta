@@ -12,6 +12,7 @@
 =image_for(@product, '250x250', :class => 'product_image')
 =@product.description
 =render :partial => 'cart_items/form', :locals => {:product => @product}
+=render_ratings_wall(@product.wall, :fb_connect => true)
 -options_panel do
   =back_link
   -if @product.active?
