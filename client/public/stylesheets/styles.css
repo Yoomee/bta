@@ -4469,6 +4469,37 @@ body.section_events #page_right_col * {
   margin-right: 20px;
 }
 
+/* ======== Product/show ========= */
+#product_info {
+  float:left;
+}
+#product_info .product_left_col{
+  height:100%;
+  width:300px;
+  float:left;
+}
+#product_info .product_right_col{
+  float:left;
+  width:440px;
+}
+#product_price {
+  clear:both;
+  float:left;
+  width:100%;
+  background-color:#EFF2F6;
+  margin-bottom:20px;
+}
+
+#product_price .price_left_col {
+  float:left;
+  width:300px;
+}
+
+#product_price .price_right_col {
+  float:left;
+  width:440px;
+}
+
 /* ======== Ratings ========= */
 
 #wall_rating_form {
