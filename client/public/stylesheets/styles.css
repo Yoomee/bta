@@ -8,6 +8,8 @@
 
 /* the tramlines vanilla stylesheet */
 
+
+
 /* ===============================  Reset styles ================================ */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
@@ -1045,8 +1047,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2795E4', end
 }
 #header_inside {
 	clear: both;
-	height: 50px;
 	position: relative;
+	
 
 }
 #home #header_inside {
@@ -4533,7 +4535,10 @@ a.wall_rating_star:hover {
 /* ================================ campaign microsite ===================================== */
 .campaigns #lower_wrapper_inside {
 	margin: 0;
+	background: #fff;
+
 }
+
 .campaigns #sidebar_col {
 	margin: 0;
 }
@@ -4543,4 +4548,29 @@ a.wall_rating_star:hover {
 
 .campaigns div#top {
 	display: none;
+}
+.campaigns #header {
+	height: 200px;
+	background: none;
+}
+body.campaigns {
+	background: #000;
+}
+.campaigns #footer {
+	background: #000;
+	color: #fff;
+}
+div.campaign_header {
+position: absolute;
+top: 0;
+background: #000;
+padding: 10px;
+right: 0;	
+}
+.campaigns #subnav {
+	background: none;
+	
+}
+.campaigns #header_inside {
+	overflow: hidden;
 }

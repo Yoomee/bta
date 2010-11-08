@@ -1,6 +1,8 @@
 - page_or_section = @section.nil? ? (@page.nil? ? nil : @page.section) : @section
 -if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'
-  
+  %img{:src => '/images/campaign_header.jpg'}
+  .campaign_header
+    =link_to site_name, :home
 -else
   #logo_box
     %h1#site_logo
