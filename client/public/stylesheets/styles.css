@@ -4540,3 +4540,7 @@ a.wall_rating_star:hover {
 .campaigns #user_links {
 	display: none;
 }
+
+.campaigns div#top {
+	background: #000;
+}
