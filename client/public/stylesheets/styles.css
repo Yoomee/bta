@@ -535,7 +535,7 @@ fieldset.buttons {
 }
 
 
-.sections_tab, .pages_tab, #admin_tab_content, #tab_loader {
+.tramlines_tab, #admin_tab_content, #tab_loader {
 	background: #f0f3f7;
 	padding: 20px 10px;
 	float: left;
@@ -583,7 +583,7 @@ br#pages_tab_links_break, br#sections_tab_links_break {
 	width: 600px;
 }
 
-.pages_tab p, #admin_tab_content p, .sections_tab p {
+.tramlines_tab p, #admin_tab_content p {
 	color: #0083be;
 }
 .pages_tab label, #admin_tab_content label {

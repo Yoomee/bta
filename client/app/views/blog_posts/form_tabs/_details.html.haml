@@ -1,0 +1,13 @@
+-semantic_fields_for blog_post do |fields|
+  -fields.inputs do
+    =fields.input :title
+    =fields.input :permalink_name, :help => "Please set a permalink (ie. a 'pretty' shortcut to the page)"
+    =fields.input :text, :as => :ck_text
+    %li=fields.photo_browser_button :photo
+    =#fields.input :image, :as => :file
+    =fields.input :member_id, :as => :hidden
+    -if fields.object.blog_id.blank?
+      =fields.input :blog_id, :as => :select, :collection => Blog.all, :include_blank => false
+    -else
+      =fields.input :blog_id, :as => :hidden
+    =fields.input :blog_post_categories, :hint => "Hold down the control-key to select multiple categories", :as => :select, :collection => BlogPostCategory.all, :input_html  => {:size => 5} unless BlogPostCategory.count.zero?
