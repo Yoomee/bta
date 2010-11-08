@@ -4542,5 +4542,5 @@ a.wall_rating_star:hover {
 }
 
 .campaigns div#top {
-	background: #000;
+	display: none;
 }
