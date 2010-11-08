@@ -36,7 +36,7 @@ h1.page_title, .title, .left_col h2, #other_stuff h2, .call_to_action, #donate, 
 
 /* ======================  CSS3 regularly used stuff ================== */
 
-#main, #footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box {
+#footer_links, .bx_h, #news_feed_older_btn, .bx_h a, button, .bttn, .pull_quote, div#page_related_col, a.backto, .search_box {
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	border-radius:3px;
@@ -133,10 +133,14 @@ a:hover {
 	
 }
 
+#lower_wrapper {
+
+	
+}
+
 #sidebar_col {
   float: left;
   margin-top: 160px;
-  width: 89px;
 }
 
 table {}
@@ -538,9 +542,9 @@ fieldset.buttons {
 
 .sections_tab, .pages_tab, #admin_tab_content, #tab_loader {
 	background: #f0f3f7;
-	padding: 20px 10px;
+	padding: 20px;
 	float: left;
-	width: 710px;
+	width: 720px;
 	position: relative;
 	z-index: 12;
 	margin: 0 0 20px;
@@ -554,7 +558,7 @@ fieldset.buttons {
 span.cke_wrapper.cke_ltr {
 	background: #d4d4d4 url(/images/sprite.png) repeat-x 0 -3985px;
 	margin-bottom: 20px;
-	width: 700px;
+	width: 710px;
 
 
 
@@ -1098,8 +1102,8 @@ div#home_header {
 	width: 800px;
 	height: 390px;
 	margin: 20px 0 0 20px;
-	z-index: 46;
 	position: relative;
+	z-index: 116;
 	
 	
      -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
@@ -1115,7 +1119,7 @@ div#home_header {
 	height: 390px;
 	position: relative;
 	width: 480px;
-	background: #333 ;
+	background: #333;
 }
 #case_study_carousel .cycle, #case_study_carousel .slide {
 	position: relative;
@@ -1649,13 +1653,13 @@ a#facebook_link {
 }
 div#home_box_center {
 	float: left;
-	position: relative;
-	z-index: 10;
 	width: 100%;
 	
 }
 div#home_box_right {
 	float: right;
+	position: relative;
+	z-index: 10;
 	
 
 	
@@ -1760,8 +1764,10 @@ a.h_image {
 #latest_news {
 	float: left;
 	width: 280px;
-	background: #fff;
+	background: #fff url(/images/latest_news.png) repeat-x 0 0;
 	padding: 20px;
+	position: relative;
+	z-index: 10;
 }
 #latest_news .title a {
   color: #133D5C;
@@ -2550,7 +2556,7 @@ div#footer_links {
 	float:right;
 	margin:0px 20px 0 0;
 	padding:10px 0px;
-	width: 530px;
+	width: 590px;
 }
 #footer_links ul {
 	margin:0px;
@@ -4512,4 +4518,14 @@ a.wall_rating_star:hover {
 
 .doc h4 {
   float:left;
+}
+/* ================================ campaign microsite ===================================== */
+.campaigns #lower_wrapper_inside {
+	margin: 0;
+}
+.campaigns #sidebar_col {
+	margin: 0;
+}
+.campaigns #user_links {
+	display: none;
 }

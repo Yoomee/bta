@@ -46,9 +46,9 @@
             $("#member_login_bttn").toggleClass("open");
           });
         });
-         
-  - body_tag do
-    #wrapper  
+  - page_or_section = @section.nil? ? (@page.nil? ? nil : @page) : @section
+  - body_tag(:class => "#{'campaigns' if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'}") do  
+    #wrapper    
       #top
         =render_flash
         =render :partial => 'layouts/nav'
