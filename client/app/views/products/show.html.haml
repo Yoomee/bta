@@ -2,6 +2,7 @@
   #subnav=render_shop_subnav(@product.department.root, @product)
 
 -title @product
+=render_breadcrumb(@product)
 -if @product.deleted?
   %p.deleted_notice
     This product has been deleted

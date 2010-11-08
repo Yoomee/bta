@@ -3379,9 +3379,17 @@ li.news_feed_item_hovering a.trash {
 }
 /* ====================  page show ===================== */
 .breadcrumbs {
-	float: left;
-	width: 100%;
-	margin: 5px 0 10px;
+  float: left;
+  width: 100%;
+  margin: 5px 0 10px;
+}
+#breadcrumb {
+  float: left;
+  width:100%;
+}
+#breadcrumb a.breadcrumb{
+  float: left;
+  padding: 5px;
 }
 .page #page_title {
 	display:block;

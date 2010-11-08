@@ -2,6 +2,7 @@
   #subnav=render_subnav(@page.section.absolute_root, @page)
 
 -title @page.title
+=render_breadcrumb(@page)
 -unless @page.published?
   %p#page_status
     =@page.status_string
