@@ -4400,5 +4400,6 @@ body.section_events #page_right_col * {
   float:left;
 }
 
-
-
+#page_right_col a.audio_download {
+  color: #2795e4;
+}
