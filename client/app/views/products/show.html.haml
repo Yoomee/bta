@@ -12,6 +12,10 @@
     =@product.sku
 =image_for(@product, '250x250', :class => 'product_image')
 =@product.description
+-unless @product.member_special_offer.blank?
+  #member_special_offer
+    %h4 Member offer
+    =@product.member_special_offer
 =render :partial => 'cart_items/form', :locals => {:product => @product}
 =render_ratings_wall(@product.wall, :fb_connect => true)
 -options_panel do
