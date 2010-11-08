@@ -1150,8 +1150,10 @@ div#home_header {
 	letter-spacing: normal;
 	font-size: 18px;
 	float: left;
-	text-indent: 26px;
+}
 
+#case_study_quote h3.quote {
+	text-indent: 26px;
 }
 
 #case_study_quote h3 span#quote_start {
@@ -4453,4 +4455,18 @@ a.wall_rating_star:hover {
   clear:none;
   float:left;
   margin-left:10px;
+}
+
+/* ============= Documents =============== */
+.doc{
+	display:block;
+	float:left;
+	font-size:12px;
+}
+.doc .doc_icon {
+  float:left;
+}
+
+.doc h4 {
+  float:left;
 }
