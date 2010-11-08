@@ -2,7 +2,7 @@
   #subnav=render_shop_subnav(@department.root, @department)
   
 -title @department
--breadcrumb [['Shop', departments_path]] + @department.breadcrumb
+=render_breadcrumb(@department)
 
 -unless @department.intro.blank?
   %p=@department.intro
