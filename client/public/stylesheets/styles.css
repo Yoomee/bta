@@ -539,6 +539,14 @@ input#page_title {
 	
 
 }
+
+fieldset legend{
+  font-size:20px;
+}
+fieldset legend span{
+  margin-bottom:5px;
+}
+
 fieldset.buttons {
 	float: left;
 	clear: both;

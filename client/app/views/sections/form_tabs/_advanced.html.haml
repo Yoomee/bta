@@ -1,0 +1,28 @@
+:javascript
+  $(document).ready(function(){
+    $('#section_bg_color').ColorPicker({
+    	onSubmit: function(hsb, hex, rgb, el) {
+    		$(el).val('#' + hex);
+    		$(el).ColorPickerHide();
+    	},
+    	onBeforeShow: function () {
+    		$(this).ColorPickerSetColor(this.value);
+    	}
+    })
+    $('#section_bg_color').bind('keyup', function(){
+    	$(this).ColorPickerSetColor(this.value);
+    });
+  });
+
+-semantic_fields_for section do |fields|
+  -fields.inputs do
+    =fields.input :permalink_name, :help => "You can set a permalink (ie. a 'pretty' shortcut to the page)"
+    =fields.input :slug if yoomee_staff_logged_in?
+    =fields.input :description, :input_html => {:rows => 5}  
+    =fields.input :weight, :label => 'Order', :help => 'Set the order for the section (sections with higher order numbers will appear further down)', :input_html => {:size => 2}
+  -if section.absolute_root.slug == 'campaigns'
+    -fields.inputs :name => "Campaign options" do  
+      =fields.input :header_image, :as => :file
+      =fields.input :front_page_image, :as => :file
+      =fields.input :bg_color, :label => "Background colour"
+    %br.clear

@@ -1,5 +1,5 @@
--if root_slug_is?('campaigns')
-  %img{:src => '/images/campaign_header.jpg'}
+-if in_campaigns?
+  %img{:src => campaign_header_image_url}
   =link_to site_name, :home, :class=>'bta_home_link'
 -else
   #logo_box

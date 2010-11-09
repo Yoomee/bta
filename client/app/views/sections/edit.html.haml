@@ -1,0 +1,6 @@
+-content_for :head do
+  =stylesheet_link_tag "client/hexcolorpicker.css"
+  =javascript_include_tag "client/hexcolorpicker.js"
+  
+- title 'Edit section'
+= render :partial => 'form', :locals => {:section => @section}

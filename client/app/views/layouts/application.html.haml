@@ -46,7 +46,7 @@
             $("#member_login_bttn").toggleClass("open");
           });
         });
-  - body_tag(:class => "#{'campaigns' if root_slug_is?('campaigns')}", :style => campaign_bg_color) do  
+  - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
     #wrapper    
       #top
         =render_flash
@@ -61,7 +61,7 @@
           
       #lower_wrapper
         #lower_wrapper_inside
-          -if root_slug_is?('campaigns')
+          -if in_campaigns?
             #bta_home
               %h2
                 =link_to site_name, :home
