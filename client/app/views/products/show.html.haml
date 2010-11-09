@@ -22,11 +22,7 @@
         %h4 Member offer
         =@product.member_special_offer
   .price_right_col
-    -if @product.member_price_in_pounds
-      %p.main_price="£#{@product.member_price_in_pounds} members"
-      %p.price="£#{@product.price_in_pounds} non-members"
-    -else 
-      %p.main_price="£#{@product.price_in_pounds}"
+    =render 'products/prices', :product => @product
     =render :partial => 'cart_items/form', :locals => {:product => @product}
 =render_ratings_wall(@product.wall, :fb_connect => true)
 -options_panel do
