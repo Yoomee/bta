@@ -46,8 +46,7 @@
             $("#member_login_bttn").toggleClass("open");
           });
         });
-  - page_or_section = @section.nil? ? (@page.nil? ? nil : @page.section) : @section
-  - body_tag(:class => "#{'campaigns' if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'}") do  
+  - body_tag(:class => "#{'campaigns' if root_slug_is?('campaigns')}", :style => campaign_bg_color) do  
     #wrapper    
       #top
         =render_flash
@@ -62,7 +61,7 @@
           
       #lower_wrapper
         #lower_wrapper_inside
-          -if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'
+          -if root_slug_is?('campaigns')
             #bta_home
               %h2
                 =link_to site_name, :home

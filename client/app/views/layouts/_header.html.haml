@@ -1,5 +1,4 @@
-- page_or_section = @section.nil? ? (@page.nil? ? nil : @page.section) : @section
--if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'
+-if root_slug_is?('campaigns')
   %img{:src => '/images/campaign_header.jpg'}
   =link_to site_name, :home, :class=>'bta_home_link'
 -else

@@ -4586,7 +4586,7 @@ a.wall_rating_star:hover {
 	background: none;
 }
 body.campaigns {
-	background: #000;
+	/*background: #000;*/
 }
 .campaigns #footer {
 	background: #000;
