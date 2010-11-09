@@ -225,6 +225,8 @@ input[type="submit"], a.bttn_l, .formtastic input[type="submit"], .formtastic  a
 	padding:5px 13px;
 	float:left;
 	
+	cursor:pointer;
+	
 	-moz-border-radius:8px;
     -webkit-border-radius:8px;
     border-radius:8px;
@@ -4435,6 +4437,11 @@ body.section_events #page_right_col * {
 .cart_list {
   float: left;
   clear: both;
+  width:100%;
+}
+
+.cart_list tr.totalRow {
+  text-align:right;
 }
 #cart_form fieldset.inputs {
   float: none;
@@ -4450,6 +4457,17 @@ body.section_events #page_right_col * {
   margin: 0;
   padding: 0;
 }
+
+#cart_form fieldset.buttons {
+  float: right;
+  clear:none;
+}
+
+li.checkout{
+  float: right;
+  list-style:none;
+}
+
 .product {
   padding:5px;
   border-top:1px solid gray;
@@ -4482,12 +4500,24 @@ body.section_events #page_right_col * {
   float:left;
   width:440px;
 }
+
+#member_special_offer {
+  background-color:#FFFBB5;
+  margin: -33px 18px 18px;
+  padding: 10px;
+  height:150px;
+}
+#member_special_offer h4{
+  font-size: 15px;
+}
+
 #product_price {
   clear:both;
   float:left;
   width:100%;
   background-color:#EFF2F6;
   margin-bottom:20px;
+  padding-top: 15px;
 }
 
 #product_price .price_left_col {
@@ -4496,8 +4526,30 @@ body.section_events #page_right_col * {
 }
 
 #product_price .price_right_col {
-  float:left;
-  width:440px;
+  float:right;
+  width:420px;
+}
+
+#product_price form fieldset.inputs {
+  display:none;
+}
+
+#product_price input[type="submit"]{
+	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;
+}
+
+#product_price p.postage {
+  font-style:italic;
+  margin-bottom:0px;
+}
+
+#product_price p.price {
+  font-size:14px;
+  margin-bottom:0px;
+}
+#product_price p.main_price {
+  font-size:25px;
+  margin-bottom:0px;
 }
 
 /* ======== Ratings ========= */
