@@ -62,6 +62,12 @@
           
       #lower_wrapper
         #lower_wrapper_inside
+          -if !page_or_section.nil? && page_or_section.absolute_root.slug == 'campaigns'
+            #bta_home
+              %h2
+                =link_to site_name, :home
+              %p  
+                The British Tinnitus Association (BTA) is a world leader, with a trained team of friendly and experienced advisors for anyone who experiences tinnitus or those simply seeking guidance or information about the condition.
           -if viewing_blog?
             #sidebar_col
               #subnav=render_blog_sidebar

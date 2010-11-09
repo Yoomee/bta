@@ -132,6 +132,7 @@ a:hover {
 	width: 100%;
 	float: left;
 	margin: -160px 0 0 0;
+	position: relative;
 	
 }
 
@@ -4590,18 +4591,56 @@ body.campaigns {
 .campaigns #footer {
 	background: #000;
 	color: #fff;
+	border: none;
 }
-div.campaign_header {
+a.bta_home_link {
 position: absolute;
 top: 0;
-background: #000;
-padding: 10px;
-right: 0;	
+background-color: #000;
+background: rgba(0,0,0,0.6) url(/images/sprite_bta.png) no-repeat -1275px -510px;
+padding: 10px 40px 10px 20px;
+right: 0;
+
+     -moz-border-radius-bottomleft:5px;
+     -moz-border-radius-bottomright:5px;
+     -webkit-border-bottom-right-radius:5px;
+     -webkit-border-bottom-left-radius:5px;
+     border-bottom-right-radius:5px;
+     border-bottom-left-radius:5px;
+
+	color: #fff;
+}
+a.bta_home_link:hover {
+	background-color: #2795e4;
 }
 .campaigns #subnav {
 	background: none;
+	margin-bottom: 500px;
 	
 }
 .campaigns #header_inside {
 	overflow: hidden;
+	height: 200px;
+}
+.campaigns #footer_links {
+	display: none;
+}
+.campaigns a#lottery_funded {
+	display: none;
+}
+
+div#bta_home {
+	position: absolute;
+	bottom: 20px;	
+	left: 20px;
+	width: 160px;
+	color: #666;
+}
+#bta_home h2 a {
+	background:#2897e8 url("/images/bta_logo.png") no-repeat scroll 15px 10px;
+	display:block;
+	height:220px;
+	margin:20px 0 20px 0px;
+	width: 161px;
+	text-indent:-9000em;
 }
