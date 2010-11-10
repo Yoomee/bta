@@ -8,8 +8,8 @@ HomeController.class_eval do
     @news_items = Section.news.pages.latest.not_including(@latest_news_item).limit(2)
     @products = Product.latest.limit(3)
     @carousel_pages = Page.show_in_carousel
+    @campaign = Section.find_by_slug('campaigns').children.descend_by_created_at.limit(1).first
   end
-  
   
   private
   def get_latest_tweet
