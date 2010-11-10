@@ -4,6 +4,7 @@
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288954595
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288962407
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288964225
+	http://bta.yoomee.com/stylesheets/client/styles.css?1289308265
 */
 
 /* the tramlines vanilla stylesheet */
@@ -2147,6 +2148,9 @@ span.cal_sheet span.day {
 }
 #login_intro h2 {
 	float: left;
+	font-weight: normal;
+	font-size: 21px;
+	line-height: 25px;
 }
 #login_intro p {
 	clear: both;
@@ -2158,14 +2162,16 @@ span.cal_sheet span.day {
 #login_form p {
 	display: block;
 	width: 220px;
+	margin: 9px 0 0;
 }
 #login_form p label {
 	font-weight: bold;
+	margin:  0 0 7px;
 }
 #fb_connect_login {
   float: left;
   clear: both;
-  margin-left: 40px;
+  margin: -7px 0 0 40px;
 }
 #login_email_or_username, #login_password {
 	float: left;
@@ -2174,7 +2180,7 @@ span.cal_sheet span.day {
 	padding: 6px 10px;
 }
 input#login_bttn {
-	margin: 17px 0 0;
+	margin: 24px 0 0;
 	clear: left;
 }
 
@@ -2188,7 +2194,7 @@ input#login_bttn {
 }
 #login_slide_bar #login_intro {
 	width: 180px;
-	margin: 0 30px 0 0;
+	margin: 0 40px 0 0;
 	padding: 0 0 0 40px;
 	float: left;
 }
@@ -3453,9 +3459,15 @@ li.news_feed_item_hovering a.trash {
   float: left;
   width:100%;
 }
-#breadcrumb a.breadcrumb{
+#breadcrumb a {
   float: left;
-  padding: 5px;
+  padding: 5px 15px 5px 10px;
+  background: url(/images/sprite_bta.png)  right -620px;
+  color: #005b8e;
+  font-size: 12px;
+}
+#breadcrumb a.end {
+	background-position: right -660px;
 }
 .page #page_title {
 	display:block;
@@ -4649,9 +4661,11 @@ body.campaigns {
 	/*background: #000;*/
 }
 .campaigns #footer {
-	background: #000;
-	color: #fff;
 	border: none;
+	float: left;
+	background: #fff;
+	margin: 0 0 40px;
+	border-top: 2px solid #c0d0db;
 }
 a.bta_home_link {
 position: absolute;
