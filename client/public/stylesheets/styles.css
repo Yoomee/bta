@@ -1457,7 +1457,7 @@ input.search_field {
 	color: #999;
 	
 }
-input.search_icon {
+input.search_icon, button.search_icon {
 	background:url("/images/sprite.png") no-repeat scroll 0 -1320px transparent;
 	border:medium none;
 	display:block;
