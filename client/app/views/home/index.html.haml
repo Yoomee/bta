@@ -1,13 +1,7 @@
 -hide_page_title
 #home_box_center
   #home_left_col.h_box
-    %ul.lst
-      %li
-        =link_to "About us", slug_path("about-the-bta"), :class => 'about_link'
-      %li
-        =link_to "Contact us", slug_path("contact-us"), :class=>'contact_link'
-      %li
-        =link_to "Support us", "#", :class=>'donate_link'
+    =render_subnav(Section.find_by_slug("about-us"),nil)
   #home_box_right  
     #box_professionals.h_box
       %ul.lst
