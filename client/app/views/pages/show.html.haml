@@ -28,12 +28,12 @@
       -if @page.has_snippet?(:call_to_action)
         .call_to_action_wrapper
           =snippet(@page, :call_to_action)
-    -if @page.has_related_documents?
+    -if @page.has_related_items?(:included_types => %w{Document})
       #audio
-        -@page.related_documents.audio.each do |audio|
+        -Document.related_to_page(@page).audio.each do |audio|
           =render 'documents/audio', :audio => audio
       #documents
-        -@page.related_documents.non_audio.each do |document|
+        -Document.related_to_page(@page).non_audio.each do |document|
           =render 'documents/document', :document => document
   -if @page.has_related_items?(:excluded_types => %w{Document})
     #related_content

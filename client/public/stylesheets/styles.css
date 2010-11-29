@@ -4633,7 +4633,7 @@ a.wall_rating_star:hover {
 .doc h4 {
   float:left;
 }
-#page_right_col a.audio_download {
+#page_right_col #documents a, #page_right_col #audio a {
   color: #2795e4;
 }
 /* ================================ campaign microsite ===================================== */
