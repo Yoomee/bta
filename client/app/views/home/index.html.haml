@@ -70,33 +70,13 @@
     %h3.title
       =link_to "BTA forum ", forum_path(1)
     %ul.lst
-      -if false
-        -@forum_posts.each do |post|
+      -unless @forum_topics.blank?
+        -@forum_topics.each do |topic|
           %li
-            =link_to post.name, post
+            =link_to topic.subject, topic
             %p
-              %span
-                3 posts.
-              Created at 07:28 on 26 August
-      %li
-        =link_to "Potential treatments", "#"
-        %p
-          %span
-            3 posts.
-          Created at 07:28 on 26 August
-      %li
-        =link_to "Profound Deafness and Tinnitus", "#"
-        %p
-          %span
-            3 posts.
-          Created at 07:28 on 26 August
-      %li
-        =link_to "Background noise on TV", "#"                
-        %p
-          %span
-            3 posts.
-          Created at 07:28 on 26 August
-
+              %span= "#{pluralize(topic.posts.count, "post")}."
+              ="Last post at #{topic.get_last_post.updated_on.strftime("%H:%M on %m %B")}"
   #facebook_box
     %h3.title
       =link_to "Facebook ", "#"
