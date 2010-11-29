@@ -4238,9 +4238,21 @@ table.forum{
 }
 .forum td {
 	border: none;
-	padding: 10px;
+	padding: 15px 15px 30px;
+	vertical-align: top;
+}
+.forum_message h4 {
+	margin: 0;
 }
 
+.forum_message p.message_posted {
+	color: #999;
+}
+
+.forum td.author {
+	width: 80px;
+	font-size: 12px;
+} 
 tr.forum_row_even td {
 	background: #f0f3f7;
 	
