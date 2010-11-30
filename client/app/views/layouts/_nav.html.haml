@@ -12,7 +12,7 @@
       -li_with_active(viewing_blog?) do
         =link_to 'Blog', blog_path(Blog.first)
     -li_with_active(viewing_shop?) do
-      =link_to 'Shop', '/shop', :id => 'shop_link'
+      =link_to 'Shop', '/departments/1', :id => 'shop_link'
     -li_with_active_slug("news_and_events", :class => viewing_events? ? "active" : "") do
       =link_to 'News & events', slug_path("news_and_events")
     -li_with_active_slug("for-health-professionals", :class => "smaller") do
