@@ -3453,21 +3453,25 @@ li.news_feed_item_hovering a.trash {
 .breadcrumbs {
   float: left;
   width: 100%;
-  margin: 5px 0 10px;
+ 
 }
 #breadcrumb {
   float: left;
   width:100%;
+   margin: 0px 0 10px;
 }
-#breadcrumb a {
+#breadcrumb a, #breadcrumb span.last_crumb {
   float: left;
-  padding: 5px 15px 5px 10px;
-  background: url(/images/sprite_bta.png)  right -620px;
+  padding: 4px 15px 4px 10px;
+  background: url(/images/sprite_bta.png)  right -622px;
   color: #005b8e;
-  font-size: 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  
 }
-#breadcrumb a.end {
-	background-position: right -660px;
+#breadcrumb span.last_crumb {
+	background-position: right -662px;
+	color: #888;
 }
 .page #page_title {
 	display:block;
@@ -4235,6 +4239,9 @@ div.color_swatch {
 }
 table.forum{
 	border: none;
+	border-bottom: 3px solid #2795e4;
+	padding: 0 0 20px;
+	margin: 0 0 30px;
 }
 .forum td {
 	border: none;
@@ -4267,7 +4274,7 @@ p#forum_intro {
 	background: #666;
 	color: #fff;
 	padding: 10px;
-	margin: 0;
+	margin: 10px 0 0 ;
 	
 	
 	     -moz-border-radius-topleft:5px;
