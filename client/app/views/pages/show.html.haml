@@ -30,14 +30,16 @@
           =snippet(@page, :call_to_action)
     -if @page.has_related_items?(:included_types => %w{Document})
       #audio
+        %h3.title Related audio
         -Document.related_to_page(@page).audio.each do |audio|
           =render 'documents/audio', :audio => audio
       #documents
+        %h3.title Related documents
         -Document.related_to_page(@page).non_audio.each do |document|
           =render 'documents/document', :document => document
   -if @page.has_related_items?(:excluded_types => %w{Document})
     #related_content
-      %h2.title Related Content
+      %h2.title Related content
       =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100, :exclude_types => %w{Document})
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?

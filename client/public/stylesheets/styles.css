@@ -789,12 +789,10 @@ div.related_result_links a {
 #pages_related_items_tab .item_relationship fieldset {
 	margin-bottom: 0;
 }
-ul#selected_items{
+ul#selected_items {
 	width: 330px;
 	display: block;
-	background: #4d7183;
-	background: rgba(0,0,0,0.2);
-	
+	background: #D8E0E9;
 	padding: 10px;
 }
 ul#selected_items li{
@@ -3592,6 +3590,8 @@ div.photo_holder {
 	margin:10px 0 0 20px;
 	width:280px;
 }
+
+
 #article_image {
 	float:left;
 	font-size:11px;
@@ -3812,6 +3812,63 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 
 
 }
+
+#audio {
+	float: left;
+	width: 200px;
+	padding: 20px 20px 20px 60px;
+	background: #444444 url(/images/mp3.png) no-repeat 20px 62px;
+	clear: both;
+	margin: 0 0 20px 0;
+	
+}
+#audio h4 {
+	color: #fff;
+	font-size: 15px;
+	margin: 0;
+}
+#audio h3 {
+	margin-left: -40px;
+}
+/* ============= Documents =============== */
+.doc{
+	display:block;
+	float:left;
+	font-size:12px;
+	width: 280px;
+	margin: 0 0 10px;
+	padding: 0 0 10px;
+	border-bottom: 1px solid #e8e8e8;
+}
+.doc .doc_icon {
+  float:left;
+  margin: 0 10px 0 0;
+}
+
+#documents .doc h4 {
+  float:left;
+  font-size: 15px;
+  margin: 10px 0 5px;
+  width: 210px;
+}
+#page_right_col #documents .doc a.download_text, #page_right_col #audio a.audio_download {
+	float: left;
+	color: #84A5B8;
+	padding: 0 0 0 20px;
+	background: url(/images/download_doc.png) no-repeat  0;
+}
+#page_right_col #documents a, #page_right_col #audio a {
+  color: #2795e4;
+}
+#documents {
+	float: right;
+	clear: both;
+
+}
+#documents h3.title {
+	color: #184f8d;
+}
+
 /* ===================================  Blog ======================================== */
 .blog{
 	margin-bottom: 30px;
@@ -4639,22 +4696,7 @@ a.wall_rating_star:hover {
   margin-left:10px;
 }
 
-/* ============= Documents =============== */
-.doc{
-	display:block;
-	float:left;
-	font-size:12px;
-}
-.doc .doc_icon {
-  float:left;
-}
 
-.doc h4 {
-  float:left;
-}
-#page_right_col #documents a, #page_right_col #audio a {
-  color: #2795e4;
-}
 /* ================================ campaign microsite ===================================== */
 .campaigns #lower_wrapper_inside {
 	margin: 0;
