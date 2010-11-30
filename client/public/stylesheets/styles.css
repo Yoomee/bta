@@ -495,7 +495,7 @@ ul.tabs_container li.active {
 
 }
 
-ul.tabs_container li#pages_details_link a {
+ul.tabs_container li#pages_details_link a, ul.tabs_container li#blog_posts_details_link a {
 	background-position: 15px -1430px;
 }
 ul.tabs_container li#pages_publishing_link a {
@@ -504,7 +504,7 @@ ul.tabs_container li#pages_publishing_link a {
 ul.tabs_container li#pages_snippets_link a {
  background-position: 15px -1730px;
 }
-ul.tabs_container li#pages_related_items_link a {
+ul.tabs_container li#pages_related_items_link a, ul.tabs_container li#blog_posts_related_items_link a {
  background-position: 15px -1790px;
 }
 ul.tabs_container li#sections_details_link a {
@@ -512,6 +512,14 @@ ul.tabs_container li#sections_details_link a {
 }
 ul.tabs_container li#sections_advanced_link a {
  background-position: 15px -1910px;
+}
+ul.tabs_container li#pages_location_link a {
+	background-position: 15px -2070px;
+	padding-left: 39px;
+}
+ul.tabs_container li#pages_paypal_link a {
+	background: none;
+	padding-left: 25px;
 }
 ul.tabs_container li a:hover{
 	text-decoration: none;
@@ -2355,7 +2363,7 @@ ul#news_feed {
 	margin:0;
 }
 ul#news_feed li, .wall_post_list li {
-	border-bottom:1px solid #E8E8E8;
+	border-bottom:1px solid #508aab;
 	float:left;
 	list-style-image:none;
 	list-style-position:outside;
@@ -2813,7 +2821,6 @@ p.section_description {
 	float: left;
 	margin: 0 0 20px;
 }
-
 div.grid_item {
 	float: left;
 	width: 220px;
@@ -3499,7 +3506,7 @@ div#page_related_col {
 	padding:0;
 	width:160px;
 }
-.controller_pages.action_show h1#page_title, .controller_departments h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title {
+.controller_pages.action_show h1#page_title, .controller_departments h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title, .controller_sections.action_show h1#page_title, .controller.blog_posts.action_show h1#page_title {
 	float: left;
 	width: 100%;
 	font-size: 22px;
@@ -3508,7 +3515,9 @@ div#page_related_col {
 	border-bottom: 2px solid #2795e4;
 	
 }
-
+.controller_sections.action_show h1#page_title {
+	margin: 0 0 10px;
+}
 p.page_publish_date {
 	color: #777;
 	float: left;
@@ -3897,8 +3906,8 @@ h3.blog_date{
 	margin-top:10px;
 	margin-bottom: 20px;
 
-	width:720px;
-	background: #333;
+	width:600px;
+
 }
 .blog_post_details{
 	float:left;
