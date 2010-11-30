@@ -1,3 +1,4 @@
+-checking_out ||= false
 -if cart.empty?
   %p
     Your cart is currently empty. Click
@@ -30,6 +31,9 @@
         %th{:colspan => 3} Total
         %td.price_column
           =@cart.valid? ? number_to_currency(@cart.total_in_pounds, :unit => '£') : "n/a"
-    %li.checkout=link_to ('Checkout', new_order_path, :class => "bttn_l")
+    -if checking_out
+      %li.checkout=link_to ('Confirm', order_path, :method => :post, :class => "bttn_l")
+    -else
+      %li.checkout=link_to ('Checkout', new_order_path, :class => "bttn_l")
     -form.buttons do
       =form.commit_button "Update cart"
