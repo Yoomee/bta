@@ -32,7 +32,8 @@
       #audio
         %h3.title Related audio
         -Document.related_to_page(@page).audio.each do |audio|
-          =render 'documents/audio', :audio => audio
+          .audio_player
+            =render 'documents/audio', :audio => audio
       #documents
         %h3.title Related documents
         -Document.related_to_page(@page).non_audio.each do |document|

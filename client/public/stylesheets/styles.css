@@ -5,6 +5,7 @@
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288962407
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288964225
 	http://bta.yoomee.com/stylesheets/client/styles.css?1289308265
+	http://bta.yoomee.com/stylesheets/client/styles.css?1291140561
 */
 
 /* the tramlines vanilla stylesheet */
@@ -942,7 +943,9 @@ html body form {
 #dash_members {
 	background-position: 10px -3270px;
 }
-
+#dash_departments {
+	background-position: 10px -3448px;
+}
 /*=========== title icons for different sections  ================*/
 .controller_photo_albums h1#main_page_title, .controller_photos h1#main_page_title {
 	background: url(/images/sprite.png) no-repeat 0px -2430px;
@@ -1403,7 +1406,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	
 
 }
+#user_links a#cart_link {
+	background: #005b8e url(/images/cart.png) no-repeat 8px 6px;
+	padding-left: 28px;
+	width: 60px;
+	
+	box-shadow: 1px 1px 4px #888888;
+     -moz-box-shadow: 1px 1px 4px #888888;
+     -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+#user_links a#cart_link span {
+	color: #fff;
+	font-weight: bold;
+	background: #333;
+	padding: 2px 5px;
+	display: block;
+	font-size: 12px;
+	margin: 2px 0;
+	line-height: 100%;
+	float: right;
+	border-radius:8px;
+	-webkit-border-radius:8px;
+	-moz-border-radius:8px;
+	
 
+
+	
+}
+#user_links a#cart_link:hover {
+	text-decoration: none;
+	background-color: #a93981;
+}
 #member_login_bttn {
 
 	
@@ -3827,6 +3860,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 	margin: 0 0 20px 0;
 	
 }
+.audio_player {
+	float: left;
+	clear: both;
+	margin: 0 0 10px;
+}
 #audio h4 {
 	color: #fff;
 	font-size: 15px;
@@ -4071,10 +4109,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#054E77', end
 }
 .ec-add-event {
   float: left;
+  font-size: 16px;
+  display: block;
+  font-weight: bold;
+  padding: 3px;
+  background: #333;
+  color: #fff;
+  
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+}
+a.ec-add-event:hover {
+	text-decoration: none;
+	background: #2795e4;
 }
 .ec-view-event {
   float: right;
-  width: 90%;
+  width: 40px;
 }
 #previous_next_day_links {
   margin-bottom: 10px;
@@ -4097,10 +4149,25 @@ li.event_list_item {
   margin:10px;  
 }
 
-.ec-day-names {
-  background:#005B8E;
-}
+/* ========= Search results =========== */
 
+#search_results ul.lst li {
+	padding: 5px;
+	margin: 0 0 5px;
+	border-bottom: 1px solid #e8e8e8;
+	
+}
+#search_again {
+	padding: 20px;
+	float: left;
+	background: #005b8e;
+	color: #fff;
+	width: 720px;
+	margin: 20px 0 0;
+}
+#search_again h2 {
+	
+}
 
 
 /* ==================  Event Categories Lists ==================== */
@@ -4744,6 +4811,58 @@ a.wall_rating_star:hover {
   clear:none;
   float:left;
   margin-left:10px;
+}
+/* ================================ Cart ===================================== */
+
+#cart_wrapper {
+	float: left;
+	width: 760px;
+	border: 3px solid #d1d1d1;
+		 box-shadow: 1px 1px 4px #e8e8e8;
+     -moz-box-shadow: 1px 1px 4px #e8e8e8;
+     -webkit-box-shadow: 1px 1px 4px #e8e8e8;
+	
+}
+#cart_wrapper p.intro {
+	background:#cdcdcd url(/images/sprite.png) 0 0 repeat-x;
+	margin: 0;
+	color: #333;
+	text-shadow: 0 1px 0 #fff;
+	
+	 box-shadow: 1px 1px 4px #888888;
+     -moz-box-shadow: 1px 1px 4px #888888;
+     -webkit-box-shadow: 1px 1px 4px #888888;
+
+}
+#cart_wrapper form{
+	margin: 20px;
+	float: left;
+	width: 720px;
+}
+#cart_wrapper th, #cart_wrapper td {
+	text-align: left;
+
+}
+
+td.product_column {
+	font-size: 14px;
+	
+}
+tr.totalRow td.price_column {
+	font-size: 14px;
+	font-weight: bold;
+	
+}
+
+#cart_wrapper div.options_panel {
+	margin: 20px 20px 40px;
+}
+
+
+#cart_wrapper a.bttn_l {
+	background: #a8387f url(/images/bttn_l.png) repeat-x top;
+	color: #fff;
+	text-shadow:0 -1px 0 #90306B;
 }
 
 
