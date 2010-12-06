@@ -734,13 +734,13 @@ strong.highlight {
 /* ============ Contact us page ============= */
 #contact_us_map {
   float:left;
-  width:425px;
-  margin-right:10px;
+  width:375px;
+  margin-right:20px;
 }
 
 #contact_us_content {
   float:left;
-  width:325px;
+  width:365px;
 }
 
 
