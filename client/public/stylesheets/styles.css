@@ -730,6 +730,20 @@ strong.highlight {
   background-color: #ffc;
 }
 
+
+/* ============ Contact us page ============= */
+#contact_us_map {
+  float:left;
+  width:425px;
+  margin-right:10px;
+}
+
+#contact_us_content {
+  float:left;
+  width:325px;
+}
+
+
 /* ============ Related Items ============= */
 
 #search_term {

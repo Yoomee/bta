@@ -7,42 +7,50 @@
   %p#page_status
     =@page.status_string
 #page_content
-  #page_big_image
-    =snippet(@page, :big_image)
-  #page_left_col
-    =render :partial => 'content', :locals => {:page => @page}
-  #page_right_col
-    #article_image
-      =photo_for(@page, "280x") if @page.has_photo?
-    -if @page.is_event?
-      .event_when
-        %h3 When
-        =date_description(@page)
-      -if @page.event_has_location?
-        .event_where
-          %h3 Where
-          =render_address(@page.event_location)
-          =render_google_map_for(@page.event, :width => 275, :height => 300)
-    -else
-      =snippet(@page, :pull_quote)
-      -if @page.has_snippet?(:call_to_action)
-        .call_to_action_wrapper
-          =snippet(@page, :call_to_action)
-    -if !@related_audio.blank?
-      #audio
-        %h3.title Related audio
-        -@related_audio.each do |audio|
-          .audio_player
-            =render 'documents/audio', :audio => audio
-    -if !@related_documents.blank?
-      #documents
-        %h3.title Related documents
-        -@related_documents.each do |document|
-          =render 'documents/document', :document => document
-  -if @page.has_related_items?(:excluded_types => %w{Document})
-    #related_content
-      %h2.title Related content
-      =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100, :exclude_types => %w{Document})
+  -if @page.slug == "contact-us"
+    #contact_us_map
+      =contact_us_map
+      %br
+      =link_to("View in Google Maps", contact_us_map_url)
+    #contact_us_content
+      =render :partial => 'content', :locals => {:page => @page}
+  -else
+    #page_big_image
+      =snippet(@page, :big_image)
+    #page_left_col
+      =render :partial => 'content', :locals => {:page => @page}
+    #page_right_col
+      #article_image
+        =photo_for(@page, "280x") if @page.has_photo?
+      -if @page.is_event?
+        .event_when
+          %h3 When
+          =date_description(@page)
+        -if @page.event_has_location?
+          .event_where
+            %h3 Where
+            =render_address(@page.event_location)
+            =render_google_map_for(@page.event, :width => 275, :height => 300)
+      -else
+        =snippet(@page, :pull_quote)
+        -if @page.has_snippet?(:call_to_action)
+          .call_to_action_wrapper
+            =snippet(@page, :call_to_action)
+      -if !@related_audio.blank?
+        #audio
+          %h3.title Related audio
+          -@related_audio.each do |audio|
+            .audio_player
+              =render 'documents/audio', :audio => audio
+      -if !@related_documents.blank?
+        #documents
+          %h3.title Related documents
+          -@related_documents.each do |document|
+            =render 'documents/document', :document => document
+    -if @page.has_related_items?(:excluded_types => %w{Document})
+      #related_content
+        %h2.title Related content
+        =render_related_items(@page, :image_size => "145x75#", :limit => 4, :truncate_length => 100, :exclude_types => %w{Document})
 -options_panel do
   ="Tagged #{in_tags(@page)}" unless @page.tags.empty?
   =back_link
