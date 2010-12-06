@@ -5,6 +5,7 @@
 -if !@topics.blank?
   %p#forum_intro
     Click on the topic that you're interested and see what's being discussed. If you want to discuss something else, why not start your own topic?
+    ="#{link_to('Login or register', new_session_path)} to add a topic." if logged_out?
   #forums
     %table.forum
       - @topics.each do |topic|
@@ -23,8 +24,8 @@
   =will_paginate @topics
   
 -else
-  %p.intro No one wants to be the first to post in a new forum. If you have something to say be the first and have your say.
-  %i No Topics have been posted yet!
+  %p.intro No one wants to be the first to post in a new forum but if you have something to say, go ahead and be the first.
+  %i No Topics have been posted yet.
   
 #facebook_box
   %h3.title
