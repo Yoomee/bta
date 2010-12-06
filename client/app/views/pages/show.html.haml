@@ -28,15 +28,16 @@
       -if @page.has_snippet?(:call_to_action)
         .call_to_action_wrapper
           =snippet(@page, :call_to_action)
-    -if @page.has_related_items?(:included_types => %w{Document})
+    -if !@related_audio.blank?
       #audio
         %h3.title Related audio
-        -Document.related_to_page(@page).audio.each do |audio|
+        -@related_audio.each do |audio|
           .audio_player
             =render 'documents/audio', :audio => audio
+    -if !@related_documents.blank?
       #documents
         %h3.title Related documents
-        -Document.related_to_page(@page).non_audio.each do |document|
+        -@related_documents.each do |document|
           =render 'documents/document', :document => document
   -if @page.has_related_items?(:excluded_types => %w{Document})
     #related_content
