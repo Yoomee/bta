@@ -1,7 +1,7 @@
 module SubnavHelper
 
   def render_subnav(section, page_or_section, level=1, published_only=nil)
-    if RAILS_ENV != 'test'
+    if RAILS_ENV != 'test' && !section.nil?
       published_only ||= @logged_in_member.nil? || !@logged_in_member.is_admin?
       html = "<ul class='lst level#{level}'>"
       section.all_children(:published_only => published_only).each do |child|
@@ -17,7 +17,7 @@ module SubnavHelper
   end
 
   def render_shop_subnav(department, product_or_department, level=1)
-    if RAILS_ENV != 'test'
+    if RAILS_ENV != 'test' && !department.nil?
       html = "<ul class='lst level#{level}'>"
       children = (level == 1 && department.is_root?) ? Department.roots.active : department.all_active_children
       children.each do |child|
