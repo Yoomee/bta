@@ -1980,10 +1980,14 @@ div#twitter_box h3 a {
 div#facebook_box {
 	float: left;
   width: 294px;
-	height: 244px;
+	height: 265px;
 	margin: 0 20px 0 0;
 	border: 3px solid #d5dee5;
 	overflow:hidden;
+}
+.controller_forums div#facebook_box {
+  width: 565px;
+  height: 200px;
 }
 
 div#facebook_box iframe{
