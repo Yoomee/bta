@@ -1980,7 +1980,7 @@ div#twitter_box h3 a {
 div#facebook_box {
 	float: left;
   width: 294px;
-	height: 265px;
+	height: 244px;
 	margin: 0 20px 0 0;
 	border: 3px solid #d5dee5;
 	overflow:hidden;
@@ -2223,7 +2223,10 @@ span.cal_sheet span.day {
 #fb_connect_login {
   float: left;
   clear: both;
-  margin: -7px 0 0 40px;
+  margin:5px 0 0 -1px;
+}
+.controller_sessions #fb_connect_login {
+  margin:15px 0 20px 0;
 }
 #login_email_or_username, #login_password {
 	float: left;
