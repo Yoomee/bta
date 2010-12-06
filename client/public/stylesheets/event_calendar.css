@@ -1,5 +1,3 @@
-/* @override http://localhost:3000/stylesheets/client/event_calendar.css */
-
 /* 
   Event Calendar stylesheet
   
@@ -17,7 +15,7 @@
 
 /* Outer most container */
 .ec-calendar {
-
+  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 11px;
   line-height: 14px;
   margin: 0;
@@ -50,11 +48,6 @@
   position: relative;
   border-right: 1px solid #303030;
   white-space: nowrap;
-  
-       box-shadow: 1px 1px 4px #ccc;
-     -moz-box-shadow: 1px 1px 4px #ccc;
-     -webkit-box-shadow: 1px 1px 4px #ccc;
-
 }
 
 /* Day names */
@@ -64,19 +57,18 @@
   left: 0;
   width: 100%;
   table-layout: fixed;
+  padding: 2px 0;
+  background: #303030;
   color: white;
-  background:#005B8E;
 }
 
-table .ec-day-names th{
+.ec-day-names th{
   border: none;
-
+  padding-top: 3px;
 }
 
-table th.ec-day-name {
-
-
-
+.ec-day-name {
+  font-weight: bold;
 }
 
 /* Rows container and Row */
@@ -119,7 +111,6 @@ table th.ec-day-name {
   position: relative;
   width: 100%;
   table-layout: fixed;
-
 }
 
 /* Day header */
@@ -130,11 +121,9 @@ table th.ec-day-name {
   line-height: 16px;
   border-top: 1px solid #d5d5d5;
   border-left: 1px solid #d5d5d5;
-  border-bottom: 1px solid #fff;
-  background-color: #f0f3f7;
+  border-bottom: 1px dotted #bbbbbb;
+  background-color: #ecede2;
   overflow: hidden;
-  
-  vertical-align: top;
 }
 
 a.ec-day-link {
