@@ -4403,6 +4403,7 @@ table.forum{
 	border-bottom: 3px solid #2795e4;
 	padding: 0 0 20px;
   margin:0 0 10px;
+  width:100%;  
 }
 #create_topic_link {
   float: left;
