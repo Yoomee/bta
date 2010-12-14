@@ -1,18 +1,5 @@
-%p#copyright
-  %strong
-    &copy; The British Tinnitus Association 
-  %br
-  Ground Floor, Unit 5 
-  %br
-  Acorn Business Park, Woodseats Close 
-  %br
-  Sheffield, S8 0TB
-  %br
-  Telephone: 0800 018 0527
-  %br
-  Email: info@tinnitus.org.uk
-  %br
-  Registered charity no. 1011145 Company limited by guarantee no. 2709302, registered in England.
+%p#medical_info
+  Material on this site is for information purposes only and is not a substitute for medical advice - you should always see your doctor and/or medical professional. 
 #footer_links    
   %ul
     - if @is_sys_admin
@@ -29,3 +16,8 @@
     %li=link_to("Sitemap", sitemap_path)
 
 =link_to 'Lottery Funded', 'http://www.biglotteryfund.co.uk', :id=>'lottery_funded', :target=>'_blank'        
+%p#copyright
+  %strong
+    &copy; The British Tinnitus Association
+  %br  
+    Registered charity no. 1011145 Company limited by guarantee no. 2709302, registered in England.

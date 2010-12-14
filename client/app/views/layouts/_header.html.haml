@@ -28,7 +28,7 @@
         -@carousel_pages.each do |page|
           .slide
             #case_study_image
-              =photo_for(page, '525x351')
+              =photo_for(page, '525x351#')
             #case_study_quote
               =render_carousel_quote(page)    
               =link_to snippet(page, :carousel_button_text), page, :id=>'learn_more_bttn', :class=>'bttn_round'

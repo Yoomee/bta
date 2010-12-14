@@ -2600,10 +2600,21 @@ ul.action_links li {
 	border-top: 2px solid #d5dee5;
 	position: relative;
 }
+
+p#medical_info {
+	float: left;
+	width: 340px;
+	background: #d5dee5;
+	padding: 8px;
+	margin: 15px 0 0;
+}
+
 #copyright {
 	float: left;
-	margin: 20px 0 20px 20px;
-	width: 300px;
+	margin: 30px 0 20px 0px;
+	font-size: 10px;
+	clear: both;
+
 }
 div#footer_links {
 	float:right;
@@ -2638,7 +2649,7 @@ div#footer_links {
 #lottery_funded {
 	position: absolute;
 	right: 20px;
-	top: 50px;
+	bottom: 20px;
 	background: url(/images/sprite_bta.png) no-repeat -220px -60px;
 	width: 90px;
 	height: 70px;
