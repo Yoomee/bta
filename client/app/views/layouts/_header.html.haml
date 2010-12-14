@@ -30,13 +30,13 @@
             #case_study_image
               =photo_for(page, '525x351#')
             #case_study_quote
-              =render_carousel_quote(page)    
+              =render_carousel_quote(page)
               =link_to snippet(page, :carousel_button_text), page, :id=>'learn_more_bttn', :class=>'bttn_round'
       #other_case_studies
         %h4 Other Stories
         %ul.lst
           -@carousel_pages.each do |page|
-            %li=link_to photo_for(page, '525x351'), "#"                                          
+            %li=link_to photo_for(page, '67x45#'), "#"
     #get_suppport
       %h2
         Get support

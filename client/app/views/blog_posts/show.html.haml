@@ -30,9 +30,10 @@
           %li
             =link_to category.name, category
 =render_comments(@blog_post, :fb_connect => true)
-#related_content
-  %h2.title Related Content
-  =render_related_items(@blog_post, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
+-if @blog_post.has_related_items?
+  #related_content
+    %h2.title Related Content
+    =render_related_items(@blog_post, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
   
 -options_panel do
   =back_link

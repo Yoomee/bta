@@ -14,12 +14,14 @@
     %meta{ :name => "info", :content => "#{page_title}#{page_subtitle}" }
     %link{ :href => "/images/favicon.ico", :rel => "shortcut icon" }
     = google_javascripts :jquery, :jqueryui
+    = javascript_include_tag 'jquery.autocomplete'
     = javascript_include_tag 'jrails'
     = javascript_include_tag 'jquery.cycle'
     = javascript_include_tag 'tramlines'
     = javascript_include_tag "client/autoresize.jquery.min.js"
     
     = stylesheet_link_tag 'jquery-ui'
+    = stylesheet_link_tag 'jquery.autocomplete'
     = formtastic_stylesheet_link_tag
     =yield :head
     = stylesheet_link_tag 'client/styles'
@@ -54,8 +56,7 @@
       -unless current_page?(new_session_path)
         #login_slide_bar
           #login_slide_bar_inside
-            =render :partial=>'sessions/form'
-            %h4.nice title 
+            =render :partial => 'sessions/form'
       #header
         #header_inside
           =render :partial => 'layouts/header'

@@ -1,10 +1,9 @@
 -title @forum.title
 
-%p=@forum.description
-
 -if !@topics.blank?
   %p#forum_intro
     Click on the topic that you're interested and see what's being discussed. If you want to discuss something else, why not start your own topic?
+    ="#{link_to('Login', new_session_path)} or #{link_to('register', new_member_path)} to add a topic." if logged_out?
   #forums
     %table.forum
       - @topics.each do |topic|
@@ -21,15 +20,16 @@
           %td
             =link_to_last_post(topic)
   =will_paginate @topics
-  
+  #create_topic_link=link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
+  %br.clear
 -else
-  %p.intro No one wants to be the first to post in a new forum. If you have something to say be the first and have your say.
-  %i No Topics have been posted yet!
+  %p.intro No one wants to be the first to post in a new forum but if you have something to say, go ahead and be the first.
+  %i No Topics have been posted yet.
   
 #facebook_box
   %h3.title
     =link_to "Facebook ", "#"
-  =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation")
+  =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation", :width => 575, :connections => 10)
 #twitter_box
   %h3.title
     =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
@@ -39,6 +39,5 @@
 
 -options_panel do
   =back_link
-  =link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
   =link_if_allowed "Edit forum", edit_forum_proc(@forum)
   =link_if_allowed 'Delete forum', @forum, :method => :delete, :confirm => "Are you sure?"

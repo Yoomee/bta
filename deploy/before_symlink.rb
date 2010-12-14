@@ -9,6 +9,7 @@ run "rm -rf #{release_path}/public/uploads"
 end
 run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
 
+run "mkdir -p #{release_path}/uploads"
 (2010..Time.now.year).each do |year|
   release_year_path = "#{release_path}/uploads/#{year}"
   shared_year_path = "#{shared_path}/doc_uploads/#{year}"
