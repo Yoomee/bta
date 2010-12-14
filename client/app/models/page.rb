@@ -1,5 +1,7 @@
 Page.class_eval do
   
+  belongs_to :carousel_photo, :class_name => "Photo", :autosave => true
+  
   delegate :location, :to => :event, :prefix => true
   
   def form_tabs
