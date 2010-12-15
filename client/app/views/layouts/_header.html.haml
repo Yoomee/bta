@@ -36,7 +36,7 @@
         %h4 Other Stories
         %ul.lst
           -@carousel_pages.each do |page|
-            %li=link_to photo_for(page, '67x45#'), "#"
+            %li=link_to image_for(page, '67x45#', :method => "carousel_photo"), "#"
     #get_suppport
       %h2
         Get support

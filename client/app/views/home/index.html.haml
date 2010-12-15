@@ -7,8 +7,8 @@
       %ul.lst
         %li
           %h4.title 
-            =link_to "What is tinnitus?", @about_tinnitus_page
-          -link_to(@about_tinnitus_page, :class => "h_image") do
+            =link_to "What is tinnitus?", slug_path('about_tinnitus')
+          -link_to(slug_path('about_tinnitus'), :class => "h_image") do
             =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
           %p=@about_tinnitus_page.summary(85)
         %li
