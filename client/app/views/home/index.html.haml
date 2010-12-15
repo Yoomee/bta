@@ -7,29 +7,25 @@
       %ul.lst
         %li
           %h4.title 
-            =link_to "What is tinnitus?", slug_path("for-researchers")
-          -link_to(slug_path("for-researchers"), :class => "h_image") do
+            =link_to "What is tinnitus?", @about_tinnitus_page
+          -link_to(@about_tinnitus_page, :class => "h_image") do
             =image_tag "/images/professional_img.jpg", :width=>'60px', :alt=>'proff'
-          %p
-            Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+          %p=@about_tinnitus_page.summary(85)
         %li
           %h4.title 
-            =link_to "For health professionals", slug_path("for-health-professionals")
-          -link_to(slug_path("for-health-professionals"), :class => "h_image") do
+            =link_to "For health professionals", @professionals_section
+          -link_to(@professionals_section, :class => "h_image") do
             =image_tag "/images/professional_img2.jpg", :width=>'60px', :alt=>'proff'
-          %p
-            Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+          %p=@professionals_section.summary(85)
         %li
           %h4.title  
-            =link_to "For researchers", slug_path("for-policy-makers")
-          %p
-            Details of three PhD studentships, funded by Deafness Research UK are now available on the 
+            =link_to "For researchers", @researchers_section
+          %p=@researchers_section.summary(85)
         %li
           %h4.title  
-            =link_to "For policy makers ", "#"
-          %p
-            Details of three PhD studentships, funded by Deafness Research UK are now available on the 
-    -if false        
+            =link_to "For policy makers ", @policy_makers_section
+          %p=@policy_makers_section.summary(85)
+    -if false
       #box_shop.h_box
         %h3.title
           =link_to "The BTA shop", '/shop'

@@ -28,10 +28,10 @@
         -@carousel_pages.each do |page|
           .slide
             #case_study_image
-              =photo_for(page, '525x351#')
+              =image_for(page, '525x351#', :method => "carousel_photo")
             #case_study_quote
               =render_carousel_quote(page)
-              =link_to snippet(page, :carousel_button_text), page, :id=>'learn_more_bttn', :class=>'bttn_round'
+              =render_carousel_button(page)
       #other_case_studies
         %h4 Other Stories
         %ul.lst
@@ -47,7 +47,7 @@
             %h5 Learn more
             %p Find out more about tinnitus
         %li
-          -link_to("#", :id => "support_call") do
+          -link_to(Page.slug("contact-us"), :id => "support_call") do
             %h5 Speak to someone
             %p Call our confidential helpline
             %p.phone_number 0800 018 0527
