@@ -10,7 +10,7 @@ HomeController.class_eval do
     @carousel_pages = Page.show_in_carousel.limit(4)
     @campaign = Section.slug(:campaigns).children.descend_by_created_at.limit(1).first
     @forum_topics = Forum.first.nil? ? [] : Forum.first.topics.descend_by_sticky.limit(3)
-    @about_tinnitus_page = Page.slug("about-tinnitus")
+    @about_tinnitus_page = Page.slug("about_tinnitus")
     @professionals_section = Section.slug("for-health-professionals")
     @researchers_section = Section.slug("for-researchers")
     @policy_makers_section = Section.slug("for-policy-makers")
