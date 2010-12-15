@@ -3941,6 +3941,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
 #documents h3.title {
 	color: #184f8d;
 }
+#document_list .document_folder_item {
+ list-style-image: url("/images/folder_icon.png");
+}
+#document_list .document_item {
+ list-style-image: url("/images/file_icon.png");  
+}
 
 /* ===================================  Blog ======================================== */
 .blog{
