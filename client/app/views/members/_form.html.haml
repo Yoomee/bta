@@ -1,0 +1,14 @@
+- semantic_form_for member, :html => {:multipart => true} do |form|
+  -form.inputs do
+    =form.input :fb_user_id, :as => :hidden if site_uses_fb_connect?
+    =form.input :image, :as => :file
+    =form.input :forename
+    =form.input :surname
+    =form.input :email
+    =form.input :password, :as => :password
+    =form.input :password_confirmation, :as => :password
+    =form.input :company
+    =form.input :bio
+    =form.input :banned_from_forum, :help => 'Please tick here if the member should not be allowed to post to the forum (this option is only available to site admins)' if logged_in_member.is_admin?
+  - form.buttons do
+    = form.commit_button
