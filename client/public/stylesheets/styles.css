@@ -4786,8 +4786,11 @@ li.checkout{
 
 div.product_overview {
 	float: left;
-	width: 460px;
-	
+	width: 460px;	
+}
+a.product_more_details {
+  float: right; 
+  font-size: 14px;
 }
 
 .product_price_box {

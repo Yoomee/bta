@@ -10,6 +10,7 @@
           Product code:
           =product.sku
       %p=product.overview
+      =link_to("More details", product, :class => "bttn_l product_more_details")
   .product_price_details
     .price_left_col
       -unless product.member_special_offer.blank?
