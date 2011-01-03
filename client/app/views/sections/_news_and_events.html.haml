@@ -9,7 +9,7 @@
       =link_to(photo_for(page_section, "100x100#"), page_section, :class => 'item_img')
       .text
         %h3=link_to(page_section, page_section)
-        %p=strip_tags description_for(page_section, :length => 150)      
+        %p=strip_tags description_for(page_section, :length => 150)
         =link_to 'More', page_section, :class => 'bttn'
   %br.clear
   =will_paginate @pages_sections
