@@ -4654,6 +4654,12 @@ body.section_events #page_right_col * {
 
 /* ============= Shop =============== */
 
+.snippet_shop_intro {
+  margin: 10px 0 10px 0;
+  float: left;  
+  clear: both;
+}
+
 .cart_list {
   float: left;
   clear: both;
