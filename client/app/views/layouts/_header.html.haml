@@ -13,7 +13,7 @@
         %button.search_icon{:name => "commit", :title => "search", :value => "search" }        
     =link_to "Cart <span>#{find_existing_cart.items.count}</span>", cart_path, :id=>'cart_link'  if !find_existing_cart.nil? &&   !find_existing_cart.items.count.zero? 
     - if logged_in?
-      =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)  
+      =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)
       =link_if_allowed 'Site settings', admin_proc
       %strong
         =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
