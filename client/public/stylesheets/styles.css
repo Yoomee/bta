@@ -4702,6 +4702,7 @@ li.checkout{
 }
 .product .product_details{
   float:left;
+  margin-bottom: 15px;
 }
 
 .product_image {
@@ -4725,19 +4726,24 @@ li.checkout{
   font-size: 14px;
 }
 
-#member_special_offer {
+.member_special_offer {
 	background: url(/images/shop_post_it.png) bottom no-repeat;
   margin: -33px 18px 18px;
   padding: 20px 20px 40px 20px;
-  height:130px;
+/*  height:130px;*/
   font-size: 14px;
 }
-#member_special_offer h4{
+.member_special_offer h4{
   font-size: 17px;
   margin: 0;
 }
-
-#product_price {
+.product .member_special_offer {
+  font-size: 13px;
+}
+.product .member_special_offer h4 {
+  font-size: 15px;
+}
+.product_price_details {
   clear:both;
   float:left;
   width:100%;
@@ -4746,34 +4752,34 @@ li.checkout{
   padding: 15px 0;
 }
 
-#product_price .price_left_col {
+.product_price_details .price_left_col {
   float:left;
   width:300px;
 }
 
-#product_price .price_right_col {
+.product_price_details .price_right_col {
   float:right;
   width:420px;
 }
 
-#product_price form fieldset.inputs {
+.product_price_details form fieldset.inputs {
   display:none;
 }
 
-#product_price input[type="submit"]{
+.product_price_details input[type="submit"]{
 	background: #c5c7c8 url(/images/sprite.png) repeat-x 0 -80px;
 }
 
-#product_price p.postage {
+.product_price_details p.postage {
   font-style:italic;
   margin-bottom:0px;
 }
 
-#product_price p.price {
+.product_price_details p.price {
   font-size:14px;
   margin-bottom:0px;
 }
-#product_price p.main_price {
+.product_price_details p.main_price {
   font-size:25px;
   margin-bottom:0px;
 }

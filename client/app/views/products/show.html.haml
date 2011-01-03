@@ -15,10 +15,10 @@
     =image_for(@product, '300x300', :class => 'product_image')
   .product_right_col
     =@product.description
-#product_price
+#product_price.product_price_details
   .price_left_col
     -unless @product.member_special_offer.blank?
-      #member_special_offer
+      .member_special_offer
         %h4 Member offer
         =@product.member_special_offer
   .price_right_col

@@ -1,0 +1,21 @@
+.product
+  %h4.product_name
+    =link_to(product, product)
+  .product_details
+    .product_thumbnail
+      =link_to(image_for(product, '150x150'), product)
+    .product_overview
+      -unless product.sku.blank?
+        %p
+          Product code:
+          =product.sku
+      %p=product.overview
+  .product_price_details
+    .price_left_col
+      -unless product.member_special_offer.blank?
+        .member_special_offer
+          %h4 Member offer
+          =product.member_special_offer
+    .price_right_col
+      =render 'products/prices', :product => product
+      =render :partial => 'cart_items/form', :locals => {:product => product}
