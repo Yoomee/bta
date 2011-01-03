@@ -9,7 +9,7 @@ Product.class_eval do
   end
   
   def member_price_in_pounds=(val)
-    self.member_price_in_pence = val.blank? ? nil : val * 100
+    self.member_price_in_pence = val.blank? ? nil : val.to_f * 100
   end
   
   def overseas_price_in_pounds
