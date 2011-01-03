@@ -12,8 +12,7 @@
       to create one.
 -else
   -@departments.each do |department|
-    %h2
-      =link_to department, department
+    %h2=link_to department, department
     -unless department.description.blank?
       %p=department.description
 =render :partial => 'shop/options_panel'

@@ -19,7 +19,7 @@
       =link_to child, child
 -options_panel do
   =back_link
-  =link_if_allowed 'Edit', edit_department_proc(@department)
-  =link_if_allowed 'Delete', @department, :method => :delete, :confirm => 'Are you sure? All products in the department will be deleted too'
+  =link_if_allowed 'Edit department', edit_department_proc(@department)
+  =link_if_allowed 'Delete department', @department, :method => :delete, :confirm => 'Are you sure? All products in the department will be deleted too'
   =link_if_allowed 'Add subdepartment', new_department_department_proc(@department)
   =link_if_allowed 'Add product', new_department_product_proc(@department)
