@@ -4,7 +4,7 @@ development:
   database: bta_development
   host: localhost
   password: ''
-test:
+test: &test
   username: root
   adapter: mysql
   database: bta_test
@@ -17,3 +17,6 @@ production:
   host: localhost
   password: ''
 
+
+cucumber:
+  <<: *test
