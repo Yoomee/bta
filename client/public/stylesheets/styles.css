@@ -505,9 +505,10 @@ ul.tabs_container li#pages_publishing_link a {
 ul.tabs_container li#pages_snippets_link a {
  background-position: 15px -1730px;
 }
-ul.tabs_container li#pages_related_items_link a, ul.tabs_container li#blog_posts_related_items_link a {
+ul.tabs_container li#pages_related_items_link a, ul.tabs_container li#blog_posts_related_items_link a, #sections_related_items_link a {
  background-position: 15px -1790px;
 }
+
 ul.tabs_container li#sections_details_link a {
  background-position: 15px -1850px;
 }
@@ -1071,12 +1072,7 @@ div#top {
 	z-index: 0;
 }
 #home #header {
-	background: #2795E4; /* old browsers */
-background: -moz-linear-gradient(top, #2795E4 57%, #227FC1 100%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(57%,#2795E4), color-stop(100%,#227FC1)); /* webkit */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2795E4', endColorstr='#227FC1',GradientType=0 ); /* ie */
+	background: #2795E4 url(/images/header_gradient_home.png) repeat-x bottom; 
 }
 #header_inside {
 	clear: both;
@@ -2246,9 +2242,9 @@ input#login_bttn {
 	float:right;
 }
 #login_slide_bar #login_intro {
-	width: 180px;
+	width: 190px;
 	margin: 0 40px 0 0;
-	padding: 0 0 0 40px;
+	padding: 0 0 0 30px;
 	float: left;
 }
 #login_slide_bar #login_intro h2 {
@@ -3636,8 +3632,8 @@ a.backto {
 	padding:0;
 	text-decoration:none;
 }
-#page_content h4 {
-	color: #0076C3;
+#page_content h2, #page_content h3, #page_content h4, .blog_post h2, .blog_post h3, .blog_post h4, #product_info h2, #product_info h3, #product_info h4, .product_overview h2, .product_overview h3, .product_overview h4 {
+	color:#005b8e;
 }
 div.photo_holder {
 	display:none;
@@ -4951,6 +4947,8 @@ body.campaigns {
 	background: #fff;
 	margin: 0 0 40px;
 	border-top: 2px solid #c0d0db;
+	width: 940px;
+	padding: 0 20px;
 }
 a.bta_home_link {
 position: absolute;
@@ -4985,7 +4983,7 @@ a.bta_home_link:hover {
 	display: none;
 }
 .campaigns a#lottery_funded {
-	display: none;
+	background: url(/images/lottery_campaigns.png) no-repeat;
 }
 
 div#bta_home {
