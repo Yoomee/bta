@@ -1414,6 +1414,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	
 
 }
+#user_links a.site_settings {
+	background: url(/images/site_settings.png) no-repeat 8px 6px;
+	padding-left: 28px;
+
+}
+#user_links a.site_settings:hover {
+	background: #005b8e url(/images/site_settings.png) no-repeat 8px 6px;
+	padding-left: 28px;
+
+}
 #user_links a#cart_link {
 	background: #005b8e url(/images/cart.png) no-repeat 8px 6px;
 	padding-left: 28px;
@@ -1543,7 +1553,7 @@ input.search_icon, button.search_icon {
 	font: 15px/27px Arial, sans-serif;
 	font-weight: bold;
 	
-	text-shadow: 0px -1px 1px rgba(0,0,0,0.2);
+	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 	
 
 }
