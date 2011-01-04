@@ -7,7 +7,7 @@ module SubnavHelper
       children = section.slug_is(:news_and_events) ? Section.latest_news(nil) : section.all_children(:published_only => published_only)
       children.each do |child|
         html << li_with_active(current_page?(:controller => "#{child.is_a?(Page) ? 'pages' : 'sections'}", :action => "show", :id => child), :class => "#{'has_children' if child.is_a?(Section) && !child.all_children(:published_only => published_only).empty?}#{' active_parent' if child.is_a?(Section) && child.has_descendant?(page_or_section)}") do
-          link_to(child.title, child)
+          link_to(child, child)
         end
         if child.is_a?(Section) && !child.all_children(:published_only => published_only).blank? && (child == page_or_section || child.has_descendant?(page_or_section))
           html << render_subnav(child, page_or_section, level + 1, published_only)
