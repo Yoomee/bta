@@ -28,7 +28,7 @@
         -@carousel_pages.each do |page|
           .slide
             #case_study_image
-              =image_for(page, '525x351#', :method => "carousel_photo")
+              =photo_for(page, '525x351#', :method => "carousel_photo")
             #case_study_quote
               =render_carousel_quote(page)
               =render_carousel_button(page)
@@ -36,7 +36,7 @@
         %h4 Other Stories
         %ul.lst
           -@carousel_pages.each do |page|
-            %li=link_to image_for(page, '67x45#', :method => "carousel_photo"), "#"
+            %li=link_to photo_for(page, '67x45#', :method => "carousel_photo"), "#"
     #get_suppport
       %h2
         Get support
