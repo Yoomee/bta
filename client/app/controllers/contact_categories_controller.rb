@@ -2,11 +2,6 @@ class ContactCategoriesController < ApplicationController
   
   admin_only :create, :destroy, :update
   
-  def index
-    @categories = ContactCategory.all(:order => :name)
-    render :template => 'categories/index'
-  end
-  
   def create
     @category = ContactCategory.new(params[:contact_category])
     render :update do |page|
@@ -33,6 +28,20 @@ class ContactCategoriesController < ApplicationController
     end
   end
   
+  def index
+    @categories = ContactCategory.all(:order => :name)
+    render :template => 'categories/index'
+  end
+  
+  def show
+    @category = ContactCategory.find(params[:id])
+    @contacts = @category.contacts.paginate(:page => params[:page], :per_page => 50)
+    @title = @category.name
+    @a_to_z = false
+    @contact_categories = ContactCategory.all(:order => 'name')
+    render :template => 'contacts/index'
+  end
+
   def update
     @category = ContactCategory.find(params[:id])
     render :update do |page|
@@ -45,11 +54,4 @@ class ContactCategoriesController < ApplicationController
     end
   end
   
-  def show
-    @category = ContactCategory.find(params[:id])
-    @contacts = @category.contacts.paginate(:page => params[:page], :per_page => 50)
-    @title = @category.name
-    @a_to_z = false
-    render :template => 'contacts/index'
-  end
 end

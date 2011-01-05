@@ -1778,12 +1778,17 @@ div#home_box_right {
 
 #campaign_box {
 	float: left;
-	background: url(/images/campaign.jpg) no-repeat 0 -10px;
+/*	background: url(/images/campaign.jpg) no-repeat 0 -10px;*/
 	width: 140px;
 	height: 245px;
-	text-indent: -9900em;
 	margin: 0px 20px 0 0;
 	
+}
+#campaign_box img {
+/*  margin-top: -10px;*/
+}
+#campaign_box h4 {
+  display: none;
 }
 
 .title, #latest_news h4  {
@@ -4526,6 +4531,12 @@ p#forum_intro {
 }
 
 /* ======== Directory ===== */
+#directory_container {
+  border: 1px solid gray;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
 #directory_a2z {
   clear:both;
   padding: 10px 20px;

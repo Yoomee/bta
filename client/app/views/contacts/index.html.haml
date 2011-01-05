@@ -1,15 +1,23 @@
+-content_for :head do
+  =javascript_include_tag "client/jquery.colorPicker"
 - title "Directory#{" > #{@category.name}" unless @category.blank?}"
 #directory_search
   =render("search/autocomplete_form", :class_name => %w{contact})
 -if @a_to_z
-  #directory_a2z
-    -('A'..'Z').each do |letter|
-      = link_to_unless_current letter, directory_path(:id => letter)
-      |
-    =link_to_unless_current '#', directory_path(:id => '#')
-=render :partial => 'contacts/directory', :contacts => @contacts
+  #directory_container
+    #directory_a2z
+      -('A'..'Z').each do |letter|
+        = link_to_unless_current letter, directory_path(:id => letter)
+        |
+      =link_to_unless_current '#', directory_path(:id => '#')
+    =render :partial => 'contacts/directory', :contacts => @contacts
+-else
+  =render :partial => 'contacts/directory', :contacts => @contacts
 =(will_paginate @contacts, :params => {:letter => params[:letter] })
-  
+%h2 Contact categories
+#categories_list
+  -@contact_categories.each do |category|
+    =render 'categories/category', :category => category, :show_form => false
 -options_panel do
   =back_link
   =link_to "A to Z listings", directory_path(:id=>nil) unless @a_to_z

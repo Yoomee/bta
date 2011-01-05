@@ -26,6 +26,9 @@
       =fields.input :header_image_uid, :as => :hidden
       =fields.input :header_image, :as => :file
       =fields.input :bg_color, :label => "Background colour"
-      =fields.input :show_on_front_page, :as => :boolean, :help => "Tick this box to show an advert for this campaign on the front page."
+      =fields.input :show_on_front_page, :as => :boolean, :help => "Tick this box and select an image to show an advert for this campaign on the front page. The most recent one will be shown at the bottom left of the page."
       =fields.input :front_page_image, :as => :file
+      -unless section.front_page_image.url.blank?
+        %li
+          =image_tag section.front_page_image.url
     %br.clear
