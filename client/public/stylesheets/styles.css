@@ -3988,18 +3988,37 @@ h3.blog_date{
 .blog_post{
 	margin-bottom: 30px;
 }
+.blog_post_author img {
+  float: left;
+  margin-right: 10px;
+}
+.blog_post_author .author_details {
+  float: left;
+  width: 117px;
+}
+.blog_post_author {
+  float: left;
+  width: 180px;
+  margin-top: 10px;
+}
+.blog_post_author p.author {
+  font-weight: bold;
+  margin-bottom: 0;
+}
 .blog_post_image{
-	float:left;
+	float:right;
 	margin-top:10px;
 	margin-bottom: 20px;
-
-	width:600px;
-
+	margin-left: 10px;
 }
 .blog_post_details{
 	float:left;
 	margin-left:0px;
-	width:600px;
+	width:560px;
+}
+.blog_post_content {
+  float: left;
+  width:350px;
 }
 h3.blog_post_date{
 	color:#999;
@@ -4007,6 +4026,10 @@ h3.blog_post_date{
 	font-weight:normal;
 	margin-bottom:5px;
 	margin-top:-10px;
+}
+h2.blog_post_title {
+  float: left;
+  width: 350px;
 }
 #blog_share_links {
 	float:left;

@@ -1,0 +1,20 @@
+.blog_post
+  .blog_post_author
+    =image_for(blog_post.author, '38x38')
+    .author_details
+      %p.author
+        =blog_post.author
+      %p.date
+        =blog_post.created_at.strftime '%d.%m.%y'
+  .blog_post_details
+    %h2.blog_post_title
+      =link_to blog_post.title, blog_post
+    .blog_post_image
+      =link_to photo_for(blog_post, '200x150'), blog_post
+    .blog_post_content
+      =truncate(blog_post.text, 200)
+      %br
+      %strong
+        =link_to "Read more...", blog_post
+    .details
+  %br.clear
