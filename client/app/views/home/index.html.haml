@@ -54,8 +54,9 @@
 #community_row
   -unless @campaign.nil?
     #campaign_box
-      =image_tag(@campaign.front_page_image.url)
-      %h4=@campaign.name
+      -link_to @campaign do
+        =image_tag(@campaign.front_page_image.url)
+        %h4=@campaign.name
   #forum_box
     %h3.title
       =link_to "BTA forum ", forum_path(1)
