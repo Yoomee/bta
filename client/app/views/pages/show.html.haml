@@ -1,5 +1,5 @@
 -content_for :sidebar do
-  #subnav=render_subnav(@page.section.absolute_root, @page)
+  #subnav=render_subnav((in_campaigns? ? @page.section : @page.section.absolute_root), @page)
 
 -title @page.title
 =render_breadcrumb(:object => @page)
