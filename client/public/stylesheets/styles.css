@@ -3371,6 +3371,13 @@ span.cal_icon span.day {
 	display:block;
 }
 
+.event_contact ul, .event_contact li {
+  list-style-type: none;
+  text-indent: 0;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .events_desc p {
 	margin: 3px 0px;
 }

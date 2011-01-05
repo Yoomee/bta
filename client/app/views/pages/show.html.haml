@@ -31,6 +31,25 @@
             %h3 Where
             =render_address(@page.event_location)
             =render_google_map_for(@page.event, :width => 275, :height => 300)
+        -if @page.has_any_snippet?(:contact_name, :phone_number, :email)
+          .event_contact
+            %h3 Contact
+            %ul
+              -if @page.has_snippet?(:contact_name)
+                %li
+                  =@page.snippet_contact_name
+              -if @page.has_snippet?(:phone_number)
+                %li
+                  Phone:
+                  =@page.snippet_phone_number
+              -if @page.has_snippet?(:email)
+                %li
+                  Email:
+                  =link_to(@page.snippet_email, "mailto:#{@page.snippet_email}")
+        -if @page.has_snippet?(:website_url)
+          .event_website
+            %h3 Website
+            =link_to @page.snippet_website_url, @page.snippet_website_url
       -else
         =snippet(@page, :pull_quote)
         -if @page.has_snippet?(:call_to_action)
