@@ -14,6 +14,15 @@ SectionsController.class_eval do
     @pages_sections = @section.pages.published + @section.children
     @pages_sections = @pages_sections.sort_by(&:weight).paginate(:page => params[:page], :per_page => 20)
   end
+
+  def show_with_events
+    if @section == Section::events
+      @pages_sections = @section.pages.published.all(:joins => :event, :conditions => ["events.start_at > ? ", Time.now], :order => "events.start_at").paginate(:page => params[:page], :per_page =>  20)
+    else
+      show_without_events
+    end
+  end
+  alias_method_chain :show, :events
   
 end
 
