@@ -50,6 +50,15 @@
           // Make all external requests open in a new window
           $('a').not("[href^='/']").not("[href*='#{request.host}']").not("[href^='#']").attr('target', '_blank');
         });
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20577106-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
   - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
     #wrapper    
       #top
