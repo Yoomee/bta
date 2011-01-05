@@ -13,7 +13,7 @@ HomeController.class_eval do
     @about_tinnitus_page = Page.slug("about_tinnitus")
     @professionals_section = Section.slug("for-health-professionals")
     @researchers_section = Section.slug("for-researchers")
-    @support_and_services_section = Section.slug("for-policy-makers")
+    @support_and_services_section = Section.slug("support-and-services")
   end
   
   private
