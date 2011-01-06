@@ -1,4 +1,6 @@
 Product.class_eval do
+
+  default_scope :order => "weight"
   
   has_wall
   rateable_by_member

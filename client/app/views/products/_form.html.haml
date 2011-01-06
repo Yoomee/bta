@@ -8,6 +8,7 @@
     =form.input :sku, :label => 'Product code', :help => "If you would like to assign your own product code to the product, please enter it here (product codes must be made up of letters and digits, with at least one letter)."
     =form.input :image, :as => :file
     =form.input :department, :collection => department_id_options(nil)
+    =form.input :weight, :label => 'Order', :help => "Please set an 'order' for the product (products with higher order numbers will appear further down the list)"
     =form.input :overview, :as => :ck_text, :help => "Please enter an intro - this will be shown in the department listing"
     =form.input :description, :as => :ck_text, :help => "Please enter a description - this will be shown in the product detail"
     =form.input :price_in_pounds, :help => "Please enter the general price of the product"
