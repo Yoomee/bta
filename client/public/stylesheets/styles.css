@@ -4721,15 +4721,15 @@ body.section_events #page_right_col * {
 .cart_list tr.totalRow {
   text-align:right;
 }
-#cart_form fieldset.inputs {
+#cart_form table fieldset.inputs {
   float: none;
   clear: none;  
   margin-bottom: 0;
 }
-#cart_form fieldset.inputs ol {
+#cart_form table fieldset.inputs ol {
   margin-bottom: 0;
 }
-#cart_form fieldset.inputs li, #cart_form fieldset.inputs li input {
+#cart_form table fieldset.inputs li, #cart_form table fieldset.inputs li input {
   float: none;
   clear: none;
   margin: 0;

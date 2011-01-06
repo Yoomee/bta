@@ -1,3 +1,16 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+     // Make BTA Member and Overseas mutually-exclusive
+     $('#cart_bta_member').click(function() {
+       if ($('#cart_bta_member').attr('checked'))
+         $('#cart_overseas').attr('checked', false);
+     });
+     $('#cart_overseas').click(function() {
+       if ($('#cart_overseas').attr('checked'))
+         $('#cart_bta_member').attr('checked', false);
+     });
+    });
 -checking_out ||= false
 -if cart.empty?
   %p
@@ -35,5 +48,10 @@
       %li.checkout=link_to('Confirm', order_path, :method => :post, :class => "bttn_l")
     -else
       %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")
+    %p
+      Select here if you are a BTA-member or a non-UK customer and click 'Update cart':
+    -form.inputs do
+      =form.input :bta_member, :as => :boolean, :checked => Module::value_to_boolean(@cart.bta_member_before_type_cast)
+      =form.input :overseas, :as => :boolean, :checked => Module::value_to_boolean(@cart.overseas_before_type_cast)
     -form.buttons do
       =form.commit_button "Update cart"
