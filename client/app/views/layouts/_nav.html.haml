@@ -7,7 +7,7 @@
     -li_with_active_slug("for-people-with-tinnitus") do
       =link_to 'Get support', slug_path("for-people-with-tinnitus")
     -li_with_active(viewing_forum?) do
-      =link_to 'Forum', forum_path(1)
+      =link_to 'Forum', forums_path
     -if !Blog.count.zero?
       -li_with_active(viewing_blog?) do
         =link_to 'Blog', blog_path(Blog.first)

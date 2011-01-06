@@ -1946,7 +1946,12 @@ div#community_row {
 	border-top: 5px solid #0870ad;
 	
 }
-
+div#forums {
+  clear: left;
+}
+.forum_list_header {
+  display: none;
+}
 div#forum_box {
 	float: left;
 	width: 280px;

@@ -59,7 +59,7 @@
         %h4=@campaign.name
   #forum_box
     %h3.title
-      =link_to "BTA forum ", forum_path(1)
+      =link_to "BTA forum ", forums_path
     %ul.lst
       -unless @forum_topics.blank?
         -@forum_topics.each do |topic|
@@ -67,7 +67,7 @@
             =link_to topic.subject, topic
             %p
               %span= "#{pluralize(topic.posts.count, "post")}."
-              ="Last post at #{topic.get_last_post.updated_on.strftime("%H:%M on %m %B")}"
+              ="Last post at #{topic.get_last_post.created_at.strftime("%H:%M on %e %B")}"
   #facebook_box
     %h3.title
       =link_to "Facebook ", "#"
