@@ -20,7 +20,7 @@ Product.class_eval do
   end
   
   def overseas_price_in_pounds=(val)
-    self.overseas_price_in_pence = val.blank? ? nil : val * 100
+    self.overseas_price_in_pence = val.blank? ? nil : val.to_f * 100
   end
     
 end

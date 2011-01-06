@@ -12,6 +12,7 @@
     =form.input :overview, :as => :ck_text, :help => "Please enter an intro - this will be shown in the department listing"
     =form.input :description, :as => :ck_text, :help => "Please enter a description - this will be shown in the product detail"
     =form.input :price_in_pounds, :help => "Please enter the general price of the product"
+    =form.input :overseas_price_in_pounds, :label => 'Non-UK price in pounds', :help => "Please enter the non-UK price, if different, otherwise leave blank"
     =form.input :member_price_in_pounds, :help => "Please enter the price for members, if different, otherwise leave blank"
     =form.input :member_special_offer, :input_html => {:rows => 5}, :help => "Please give details of any member offer - this will be shown on the product page"
   -form.buttons do
