@@ -1,0 +1,4 @@
+-semantic_fields_for blog_post do |fields|
+  -fields.inputs do
+    =fields.input :snippet_author_name
+    =fields.input :snippet_author_details, :as => :text, :input_html => {:rows => 5}

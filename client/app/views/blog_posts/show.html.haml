@@ -1,8 +1,29 @@
 - title @blog_post.title
-
-.blog_post
+.details
+  .posted_by
+    Posted by
+  .author_name_and_photo
+    -if @blog_post.has_snippet?(:author_name)
+      =image_for Member.new, '38x38>'
+      =@blog_post.snippet_author_name
+    -else
+      =image_for(@blog_post.author, '38x38>')
+      =link_to @blog_post.author, @blog_post.author
+    .posted_on
+      =@blog_post.created_at.strftime '%d.%m.%y'
+  -if @blog_post.has_snippet?(:author_details)
+    .author_details
+      =@blog_post.snippet_author_details
+  -if !@blog_post.categories.empty? && false
+    %br
+    Filed under:
+    %ul
+      -@blog_post.categories.each do |category|
+        %li
+          =link_to category.name, category
+.blog_post_inside
   .blog_post_image
-    = photo_for(@blog_post, '400x300')
+    = photo_for(@blog_post, '560x300>')
   .blog_post_details
     =@blog_post.text
     #blog_share_links
@@ -15,25 +36,12 @@
         %li.delicious=link_to("Delicious", "http://del.icio.us/post?url=#{blog_post_url(@blog_post)}", :target => "_blank")
         %li.reddit=link_to("reddit", "http://reddit.com/submit?url=#{blog_post_url(@blog_post)}", :target => "_blank")
         %li.stumbleupon=link_to("StumbleUpon", "http://www.stumbleupon.com/submit?url=#{blog_post_url(@blog_post)}", :target => "_blank")
-  .details
-    Posted by
-    =link_to @blog_post.member.full_name, @blog_post.member
-    in 
-    = link_to @blog_post.blog.name, blog_blog_posts_path(@blog_post.blog)
-    on
-    =@blog_post.created_at.strftime '%d %B %Y'
-    -if !@blog_post.categories.empty?
-      %br
-      Filed under:
-      %ul
-        -@blog_post.categories.each do |category|
-          %li
-            =link_to category.name, category
-=render_comments(@blog_post, :fb_connect => true)
--if @blog_post.has_related_items?
-  #related_content
-    %h2.title Related Content
-    =render_related_items(@blog_post, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
+  =render_comments(@blog_post, :fb_connect => true)
+  -if @blog_post.has_related_items?
+    #related_content
+      %h2.title Related Content
+      =render_related_items(@blog_post, :image_size => "145x75#", :limit => 4, :truncate_length => 100)
+    
   
 -options_panel do
   =back_link

@@ -1,7 +1,7 @@
 -content_for :head do
   =javascript_include_tag :ckeditor
 -semantic_form_for @blog_post, :html => {:multipart => true} do |form|
-  =tramlines_tabs(:tabs => %w{details related_items}, :tab_directory => 'form_tabs', :locals => {:blog_post => @blog_post})
+  =tramlines_tabs(:tabs => %w{details author related_items}, :tab_directory => 'form_tabs', :locals => {:blog_post => @blog_post})
   %br.clear
   -form.buttons do
     = form.commit_button :label => 'Save'
