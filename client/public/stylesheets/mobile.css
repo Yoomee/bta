@@ -1484,6 +1484,7 @@ input.search_icon {
 	margin:0;
 	padding:0;
 	text-indent:0;
+	background: #005b8e;
 }
 #nav ul li {
 	float:left;
