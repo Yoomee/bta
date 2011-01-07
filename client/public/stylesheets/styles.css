@@ -89,6 +89,7 @@ body {
 	margin: 0px 0 20px 0;
 	background: #fff;
 	position: relative;
+	z-index: 39;
 	padding: 20px;
 	
 	
@@ -133,6 +134,8 @@ a:hover {
 	float: left;
 	margin: -160px 0 0 0;
 	position: relative;
+	z-index: 39;
+
 	
 }
 
@@ -144,6 +147,8 @@ a:hover {
 #sidebar_col {
   float: left;
   margin-top: 160px;
+  position: relative;
+  z-index: 33;
 }
 
 table {}
@@ -1069,10 +1074,11 @@ div#top {
 	background: #2795E4; 
 	float: left;
 	position: relative;
-	z-index: 0;
+	z-index: 35;
 }
 #home #header {
 	background: #2795E4 url(/images/header_gradient_home.png) repeat-x bottom; 
+	height: 466px;
 }
 #header_inside {
 	clear: both;
@@ -1097,19 +1103,28 @@ div#top {
 #login_slide_bar_inside {
 }
 h1#site_logo {
-	margin:0;
+	margin:0px 0 20px 0px;
 	float: left;
+	display: block;
+	width: 131px;
+	height: 201px;
+
 } 
 h1#site_logo a {
 	background:url("/images/bta_logo.png") no-repeat scroll -3px 0 transparent;
 	display:block;
 	height:201px;
-	margin:20px 0 20px 0px;
 	width: 131px;
 	text-indent:-9000em;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+
 }
-#home h1#site_logo a {
-	margin:15px 0 20px 0px;
+#home h1#site_logo {
+	margin:0px 0 20px 0px;
 }
 h1#site_logo a:active {
 }
@@ -1117,8 +1132,11 @@ h1#site_logo a:active {
 #logo_box {
 	float: left;
 	width: 140px;
+	height: 221px;
 	color: #fff;
-	margin: 0 0 0 20px;
+	margin: 15px 0 0 20px;
+	
+	position: relative;
 	
 }
 #inside #logo_box p {
@@ -1172,7 +1190,7 @@ div#home_header {
 }
 
 #case_study_quote {
-	background: rgba(26, 70, 102, 0.810);
+	background: url(/images/carousel_bg.png);
 	position: absolute;
 	z-index: 65;
 	width: 160px;
@@ -1234,6 +1252,7 @@ div#home_header {
 	background:;
 	width: 480px;
 	bottom: 0;
+	left: 0;
 	height: 70px;
 
 	background: #545454;	
@@ -2030,6 +2049,8 @@ div#twitter_box .bttn_round {
 	bottom: 0;
 	width: 110px;
 	font-weight: bold;
+	clear: both;
+	float: left;
 }
 
 
@@ -2649,6 +2670,7 @@ p#medical_info {
 	margin: 30px 0 20px 0px;
 	font-size: 10px;
 	clear: both;
+	width: 500px;
 
 }
 div#footer_links {
@@ -3957,8 +3979,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#BED3E2', end
   color: #2795e4;
 }
 #documents {
-	float: right;
+	float: left;
 	clear: both;
+	width: 280px;
 
 }
 #documents h3.title {
@@ -4735,7 +4758,7 @@ body.section_news_and_events #latestStoriesList .item .item_img img {
   margin: 0;
 }
 body.section_news_and_events #latest_events {
-  float:left;
+  float:right;
   margin-left:20px;
   width:280px;
   background: #d3dde5;

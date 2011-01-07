@@ -25,6 +25,8 @@
     =#formtastic_stylesheet_link_tag
     =yield :head
     = stylesheet_link_tag 'client/styles'
+    /[if IE 6]
+      = stylesheet_link_tag 'client/ie6.css'
     -unless current_page?(new_session_path)
       :javascript
         $(document).ready(function(){    
