@@ -12,8 +12,8 @@ HomeController.class_eval do
     @latest_news_item = @news_items.shift
     @products = Product.latest.limit(3)
     @professionals_section = Section.slug("for-health-professionals")
-    @researchers_section = Section.slug("for-researchers")
-    @support_and_services_section = Section.slug("support-and-services")
+    @researchers_section = Section.slug("tinnitus-research")
+    @support_and_services_section = Section.slug("support-services")
   end
   
   private
