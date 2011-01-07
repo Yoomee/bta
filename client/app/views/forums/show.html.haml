@@ -6,7 +6,9 @@
     ="#{link_to('Login', new_session_path)} or #{link_to('register', new_member_path)} to add a topic." if logged_out?
   #forums
     %table.forum
+      -puts @topics.inspect
       - @topics.each do |topic|
+        -puts @topic.inspect
         %tr{:class => "forum_row_#{cycle("even", "odd")}"}
           %td{:width => "70%"}
             %strong= link_to(topic.subject, topic)

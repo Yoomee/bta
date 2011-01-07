@@ -37,12 +37,6 @@ class CartTest < ActiveSupport::TestCase
       assert @cart.overseas?
     end
     
-    should "reset overseas when bta_member is set to true and saved" do
-      @cart.bta_member = true
-      @cart.save!
-      assert !@cart.overseas?
-    end      
-    
     should "set bta_member when bta_member is set to true" do
       @cart.bta_member = true
       assert @cart.bta_member?
