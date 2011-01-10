@@ -18,11 +18,11 @@
           %td
             =link_to_last_post(topic)
   =will_paginate @topics
-  #create_topic_link=link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
   %br.clear
 -else
   %p.intro No one wants to be the first to post in a new forum but if you have something to say, go ahead and be the first.
   %i No Topics have been posted yet.
+  #create_topic_link=link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
   
 #facebook_box
   %h3.title
