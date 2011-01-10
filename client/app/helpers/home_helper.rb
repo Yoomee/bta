@@ -6,6 +6,7 @@ module HomeHelper
   end
   
   def render_carousel_quote(page)
+    return nil if snippet(page, :carousel_quote, false).nil?
     options = {}
     quote = snippet(page, :carousel_quote, false).strip
     if quote.starts_with?("\"")
