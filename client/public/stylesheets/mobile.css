@@ -4735,3 +4735,10 @@ div#bta_home {
   margin: 0 !important;
   }
 /*}*/
+
+
+.view_standard {
+  font-size:12px;
+  text-align:center;
+  width:100%;
+}
