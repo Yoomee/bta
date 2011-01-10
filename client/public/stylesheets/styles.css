@@ -1300,7 +1300,7 @@ div#home_header {
 	width: 90px;
 
 }
-#get_suppport {
+#get_support {
 	float: right;
 	width: 280px;
 	height: 350px;
@@ -1316,7 +1316,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	
 }
 
-#get_suppport h2 {
+#get_support h2 {
 
 	color: #184f7b;
 	font-size: 21px;
@@ -1326,17 +1326,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	margin: 0 0 0px 0;
 	
 }
-#get_suppport h2 strong {
+#get_support h2 strong {
 	float: left;
 }
-#get_suppport h2 span {
+#get_support h2 span {
 	font-weight: bold;
 	float: left;
 }
-#get_suppport ul li:last-child a {
+#get_support ul li:last-child a {
 	border: none;
 }
-#get_suppport ul li a {
+#get_support ul li a {
 	background: url(/images/sprite_bta.png) no-repeat -1450px 15px;
 	float: left;
 	padding: 15px 10px 20px 60px;
@@ -1345,29 +1345,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	width: 210px;
 
 }
-#get_suppport ul li a h5 {
+#get_support ul li a h5 {
 	color: #184f7b;
 	margin: 0;
 }
-#get_suppport ul li a p {
+#get_support ul li a p {
 	color: #333;
 	margin: 0;
 }
-#get_suppport ul li a p.phone_number {
+#get_support ul li a p.phone_number {
 	font-size: 14px;
 	font-weight: bold;
 } 
-#get_suppport ul li a:hover {
+#get_support ul li a:hover {
 	background-color:#C2D0DA;
 	text-decoration: none;
 }
-#get_suppport ul li a#support_shop {
+#get_support ul li a#support_shop {
 	background-position: -1430px -145px;
 } 
-#get_suppport ul li a#support_forum {
+#get_support ul li a#support_forum {
 	background-position: -1440px -280px;
 } 
-#get_suppport ul li a#find_out_more {
+#get_support ul li a#find_out_more {
 	background-position: -1453px -400px;
 } 
 /* =======  cycle  ====== */
