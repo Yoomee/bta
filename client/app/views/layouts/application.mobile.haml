@@ -34,7 +34,8 @@
         });
   - body_tag do
     #wrapper  
-      %p=link_to_remote "View standard site", :url =>{:controller => 'mobile', :action => 'toggle'}
+      .view_standard
+        =link_to_remote("View standard site", :url =>{:controller => 'mobile', :action => 'toggle'})
       #top
         =render :partial => 'layouts/nav'
       -unless current_page?(new_session_path)

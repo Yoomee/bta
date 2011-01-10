@@ -12,6 +12,9 @@
       =contact_us_map
       %br
       =link_to("View in Google Maps", contact_us_map_url)
+      %br
+      %br
+      =photo_for(@page, "375x") if @page.has_photo?
     #contact_us_content
       =render :partial => 'content', :locals => {:page => @page}
   -else

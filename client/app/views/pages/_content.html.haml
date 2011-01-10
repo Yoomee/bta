@@ -1,0 +1,9 @@
+-if page.published? || allowed_to?(edit_page_proc(page))
+  #event_info
+    =contentize(page.text)
+    -if page.event_bookable?
+      =link_if_allowed 'Book', new_event_booking_proc(page.event)
+-content_for(:options_panel) do
+  -if page.event && !page.event_bookings.empty? && allowed_to?(hash_for_new_report_path(:name => 'bookings', :event_id => page.event.id))
+    |
+    =link_to 'Bookings', new_report_path(:name => 'bookings', :report => {:event_id => page.event.id})
