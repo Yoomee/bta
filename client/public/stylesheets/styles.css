@@ -1143,7 +1143,7 @@ h1#site_logo a:active {
 	display: none;
 }
 div#home_header {
-	float: right;
+	float: left;
 	background: #fff;
 	width: 800px;
 	height: 390px;

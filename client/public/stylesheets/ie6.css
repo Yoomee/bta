@@ -1,4 +1,4 @@
-#search_box, ul#logged_out_nav li a, h1#site_logo, #home #header_inside, home #header, #case_study_carousel, #case_study_carousel .cycle, #case_study_carousel .slide, #get_suppport, #get_suppport ul li a#find_out_more, #get_suppport ul li a, #home_left_col, div#home_box_right, .lst, .lst li, #box_professionals li img, #other_case_studies, #logo_box, #home h1#site_logo, div#home_header, #wrapper, #header, #nav, #nav ul, #nav ul li  {
+#search_box, ul#logged_out_nav li a, h1#site_logote_logo, #home #header, #case_study_carousel, #case_study_carousel .cycle, #case_study_carousel .slide, #get_suppport, #get_suppport ul li a#find_out_more, #get_suppport ul li a, #home_left_col, div#home_box_right, .lst, .lst li, #box_professionals li, #box_professionals li p, #box_professionals li h4, #box_professionals li img, #other_case_studies, #logo_box, #home h1#site_logo, div#home_header, #wrapper, #header, #nav ul, #nav ul li, #nav ul li a, #box_professionals, .lst  {
 	display:inline;
 }
 #logged_in_as ul li a {
