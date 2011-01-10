@@ -22,7 +22,6 @@
 -else
   %p.intro No one wants to be the first to post in a new forum but if you have something to say, go ahead and be the first.
   %i No Topics have been posted yet.
-  #create_topic_link=link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
   
 #facebook_box
   %h3.title
@@ -37,5 +36,6 @@
 
 -options_panel do
   =back_link
+  =link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
   =link_if_allowed "Edit forum", edit_forum_proc(@forum)
   =link_if_allowed 'Delete forum', @forum, :method => :delete, :confirm => "Are you sure?"
