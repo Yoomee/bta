@@ -2487,7 +2487,7 @@ p.post_admin a {
 
 
 /* ====== info messages for boxes without content (empty profiles etc)====== */
-p.nothing_yet, .intro, #intro, #flash_notice, #notice {
+p.nothing_yet, .intro, #intro, #flash_notice, #notice, #error {
 	padding:8px 0px;
 	position:relative;
 	text-align:center;
