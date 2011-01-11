@@ -12,7 +12,7 @@
     .blog_post_image
       =link_to photo_for(blog_post, '200x150'), blog_post
     .blog_post_content
-      =truncate(blog_post.text, 200)
+      =(strip_tags blog_post.text).word_truncate(200)
       %br
       %strong
         =link_to "Read more...", blog_post
