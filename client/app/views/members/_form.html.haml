@@ -9,6 +9,6 @@
     =form.input :password_confirmation, :as => :password
     =form.input :company
     =form.input :bio
-    =form.input :banned_from_forum, :help => 'Please tick here if the member should not be allowed to post to the forum (this option is only available to site admins)' if logged_in_member.is_admin?
+    =form.input :banned_from_forum, :help => 'Please tick here if the member should not be allowed to post to the forum (this option is only available to site admins)' if logged_in_member.try(:is_admin?)
   - form.buttons do
     = form.commit_button
