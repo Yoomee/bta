@@ -9,4 +9,4 @@ development:
   site_name: British Tinnitus Association
 production:
   # This needs changing before go-live
-  paypal_business_email: seller_1279274874_biz@yoomee.com
+  paypal_business_email: jane@tinnitus.org.uk
