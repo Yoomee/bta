@@ -51,7 +51,7 @@
             $("#member_login_bttn").toggleClass("open");
           });
           // Make all external requests open in a new window
-          $('a').not("[href^='/']").not("[href*='#{request.host}']").not("[href^='#']").attr('target', '_blank');
+          $('a').not("[href^='/']").not("[href*='#{request.host.gsub(/www\./, '')}']").not("[href^='#']").attr('target', '_blank');
         });
   - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
     #wrapper    
