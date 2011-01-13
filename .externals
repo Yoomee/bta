@@ -92,11 +92,6 @@ path = vendor/plugins/tramlines_walls
 repository = git://git.yoomee.com:4321/plugins/tramlines_walls
 scm = git
 
-[vendor/plugins/ym4r-gm]
-path = vendor/plugins/ym4r-gm
-scm = git
-repository = git://github.com/queso/ym4r-gm.git
-
 [vendor/plugins/tramlines_ratings]
 path = vendor/plugins/tramlines_ratings
 scm = git
