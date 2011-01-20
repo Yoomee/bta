@@ -1,7 +1,9 @@
 class ContactCategoriesController < ApplicationController
   
-  admin_only :create, :destroy, :update
+  include ContactsMap
   
+  admin_only :create, :destroy, :update
+
   def create
     @category = ContactCategory.new(params[:contact_category])
     render :update do |page|
@@ -38,7 +40,8 @@ class ContactCategoriesController < ApplicationController
     @contacts = @category.contacts.paginate(:page => params[:page], :per_page => 50)
     @title = @category.name
     @a_to_z = false
-    @contact_categories = ContactCategory.all(:order => 'name')
+    @contact_categories = ContactCategory.all(:order => 'name') - [@category]
+    initialize_map(@category.contacts)
     render :template => 'contacts/index'
   end
 

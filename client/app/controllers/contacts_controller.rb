@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+
+  include ContactsMap
     
   admin_only :create, :destroy, :edit, :new, :update
   
@@ -32,6 +34,7 @@ class ContactsController < ApplicationController
     end
     @contact_categories = ContactCategory.all(:order => 'name')
     @a_to_z = true
+    initialize_map(Contact.all)
   end
   
   def new

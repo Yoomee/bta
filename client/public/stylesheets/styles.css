@@ -4500,6 +4500,21 @@ a.category_function_link {
 	margin:2px 5px 0 0;
 	width:41px;
 }
+#page_title .color_block {
+  border: 2px solid;
+  clear: none;
+  float: left;
+  height: 22px;
+  margin: 6px 5px 0 0;
+  width: 41px;
+}
+#page_title a {
+  float: left;
+}
+#page_title .greater_than {
+  float: left;
+  margin: 0 5px;
+}
 
 /* ================== Color Picker ==================== */
 
@@ -4748,7 +4763,39 @@ p#forum_intro {
 	float: right;
 
 }
-
+#categories_list {
+  width: 250px;
+  float: left;
+}
+div#categories_list.directory h3 {
+  font-size: 13px;
+  margin-top: 4px;
+  width: 196px;
+}
+#categories_list .category_wrapper {
+  width: 250px;
+}
+.directory_map {
+  float: right;
+/*  margin-top: -43px;*/
+}
+.directory_map h3.contact_name {
+  font-size: 12px;
+}
+.directory_map .list_image {
+  float: left;
+  margin: 0 10px 10px 0;
+}
+#directory_container {
+  margin-bottom: 30px;
+}
+h2.contact_categories {
+  float: left;
+  width: 300px;
+}
+.contact_info_window {
+  width: 200px;
+}
 /* ====================  Related Content ===================== */
 
 #related_content {
