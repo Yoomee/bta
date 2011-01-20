@@ -18,6 +18,12 @@
     ="'#{@search.term}'."
     Please try again.
 -else
+  -if @search
+    %p
+      Showing
+      =pluralize @contacts.size, 'result'
+      for
+      ="'#{@search.term}'"
   -if @a_to_z
     #directory_container
       #directory_a2z
