@@ -40,6 +40,14 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
   end
+
+  def search
+    @search = Search.new(:term => params[:term], :models => 'contact')
+    @contacts = @search.results.paginate(:page => params[:page], :per_page => 50)
+    @contact_categories = ContactCategory.all(:order => 'name')
+    initialize_map(@contacts)
+    render :action => 'index'
+  end
   
   def show
   end
