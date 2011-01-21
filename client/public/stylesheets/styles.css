@@ -4337,10 +4337,16 @@ li.event_list_item {
 	float: left;
 	width: 180px;
 	margin: 0px 0px 0 0px;
-	padding: 20px 0;
+	padding: 20px 0 0;
 	position: relative;
 	background: #c0d4e2;
 	
+}
+#category_loader {
+  float: left;
+  width: 100%;
+  text-align: center;
+  background: #f0f3f7;
 }
 #event_categories_key h4 {
 	font-size: 14px;
