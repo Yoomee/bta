@@ -3,7 +3,8 @@
   %head
     %title
       BTA
-      \-
+      -unless page_title.blank? && page_subtitle.blank?
+        \-
       = strip_tags page_title
       = page_subtitle
     %meta{ :name => "Generator", :content => "Yoomee (Ruby on Rails)" }
