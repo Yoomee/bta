@@ -15,10 +15,11 @@
           Email/Username:
         = text_field_tag 'login_email_or_username', @login_email_or_username
         = star
+        %br
+        =link_to "Forgotten password?", resend_password_path
       %p.password
         %label{ :for => "login_password" }
           Password:
         = password_field_tag 'login_password'
         = star
       = submit_tag 'Log in', :id => 'login_bttn'
-  -#forgot_password=link_to "Forgot password?", Page.forgot_password
