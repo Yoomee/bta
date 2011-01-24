@@ -15,7 +15,7 @@
           Email/Username:
         = text_field_tag 'login_email_or_username', @login_email_or_username
         = star
-        %br
+        %br.clear
         =link_to "Forgotten password?", resend_password_path
       %p.password
         %label{ :for => "login_password" }
