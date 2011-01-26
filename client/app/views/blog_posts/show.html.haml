@@ -8,7 +8,7 @@
       =@blog_post.snippet_author_name
     -else
       =image_for(@blog_post.author, '38x38>')
-      =link_to @blog_post.author, @blog_post.author
+      =@blog_post.author
     .posted_on
       =@blog_post.created_at.strftime '%d.%m.%y'
   -if @blog_post.has_snippet?(:author_details)

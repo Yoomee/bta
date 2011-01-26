@@ -50,11 +50,11 @@
         
       %ul.lst
         %li
-          -link_to(slug_path("about_tinnitus"), :id => "find_out_more") do
+          -link_to(slug_path("about-tinnitus"), :id => "find_out_more") do
             %h5 Learn more
             %p Find out more about tinnitus
         %li
-          -link_to(Page.slug("contact-us"), :id => "support_call") do
+          -link_to(slug_path("contact-us"), :id => "support_call") do
             %h5 Speak to someone
             %p Call our confidential helpline
             %p.phone_number 0800 018 0527

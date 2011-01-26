@@ -1,13 +1,27 @@
--category_ids = params[:category_ids] || []
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      setupCategoryForm();
+    });
+    
+    function setupCategoryForm() {
+      $('.category_ids_cb').click(function() {
+        $('#event_categories_submit').click();
+        $('#category_loader').show();
+      });
+    };
+-category_ids = params[:category_ids].try(:map, &:to_i) || EventCategory.all.map(&:id)
 #event_categories_key
   %h4 Calendar Key
-  -form_tag(calendar_path(:year => @year, :month => @month)) do
+  -form_remote_tag(:url => calendar_path(:year => @year, :month => @month), :html => {:id => 'category_form'}) do
     =#select_tag :category_id, event_category_select_options(@category), :onchange => "$('#event_categories_submit').click()"
     %ul.lst
       -EventCategory.all.each do |category|
         %li          
-          =check_box_tag("category_ids[]", true, category.in?(category_ids))
+          =check_box_tag("category_ids[]", category.id, category.id.in?(category_ids), :class => 'category_ids_cb')
           .cal_category_color{:style => "background-color:#{category.color};"}
           %p
-            =label_tag category.name
-    =submit_tag "Submit", :id => "event_categories_submit"
+            =label_tag category.name, category.name
+    #category_loader{:style => 'display: none'}
+      =image_tag 'ajax-loader_gray_squares.gif'
+    =submit_tag "Submit", :id => "event_categories_submit", :style => 'display: none'

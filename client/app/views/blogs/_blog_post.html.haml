@@ -1,11 +1,19 @@
 .blog_post
   .blog_post_author
-    =image_for(blog_post.author, '38x38>')
-    .author_details
-      %p.author
-        =blog_post.author
-      %p.date
-        =blog_post.created_at.strftime '%d.%m.%y'
+    -if blog_post.has_snippet?(:author_name)
+      =image_for(Member.new, '38x38>')
+      .author_details
+        %p.author
+          =blog_post.snippet_author_name
+        %p.date
+          =blog_post.created_at.strftime '%d.%m.%y'
+    -else
+      =image_for(blog_post.author, '38x38>')
+      .author_details
+        %p.author
+          =blog_post.author
+        %p.date
+          =blog_post.created_at.strftime '%d.%m.%y'
   .blog_post_details
     %h2.blog_post_title
       =link_to blog_post.title, blog_post

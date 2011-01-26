@@ -2,17 +2,17 @@
 %html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml" }
   %head
     %title
-      = site_name
-      \:
-      = site_slogan
-      \//
-      = page_title
+      BTA
+      -unless page_title.blank? && page_subtitle.blank?
+        \-
+      = strip_tags page_title
       = page_subtitle
     %meta{ :name => "Generator", :content => "Yoomee (Ruby on Rails)" }
     %meta{ :name => "robots", :content => "index, follow" }
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{ :name => "info", :content => "#{page_title}#{page_subtitle}" }
-    %link{ :href => "/images/favicon.ico", :rel => "shortcut icon" }
+    %link{ :href => "/images/favicon.ico", :rel => "icon", :type => 'image/x-icon'}
+    %link{ :href => "/images/favicon.ico", :rel => "shortcut icon", :type => 'image/x-icon'}
     = google_javascripts :jquery, :jqueryui
     = javascript_include_tag 'jquery.autocomplete'
     = javascript_include_tag 'jrails'

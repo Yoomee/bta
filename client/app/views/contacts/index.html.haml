@@ -1,21 +1,45 @@
 -content_for :head do
   =javascript_include_tag "client/jquery.colorPicker"
-- title "Directory#{" > #{@category.name}" unless @category.blank?}"
-#directory_search
-  =render("search/autocomplete_form", :class_name => %w{contact})
--if @a_to_z
-  #directory_container
-    #directory_a2z
-      -('A'..'Z').each do |letter|
-        = link_to_unless_current letter, directory_path(:id => letter)
-        |
-      =link_to_unless_current '#', directory_path(:id => '#')
-    =render :partial => 'contacts/directory', :contacts => @contacts
+  =GMap.header(:host => request.host, :version => 2)
+  :javascript
+    #{@map.to_html :no_script_tag => true}
+-if @category
+  -title "#{link_to("Directory", directory_path(nil))} #{content_tag(:span, '&gt;', :class => 'greater_than')} #{content_tag(:div, '', :class => 'color_block', :style => "background:#{@category.color}")} #{@category.name}"
 -else
-  =render :partial => 'contacts/directory', :contacts => @contacts
+  -title "Directory"
+#directory_search
+  -form_tag :controller => 'contacts', :action => 'search' do
+    .search_box
+      %input#search_term.search_field{:name => "term", :type => "text", :value => "Search the directory", :autocomplete => "off",:onfocus => "var element = document.getElementById('search_term');element.value='';"}
+      %input.search_icon{ :name => "commit", :title => "search", :value => "search", :type => 'submit'}
+-if @search && @contacts.empty?
+  %p
+    Sorry, no results were found for
+    ="'#{@search.term}'."
+    Please try again.
+-else
+  -if @search
+    %p
+      Showing
+      =pluralize @contacts.size, 'result'
+      for
+      ="'#{@search.term}'"
+  -if @a_to_z
+    #directory_container
+      #directory_a2z
+        -('A'..'Z').each do |letter|
+          = link_to_unless_current letter, directory_path(:id => letter)
+          |
+        =link_to_unless_current '#', directory_path(:id => '#')
+      =render :partial => 'contacts/directory', :contacts => @contacts
+  -else
+    #directory_container
+      =render :partial => 'contacts/directory', :contacts => @contacts
 =(will_paginate @contacts, :params => {:letter => params[:letter] })
-%h2 Contact categories
-#categories_list
+%h2.contact_categories
+  =@category ? "Other contact categories" : "Contact categories"
+=@map.div(:width => 450, :height => 400, :class => 'directory_map')
+#categories_list.directory
   -@contact_categories.each do |category|
     =render 'categories/category', :category => category, :show_form => false
 -options_panel do

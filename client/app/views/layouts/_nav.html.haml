@@ -5,7 +5,7 @@
     -li_with_active_slug("about-tinnitus", :id => "link_about") do
       =link_to 'About tinnitus', slug_path("about-tinnitus")
     -li_with_active_slug("for-people-with-tinnitus") do
-      =link_to 'Get support', slug_path("for-people-with-tinnitus")
+      =link_to 'Get support', slug_path("support-services")
     -li_with_active(viewing_forum?) do
       =link_to 'Forum', forums_path
     -if !Blog.count.zero?
@@ -17,5 +17,5 @@
       =link_to 'News & events', slug_path("news_and_events")
     -li_with_active_slug("for-health-professionals", :class => "smaller") do
       =link_to 'For professionals', slug_path("for-health-professionals")
-    -li_with_active_slug("about-s", :class => "smaller") do
+    -li_with_active_slug("about-us", :class => "smaller") do
       =link_to 'About us', slug_path("about-us")

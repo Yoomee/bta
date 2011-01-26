@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :contacts
+  map.resources :contacts, :collection => {:search => :post}
   map.resources :contact_categories
   
   map.directory '/directory/:id', :controller => 'contacts', :action => 'index'
