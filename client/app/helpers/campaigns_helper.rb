@@ -1,7 +1,7 @@
 module CampaignsHelper
   def root_slug_is?(slug) 
     return false if current_section.nil? || current_section.slug == slug
-    current_section.absolute_root.slug == slug
+    current_section.absolute_root.slug_name == slug
   end
   
   def in_campaigns?
