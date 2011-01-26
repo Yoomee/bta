@@ -1,9 +1,35 @@
 SectionsController.class_eval do
   
+  def archive
+    begin
+      @section = Section.find params[:id]
+      @month = params[:month].to_i
+      @year = params[:year].to_i
+      if @month.zero? || @year.zero?
+        month_and_year = @section.last_month_and_year
+        @month = month_and_year[0]
+        @year = month_and_year[1]
+      end
+      if @section.slug_is(:news_and_events)
+        @page_title = "News archive: #{Date::MONTHNAMES[@month]} #{@year}"
+        @breadcrumb = [['Home', home_path]] + @section.breadcrumb + ["News archive"]
+      else
+        @page_title = "#{@section.name}: #{Date::MONTHNAMES[@month]} #{@year}"
+      end
+      @pages = @section.pages.published.for_month_and_year(@month, @year)
+    rescue ActiveRecord::RecordNotFound
+      render_404
+    end
+  end
+  
   def show
     case @section.view
       when 'latest_stories'
-        @pages_sections = @section.pages.published.latest + @section.children
+        if @section.slug_is(:news_and_events)
+          @pages_sections = @section.pages.published.latest.limit(18)
+        else
+          @pages_sections = @section.pages.published.latest + @section.children
+        end
         @pages_sections.extend(SectionsController::SortByWeightAndLatest)
         @pages_sections = @pages_sections.sort_by_weight_and_latest.paginate(:page => params[:page], :per_page => (APP_CONFIG[:latest_stories_items_per_page] || 6))
         return render(:action => 'latest_stories')

@@ -3637,7 +3637,7 @@ div#page_related_col {
 	padding:0;
 	width:160px;
 }
-.controller_pages.action_show h1#page_title, .controller_departments h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title, .controller_sections.action_show h1#page_title, .controller.blog_posts.action_show h1#page_title {
+.controller_pages.action_show h1#page_title, .controller_departments h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title, .controller_sections.action_show h1#page_title, .controller.blog_posts.action_show h1#page_title, .controller_sections.action_archive h1#page_title{
 	float: left;
 	width: 100%;
 	font-size: 22px;
@@ -5258,3 +5258,10 @@ div#bta_home {
 	width: 161px;
 	text-indent:-9000em;
 }
+
+/*=========Section Archive==========*/
+
+.action_archive table {
+  margin-top:15px;
+}
+

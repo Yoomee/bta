@@ -4,13 +4,18 @@ module SubnavHelper
     if RAILS_ENV != 'test' && !section.nil?
       published_only ||= @logged_in_member.nil? || !@logged_in_member.is_admin?
       html = "<ul class='lst level#{level}'>"
-      children = section.slug_is(:news_and_events) ? Section.latest_news(nil) : section.all_children(:published_only => published_only)
+      children = section.slug_is(:news_and_events) ? Section.latest_news(6) : section.all_children(:published_only => published_only)
       children.each do |child|
         html << li_with_active(current_page?(:controller => "#{child.is_a?(Page) ? 'pages' : 'sections'}", :action => "show", :id => child), :class => "#{'has_children' if child.is_a?(Section) && !child.all_children(:published_only => published_only).empty?}#{' active_parent' if child.is_a?(Section) && child.has_descendant?(page_or_section)}") do
           link_to(child, child)
         end
         if child.is_a?(Section) && !child.all_children(:published_only => published_only).blank? && (child == page_or_section || child.has_descendant?(page_or_section))
           html << render_subnav(child, page_or_section, level + 1, published_only)
+        end
+      end
+      if section.slug_is(:news_and_events)
+        html << li_with_active(current_page?(:controller => :sections, :action => :archive, :id => section.id)) do
+          link_to("News archive", :controller => :sections, :action => :archive, :id => section.id)
         end
       end
       html << "</ul>"
