@@ -3,7 +3,7 @@ HomeController.class_eval do
   before_filter :get_latest_tweet, :only => %w{index}
   
   def index
-    @about_tinnitus_page = Page.slug("about-tinnitus")
+    @about_tinnitus_page = Page.slug("what-is-tinnitus")
     @campaign = Section.slug(:campaigns).children.show_on_front_page.descend_by_created_at.limit(1).first
     @carousel_pages = Page.show_in_carousel.all(:order => 'created_at DESC', :limit => 5)
     @events = Event.closest.limit(3)
