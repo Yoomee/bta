@@ -34,6 +34,10 @@
             %h3 Where
             =render_address(@page.event_location)
             =render_google_map_for(@page.event, :width => 275, :height => 300)
+        -if @page.has_snippet?(:to_book)
+          .event_to_book
+            %h3 To book
+            =auto_link simple_format(@page.snippet_to_book)
         -if @page.has_any_snippet?(:contact_name, :phone_number, :email)
           .event_contact
             %h3 Contact
