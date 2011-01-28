@@ -3,7 +3,9 @@
 
 -title 'Shop'
 =render_breadcrumb(:object => [['Shop', departments_path]])
-=site_snippet(:shop_intro)
+%h5.article_intro
+  We have carefully chosen a selection of products to help you manage your tinnitus more effectively.
+%br
 -if @departments.empty?
   %p
     The shop doesn't currently have any departments.
@@ -12,10 +14,15 @@
       =link_to 'here', new_department_path
       to create one.
 -else
-  -@departments.each do |department|
-    %h2=link_to department, department
-    -unless department.description.blank?
-      %p=department.description
+  #section_grid
+    -@departments.each do |department|
+      .grid_item
+        =link_to(image_for(department.products.active.first, "220x160#"), department, :class => 'item_img')
+        .grid_image
+          %h3=link_to(department, department)
+          %p=strip_tags description_for(department, :length => 110)
+          =link_to 'View products', department, :class => 'bttn'
+=site_snippet(:shop_intro)
 
 -options_panel do
   =back_link
