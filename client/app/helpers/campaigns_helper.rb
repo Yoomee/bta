@@ -1,6 +1,6 @@
 module CampaignsHelper
   def root_slug_is?(slug) 
-    return false if current_section.nil? || current_section.slug == slug
+    return false if current_section.nil? || current_section.slug_name == slug
     current_section.absolute_root.slug_name == slug
   end
   
@@ -15,7 +15,7 @@ module CampaignsHelper
   
   def campaign_header_image_url
     return nil if !in_campaigns?
-    current_section.header_image.url
+    current_section.header_image.nil? ? '' : current_section.header_image.url
   end
   
   private

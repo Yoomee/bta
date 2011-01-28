@@ -34,7 +34,7 @@ class ContactsController < ApplicationController
     end
     @contact_categories = ContactCategory.all(:order => 'name')
     @a_to_z = true
-    initialize_map(Contact.all)
+    initialize_map(Contact.with_lat_lng)
   end
   
   def new

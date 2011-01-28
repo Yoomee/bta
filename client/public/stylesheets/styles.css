@@ -2188,6 +2188,23 @@ h5.article_intro {
 #events .bx_in a {
 	color: #FFFFFF;
 }
+
+#page_right_col.event_details *{
+  color: #333;
+}
+#page_right_col.event_details h3 {
+  margin:10px 0 5px;
+  color:#005B8E;
+}
+
+#page_right_col.event_details a {
+  color: #2795E4;
+}
+
+#page_right_col.event_details .event_contact ul {
+  padding-left:20px;
+}
+
 #news {
 }
 #news .bx_in, #news .bx_h {
@@ -5199,6 +5216,22 @@ tr.totalRow td.price_column {
 	background: #a8387f url(/images/bttn_l.png) repeat-x top;
 	color: #fff;
 	text-shadow:0 -1px 0 #90306B;
+}
+td.gift_aid_column {
+  width: 514px;
+}
+td.gift_aid_column label {
+  font-weight: normal;
+  font-size: 14px;
+}
+#cart_form table td.gift_aid_column fieldset.inputs input {
+  margin-right: 5px;
+  float: left;
+}
+td.gift_aid_column p {
+  font-size: 12px;
+  color: gray;
+  font-style: italic;
 }
 
 

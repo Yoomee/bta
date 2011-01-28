@@ -1,4 +1,4 @@
--if section.slug != 'campaigns' && section.absolute_root.slug == 'campaigns'
+-if section.slug_name != 'campaigns' && section.absolute_root.slug_name == 'campaigns'
   :javascript
     $(document).ready(function(){
       $('#section_bg_color').ColorPicker({
@@ -18,7 +18,7 @@
 -semantic_fields_for section do |fields|
   -fields.inputs do
     =fields.input :permalink_name, :help => "You can set a permalink (ie. a 'pretty' shortcut to the page)"
-    =fields.input :slug if yoomee_staff_logged_in?
+    =fields.input :slug_name if yoomee_staff_logged_in?
     =fields.input :description, :input_html => {:rows => 5}  
     =fields.input :weight, :label => 'Order', :help => 'Set the order for the section (sections with higher order numbers will appear further down)', :input_html => {:size => 2}
   -if section.slug != 'campaigns' && section.absolute_root.slug == 'campaigns'

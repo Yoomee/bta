@@ -7,7 +7,7 @@
   %p#page_status
     =@page.status_string
 #page_content
-  -if @page.slug == "contact-us"
+  -if @page.slug_is("contact-us")
     #contact_us_map
       =contact_us_map
       %br
@@ -22,7 +22,7 @@
       =snippet(@page, :big_image)
     #page_left_col
       =render :partial => 'content', :locals => {:page => @page}
-    #page_right_col
+    #page_right_col.event_details
       #article_image
         =photo_for(@page, "280x") if @page.has_photo?
       -if @page.is_event?
@@ -52,7 +52,11 @@
         -if @page.has_snippet?(:website_url)
           .event_website
             %h3 Website
-            =link_to @page.snippet_website_url, @page.snippet_website_url
+            =link_to_url @page.snippet_website_url, :target => "_blank"
+        -if @page.has_snippet?(:to_book)
+          .event_to_book
+            %h3 To book
+            =auto_link simple_format(@page.snippet_to_book)
       -else
         =snippet(@page, :pull_quote)
         -if @page.has_snippet?(:call_to_action)
