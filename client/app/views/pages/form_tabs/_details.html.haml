@@ -20,6 +20,7 @@
       =fields.input :snippet_phone_number, :label => 'Phone number'
       =fields.input :snippet_email, :label => 'Email address'
       =fields.input :snippet_website_url, :label => 'Website'
+      =fields.input :snippet_to_book, :label => "To book", :as => :text, :input_html => {:rows => 5}
     -fields.semantic_fields_for :event, :as => :event_attributes do |event|
       -event.inputs do
         =event.input :formatted_start_at, :as => :string, :label => "Start time", :input_html => {:class => 'datetime'}
