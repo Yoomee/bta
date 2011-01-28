@@ -2960,6 +2960,10 @@ div.grid_item a.item_img {
 	float: left;
 }
 
+.controller_departments.action_index div.grid_item {
+  height:325px;
+}
+
 /* ====================  latest stories  ===================== */
 #latestStoriesList {
 	float: left;
