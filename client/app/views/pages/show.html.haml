@@ -22,7 +22,7 @@
       =snippet(@page, :big_image)
     #page_left_col
       =render :partial => 'content', :locals => {:page => @page}
-    #page_right_col
+    #page_right_col.event_details
       #article_image
         =photo_for(@page, "280x") if @page.has_photo?
       -if @page.is_event?
@@ -34,10 +34,6 @@
             %h3 Where
             =render_address(@page.event_location)
             =render_google_map_for(@page.event, :width => 275, :height => 300)
-        -if @page.has_snippet?(:to_book)
-          .event_to_book
-            %h3 To book
-            =auto_link simple_format(@page.snippet_to_book)
         -if @page.has_any_snippet?(:contact_name, :phone_number, :email)
           .event_contact
             %h3 Contact
@@ -56,7 +52,11 @@
         -if @page.has_snippet?(:website_url)
           .event_website
             %h3 Website
-            =link_to @page.snippet_website_url, @page.snippet_website_url
+            =link_to_url @page.snippet_website_url, :target => "_blank"
+        -if @page.has_snippet?(:to_book)
+          .event_to_book
+            %h3 To book
+            =auto_link simple_format(@page.snippet_to_book)
       -else
         =snippet(@page, :pull_quote)
         -if @page.has_snippet?(:call_to_action)

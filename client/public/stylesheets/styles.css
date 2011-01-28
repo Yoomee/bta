@@ -2166,21 +2166,23 @@ h5.article_intro {
 #events .bx_in a {
 	color: #FFFFFF;
 }
-#page_right_col .event_when {
+
+#page_right_col.event_details *{
   color: #333;
 }
-#page_right_col .event_where {
-  color: #333;
+#page_right_col.event_details h3 {
+  margin:10px 0 5px;
+  color:#005B8E;
 }
-#page_right_col .event_where .contact_address {
-  color: #333;
-}
-#page_right_col .event_to_book * {
-  color: #333;
-}
-#page_right_col .event_to_book a {
+
+#page_right_col.event_details a {
   color: #2795E4;
 }
+
+#page_right_col.event_details .event_contact ul {
+  padding-left:20px;
+}
+
 #news {
 }
 #news .bx_in, #news .bx_h {
