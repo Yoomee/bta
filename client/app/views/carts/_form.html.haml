@@ -44,14 +44,14 @@
         %th{:colspan => 3} Total
         %td.price_column
           =@cart.valid? ? number_to_currency(@cart.total_in_pounds, :unit => '£') : "n/a"
-    -if checking_out
-      %li.checkout=link_to('Confirm', order_path, :method => :post, :class => "bttn_l")
-    -else
-      %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")
-    %p
+    %p.non_uk_customer
       Select here if you are a BTA-member or a non-UK customer and click 'Update cart':
     -form.inputs do
       =form.input :bta_member, :as => :boolean, :checked => Module::value_to_boolean(@cart.bta_member_before_type_cast), :label => "BTA member"
       =form.input :overseas, :as => :boolean, :checked => Module::value_to_boolean(@cart.overseas_before_type_cast)
     -form.buttons do
       =form.commit_button "Update cart"
+      -if checking_out
+        %li.checkout=link_to('Confirm', order_path, :method => :post, :class => "bttn_l")
+      -else
+        %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")  
