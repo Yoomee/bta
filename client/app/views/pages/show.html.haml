@@ -7,7 +7,7 @@
   %p#page_status
     =@page.status_string
 #page_content
-  -if @page.slug == "contact-us"
+  -if @page.slug_is("contact-us")
     #contact_us_map
       =contact_us_map
       %br
