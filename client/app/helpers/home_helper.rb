@@ -2,7 +2,7 @@ module HomeHelper
 
   def render_carousel_button(page)
     text = page.has_snippet?(:carousel_button_text) ? snippet(page, :carousel_button_text) : "Find out more"
-    link_to(text, page, :class => 'learn_more_bttn bttn_round')
+    link_to(text, page, :class => 'learn_more_bttn')
   end
   
   def render_carousel_quote(page)
