@@ -5172,6 +5172,22 @@ tr.totalRow td.price_column {
 	color: #fff;
 	text-shadow:0 -1px 0 #90306B;
 }
+td.gift_aid_column {
+  width: 514px;
+}
+td.gift_aid_column label {
+  font-weight: normal;
+  font-size: 14px;
+}
+#cart_form table td.gift_aid_column fieldset.inputs input {
+  margin-right: 5px;
+  float: left;
+}
+td.gift_aid_column p {
+  font-size: 12px;
+  color: gray;
+  font-style: italic;
+}
 
 
 /* ================================ campaign microsite ===================================== */
