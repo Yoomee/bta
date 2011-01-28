@@ -1,0 +1,10 @@
+-content_for :sidebar do
+  #subnav=render_subnav((in_campaigns? ? @section : @section.absolute_root), @section)
+
+=render_breadcrumb(:object => @section)
+#archive
+  =render :partial => 'archive_select', :locals => {:month => @month, :year => @year, :section => @section}
+  %table
+    =render :partial => 'archive_page', :collection => @pages
+-options_panel do
+  =link_to "Back to section", @section

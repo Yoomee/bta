@@ -1,7 +1,10 @@
 Cart.class_eval do
 
-  after_save :update_price_brackets
+  # has_many :donations, :dependent => :destroy, :autosave => true
+  # accepts_nested_attributes_for :donations
 
+  after_save :update_price_brackets
+  
   private
   def update_price_brackets
     # bta_member and overseas need to be mutually-exclusive

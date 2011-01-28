@@ -15,7 +15,7 @@ module CampaignsHelper
   
   def campaign_header_image_url
     return nil if !in_campaigns?
-    current_section.header_image.url
+    current_section.header_image.nil? ? '' : current_section.header_image.url
   end
   
   private

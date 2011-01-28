@@ -2975,6 +2975,10 @@ div.grid_item a.item_img {
 	float: left;
 }
 
+.controller_departments.action_index div.grid_item {
+  height:325px;
+}
+
 /* ====================  latest stories  ===================== */
 #latestStoriesList {
 	float: left;
@@ -3652,7 +3656,7 @@ div#page_related_col {
 	padding:0;
 	width:160px;
 }
-.controller_pages.action_show h1#page_title, .controller_departments h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title, .controller_sections.action_show h1#page_title, .controller.blog_posts.action_show h1#page_title {
+.controller_pages.action_show h1#page_title, .controller_departments.action_index h1#page_title, .controller_departments.action_show h1#page_title, .controller_shop h1#page_title, .controller_forums h1#page_title, .controller_topics h1#page_title, .controller_products h1#page_title, .controller_sections.action_show h1#page_title, .controller.blog_posts.action_show h1#page_title, .controller_sections.action_archive h1#page_title{
 	float: left;
 	width: 100%;
 	font-size: 22px;
@@ -5187,6 +5191,22 @@ tr.totalRow td.price_column {
 	color: #fff;
 	text-shadow:0 -1px 0 #90306B;
 }
+td.gift_aid_column {
+  width: 514px;
+}
+td.gift_aid_column label {
+  font-weight: normal;
+  font-size: 14px;
+}
+#cart_form table td.gift_aid_column fieldset.inputs input {
+  margin-right: 5px;
+  float: left;
+}
+td.gift_aid_column p {
+  font-size: 12px;
+  color: gray;
+  font-style: italic;
+}
 
 
 /* ================================ campaign microsite ===================================== */
@@ -5274,4 +5294,9 @@ div#bta_home {
 	text-indent:-9000em;
 }
 
+/*=========Section Archive==========*/
+
+.action_archive table {
+  margin-top:15px;
+}
 
