@@ -23,8 +23,9 @@
     #page_left_col
       =render :partial => 'content', :locals => {:page => @page}
     #page_right_col.event_details
-      #article_image
-        =photo_for(@page, "280x") if @page.has_photo?
+      -unless @page.slug_is("tinnitus-the-video")
+        #article_image
+          =photo_for(@page, "280x") if @page.has_photo?
       -if @page.is_event?
         .event_when
           %h3 When
