@@ -5,6 +5,7 @@
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288962407
 	http://bta.yoomee.com/stylesheets/client/styles.css?1288964225
 	http://bta.yoomee.com/stylesheets/client/styles.css?1289308265
+	http://localhost:3000/stylesheets/client/mobile.css
 */
 
 /* the tramlines vanilla stylesheet */
@@ -1133,6 +1134,7 @@ div#home_header {
 	height: 390px;
 	position: relative;
 	width: 480px;
+	display: none;
 	background: #333;
 }
 #case_study_carousel .cycle, #case_study_carousel .slide {

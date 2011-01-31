@@ -1,4 +1,7 @@
-/* @override http://localhost:3000/stylesheets/client/event_calendar.css */
+/* @override 
+	http://localhost:3000/stylesheets/client/event_calendar.css
+	http://localhost:3000/stylesheets/client/tramlines_event_calendar.css
+*/
 
 /* 
   Event Calendar stylesheet
@@ -38,6 +41,7 @@
 .ec-month-name {
   font-size: 16px;
   font-weight: bold;
+  height: 20px;
 }
 
 .ec-month-nav {
@@ -70,11 +74,13 @@
 
 .ec-day-names th{
   border: none;
+
   padding-top: 3px;
 }
 
 .ec-day-name {
   font-weight: bold;
+  height: 20px;
 }
 
 /* Rows container and Row */
@@ -84,6 +90,7 @@
   bottom: 0;
   width: 100%;
   background: white;
+
   overflow: hidden;
   border-right: 1px solid #d5d5d5;
 }
@@ -107,6 +114,7 @@
 
 .ec-day-bg {
   border-left: 1px solid #d5d5d5;
+
 }
 
 .ec-today-bg {
@@ -178,6 +186,7 @@ a.ec-day-link {
   -moz-border-radius: 3px;
   overflow: hidden;
   white-space: nowrap;
+
 }
 
 .ec-event :hover {
