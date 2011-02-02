@@ -4335,23 +4335,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#054E77', end
 
 /* ========= Calendar =========== */
 .ec-day-link {
-  float: right; 
+  float: left; 
   width: 100%;
   position: relative;
+  font-size:15px;
+  text-align:left;
+  padding-top:3px;
 }
 .ec-add-event {
-  float: left;
+  float: right;
   font-size: 16px;
   line-height: 8px;
   display: block;
   font-weight: bold;
   padding: 1px 3px 6px;
   background: #333;
-  color: #fff;
-  position: absolute;
-  top: 0;
-  left: 0;
-  
+  color: #fff;  
   border-radius:5px;
   -webkit-border-radius:5px;
   -moz-border-radius:5px;
@@ -4361,7 +4360,7 @@ a.ec-add-event:hover {
 	background: #2795e4;
 }
 .ec-view-event {
-  float: right;
+  float: left;
   width: 40px;
 }
 #previous_next_day_links {
@@ -4601,6 +4600,7 @@ div#color_selector {
   border: 1px solid #598FEF;
   background-color: #EFEFEF;
   padding: 2px;
+  z-index:100;
 }
   div#color_custom {width: 100%; float:left }
   div#color_custom label {font-size: 95%; color: #2F2F2F; margin: 5px 2px; width: 25%}
@@ -4822,7 +4822,7 @@ p#forum_intro {
 	float: right;
 
 }
-#categories_list {
+#categories_list.directory {
   width: 250px;
   float: left;
 }
@@ -4831,7 +4831,7 @@ div#categories_list.directory h3 {
   margin-top: 4px;
   width: 196px;
 }
-#categories_list .category_wrapper {
+#categories_list.directory .category_wrapper {
   width: 250px;
 }
 .directory_map {
