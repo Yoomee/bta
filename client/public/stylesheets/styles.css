@@ -5344,6 +5344,6 @@ div#bta_home {
 
 
 .ui-datepicker {
-  z-index:100 !important;
+  z-index:1000 !important;
 }
 
