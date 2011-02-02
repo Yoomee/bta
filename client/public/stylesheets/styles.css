@@ -201,7 +201,7 @@ p.flash_error {
 	float:right;
 }
 .ui-datepicker {
-	z-index: 20;
+	z-index: 50;
 }
 ul {
 	list-style-image:none;
@@ -5339,5 +5339,11 @@ div#bta_home {
 
 .action_archive table {
   margin-top:15px;
+}
+
+
+
+.ui-datepicker {
+  z-index:100 !important;
 }
 
