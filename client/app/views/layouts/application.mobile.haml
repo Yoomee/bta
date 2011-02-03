@@ -38,13 +38,9 @@
         =link_to_remote("View standard site", :url =>{:controller => 'mobile', :action => 'toggle'})
       #top
         =render :partial => 'layouts/nav'
-      -unless current_page?(new_session_path)
-        #login_slide_bar
-          #login_slide_bar_inside
-            =render :partial=>'sessions/form.html'
       #header
         #header_inside
-          =render :partial => 'layouts/header.html'
+          =render :partial => 'layouts/header'
           
       #lower_wrapper 
         #lower_wrapper_inside
@@ -55,4 +51,4 @@
             =@content_for_layout
             %br.clear
         #footer
-          =render :partial => 'layouts/footer.html'
+          =render :partial => 'layouts/footer'
