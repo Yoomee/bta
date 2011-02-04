@@ -5347,3 +5347,13 @@ div#bta_home {
   z-index:1000 !important;
 }
 
+
+/*============= Contact us form ========= */
+select#enquiry_i_would_like_more_information_because, select#enquiry_please_send_me_more_information_on {
+  clear: both;
+  float: left;
+  margin: 0 0 20px;
+}
+input#enquiry_please_send_this_information_to_me_via_email {
+  margin-bottom: 0;
+}

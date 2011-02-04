@@ -17,6 +17,8 @@
       =photo_for(@page, "375x") if @page.has_photo?
     #contact_us_content
       =render :partial => 'content', :locals => {:page => @page}
+    #contact_us_form
+      =render_form(@enquiry)
   -else
     #page_big_image
       =snippet(@page, :big_image)
