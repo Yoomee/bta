@@ -1,7 +1,7 @@
 .blog_post
   .blog_post_author
     -if blog_post.has_snippet?(:author_name)
-      =image_for(Member.new, '38x38>')
+      =blog_post_author_image(blog_post)
       .author_details
         %p.author
           =blog_post.snippet_author_name

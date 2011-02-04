@@ -13,13 +13,13 @@
       %p.login_email
         %label{ :for => "login_email" }
           Email/Username:
-        = text_field_tag 'login_email_or_username', @login_email_or_username
+        = text_field_tag 'login_email_or_username', @login_email_or_username, :tabindex => 1
         = star
         %br.clear
         =link_to "Forgotten password?", resend_password_path
       %p.password
         %label{ :for => "login_password" }
           Password:
-        = password_field_tag 'login_password'
+        = password_field_tag 'login_password',nil, :tabindex => 2
         = star
       = submit_tag 'Log in', :id => 'login_bttn'

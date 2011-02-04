@@ -4,29 +4,30 @@
     =render_subnav(Section.slug("about-us"), nil)
     =link_to("Donate", Page.slug(:donate), :class=>'donate_bttn')
     
-  #home_box_right  
-    #box_professionals.h_box
-      %ul.lst
-        %li
-          %h4.title 
-            =link_to "What is tinnitus?", @about_tinnitus_page
-          -link_to(@about_tinnitus_page, :class => "h_image") do
-            =image_tag "/images/what_is_tinnitus.jpg", :width=>'60px', :alt=>'proff'
-          %p=@about_tinnitus_page.summary(85)
-        %li
-          %h4.title 
-            =link_to "For health professionals", @professionals_section
-          -link_to(@professionals_section, :class => "h_image") do
-            =image_tag "/images/for_health_proffessionals.jpg", :width=>'60px', :alt=>'proff'
-          %p=@professionals_section.summary(85)
-        %li
-          %h4.title  
-            =link_to "Tinnitus research", @researchers_section
-          %p=@researchers_section.summary(85)
-        %li
-          %h4.title  
-            =link_to "Support and services ", @support_and_services_section
-          %p=@support_and_services_section.summary(85)
+  #home_box_right
+    -unless mobile_view?  
+      #box_professionals.h_box
+        %ul.lst
+          %li
+            %h4.title 
+              =link_to "What is tinnitus?", @about_tinnitus_page
+            -link_to(@about_tinnitus_page, :class => "h_image") do
+              =image_tag "/images/what_is_tinnitus.jpg", :width=>'60px', :alt=>'proff'
+            %p=@about_tinnitus_page.summary(85)
+          %li
+            %h4.title 
+              =link_to "For health professionals", @professionals_section
+            -link_to(@professionals_section, :class => "h_image") do
+              =image_tag "/images/for_health_proffessionals.jpg", :width=>'60px', :alt=>'proff'
+            %p=@professionals_section.summary(85)
+          %li
+            %h4.title  
+              =link_to "Tinnitus research", @researchers_section
+            %p=@researchers_section.summary(85)
+          %li
+            %h4.title  
+              =link_to "Support and services ", @support_and_services_section
+            %p=@support_and_services_section.summary(85)
     #latest_news
       %h3.title
         =link_to "Latest News", slug_path(:news_and_events)

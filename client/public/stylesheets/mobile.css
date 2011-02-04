@@ -1373,38 +1373,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', end
 	border: none;
 }
 #get_support ul li a {
-	background: url(/images/sprite_bta.png) no-repeat -1450px 15px;
 	float: left;
-	padding: 15px 10px 20px 60px;
+	padding: 15px 10px 20px 20px;
 	margin: 0 0 0px 0px;
 	border-bottom: 1px solid #C0D0DB;
 	width: 210px;
 
 }
+#get_support ul li img {
+	float: left;
+	margin: 15px 0 0 10px;
+}
 #get_support ul li a h5 {
 	color: #184f7b;
 	margin: 0;
+	float: left;
+	
 }
 #get_support ul li a p {
 	color: #333;
 	margin: 0;
+	float: left;
+	
 }
 #get_support ul li a p.phone_number {
 	font-size: 14px;
 	font-weight: bold;
-} 
-#get_support ul li a:hover {
-	background-color:#C2D0DA;
-	text-decoration: none;
-}
-#get_support ul li a#support_shop {
-	background-position: -1430px -145px;
-} 
-#get_support ul li a#support_forum {
-	background-position: -1440px -280px;
-} 
-#get_support ul li a#find_out_more {
-	background-position: -1453px -400px;
 } 
 /* =======  cycle  ====== */
 .cycle_frame {
@@ -1610,7 +1604,7 @@ input.search_icon, button.search_icon {
 	color:#fff;
 	display:block;
 	float:left;
-	margin:5px 5px 6px 0;
+	margin:0 !important;
 	padding:2px 14px 3px;
 	font: 15px/27px Arial, sans-serif;
 	font-weight: bold;
@@ -1629,18 +1623,8 @@ input.search_icon, button.search_icon {
 
 }
 #nav ul li.active a, #home #nav ul li#link_home a {
-	background: url(/images/nav_active.png) center -4px repeat-x;
+	background-color:#FFF;
 	color: #000;
-	padding-bottom: 7px;
-	padding-top: 0;
-	margin-bottom: 2px;
-	margin-top: 7px;
-	margin-left: 20px;
-	
-	-moz-border-radius:0px;
-     -webkit-border-radius:0px;
-     border-radius:0px;
-
 }
 #nav ul li.smaller a {
 
@@ -3000,7 +2984,7 @@ p.section_description {
 div.grid_item {
 	float: left;
 	width: 220px;
-	height: 400px;
+	height: 310px;
 	padding: 0px;
 	margin: 0 20px 0 0;
 }
@@ -4116,6 +4100,7 @@ h3.blog_date{
 }
 
 .controller_blog_posts .details img {
+  display:none;
   float: left;
   margin: 0 10px 10px;
 }
@@ -4126,7 +4111,7 @@ h3.blog_date{
 
 .controller_blog_posts h1#page_title {
   float: left;
-  width: 560px;
+  width: auto;
 }
 
 .controller_blog_posts .details .author_details {
@@ -4148,6 +4133,7 @@ h3.blog_date{
 	margin-bottom: 30px;
 }
 .blog_post_author img {
+  display:none;
   float: left;
   margin-right: 10px;
 }
@@ -5365,8 +5351,11 @@ div#bta_home {
   }
 /*}*/
 
+* {
+    max-width:320px !important;
+}
+
 textarea, input[type="text"] {
-  max-width:320px !important;
   padding:0 !important;
 }
 
@@ -5378,8 +5367,4 @@ div.message_body {
   font-size:12px;
   text-align:center;
   width:100%;
-}
-
-.formtastic ol {
-  max-width:320px;
 }

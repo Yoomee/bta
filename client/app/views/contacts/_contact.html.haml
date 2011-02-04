@@ -1,6 +1,6 @@
 .contact.contact_info_window{:id => "contact_#{contact.id}"}
   .list_image
-    =link_to(image_for(contact, "50x50#", :class => 'contact_image'), contact)
+    =link_to(image_for(contact, "50x50#", :class => 'contact_image'), contact) if contact.has_image?
   %h3.contact_name=link_to(contact, contact)
   -if false
     .category

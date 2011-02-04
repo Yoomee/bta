@@ -208,7 +208,7 @@ ul {
 	list-style-position:outside;
 	list-style-type:none;
 }
-.content li {
+.content li, .cke_show_borders li {
 	list-style-image:url(/images/bullet.png);
 }
 
