@@ -12,6 +12,10 @@
       =form.input :i_would_like_more_information_because, :as => :select, :collection => ['I have tinnitus', 'Someone in my family/my friend has tinnitus', 'My work brings me into contact with people with tinnitus', 'I would like to support the BTA', 'Other (please use the message field below)']
       =form.input :please_send_me_more_information_on, :as => :select, :collection => ['Tinnitus', 'Fundraising for the BTA', 'Local hospital services', 'Other (please use the message field below)']
       =form.input :please_send_this_information_to_me, :as => :radio, :collection => ['Via email', 'Via the post']
-      =form.input :i_would_like_to_receive_regular_email_updates_from_the_bta, :as => :boolean, :label => 'I would like to receive regular email updates from the BTA'
+      =#form.input :i_would_like_to_receive_regular_email_updates_from_the_bta, :as => :boolean, :label => 'I would like to receive regular email updates from the BTA'
+      %li#enquiry_i_would_like_to_receive_regular_email_updates_from_the_bta_input.boolean.optional
+        %label{:for => 'enquiry_i_would_like_to_receive_regular_email_updates_from_the_bta'}
+          I would like to receive regular updates from the BTA
+          =form.check_box :i_would_like_to_receive_regular_email_updates_from_the_bta, {}, 'Yes', 'No'
       =form.input :message, :as => :text, :input_html => {:rows => 5}
       

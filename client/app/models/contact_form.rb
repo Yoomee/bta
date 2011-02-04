@@ -12,5 +12,6 @@ module ContactForm
   response_message "Thank you for your enquiry. We will be in touch shortly."
   
   validates_presence_of :name, :email_address, :address, :message, :i_would_like_more_information_because, :please_send_me_more_information_on, :please_send_this_information_to_me
+  validates_format_of :email_address, :with => ValidateExtensions::EMAIL_FORMAT
   
 end
