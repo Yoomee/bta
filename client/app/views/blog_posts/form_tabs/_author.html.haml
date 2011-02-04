@@ -2,3 +2,4 @@
   -fields.inputs do
     =fields.input :snippet_author_name, :label => 'Author name'
     =fields.input :snippet_author_details, :as => :text, :input_html => {:rows => 5}, :label => 'Author details'
+    %li=fields.photo_browser_button :author_photo

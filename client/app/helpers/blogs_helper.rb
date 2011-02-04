@@ -1,5 +1,13 @@
 BlogsHelper.module_eval do
   
+  def blog_post_author_image(blog_post)
+    if !blog_post.author_photo.blank?
+      image_for(blog_post, '38x38>', :method => "author_photo")
+    else
+      image_for(Member.new, '38x38>')
+    end
+  end
+  
   def render_blog_sidebar(blog = nil)
     blog ||= get_blog
     return "" if blog.nil?    
