@@ -5215,10 +5215,15 @@ td.product_column {
 	font-size: 14px;
 	
 }
-tr.totalRow td.price_column {
+tr.totalRow td.price_column, tr.totalToPayRow td.price_column {
 	font-size: 14px;
 	font-weight: bold;
-	
+}
+.totalToPayRow th {
+  width: 78%;
+}
+.donation_column {
+  width: 78%;
 }
 
 #cart_wrapper div.options_panel {
