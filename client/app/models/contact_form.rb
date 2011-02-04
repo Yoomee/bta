@@ -5,7 +5,7 @@ module ContactForm
   title "Contact Us"
   fields :name, :email_address, :address, :i_would_like_more_information_because, :please_send_me_more_information_on, :please_send_this_information_to_me, :i_would_like_to_receive_regular_email_updates_from_the_bta, :message
   
-  email_to "si@yoomee.com"
+  email_to "info@tinnitus.org.uk"
   email_from "website@tinnitus.org.uk"
   email_subject "New contact form enquiry"
   
