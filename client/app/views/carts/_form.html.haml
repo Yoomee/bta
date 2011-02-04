@@ -41,9 +41,28 @@
           %td.link_column
             =link_to 'Remove', item, :method => :delete, :confirm => "Are you sure?"
       %tr.totalRow
-        %th{:colspan => 3} Total
+        %th{:colspan => 3} Product Total
         %td.price_column
           =@cart.valid? ? number_to_currency(@cart.total_in_pounds, :unit => '£') : "n/a"
+    -if false
+      %table.cart_list
+        %tr
+          %th.donation_column{:colspan => 1} Optional donation
+          %th.price_column Amount
+        %tr
+          %td.gift_aid_column
+            -form.semantic_fields_for(:donations) do |donation_form|
+              -donation_form.inputs do
+                =donation_form.input :donation_gift_aid, :as => :boolean, :label => "Please tick if you would like us to be able claim Gift Aid on your donation*", :required => false
+          %td.price_column
+            -form.semantic_fields_for(:donations) do |donation_form|
+              -donation_form.inputs do
+                =donation_form.input :amount_in_pounds, :label => "£", :required => false, :input_html => {:size => 8}
+        %tr
+          %td.gift_aid_column
+            %p
+              %span *
+              To qualify for Gift Aid, what you pay in income tax or capital gains tax must at least equal the amount we will claim in the tax year.          
     %p.non_uk_customer
       Select here if you are a BTA-member or a non-UK customer and click 'Update cart':
     -form.inputs do
