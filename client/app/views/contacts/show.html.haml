@@ -7,7 +7,7 @@
 - title @contact.name
 
 #contact_top
-  =image_for(@contact, "100x100")
+  =image_for(@contact, "100x100#") if @contact.has_image?
   =contentize(@contact.description)
   %p
     Category:
