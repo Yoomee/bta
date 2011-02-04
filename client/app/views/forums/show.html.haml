@@ -22,17 +22,18 @@
 -else
   %p.intro No one wants to be the first to post in a new forum but if you have something to say, go ahead and be the first.
   %i No Topics have been posted yet.
-  
-#facebook_box
-  %h3.title
-    =link_to "Facebook ", "#"
-  =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation", :width => 575, :connections => 10)
-#twitter_box
-  %h3.title
-    =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
-  %p.tweet  
-    =highlight_tweet_links(@latest_tweet)
-  =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'
+
+-unless mobile_view?  
+  #facebook_box
+    %h3.title
+      =link_to "Facebook ", "#"
+    =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation", :width => 575, :connections => 10)
+  #twitter_box
+    %h3.title
+      =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
+    %p.tweet  
+      =highlight_tweet_links(@latest_tweet)
+    =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'
 
 -options_panel do
   =back_link
