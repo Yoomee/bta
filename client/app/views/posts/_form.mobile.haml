@@ -1,0 +1,50 @@
+-content_for(:head) do
+  =javascript_include_tag :ckeditor
+-semantic_form_for(post) do |form|
+  -form.inputs do
+    =form.input :topic_id, :as => :hidden
+    =form.input :member_id, :as => :hidden
+    =form.input :subject
+    =form.input :message, :input_html => {:rows => 10}
+  -form.buttons do
+    =form.commit_button post.new_record? ? "Post" : "Update"
+
+-#
+  / <p>
+  /     <label for="post_subject">Subject</label><br/>
+  /     <%= text_field_tag 'post[subject]', @post.get_subject, :size=>60 %>
+  / </p>
+  / 
+  / <!-- <p class="help">
+  /     You can give your post an icon that characterises it. Please choose an icon below.<br/>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon1.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon1.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon2.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon2.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon3.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon3.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon4.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon4.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon5.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon5.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon6.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon6.gif' %></span>
+  /     <span class="topic_smiley"><%= image_tag('forum/message_icons/icon7.gif') %>
+  /     <%= radio_button 'post', 'message_icon', 'icon7.gif' %></span>
+  / <br clear="all" />
+  / </p>
+  / <br/> -->
+  / 
+  / <p>
+  /     <label for="post_message">Message</label><br/>
+  /     <%= text_area 'post', 'message' %><%= render_star %>
+  / </p>
+  / <br/>
+  / 
+  / <% if file_uploads? @post.topic.forum %>
+  /         <p class="help">
+  /             You can also upload a file for your post. People will be able to download this file.
+  /             <%= file_field 'post', 'upload_file' %>
+  /         </p>
+  /         <br/>
+  / <% end %>

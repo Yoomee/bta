@@ -1,0 +1,39 @@
+-title @topic.subject
+=render_breadcrumb(:object => @topic)
+#forums
+  %table.forum
+    -@posts.each do |post|
+      %tr{ :class => "forum_row_#{cycle("even", "odd")}" }
+        %td.author
+          %a{:name => "#{post.id}"}
+          =image_for(post.member, "55x")
+          =post.member.full_name
+      %tr{ :class => "forum_row_#{cycle("even", "odd")}" }
+        %td.message
+          %p.forum_message
+            %h4
+              =get_message_icon(post)
+              =post.subject
+            %p.post_info
+              -if post.has_file?
+                %p.forum_attachments
+                  =image_tag("attach.png")
+                  Attachments:
+                  = link_to post.file, :controller => 'post', :action => 'download', :id => post.id
+                  = link_to image_tag(post.file_image, :alt=>"Download"), :controller =>'post', :action=>'download', :id=>post.id
+              %p.message_posted
+                Posted:
+                = post.created_at.to_s(:long)
+                by
+                = link_to post.get_poster.full_name, :controller => 'member', 'action' => 'show', :id => post.get_poster.id
+            %p.message_body
+              =post.message
+  %p="#{link_to('Login', new_session_path)} or #{link_to('register', new_member_path)} to add a reply." if logged_out?
+  #pagination_links
+    = will_paginate @posts
+  -options_panel do
+    =back_link
+    =link_if_allowed 'Edit Topic', edit_topic_proc(@topic)
+    =link_if_allowed 'Delete Topic', @topic, :method => :delete, :confirm => 'Are you sure?'
+    =link_if_allowed "Post Reply", new_topic_post_proc(@topic)
+    =link_if_allowed "New Topic", new_forum_topic_proc(@topic.forum)

@@ -27,16 +27,6 @@
           %h4.title  
             =link_to "Support and services ", @support_and_services_section
           %p=@support_and_services_section.summary(85)
-    -if false
-      #box_shop.h_box
-        %h3.title
-          =link_to "The BTA shop", '/shop'
-        %ul.lst
-          -@products.each do |product|
-            %li
-              -link_to(product, :class => "h_image") do
-                =image_for(product, "200x200#")
-                %h4.title=product.name
     #latest_news
       %h3.title
         =link_to "Latest News", slug_path(:news_and_events)
@@ -53,31 +43,32 @@
               =link_to(photo_for(news, "60x60#"), news, :class => "h_image")
               %h4=link_to(news.title, news)
               %p=strip_tags news.summary
-#community_row
-  -unless @campaign.nil?
-    #campaign_box
-      -link_to @campaign do
-        =image_tag(@campaign.front_page_image.url)
-        %h4=@campaign.name
-  #forum_box
-    %h3.title
-      =link_to "BTA forum ", forums_path
-    %ul.lst
-      -unless @forum_topics.blank?
-        -@forum_topics.each do |topic|
-          %li
-            =link_to topic.subject, topic
-            %p
-              %span= "#{pluralize(topic.posts.count, "post")}."
-              ="Last post at #{topic.get_last_post.created_at.strftime("%H:%M on %e %B")}"
-  #facebook_box
-    %h3.title
-      =link_to "Facebook ", "#"
-    =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation")
-  #twitter_box
-    %h3.title
-      =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
-    %p.tweet  
-      =highlight_tweet_links(@latest_tweet)
-    =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'      
+-unless mobile_view?
+  #community_row
+    -unless @campaign.nil?
+      #campaign_box
+        -link_to @campaign do
+          =image_tag(@campaign.front_page_image.url)
+          %h4=@campaign.name
+    #forum_box
+      %h3.title
+        =link_to "BTA forum ", forums_path
+      %ul.lst
+        -unless @forum_topics.blank?
+          -@forum_topics.each do |topic|
+            %li
+              =link_to topic.subject, topic
+              %p
+                %span= "#{pluralize(topic.posts.count, "post")}."
+                ="Last post at #{topic.get_last_post.created_at.strftime("%H:%M on %e %B")}"
+    #facebook_box
+      %h3.title
+        =link_to "Facebook ", "#"
+      =facebook_like_box("http://www.facebook.com/BritishTinnitusAssociation")
+    #twitter_box
+      %h3.title
+        =link_to "Twitter ", "http://www.twitter.com/britishtinnitus"
+      %p.tweet  
+        =highlight_tweet_links(@latest_tweet)
+      =link_to "Follow us ", "http://www.twitter.com/britishtinnitus", :class=>'bttn_round'      
     
