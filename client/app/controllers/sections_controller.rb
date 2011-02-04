@@ -23,7 +23,6 @@ SectionsController.class_eval do
   end
   
   def show
-    debugger
     case @section.view
       when 'latest_stories'
         if @section.slug_is(:news_and_events)

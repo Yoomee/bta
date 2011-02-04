@@ -14,7 +14,7 @@
             %strong= link_to(topic.subject, topic)
             %br
             %span.light_text
-              ="Started by #{link_to topic.get_poster_name, topic.member} | #{pluralize(topic.get_replies, 'reply')} and #{pluralize(topic.get_views, 'view')}"
+              ="Started by #{link_to_poster(topic.member)} | #{pluralize(topic.get_replies, 'reply')} and #{pluralize(topic.get_views, 'view')}"
           %td
             =link_to_last_post(topic)
   =will_paginate @topics
