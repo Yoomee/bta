@@ -4,7 +4,7 @@
     Posted by
   .author_name_and_photo
     -if @blog_post.has_snippet?(:author_name)
-      =image_for Member.new, '38x38>'
+      =blog_post_author_image(@blog_post)
       =@blog_post.snippet_author_name
     -else
       =image_for(@blog_post.author, '38x38>')
