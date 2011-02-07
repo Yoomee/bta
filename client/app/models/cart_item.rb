@@ -1,12 +1,6 @@
 CartItem.class_eval do
-  
-  def initialize_with_donations(attrs = {})
-    @is_donation = attrs.delete(:donation)
-    @donation_amount = attrs.delete(:amount)
-    @gift_aid = attrs.delete(:gift_aid)
-    initialize_without_donations(attrs)
-  end
-  alias_method_chain :initialize, :donations
+
+  attr_writer :is_donation, :donation_amount, :gift_aid
   
   def price_bracket_prefix
     case

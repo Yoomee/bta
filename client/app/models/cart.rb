@@ -20,7 +20,7 @@ Cart.class_eval do
   end
   
   def donation_item
-    CartItem.new(:donation => true, :amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid)
+    CartItem.new(:is_donation => true, :donation_amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid)
   end
   
   def has_donation?
