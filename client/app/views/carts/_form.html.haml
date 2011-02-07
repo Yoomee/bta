@@ -72,7 +72,8 @@
       =form.input :overseas, :as => :boolean, :checked => Module::value_to_boolean(@cart.overseas_before_type_cast)
     -form.buttons do
       =form.commit_button "Update cart"
+      %li.checkout=link_to("Continue shopping", shop_path, :class => 'bttn_l')
       -if checking_out
         %li.checkout=link_to('Confirm', order_path, :method => :post, :class => "bttn_l")
       -else
-        %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")  
+        %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")
