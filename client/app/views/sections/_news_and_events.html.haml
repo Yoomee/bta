@@ -16,7 +16,7 @@
 #latest_events
   %h2 Events
   %ul.event_list
-    =event_list(Event.future.earliest_first.limit(5), :description_length => 80)
+    =event_list(Event.future.earliest_first.limit(13), :description_length => 80)
   =link_to("View the calendar", "/calendar", :id => "calendar_link")
 -options_panel do
   =back_link
