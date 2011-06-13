@@ -8,11 +8,12 @@
       =link_to 'here', new_member_url
     #fb_connect_login
       =fb_login_button "window.location = '#{url_for(:controller => 'facebook_sessions', :action => 'create')}';", :text => 'Log in with Facebook', :v => 2, :size => "large"
+    #br.clear
   - form_tag session_url do
     #login_form
       %p.login_email
         %label{ :for => "login_email" }
-          Email/Username:
+          Email:
         = text_field_tag 'login_email_or_username', @login_email_or_username, :tabindex => 1
         = star
         %br.clear

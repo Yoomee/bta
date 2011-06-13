@@ -3,7 +3,7 @@
   %p
     There are no sections yet.
 -else
-  =render :partial => 'sections', :locals => {:sections => @sections}
+  =render :partial => 'children', :locals => {:children => @sections}
 -options_panel do
   =back_link
   =link_if_allowed 'New Section', new_section_proc
