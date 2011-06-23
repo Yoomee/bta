@@ -18,7 +18,8 @@
             %h4.title 
               =link_to "For health professionals", @professionals_section
             -link_to(@professionals_section, :class => "h_image") do
-              =image_tag "/images/for_health_proffessionals.jpg", :width=>'60px', :alt=>'proff'
+              =#image_tag "/images/carousel_image5.jpg", :width=>'60px', :alt=>'proff'
+              =image_for(Photo.find(127), '210x')
             %p=@professionals_section.summary(85)
           %li
             %h4.title  
