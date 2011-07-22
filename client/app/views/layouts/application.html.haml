@@ -33,6 +33,13 @@
       
         //var document_urls = #{document_urls.to_json};
       
+        function sleep(ms)
+        	{
+        		var dt = new Date();
+        		dt.setTime(dt.getTime() + ms);
+        		while (new Date().getTime() < dt.getTime());
+        	}
+      
         $(document).ready(function(){    
           $('.cycle').cycle({
             fx: 'fade',
@@ -58,7 +65,8 @@
           // Track document downloads
           $("a[href^='/documents/']").live('click', function() {
             _gaq.push(['_trackPageview', $(this).attr('href')]);
-            return false;
+            sleep(100);
+            return true;
           });
         });
   - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
