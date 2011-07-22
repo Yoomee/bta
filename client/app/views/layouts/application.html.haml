@@ -63,8 +63,9 @@
           // Make all external requests open in a new window
           $('a').not("[href^='/']").not("[href*='#{request.host.gsub(/www\./, '')}']").not("[href^='#']").attr('target', '_blank');
           // Track document downloads
-          $("a[href^='/documents/']").live('click', function() {
-            _gaq.push(['_trackPageview', $(this).attr('href')]);
+          $("a[href^='/documents/'], a[href*='tinnitus.org.uk/documents/']").live('click', function() {
+            var href = $(this).attr('href').match(/\/documents\/\d+/)[0];
+            _gaq.push(['_trackPageview', href]);
             sleep(100);
             return true;
           });
