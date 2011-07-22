@@ -31,8 +31,6 @@
     -unless current_page?(new_session_path)
       :javascript
       
-        //var document_urls = #{document_urls.to_json};
-      
         function sleep(ms)
         	{
         		var dt = new Date();
@@ -62,14 +60,21 @@
           });
           // Make all external requests open in a new window
           $('a').not("[href^='/']").not("[href*='#{request.host.gsub(/www\./, '')}']").not("[href^='#']").attr('target', '_blank');
-          // Track document downloads
-          $("a[href^='/documents/'], a[href*='tinnitus.org.uk/documents/']").live('click', function() {
-            var href = $(this).attr('href').match(/\/documents\/\d+/)[0];
-            _gaq.push(['_trackPageview', href]);
-            sleep(100);
-            return true;
-          });
         });
+
+
+  -unless controller_name == 'documents' && action_name == 'show'
+    :javascript
+      $(document).ready(function() {
+        // Track document downloads
+        $("a[href^='/documents/'], a[href*='tinnitus.org.uk/documents/']").live('click', function() {
+          var href = $(this).attr('href').match(/\/documents\/\d+/)[0];
+          _gaq.push(['_trackPageview', href]);
+          sleep(100);
+          return true;
+        });
+      });
+
   - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
     #wrapper    
       #top

@@ -1,0 +1,15 @@
+-content_for(:head) do
+  :javascript
+    $(document).ready(function() {
+      var href = '#{url_for(@document)}';
+      _gaq.push(['_trackPageview', href]);
+      sleep(100);
+      window.location.href = href;
+    });
+-title @document.name
+%p
+  You are downloading the document
+  ="#{@document.name}."
+  It should begin downloading shortly.
+  If not, then click
+  ="#{link_to 'here', @document}."  
