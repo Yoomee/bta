@@ -31,13 +31,6 @@
     -unless current_page?(new_session_path)
       :javascript
       
-        function sleep(ms)
-        	{
-        		var dt = new Date();
-        		dt.setTime(dt.getTime() + ms);
-        		while (new Date().getTime() < dt.getTime());
-        	}
-      
         $(document).ready(function(){    
           $('.cycle').cycle({
             fx: 'fade',
