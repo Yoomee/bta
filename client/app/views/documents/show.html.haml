@@ -1,12 +1,12 @@
 -content_for(:head) do
-  -unless RAILS_ENV == 'development'
-    :javascript
-      $(document).ready(function() {
-        var href = '#{url_for(@document)}';
-        //_gaq.push(['_trackPageview', href]); This is not needed, as the page will do it.
-        sleep(100);
-        window.location.href = href;
-      });
+  -#unless RAILS_ENV == 'development'
+  :javascript
+    $(document).ready(function() {
+      var href = '#{url_for(@document)}';
+      //_gaq.push(['_trackPageview', href]); This is not needed, as the page will do it.
+      sleep(100);
+      window.location.href = href + '?t=#{Time.now.to_i}';
+    });
 -content_for :sidebar do
   #subnav
 
