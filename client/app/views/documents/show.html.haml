@@ -3,7 +3,7 @@
     :javascript
       $(document).ready(function() {
         var href = '#{url_for(@document)}';
-        _gaq.push(['_trackPageview', href]);
+        //_gaq.push(['_trackPageview', href]); This is not needed, as the page will do it.
         sleep(100);
         window.location.href = href;
       });
