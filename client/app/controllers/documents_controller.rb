@@ -1,4 +1,10 @@
 DocumentsController.class_eval do
+
+  admin_only :list
+  
+  def list
+    @documents = Document.all(:order => 'id')
+  end
   
   def show_with_analytics
     @logger = Logger.new("#{RAILS_ROOT}/log/document_referrers.log")
