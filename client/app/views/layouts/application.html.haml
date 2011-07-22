@@ -30,6 +30,9 @@
       = stylesheet_link_tag 'client/ie6.css'
     -unless current_page?(new_session_path)
       :javascript
+      
+        //var document_urls = #{document_urls.to_json};
+      
         $(document).ready(function(){    
           $('.cycle').cycle({
             fx: 'fade',
@@ -52,6 +55,11 @@
           });
           // Make all external requests open in a new window
           $('a').not("[href^='/']").not("[href*='#{request.host.gsub(/www\./, '')}']").not("[href^='#']").attr('target', '_blank');
+          // Track document downloads
+          $("a[href^='/documents/']").live('click', function() {
+            _gaq.push(['_trackPageview', $(this).attr('href')]);
+            return false;
+          });
         });
   - body_tag(:class => "#{'campaigns' if in_campaigns?}", :style => campaign_bg_color) do  
     #wrapper    
