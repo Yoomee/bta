@@ -5,7 +5,7 @@ ApplicationController.class_eval do
 
   skip_before_filter :force_password_change
   
-  before_filter :log_out
+  #before_filter :log_out
   
   def log_out
     puts "IN log_out"
