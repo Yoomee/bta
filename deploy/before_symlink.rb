@@ -19,3 +19,8 @@ run "mkdir -p #{release_path}/uploads"
 end
 
 run "rm #{release_path}/public/404.html; ln -nfs #{release_path}/client/public/404.html #{release_path}/public/404.html"
+
+# Setup sphinx
+run "rm -rf #{release_path}/db/sphinx"
+run "mkdir -p #{shared_path}/sphinx"
+run "ln -nfs #{shared_path}/sphinx #{release_path}/db/sphinx"
