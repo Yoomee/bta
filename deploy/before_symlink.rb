@@ -1,4 +1,3 @@
-run "cd #{current_path} && rake ts:stop RAILS_ENV=production -t"
 run "rm -rf #{release_path}/public/uploads"
 (2010..Time.now.year).each do |year|
   release_year_path = "#{release_path}/public/dragonfly/#{year}"
