@@ -4,3 +4,7 @@ development:
 production:
   min_prefix_len: 1
   config_file: /data/tinnitus/shared/production.sphinx.conf
+  searchd_file_path: /data/tinnitus/shared/sphinx
+  searchd_log_path: /data/tinnitus/shared/searchd.log
+  query_log_file: /data/tinnitus/shared/searchd.query.log
+  pid_file: /data/tinnitus/shared/searchd.production.pid
