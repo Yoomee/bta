@@ -18,7 +18,7 @@ HomeController.class_eval do
   
   private
   def get_latest_tweet
-    @latest_tweet = latest_tweet_for("britishtinnitus").text
+    @latest_tweet = latest_tweet_for("britishtinnitus").try(:text) || ''
   end
   
 end
