@@ -50,7 +50,7 @@
     -unless @campaign.nil?
       #campaign_box
         -link_to @campaign do
-          =image_tag(@campaign.front_page_image.url)
+          =image_tag(@campaign.front_page_image.url) if @campaign.front_page_image
           %h4=@campaign.name
     #forum_box
       %h3.title
