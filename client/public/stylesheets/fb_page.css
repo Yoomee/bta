@@ -43,14 +43,6 @@ a:hover {
   float: left;
   width: 225px;
 }
-#bta_fb_site_logo {
-	background:url(http://tinnitus.org.uk/images/bta_logo.png) no-repeat scroll -3px 0 transparent;  
-	display:block;
-	height:201px;
-	width: 131px;
-	text-indent:-9000em;
-	margin: 0;
-}
 #bta_fb_site_intro {
   color: white;
   width: 100%;
@@ -86,11 +78,18 @@ a:hover {
 	border: none;
 }
 #bta_fb_top_right ul li a {
-	background: url(http://tinnitus.org.uk/images/sprite_bta.png) no-repeat -1450px 15px;
 	float: left;
-	padding: 10px 10px 10px 50px;
+  padding: 10px;
 	margin: 0 0 0px 0px;
 	border-bottom: 1px solid #C0D0DB;
+}
+#bta_fb_top_right img {
+  float: left;
+  margin-right: 10px;
+}
+#bta_fb_top_right div.get_support_text {
+  float: left;
+  width: 138px;
 }
 #bta_fb_top_right ul li a h3 {
 	color: #184f7b;
@@ -107,15 +106,6 @@ a:hover {
 #bta_fb_top_right ul li a:hover {
 	background-color:#C2D0DA;
 	text-decoration: none;
-}
-#bta_fb_top_right ul li a#support_shop {
-	background-position: -1430px -145px;
-} 
-#bta_fb_top_right ul li a#support_forum {
-	background-position: -1440px -280px;
-} 
-#bta_fb_top_right ul li a#find_out_more {
-	background-position: -1453px -400px;
 }
 
 /*========== Bottom ==========*/
