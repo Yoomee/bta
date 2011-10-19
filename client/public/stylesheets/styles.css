@@ -1162,8 +1162,7 @@ h1#site_logo a {
 	display:block;
 	height:201px;
 	width: 131px;
-	text-indent:-9000em;
-	
+	text-indent:-9000em;	
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1198,14 +1197,9 @@ div#home_header {
 	position: relative;
 	z-index: 116;
 	
-	
-     -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
-     box-shadow: 0 0 7px rgba(0,0,0,0.3);
-
-	
-
-	
+  -webkit-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 0 7px rgba(0,0,0,0.3);
+  box-shadow: 0 0 7px rgba(0,0,0,0.3);	
 }
 #case_study_carousel {
 	float: left;
@@ -1368,27 +1362,19 @@ div#home_header {
 	float: right;
 	width: 280px;
 	height: 350px;
-
 	padding: 40px 20px 0;
 	background: #D5DEE5; /* old browsers */	
-background: -moz-linear-gradient(top, #D5DEE5 0%, #E3EBF2 65%); /* firefox */
-
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D5DEE5), color-stop(65%,#E3EBF2)); /* webkit */
-
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', endColorstr='#E3EBF2',GradientType=0 ); /* ie */
-	
-	
+  background: -moz-linear-gradient(top, #D5DEE5 0%, #E3EBF2 65%); /* firefox */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D5DEE5), color-stop(65%,#E3EBF2)); /* webkit */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D5DEE5', endColorstr='#E3EBF2',GradientType=0 ); /* ie */
 }
-
 #get_support h2 {
-
 	color: #184f7b;
 	font-size: 21px;
 	line-height: 25px;
 	float: left;
 	font-weight: normal;
 	margin: 0 0 0px 0;
-	
 }
 #get_support h2 strong {
 	float: left;
@@ -2594,22 +2580,15 @@ p.nothing_yet, .intro, #intro, #flash_notice, #notice, #error {
 	z-index:2;
 	font-size: 15px;
 	font-weight: bold;
-
-
 	clear:left;
 	float: left;
 	width: 100%;
 	background:#fff;
-	color: #2795e4;
+	color: #2795e4;	
 	
-	 -webkit-box-shadow:inset 0 -6px 10px #e8e8e8;
-     -moz-box-shadow:inset 0 -6px 10px #e8e8e8;
-     box-shadow:inset 0 -6px 10px #e8e8e8;
-
-	
-	
-
-    
+  -webkit-box-shadow:inset 0 -6px 10px #e8e8e8;
+  -moz-box-shadow:inset 0 -6px 10px #e8e8e8;
+  box-shadow:inset 0 -6px 10px #e8e8e8;
 }
 
 .controller_sections.action_create #main_page_title, .controller_sections.action_update #main_page_title, .controller_pages.action_create #main_page_title, .controller_pages.action_update #main_page_title {
