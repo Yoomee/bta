@@ -26,7 +26,7 @@ a:hover {
   color: #333;
   width: 476px;
 	background: #2795E4 url(http://tinnitus.org.uk/images/header_gradient_home.png) repeat-x bottom; 
-	height: 800px;
+	height: 780px;
 	padding: 20px;
   font:13px/1.5 'Helvetica Neue',Arial,'Liberation Sans',FreeSans,sans-serif	
 }
@@ -152,6 +152,12 @@ a:hover {
 	float: left;
 	display: block;
 	margin-bottom: 10px;
+}
+#bta_fb_middle .bta_fb_box {
+  height: 230px;
+}
+#bta_fb_bottom .bta_fb_box {
+  height: 95px;
 }
 #bta_fb_middle_right.bta_fb_box, #bta_fb_bottom_right.bta_fb_box {
   float: right; 
