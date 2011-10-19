@@ -32,7 +32,7 @@
         %li
           %a{ :href => "/photos/new" }
             Add an image
-    #dash_sections_and_pages.dash_item
+    #dash_events.dash_item
       %h3
         Events
       %ul
@@ -48,7 +48,7 @@
         %li
           %a{ :href => "/event_categories" }
             Edit event categories
-    #dash_sections_and_pages.dash_item
+    #dash_documents.dash_item
       %h3
         Documents
       %ul
@@ -68,7 +68,13 @@
       %ul
         %li
           %a{ :href => "/enquiries" }
-            List enquiries                                
+            List enquiries
+    #dash_forums.dash_item
+      %h3
+        Forums
+      %ul
+        %li=link_to("List forum rankings", forum_rankings_path)
+        %li=link_to("Add a forum ranking", new_forum_ranking_path)
   #dash_membership.dash_col
     %h2
       Membership

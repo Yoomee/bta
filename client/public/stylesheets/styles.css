@@ -228,6 +228,20 @@ ul {
 .labelified {
 	color:gray;
 }
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.flcb {
+  float: left;
+  clear: both;
+}
+.frcb {
+  float: right;
+  clear: both;
+}
 
 /* =============================  button styles ============================= */
 /* general large button*/
@@ -399,6 +413,18 @@ body .formtastic .error input, body .formtastic .error textarea, body .formtasti
 	-moz-box-shadow:0 0px 3px rgba(0,0,0,0.3);
 	box-shadow:0 0px 3px rgba(0,0,0,0.3);
 	border: 2px solid #d91c5c;	
+}
+.formtastic ol li.inline-fields {
+  float:left;
+  clear:none;
+}
+.formtastic ol li.inline-fields label, .formtastic ol li.inline-fields input, .formtastic ol li.inline-fields select {
+  float: left;
+  clear: none;
+  margin-right: 10px;
+}
+.formtastic ol li.inline-fields label, .formtastic ol li.inline-fields .inline-errors {
+  margin-top: 10px;
 }
 p.inline-errors {
 	font-size: 15px;
@@ -966,7 +992,7 @@ html body form {
 	padding: 0 0 0 35px;
 	margin: 0 0 0px 30px;
 }
-#dash_sections_and_pages {
+#dash_sections_and_pages, #dash_events, #dash_forums {
 	background-position: 10px -2190px;
 }
 #dash_images {
@@ -2598,6 +2624,13 @@ p.nothing_yet, .intro, #intro, #flash_notice, #notice, #error {
 .profile_photo {
 	float:left;
 	width:140px;
+}
+#profile .profile_photo {
+  margin-right: 20px;
+}
+#profile .profile_registered_date {
+  color: gray;
+  margin-top: 10px;
 }
 .profile_info {
 	float:right;
@@ -4693,6 +4726,16 @@ table.forum{
   margin:0 0 10px;
   width:100%;  
 }
+table.forum .author_ranking {
+/*  margin-top: 10px;*/
+}
+table.forum .author_num_posts {
+/*  color: gray;*/
+}
+table.forum .author_registered_date {
+  color: gray;
+  margin-top: 10px;
+}
 #create_topic_link {
   float: left;
   clear: both;
@@ -4717,7 +4760,6 @@ table.forum{
 } 
 tr.forum_row_even td {
 	background: #f0f3f7;
-	
 }
 
 span.light_text {
