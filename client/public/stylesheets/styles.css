@@ -4722,7 +4722,7 @@ table.forum .author_registered_date {
 }
 .forum td {
 	border: 1px solid #DAE0E8;
-	padding: 15px 15px 30px;
+	padding: 15px 15px 20px;
 	vertical-align: top;
 }
 .forum_message h4 {
@@ -4767,9 +4767,15 @@ p#forum_intro {
 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#545454', endColorstr='#383838',GradientType=0 );
 }
-
-
-
+#private_forum_message, .private_forum_message {
+  color: #CF0202;  
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+.ui-autocomplete-loading {
+  background: white url('images/autocomplete_loader.gif') right center no-repeat;
+}
 
 /* ======== Autocomplete ===== */
 

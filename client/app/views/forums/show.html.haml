@@ -1,5 +1,8 @@
 -title @forum.title
 
+-if @forum.is_private?
+  #private_forum_message.private_forum_message
+    This forum is private.
 -if !@topics.blank?
   %p#forum_intro
     Click on the topic that you're interested and see what's being discussed. If you want to discuss something else, why not start your own topic?

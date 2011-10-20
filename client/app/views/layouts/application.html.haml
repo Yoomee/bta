@@ -14,11 +14,12 @@
     %link{ :href => "/images/favicon.ico", :rel => "icon", :type => 'image/x-icon'}
     %link{ :href => "/images/favicon.ico", :rel => "shortcut icon", :type => 'image/x-icon'}
     = google_javascripts :jquery, :jqueryui
-    = javascript_include_tag 'jquery.autocomplete'
+    =#javascript_include_tag 'jquery.autocomplete'
     = javascript_include_tag 'jrails'
     = javascript_include_tag 'jquery.cycle'
     = javascript_include_tag 'tramlines'
     = javascript_include_tag "client/autoresize.jquery.min.js"
+    = javascript_include_tag "jquery.labelify.js"
     
     = stylesheet_link_tag 'jquery-ui'
     = stylesheet_link_tag 'jquery.autocomplete'
