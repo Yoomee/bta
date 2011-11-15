@@ -82,6 +82,16 @@ repository = git://git.yoomee.com:4321/plugins/tramlines_mobile.git
 path = vendor/plugins/tramlines_mobile
 scm = git
 
+[vendor/plugins/tramlines_payments]
+path = vendor/plugins/tramlines_payments
+scm = git
+repository = git://git.yoomee.com:4321/plugins/tramlines_payments.git
+
+[vendor/plugins/tramlines_ratings]
+path = vendor/plugins/tramlines_ratings
+scm = git
+repository = git://git.yoomee.com:4321/plugins/tramlines_ratings.git
+
 [vendor/plugins/tramlines_shop]
 scm = git
 path = vendor/plugins/tramlines_shop
@@ -92,7 +102,3 @@ path = vendor/plugins/tramlines_walls
 repository = git://git.yoomee.com:4321/plugins/tramlines_walls
 scm = git
 
-[vendor/plugins/tramlines_ratings]
-path = vendor/plugins/tramlines_ratings
-scm = git
-repository = git://git.yoomee.com:4321/plugins/tramlines_ratings.git

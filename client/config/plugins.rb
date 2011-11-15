@@ -8,3 +8,5 @@ Tramlines.add_plugin(:mobile)
 Tramlines.add_plugin(:walls)
 Tramlines.add_plugin(:shop)
 Tramlines.add_plugin(:ratings)
+
+Tramlines.add_plugin(:payments)

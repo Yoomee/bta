@@ -18,7 +18,7 @@
     =link_to 'here', departments_path
     to go back to shopping
 -else
-  -semantic_form_for(@cart, :url => cart_path, :html => {:id => "cart_form"}) do |form|
+  -semantic_form_for(cart, :url => cart_path, :html => {:id => "cart_form"}) do |form|
     %table.cart_list
       %tr
         %th.product_column Product
@@ -26,7 +26,7 @@
         %th.quantity_column Quantity
         %th.price_column Price
         %th
-      -@cart.items.each do |item|
+      -cart.items.each do |item|
         %tr
           %td.product_column
             =link_to item.product, item.product
@@ -43,7 +43,7 @@
       %tr.totalRow
         %th{:colspan => 3} Product Total
         %td.price_column
-          =@cart.valid? ? number_to_currency(@cart.total_in_pounds, :unit => '£') : "n/a"
+          =cart.valid? ? number_to_currency(cart.total_in_pounds, :unit => '£') : "n/a"
     %table.cart_list
       %tr
         %th.donation_column{:colspan => 1} Optional donation
@@ -51,7 +51,7 @@
       %tr
         %td.gift_aid_column
           -form.inputs do
-            =form.input :donation_gift_aid, :as => :boolean, :checked => Module::value_to_boolean(@cart.donation_gift_aid_before_type_cast), :label => "Please tick if you would like us to be able claim Gift Aid on your donation*"
+            =form.input :donation_gift_aid, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_before_type_cast), :label => "Please tick if you would like us to be able claim Gift Aid on your donation*"
         %td.price_column
           -form.inputs do
             =form.input :donation_amount_in_pounds_s, :label => "£", :required => false, :input_html => {:size => 8}
@@ -64,16 +64,16 @@
       %tr.totalToPayRow
         %th Total to pay
         %td.price_column
-          =number_to_currency(@cart.total_to_pay_in_pounds, :unit => '£')
+          =number_to_currency(cart.total_to_pay_in_pounds, :unit => '£')
     %p.non_uk_customer
       Select here if you are a BTA-member or a non-UK customer and click 'Update cart':
     -form.inputs do
-      =form.input :bta_member, :as => :boolean, :checked => Module::value_to_boolean(@cart.bta_member_before_type_cast), :label => "BTA member"
-      =form.input :overseas, :as => :boolean, :checked => Module::value_to_boolean(@cart.overseas_before_type_cast)
+      =form.input :bta_member, :as => :boolean, :checked => Module::value_to_boolean(cart.bta_member_before_type_cast), :label => "BTA member"
+      =form.input :overseas, :as => :boolean, :checked => Module::value_to_boolean(cart.overseas_before_type_cast)
     -form.buttons do
       =form.commit_button "Update cart"
       %li.checkout=link_to("Continue shopping", shop_path, :class => 'bttn_l')
       -if checking_out
-        %li.checkout=link_to('Confirm', order_path, :method => :post, :class => "bttn_l")
+        %li.checkout=link_to('Confirm', orders_path, :method => :post, :class => "bttn_l")
       -else
         %li.checkout=link_to('Checkout', new_order_path, :class => "bttn_l")
