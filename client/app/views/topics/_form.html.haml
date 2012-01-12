@@ -1,5 +1,6 @@
 -content_for(:head) do
   =javascript_include_tag :ckeditor
+  =javascript_include_tag 'jquery.autocomplete'
 -semantic_form_for(topic, :multipart => true) do |form|
   -form.inputs do
     =form.input :member_id, :as => :hidden

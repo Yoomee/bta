@@ -1,5 +1,5 @@
 #cart_wrapper
   %p.intro
     Please review your order and click 'Update cart' if there is anything which needs changing. Then click 'Confirm' when you are satisfied to go to PayPal and complete the order.
-  =render :partial => 'carts/form', :locals => {:cart => @cart, :checking_out => true}
+  =render :partial => 'carts/form', :locals => {:cart => cart, :checking_out => true}
   =render :partial => 'shop/options_panel'

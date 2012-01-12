@@ -1,5 +1,6 @@
 -content_for(:head) do
   =javascript_include_tag :ckeditor
+  =javascript_include_tag 'jquery.autocomplete'
 
 %p= "Please enter the details of the product below."  
 -semantic_form_for product, :html => {:multipart => true} do |form|
