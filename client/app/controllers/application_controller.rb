@@ -1,4 +1,5 @@
 ApplicationController.class_eval do
+  include Facebooker2::Rails::Controller
 
   ExceptionNotifier.email_prefix = 'BTA: '
   ExceptionNotifier.exception_recipients = 'developers@yoomee.com'

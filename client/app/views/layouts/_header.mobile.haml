@@ -4,7 +4,7 @@
 -else
   #user_links
     - if logged_in?
-      =facebook_session ? facebook_connect_logout_link : link_to('Logout', session_url, :method => :delete)
+      =link_to('Logout', session_url, :method => :delete)
       %strong
         =link_to(@logged_in_member.full_name, member_path(@logged_in_member))
     - elsif !current_page?(new_session_path)

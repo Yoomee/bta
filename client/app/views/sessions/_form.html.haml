@@ -1,3 +1,16 @@
+-content_for(:head) do
+  :javascript
+    var FBLogin = {
+      process: function() {
+        FB.getLoginStatus(function(response) {
+          if (response.session) {
+            #{redirect_to_fb_create}
+          } else {
+            #{show_denied_fb_perms_message}
+          }
+        });
+      }
+    };
 = render_login_redirect_message
 #login_wrapper
   #login_intro
@@ -7,7 +20,9 @@
       Not a member? Register
       =link_to 'here', new_member_url
     #fb_connect_login
-      =fb_login_button "window.location = '#{url_for(:controller => 'facebook_sessions', :action => 'create')}';", :text => 'Log in with Facebook', :v => 2, :size => "large"
+      =fb_login_and_redirect(create_fb_session_path,:text => "Log in with Facebook", :scope => "email")
+    
+      =#fb_login_button "window.location = '#{url_for(:controller => 'facebook_sessions', :action => 'create')}';", :text => 'Log in with Facebook', :v => 2, :size => "large"
     #br.clear
   - form_tag session_url do
     #login_form

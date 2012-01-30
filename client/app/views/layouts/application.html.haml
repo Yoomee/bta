@@ -1,5 +1,5 @@
 !!! Strict
-%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml", "xmlns:fb" => "http://www.facebook.com/2008/fbml" }
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %title
       BTA
@@ -11,7 +11,6 @@
     %meta{ :name => "robots", :content => "index, follow" }
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-Type" }
     %meta{ :name => "info", :content => "#{page_title}#{page_subtitle}" }
-    %link{ :href => "/images/favicon.ico", :rel => "icon", :type => 'image/x-icon'}
     %link{ :href => "/images/favicon.ico", :rel => "shortcut icon", :type => 'image/x-icon'}
     = google_javascripts :jquery, :jqueryui
     =#javascript_include_tag 'jquery.autocomplete'
@@ -29,6 +28,7 @@
     = stylesheet_link_tag 'client/styles'
     /[if IE 6]
       = stylesheet_link_tag 'client/ie6.css'
+    =fb_connect_async_js
     -unless current_page?(new_session_path)
       :javascript
       
@@ -102,4 +102,3 @@
             %br.clear
         #footer
           =render :partial => 'layouts/footer'
-    =tramlines_facebook_connect_receiver

@@ -14,11 +14,18 @@
 #   secret_key: 54f4c83ad90973e26f73f3d39c916c09
 #   pretty_errors: true
 
-#ian
+#yoomee
 development:
-  api_key: 56e460da053a913c43817c3b126be55c
-  secret_key: 85c4852e799ccd5e4062024ec83ae552
-  pretty_errors: false
+  app_id: '137557166307145'
+  api_key: '137557166307145'
+  secret: 4f39d3e37e194f4113f49a68e2f6af91
+  pretty_errors: true
+
+#ian
+# development:
+#  api_key: 56e460da053a913c43817c3b126be55c
+#  secret_key: 85c4852e799ccd5e4062024ec83ae552
+#  pretty_errors: false
  
 #rich
 # development:
@@ -33,11 +40,13 @@ development:
 #  pretty_errors: false
 
 test:
+  app_id: f71b1d98c870c8b6c3f911eadc598026
   api_key: f71b1d98c870c8b6c3f911eadc598026
-  secret_key: ace89ed0b0cdd0b2f42458e1f066590e
+  secret: ace89ed0b0cdd0b2f42458e1f066590e
   pretty_errors: false
 
 production:
-  api_key: db9ee33aa67db910ea47dd20cc13cb20
-  secret_key: 93d369dd5d02aae343c08fae6c30533b
+  app_id: 157913157580785
+  api_key: 157913157580785
+  secret: 93d369dd5d02aae343c08fae6c30533b
   pretty_errors: false
