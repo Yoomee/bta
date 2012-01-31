@@ -20,8 +20,9 @@
     #contact_us_form
       =render_form(@enquiry)
   -else
-    #page_big_image
-      =snippet(@page, :big_image)
+    -if snippet(@page, :big_image).present?
+      #page_big_image
+        =snippet(@page, :big_image)
     #page_left_col
       =render :partial => 'content', :locals => {:page => @page}
     #page_right_col.event_details

@@ -1,3 +1,5 @@
+%p.last_updated_at
+  =page.last_updated
 -if page.published? || allowed_to?(edit_page_proc(page))
   #event_info
     -if page.slug_is("tinnitus-the-video")

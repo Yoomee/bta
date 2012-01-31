@@ -15,4 +15,8 @@ Page.class_eval do
     end
   end
   
+  def last_updated
+    date = [publish_on, updated_at].max
+    date.strftime("Last updated on %d %B %Y")
+  end
 end
