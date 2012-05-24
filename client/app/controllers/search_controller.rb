@@ -1,5 +1,15 @@
 SearchController.class_eval do
   
+  # Don't use autocomplete index, always returns [] on production
+  def create
+    options = {:match_mode => params[:match_mode], :autocomplete => false}
+    @search = Search.new params[:search], options
+    if request.xhr?
+      partial_view_path = params[:results_view_path] ? "#{params[:results_view_path]}/" : ""
+      return render(:partial => "#{partial_view_path}ajax_search_results", :locals => {:search => @search})
+    end
+  end
+
   def autocomplete
     search = Search.new({:term => params[:term], :models => params[:models]}, :autocomplete => true)
     search_results = search.results
