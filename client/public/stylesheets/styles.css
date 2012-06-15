@@ -2769,7 +2769,7 @@ div#footer_links {
 	margin:0px;
 	padding:0px;
 	text-indent:0;
-	float:right;
+	float:left;
 	clear:left;
 }
 #footer_links ul li {
@@ -2781,7 +2781,7 @@ div#footer_links {
 }
 #footer_links ul li a {
 	float: left;
-	margin: 5px 10px 0 0;
+	margin: 5px 13px 0 0;
 }
 
 #footer_links ul li#site_feedback a {

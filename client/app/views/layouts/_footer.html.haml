@@ -14,6 +14,13 @@
     %li=link_to_slug("Accessibility options ", "accessibility-options")
     %li=link_to("Website feedback ", :controller => "enquiries", :action => "new", :id => "feedback")
     %li=link_to("Sitemap", sitemap_path)
+  %ul
+    %li=link_to_slug("Samples from our CDs", 'cd_samples')
+    %li=link_to_slug("Complaints", 'complaints_procedure')
+    %li=link_to_slug("Confidentiality", 'confidentiality_policy')
+    %li=link_to_slug("Privacy", 'privacy_policy')
+    %li=link_to_slug("Terms and conditions", 'terms_conditions')    
+    %li=link_to_slug("Cookies", "cookie_policy")
 
 =link_to 'The Helplines association', 'http://www.helplines.org.uk', :id => 'helplines_association', :target => '_blank'
 =link_to 'Lottery Funded', 'http://www.biglotteryfund.co.uk', :id=>'lottery_funded', :target=>'_blank'        
