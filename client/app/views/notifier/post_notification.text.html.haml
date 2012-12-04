@@ -1,0 +1,28 @@
+%p="Hi #{@member.forename},"
+
+-if @post.deleted?
+  %p= "#{@post.member.full_name} deleted their post in the forum #{@post.forum.title}."
+-elsif @post.edited?
+  %p= "#{@post.member.full_name} edited their post in the forum #{@post.forum.title}."
+-elsif @post.topic.contains_post_by?(@member)
+  %p= "#{@post.member.full_name} has replied to your thread in the forum #{@post.forum.title}."
+-else
+  %p= "#{@post.member.full_name} has posted in the forum #{@post.forum.title}."
+
+-unless @post.deleted?
+  %p="#{@post.member.forename} wrote:"
+
+  = @post.message
+
+-if @post.deleted?
+  %p To view the thread click the link below.
+  %p="#{site_url}#{topic_path(@post.topic, :only_path => true)}"
+-else
+  %p To view the post click the link below.
+  %p="#{site_url}#{post_path(@post, :only_path => true)}"
+
+%p
+  Thanks
+  %br
+  ="The #{site_name} Team"
+

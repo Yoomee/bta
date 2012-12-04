@@ -4745,6 +4745,17 @@ table.forum .author_registered_date {
 tr.forum_row_even td {
 	background: #f0f3f7;
 }
+tr.forum_row_deleted{
+	color: #aaa;
+}
+tr.forum_row_deleted a{
+	color: #8ABBDE;
+}
+tr.forum_row_deleted p{
+}
+tr.forum_row_deleted h4 {
+  font-size:16px;
+}
 
 span.light_text {
 	color: #999;
