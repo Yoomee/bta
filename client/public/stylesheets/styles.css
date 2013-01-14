@@ -5413,3 +5413,14 @@ select#enquiry_i_would_like_more_information_because, select#enquiry_please_send
 input#enquiry_please_send_this_information_to_me_via_email {
   margin-bottom: 0;
 }
+
+
+/*========== Forum post report link ==========*/
+td.message {
+  position:relative;
+}
+.report-post-link {
+  position:absolute;
+  bottom:15px;
+  right:20px;
+}

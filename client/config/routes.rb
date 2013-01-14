@@ -10,4 +10,6 @@ ActionController::Routing::Routes.draw do |map|
   
   map.sitemap '/sitemap', :controller => 'sections', :action => 'index'
   
+  map.report_post '/posts/:id/report', :controller => 'posts', :action => 'report'
+  
 end
