@@ -13,7 +13,7 @@
       ="Registered on #{@member.created_at.try(:strftime, '%e %b %G')}"
     .profile_num_posts
       =pluralize(@member.posts.count, 'post')
-
+    %hr
     %table.forum
       -@posts.each do |post|
         %tr{ :class => "forum_row_#{cycle("even", "odd")} #{'forum_row_deleted' if post.deleted}" }
