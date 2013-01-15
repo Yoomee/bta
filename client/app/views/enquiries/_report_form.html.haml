@@ -1,0 +1,53 @@
+-post = form.object.post
+%table.forum
+  %tr{ :class => "forum_row_#{cycle("even", "odd")} #{'forum_row_deleted' if post.deleted}" }
+    -if post.deleted?
+      %td.author
+        =default_image_for(post.member, "55x")
+      %td.message
+        .forum_message
+          %h4=post.subject
+          .message_body=post.message
+      %td.actions
+    -else
+      %td.author
+        %a{:name => "#{post.id}"}
+        =image_for(post.member, "55x")
+        %br
+        =post.member
+        .author_ranking
+          %strong=post.member.forum_ranking_name
+        .author_num_posts
+          =pluralize(post.member.posts.count, 'post')
+        .author_registered_date
+          ="Registered on #{post.member.created_at.strftime('%e %b %G')}"
+      %td.message
+        .forum_message
+          %h4
+            =get_message_icon(post)
+            =post.subject
+          .post_info
+            -if post.has_file?
+              %p.forum_attachments
+                =image_tag("attach.png")
+                Attachments:
+                = link_to post.file, :controller => 'post', :action => 'download', :id => post.id
+                = link_to image_tag(post.file_image, :alt=>"Download"), :controller =>'post', :action=>'download', :id=>post.id
+            %p.message_posted
+              Posted:
+              =post.created_at.to_s(:long)
+              -if post.updated_at > post.created_at
+                &middot;
+                Edited:
+                =post.updated_at.to_s(:long)
+              by
+              =post.member
+                  
+          .message_body
+            =post.message
+      %td.actions
+%br.clear
+%p Please tell us why you have found the content of this post inappropriate.
+-form.inputs do
+  =form.input :post_id, :as => :hidden
+  =form.input :message, :as => 'text', :input_html => {:rows => 4}, :label => "Reason for reporting"

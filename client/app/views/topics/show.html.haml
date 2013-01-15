@@ -48,6 +48,7 @@
                   
               .message_body
                 =post.message
+              =link_to("Report this post as inappropriate", report_post_path(post), :class => 'report-post-link')
           %td.actions
             =link_if_allowed('Edit', edit_post_proc(post))
             %br
