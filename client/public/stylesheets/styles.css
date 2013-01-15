@@ -5416,11 +5416,22 @@ input#enquiry_please_send_this_information_to_me_via_email {
 
 
 /*========== Forum post report link ==========*/
-td.message {
-  position:relative;
+.like_form {
+  float:left;
+  margin-top:-2px;
+}
+.like_link,.unlike_link{
+  padding-left:17px;
+	background:url("/images/like.png") no-repeat scroll 0px 0px;
+}
+.like_list {
+  float:left;
+  clear:both;
+  margin-top:5px;
 }
 .report-post-link {
-  position:absolute;
-  bottom:15px;
-  right:20px;
+  float:right;
+  margin-top:-2px;
+  padding-left:17px;
+	background:url("/images/report.png") no-repeat scroll 0px 2px;
 }

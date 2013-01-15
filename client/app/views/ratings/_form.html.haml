@@ -1,0 +1,9 @@
+-unique_rating = unique_rating_string(rating)
+-semantic_remote_form_for(rating, :loading => "LikeForm.loading('#{unique_rating}')", :complete => "LikeForm.complete('#{unique_rating}')", :html => {:style => "display:none"}) do |form|
+  -form.inputs do
+    =form.input :rateable_id, :as => :hidden, :input_html => {:id => "rating_rateable_id_#{unique_rating}"}
+    =form.input :rateable_type, :as => :hidden, :input_html => {:id => "rating_rateable_type_#{unique_rating}"}
+    =form.input :score, :as => :hidden, :input_html => {:value => 1, :id => "rating_score_#{unique_rating}"}
+    =hidden_field_tag :polarized, polarized
+  -form.buttons do
+    =form.commit_button "Like", :button_html => {:id => "rating_submit_#{unique_rating}"}

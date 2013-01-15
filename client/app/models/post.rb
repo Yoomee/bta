@@ -1,5 +1,7 @@
 Post.class_eval do
   
+  include TramlinesRatings::RateableByMember
+  
   after_update :notify_nic
   
   def edited?

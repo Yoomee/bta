@@ -1,4 +1,6 @@
 -title @topic.subject
+-content_for :head do
+  =like_form_javascript
 =render_breadcrumb(:object => @topic)
 #forums
   %table.forum
@@ -48,7 +50,11 @@
                   
               .message_body
                 =post.message
-              =link_to("Report this post as inappropriate", report_post_path(post), :class => 'report-post-link')
+              %hr
+              %div
+                =link_to("Report this post as inappropriate", report_post_path(post), :class => 'report-post-link')
+                =render_like_link_for(post, :ajax_loader => "ajax-loader_gray_squares.gif")
+                =render_like_list_for(post)
           %td.actions
             =link_if_allowed('Edit', edit_post_proc(post))
             %br
