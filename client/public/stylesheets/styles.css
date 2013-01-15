@@ -2613,7 +2613,7 @@ p.nothing_yet, .intro, #intro, #flash_notice, #notice, #error {
 }
 .profile_info {
 	float:right;
-	width:380px;
+	width:600px;
 }
 .profile_photo img {}
 
