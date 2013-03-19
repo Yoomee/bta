@@ -2044,6 +2044,9 @@ div#forum_box {
 	background: #d5dee5;
 	
 }
+div#forum_box.empty_forum_box{
+	background: none;	
+}
 div#forum_box h3, div#twitter_box h3 {
 	margin: 0 0 10px;
 

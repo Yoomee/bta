@@ -52,17 +52,18 @@
         -link_to @campaign do
           =image_tag(@campaign.front_page_image.url) if @campaign.front_page_image
           %h4=@campaign.name
-    #forum_box
-      %h3.title
-        =link_to "BTA forum ", forums_path
-      %ul.lst
-        -unless @forum_topics.blank?
-          -@forum_topics.each do |topic|
-            %li
-              =link_to topic.subject, topic
-              %p
-                %span= "#{pluralize(topic.posts.count, "post")}."
-                ="Last post at #{topic.get_last_post.created_at.strftime("%H:%M on %e %B")}"
+    #forum_box.empty_forum_box
+      -if false #Hidden for now
+        %h3.title
+          =link_to "BTA forum ", forums_path
+        %ul.lst
+          -unless @forum_topics.blank?
+            -@forum_topics.each do |topic|
+              %li
+                =link_to topic.subject, topic
+                %p
+                  %span= "#{pluralize(topic.posts.count, "post")}."
+                  ="Last post at #{topic.get_last_post.created_at.strftime("%H:%M on %e %B")}"
     #facebook_box
       %h3.title
         =link_to "Facebook ", "#"

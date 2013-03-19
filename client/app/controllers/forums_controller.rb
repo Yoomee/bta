@@ -1,6 +1,10 @@
 ForumsController.class_eval do
   
-  before_filter :get_latest_tweet, :only => %w{show}  
+  before_filter :get_latest_tweet, :only => %w{show}
+  
+  def closed
+    
+  end
   
   private
   def get_latest_tweet

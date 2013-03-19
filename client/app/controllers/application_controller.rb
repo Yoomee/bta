@@ -7,6 +7,7 @@ ApplicationController.class_eval do
   skip_before_filter :force_password_change
   
   #before_filter :log_out
+  before_filter :forum_closed
   
   def login_member!(member, options = {})
     options.reverse_merge!(:redirect => true, :super => false, :remember_me => false)
@@ -49,6 +50,14 @@ ApplicationController.class_eval do
       flash.clear
       flash[:notice] = "The BTA website is currently undergoing some maintenance, and logging in has been temporarily disabled. Please check back again later."
       redirect_to root_url
+    end
+  end
+  
+  private
+  def forum_closed
+    return true if @logged_in_member.try(:is_admin?) || (controller_name == "forums" && action_name == "closed")
+    if controller_name.in?(%w{forums topics posts forum_rankings})
+      redirect_to forum_closed_path
     end
   end
 
