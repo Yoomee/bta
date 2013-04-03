@@ -5,6 +5,8 @@ PagesController.class_eval do
     @related_documents = Document.related_to_page(@page).non_audio.most_recent
     if @page.id == 339
       @related_documents = @related_documents.sort_by {|doc| PAGE_339_WEIGHTS[doc.id] || 99}
+    elsif @page.id == 99
+      @related_documents.reverse!
     end
     @breadcrumb = [Section.find_by_slug("news_and_events"), @page] if @page.is_event?
     @enquiry = Enquiry.new(:form_name => 'contact', :member => logged_in_member) if @page.slug_is?("contact-us")
