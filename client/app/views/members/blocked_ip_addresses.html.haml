@@ -1,0 +1,23 @@
+%h1.page-title
+  %i.icon-ban-circle
+  Blocked IP addresses
+%table.table.table-striped
+  %thead
+    %tr
+      %th IP address
+      %th Suspended users of this IP address
+      %th Other users of this IP address
+      %th Blocked
+  %tbody
+    -@blocked_ip_addresses.each do |ip_address|
+      %tr
+        %td=ip_address
+        %td.span5
+          -ip_address.banned_members.each do |member|
+            =link_to_self(member)
+            %br
+        %td.span5
+          -ip_address.other_members.each do |member|
+            =link_to_self(member)
+            %br
+        %td=ip_address.created_at.to_s(:date_and_time)

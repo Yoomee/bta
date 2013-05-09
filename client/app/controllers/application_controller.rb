@@ -15,9 +15,14 @@ ApplicationController.class_eval do
     store_remember_me_cookies(@logged_in_member) if options[:remember_me]
     session[:logged_in_member_id] = @logged_in_member.id
     unless options[:super] || request.remote_ip.blank?
-      ip_addresses = @logged_in_member.ip_address.to_s.split(',')
+      ip_addresses = @logged_in_member.ip_addresses.dup
       ip_addresses << request.remote_ip
       @logged_in_member.update_attribute(:ip_address, ip_addresses.uniq.sort.join(','))
+      unless @logged_in_member.is_admin? || @logged_in_member.whitelisted?
+        if BlockedIpAddress.exists?(:ip_address => request.remote_ip)
+          @logged_in_member.update_attribute(:banned_from_forum,true)
+        end
+      end
     end
     if Module.value_to_boolean(params[:in_popup])
       render(:text => "<script type='text/javascript'>window.close()</script>")

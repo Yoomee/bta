@@ -4,6 +4,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :contact_categories
   map.resources :documents, :only => [], :collection => {:list => :get}
   
+  map.blocked_ip_addresses '/blocked_ip_addresses', :controller => 'members', :action => 'blocked_ip_addresses'
+  
   map.directory '/directory/:id', :controller => 'contacts', :action => 'index'
   
   map.resources :searches, :controller => :search, :as => :search, :new => {:autocomplete => :get}, :collection => {:jquery_autocomplete => :get}
