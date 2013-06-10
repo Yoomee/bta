@@ -7,7 +7,7 @@ ApplicationController.class_eval do
   skip_before_filter :force_password_change
   
   #before_filter :log_out
-  before_filter :forum_closed
+  #before_filter :forum_closed
   
   def login_member!(member, options = {})
     options.reverse_merge!(:redirect => true, :super => false, :remember_me => false)

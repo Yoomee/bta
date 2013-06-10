@@ -1,0 +1,30 @@
+-title "Forums"
+%p#intro
+  All of the forums are listed below. Click on the name of a forum to view its topics.
+%br.clear
+%p#terms_conditions
+  ="We've updated our forum terms and conditions &mdash; #{link_to('click here to read them', '/website-terms-and-conditions')}."
+%div#forums{:style => "display: block;"}
+  %table.forum
+    %tr.forum_list_header
+      %th
+      %th{:width => "50%"} Forum
+      %th Topics
+      %th Posts
+      %th Last Post
+    - @forums.each do |forum|
+      %tr{:class => "forum_row_#{cycle("even", "odd")}"}
+        %td.main
+          =link_to forum.title, forum
+          %br
+          %span=forum.description
+          %br
+          -if forum.is_private
+            %span.private_forum_message Private forum
+        %td=forum.topics.size
+        %td=forum.posts.size
+        %td=get_last_post_info(forum)
+
+-options_panel do
+  =back_link
+  =link_if_allowed 'New Forum', new_forum_proc

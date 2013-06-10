@@ -7,49 +7,46 @@
       =image_for(@member, '140x')
   .profile_info
     %h1=@member.full_name
-    -if false #Hiding forum stuff for now
-      .profile_forum_ranking
-        %strong=@member.forum_ranking_name
-      .profile_registered_date
-        ="Registered on #{@member.created_at.try(:strftime, '%e %b %G')}"
-      .profile_num_posts
-        =pluralize(@member.posts.count, 'post')
+    .profile_forum_ranking
+      %strong=@member.forum_ranking_name
+    .profile_registered_date
+      ="Registered on #{@member.created_at.try(:strftime, '%e %b %G')}"
+    .profile_num_posts
+      =pluralize(@member.posts.count, 'post')
     %hr
-    -if false #Hiding forum stuff for now
-      %table.forum
-        -@posts.each do |post|
-          %tr{ :class => "forum_row_#{cycle("even", "odd")} #{'forum_row_deleted' if post.deleted}" }
-            %td.message
-              .forum_message
-                %h4
-                  =get_message_icon(post)
-                  =link_to post.subject, post
-                .post_info
-                  -if post.has_file?
-                    %p.forum_attachments
-                      =image_tag("attach.png")
-                      Attachments:
-                      = link_to post.file, :controller => 'post', :action => 'download', :id => post.id
-                      = link_to image_tag(post.file_image, :alt=>"Download"), :controller =>'post', :action=>'download', :id=>post.id
-                  %p.message_posted
-                    Posted:
-                    =post.created_at.to_s(:long)
-                    -if post.updated_at > post.created_at
-                      &middot;
-                      Edited:
-                      =post.updated_at.to_s(:long)
-                    by
-                    =link_to_poster(post.member)
-                  
-                .message_body
-                  =post.message
-            %td.actions
-              =link_if_allowed('Edit', edit_post_proc(post))
-              %br
-              =link_if_allowed('Delete', post, :method => :delete, :confirm => "Are you sure?|")
-    -if false #Hiding forum stuff for now  
-      #pagination_links
-        =will_paginate @posts
+    %table.forum
+      -@posts.each do |post|
+        %tr{ :class => "forum_row_#{cycle("even", "odd")} #{'forum_row_deleted' if post.deleted}" }
+          %td.message
+            .forum_message
+              %h4
+                =get_message_icon(post)
+                =link_to post.subject, post
+              .post_info
+                -if post.has_file?
+                  %p.forum_attachments
+                    =image_tag("attach.png")
+                    Attachments:
+                    = link_to post.file, :controller => 'post', :action => 'download', :id => post.id
+                    = link_to image_tag(post.file_image, :alt=>"Download"), :controller =>'post', :action=>'download', :id=>post.id
+                %p.message_posted
+                  Posted:
+                  =post.created_at.to_s(:long)
+                  -if post.updated_at > post.created_at
+                    &middot;
+                    Edited:
+                    =post.updated_at.to_s(:long)
+                  by
+                  =link_to_poster(post.member)
+                
+              .message_body
+                =post.message
+          %td.actions
+            =link_if_allowed('Edit', edit_post_proc(post))
+            %br
+            =link_if_allowed('Delete', post, :method => :delete, :confirm => "Are you sure?|")
+    #pagination_links
+      =will_paginate @posts
       
 -options_panel do
   =back_link
