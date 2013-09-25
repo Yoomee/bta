@@ -5,7 +5,7 @@
     -li_with_active_slug("about-tinnitus", :id => "link_about") do
       =link_to 'About tinnitus', slug_path("about-tinnitus")
     -li_with_active_slug("support-services") do
-      =link_to 'Get support', slug_path("support-services")   
+      =link_to 'Get support', slug_path("support-services"), :class=>"get-support-link"  
     -li_with_active(viewing_forum?) do
       =link_to 'Forum', forums_path
     -li_with_active_slug("fundraising") do

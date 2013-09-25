@@ -1678,6 +1678,14 @@ input.search_icon, button.search_icon {
      border-radius:0px;
 
 }
+/*Making it so that get support bookmark doesn't show when on support groups page*/
+.page_support_groups a.get-support-link {
+	color:#fff !important;
+	background: none !important;
+	margin:5px 0px 6px 0 !important;
+	padding:2px 12px 3px !important;
+
+}
 #nav ul li.smaller a {
 
 }
