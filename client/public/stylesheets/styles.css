@@ -1457,7 +1457,7 @@ div#home_header {
 
 #user_links {
 	float:right;
-	margin:0px 20px;
+	margin:0px 0 0 20px;
 	width:740px;
 	padding: 15px 0;
 	
@@ -1571,6 +1571,31 @@ fb.fb_login_not_logged_in.FB_login_button {
 	
 
 }
+a#donate-btn {
+	display: block;
+	float: right;
+	margin: 0 0 0 12px;
+	padding: 4px 20px;
+	font-weight: bold;
+	color: #1D4D7B;
+	background: #F9FF39;
+	
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+}
+a#donate-btn.donate-btn-home {
+	float: left;
+	width: 115px;
+	text-align: center;
+	margin-top: 15px ;
+	font-size: 18px;
+}
+a#donate-btn:hover {
+	color: #1D4D7B;
+	text-decoration: none;
+	background: #E4F45B;
+}
 input.search_field {
 	border:medium none;
 	float:left;
@@ -1621,9 +1646,9 @@ input.search_icon, button.search_icon {
 	color:#fff;
 	display:block;
 	float:left;
-	margin:5px 5px 6px 0;
-	padding:2px 14px 3px;
-	font: 15px/27px Arial, sans-serif;
+	margin:5px 0px 6px 0;
+	padding:2px 12px 3px;
+	font: 13px/27px Arial, sans-serif;
 	font-weight: bold;
 	
 	text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
@@ -1639,7 +1664,7 @@ input.search_icon, button.search_icon {
      border-radius:5px;
 
 }
-#nav ul li.active a, #home #nav ul li#link_home a {
+#nav ul li.active a, #home #nav ul li a#link_home {
 	background: url(/images/nav_active.png) center -4px repeat-x;
 	color: #000;
 	padding-bottom: 7px;
@@ -1782,15 +1807,6 @@ a#facebook_link {
 	position: relative;
 	background: #c0d4e2;
 	
-}
-#home_left_col .donate_bttn{
-	float: left;
-	margin: 10px 0 0 15px;
-	width: 160px;
-	height: 35px;
-	font-weight: bold;
-	text-indent: -9000em;
-	background: url(/images/sprite_bta.png) 0 -260px;
 }
 #home_left_col li {
 	border-bottom: 1px solid #e1e9ee;

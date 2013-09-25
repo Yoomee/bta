@@ -2,7 +2,7 @@
 #home_box_center
   #home_left_col.h_box
     =render_subnav(Section.slug("about-us"), nil)
-    =link_to("Donate", Page.slug(:donate), :class=>'donate_bttn')
+    =link_to("Donate", Page.slug(:donate), :class=>'donate-btn-home', :id=>'donate-btn')
     
   #home_box_right
     -unless mobile_view?  

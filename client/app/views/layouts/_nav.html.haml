@@ -1,21 +1,27 @@
 #nav
   %ul
-    -li_with_active(current_page?(home_path), :id => "link_home") do
-      =link_to 'Home', home_path
+    %li
+      =link_to 'Home', home_path, :id=>"link_home"
     -li_with_active_slug("about-tinnitus", :id => "link_about") do
       =link_to 'About tinnitus', slug_path("about-tinnitus")
     -li_with_active_slug("support-services") do
-      =link_to 'Get support', slug_path("support-services")
+      =link_to 'Get support', slug_path("support-services")   
     -li_with_active(viewing_forum?) do
       =link_to 'Forum', forums_path
-    -if !Blog.count.zero?
-      -li_with_active(viewing_blog?) do
-        =link_to 'Blog', blog_path(Blog.first)
+    -li_with_active_slug("fundraising") do
+      =link_to 'Fundraising', slug_path("fundraising")         
+    -if false  
+      -if !Blog.count.zero?
+        -li_with_active(viewing_blog?) do
+          =link_to 'Blog', blog_path(Blog.first)
     -li_with_active(viewing_shop?) do
       =link_to 'Shop', shop_path, :id => 'shop_link'
     -li_with_active_slug("news_and_events", :class => viewing_events? ? "active" : "") do
       =link_to 'News & events', slug_path("news_and_events")
     -li_with_active_slug("for-health-professionals", :class => "smaller") do
       =link_to 'For professionals', slug_path("for-health-professionals")
+
+    -li_with_active_slug("support-groups", :class => "smaller") do
+      =link_to 'Support groups', slug_path("support-groups")  
     -li_with_active_slug("about-us", :class => "smaller") do
-      =link_to 'About us', slug_path("about-us")
+      =link_to 'About us', slug_path("about-us")      
