@@ -4945,6 +4945,10 @@ div#categories_list.directory h3 {
   float: right;
 /*  margin-top: -43px;*/
 }
+.directory_map_heading{
+	padding-left: 10px;
+	display: inline;
+}
 .directory_map h3.contact_name {
   font-size: 12px;
 }

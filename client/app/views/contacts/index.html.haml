@@ -38,6 +38,7 @@
 =(will_paginate @contacts, :params => {:letter => params[:letter] })
 %h2.contact_categories
   =@category ? "Other contact categories" : "Contact categories"
+%p.directory_map_heading Double click to zoom in
 =@map.div(:width => 450, :height => 400, :class => 'directory_map')
 #categories_list.directory
   -@contact_categories.each do |category|
