@@ -4833,6 +4833,22 @@ p#forum_intro {
   background: white url('images/autocomplete_loader.gif') right center no-repeat;
 }
 
+.controller_forums h1#page_title, .controller_topics h1#page_title{
+	display: block;
+	width: 560px;
+	padding-right: 200px;
+}
+
+.house-rules-link{
+	font-size: 19px;
+	float: right;
+	padding-top: 0;
+	position: absolute;
+	top: 19px;
+	right: 19px;
+	text-decoration: underline;
+}
+
 /* ======== Autocomplete ===== */
 
 .ui-autocomplete {
