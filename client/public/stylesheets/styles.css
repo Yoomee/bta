@@ -4941,18 +4941,24 @@ div#categories_list.directory h3 {
 #categories_list.directory .category_wrapper {
   width: 250px;
 }
-.directory_map {
+
+#directory_map{
+	width:450px;
+	height:400px;
+}
+
+#directory_map {
   float: right;
 /*  margin-top: -43px;*/
 }
-.directory_map_heading{
+#directory_map_heading{
 	padding-left: 10px;
 	display: inline;
 }
-.directory_map h3.contact_name {
+#directory_map h3.contact_name {
   font-size: 12px;
 }
-.directory_map .list_image {
+#directory_map .list_image {
   float: left;
   margin: 0 10px 10px 0;
 }

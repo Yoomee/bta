@@ -1,0 +1,32 @@
+-content_for :head do
+  %script{:type => 'text/javascript', :src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyAaKj8TB7RNE3rPuMTt4Dmsljns-HF3dCE&sensor=false"}
+  :javascript
+    function initialize() {
+      var mapOptions = {
+        center: new google.maps.LatLng(54.00366,-2.547855),
+        zoom: 5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP          
+      };
+      var map = new google.maps.Map(document.getElementById("directory_map"), mapOptions);
+      contactLatLngs = #{contacts.collect {|c| [c.lat, c.lng, c.category_id]}.to_json};
+      $.each(contactLatLngs, function (i, latLng) {
+        var type = latLng[2];
+        var colour;
+          if(type == 2){
+            colour = 'blue';            
+          }
+          else if(type == 3){
+            colour = 'yellow';            
+          }
+          else if(type == 4){
+            colour = 'green';            
+          }
+          var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(latLng[0], latLng[1]),
+          title:"Trying some words",
+          icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/' + colour + '-dot.png'        
+        });
+        marker.setMap(map);
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
