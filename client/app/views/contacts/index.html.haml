@@ -1,17 +1,5 @@
 -content_for :head do
-  =javascript_include_tag "client/jquery.colorPicker"  
-  %script{:type => 'text/javascript', :src => "http://maps.googleapis.com/maps/api/js?key=AIzaSyAaKj8TB7RNE3rPuMTt4Dmsljns-HF3dCE&sensor=false"}
-  :javascript
-    function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(54.00366,-2.547855),
-          zoom: 5,
-          mapTypeId: google.maps.MapTypeId.ROADMAP          
-        };
-        var map = new google.maps.Map(document.getElementById("directory_map"),
-            mapOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+  =javascript_include_tag "client/jquery.colorPicker"    
 /   =GMap.header(:host => request.host, :version => 2)
 /   :javascript
 /     #{@map.to_html :no_script_tag => true}

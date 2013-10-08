@@ -8,7 +8,7 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP          
       };
       var map = new google.maps.Map(document.getElementById("directory_map"), mapOptions);
-      contactLatLngs = #{contacts.collect {|c| [c.lat, c.lng, c.category_id]}.to_json};
+      contactLatLngs = #{contacts.collect {|c| [c.lat, c.lng, c.category_id, c.name]}.to_json};
       $.each(contactLatLngs, function (i, latLng) {
         var type = latLng[2];
         var colour;
@@ -22,10 +22,16 @@
             colour = 'green';            
           }
           var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(latLng[0], latLng[1]),
-          title:"Trying some words",
+          position: new google.maps.LatLng(latLng[0], latLng[1]),          
           icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/' + colour + '-dot.png'        
         });
+
+        var infowindow = new google.maps.InfoWindow({
+          content: latLng[3]
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+          });
         marker.setMap(map);
       });
     }
