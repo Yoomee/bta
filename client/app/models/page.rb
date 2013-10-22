@@ -1,6 +1,8 @@
 Page.class_eval do
   
   belongs_to :carousel_photo, :class_name => "Photo", :autosave => true
+
+  has_related_items :pages, :documents, :members, :photos, :links, :videos, :contacts
   
   delegate :location, :to => :event, :prefix => true
   
