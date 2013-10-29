@@ -39,7 +39,7 @@
 %h2.contact_categories
   =@category ? "Other contact categories" : "Contact categories"
 %p.directory_map_heading Double click to zoom in
-=render 'map', :contacts => @contacts
+=render 'contacts/map', :contacts => @contacts
 #directory_map
 #categories_list.directory
   -@contact_categories.each do |category|
