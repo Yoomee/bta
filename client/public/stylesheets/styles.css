@@ -486,6 +486,12 @@ html body.controller_enquiries form {
 #contact_us_form h3 {
 	
 }
+#contact_us_form legend {
+  float: left;
+}
+#contact_us_form li.check_boxes input[type='checkbox'] {
+  margin-bottom: 0;
+}
 .formtastic p.contact_us_form_intro {
 	margin: 0 0 20px 0;
 }
