@@ -11,4 +11,17 @@ TopicsController.class_eval do
     end
   end
   
+  #Action to update a topic of Sticky
+  def update
+    Post.suspended_delta do
+      @topic.update_attributes(params[:topic])
+    end
+    if @topic.errors.empty?
+      flash[:notice] = "Topic Updated Successfully"
+      redirect_to @topic.forum
+    else
+      render :action => 'edit'
+    end
+  end
+
 end

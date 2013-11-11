@@ -18,7 +18,7 @@ Post.class_eval do
   
   private
   def notify_nic
-    if member_nic = Member.nic
+    if (changed & %w{subject message deleted}).present? && member_nic = Member.nic
       BackgroundRake::bta::notify_nic.call(:post_id => id) unless owned_by?(member_nic)
     end
     true
