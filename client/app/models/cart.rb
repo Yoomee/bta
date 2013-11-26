@@ -6,6 +6,14 @@ Cart.class_eval do
     record.errors.add attr, 'cannot be less than zero' if record.donation_amount_in_pence < 0
   end
   
+  validates_each :donation_gift_aid do |record, attr, value|
+    record.errors.add attr, 'Please confirm that you understand this statement' if (record.donation_gift_aid_today || record.donation_gift_aid_past || record.donation_gift_aid_future) && (value == false)
+  end
+  
+  validates_each :donation_gift_aid_future do |record, attr, value|
+    record.errors.add attr, 'Please tick one or more of these boxes' if !(value || record.donation_gift_aid_past || record.donation_gift_aid_today) && (record.donation_gift_aid == true)
+  end
+  
   def donation_amount_in_pounds
     donation_amount_in_pence.to_f / 100
   end
@@ -20,7 +28,7 @@ Cart.class_eval do
   end
   
   def donation_item
-    CartItem.new(:is_donation => true, :donation_amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid)
+    CartItem.new(:is_donation => true, :donation_amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid, :gift_aid_today => donation_gift_aid_today, :gift_aid_past => donation_gift_aid_past, :gift_aid_future => donation_gift_aid_future)
   end
   
   def has_donation?

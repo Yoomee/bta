@@ -5362,7 +5362,9 @@ tr.totalRow td.price_column, tr.totalToPayRow td.price_column {
 }
 td.gift_aid_column {
   width: 514px;
+  font-size:14px;
 }
+
 td.gift_aid_column label {
   font-weight: normal;
   font-size: 14px;
@@ -5371,10 +5373,15 @@ td.gift_aid_column label {
   margin-right: 5px;
   float: left;
 }
-td.gift_aid_column p {
-  font-size: 12px;
-  color: gray;
-  font-style: italic;
+td.gift_aid_column p.inline-errors {
+  color: red;
+  clear:both;
+}
+
+#cart_form table fieldset.inputs li#cart_donation_gift_aid_input.error {
+  border: 1px solid red;  
+  padding: 4px;
+  margin: -5px;
 }
 
 

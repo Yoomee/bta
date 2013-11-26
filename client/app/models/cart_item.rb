@@ -1,6 +1,6 @@
 CartItem.class_eval do
 
-  attr_writer :is_donation, :donation_amount, :gift_aid
+  attr_writer :is_donation, :donation_amount, :gift_aid, :gift_aid_today, :gift_aid_past, :gift_aid_future
   
   def price_bracket_prefix
     case
@@ -15,7 +15,20 @@ CartItem.class_eval do
   
   def product_name_with_donations
     if @is_donation
-      "#{@gift_aid ? "Gift-aid" : 'Non-gift-aid'} donation"
+      if @gift_aid && @gift_aid_today
+        name = "Gift-aid donation"
+      else
+        name = "Non-gift-aid donation"
+      end
+      gift_aid_periods = [
+        (@gift_aid_today ? 'T' : nil),
+        (@gift_aid_past ? 'P' : nil),
+        (@gift_aid_future ? 'F' : nil)
+      ].compact
+      unless gift_aid_periods.empty?
+        name << " [#{gift_aid_periods.join('')}]"
+      end
+      name
     else
       product_name_without_donations
     end

@@ -50,16 +50,19 @@
         %th.price_column Amount
       %tr
         %td.gift_aid_column
+          Please treat as Gift Aid donations all qualifying gifts of money I have made to the British Tinnitus Association:
           -form.inputs do
-            =form.input :donation_gift_aid, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_before_type_cast), :label => "Please tick if you would like us to be able claim Gift Aid on your donation*"
+            =form.input :donation_gift_aid_today, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_today_before_type_cast), :label => "today"
+            =form.input :donation_gift_aid_past, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_past_before_type_cast), :label => "in the past 4 years"
+            =form.input :donation_gift_aid_future, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_future_before_type_cast), :label => "in the future"
+            
         %td.price_column
           -form.inputs do
             =form.input :donation_amount_in_pounds_s, :label => "£", :required => false, :input_html => {:size => 8}
       %tr
         %td.gift_aid_column
-          %p
-            %span *
-            To qualify for Gift Aid, what you pay in income tax or capital gains tax must at least equal the amount we will claim in the tax year.
+          -form.inputs do
+            =form.input :donation_gift_aid, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_before_type_cast), :label => "I confirm I have paid or will pay an amount of Income Tax and/or Capital Gains Tax for each tax year that is at least equal to the amount of tax that all the charities or community amateur sports clubs that I donate to will reclaim on my gifts for that tax year. I understand that other taxes such as VAT and Council Tax do not qualify. The BTA will reclaim 25p of tax on every £1 you have given."
     %table.cart_list
       %tr.totalToPayRow
         %th Total to pay
