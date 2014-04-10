@@ -1,0 +1,17 @@
+-title "#{@product}: Photos"
+-if @photos.empty?
+  %p
+    You haven't added any photos of this product yet. Do so
+    =link_to 'here', new_product_photo_path(:product_id => @product.id)
+-else
+  %p The following photos currently exist for this product. Please add new ones or click the trash icon to delete a photo.
+  %table.product_photos
+    -@photos.each_slice(5) do |slice|
+      %tr
+        -slice.each do |photo|
+          %td
+            =image_for photo, '200x200', :title => ''
+            =link_to image_tag('trash.gif'), destroy_product_photo_path(photo), :method => :delete, :confirm => "Are you sure you want to delete this photo?", :class => 'trash'
+-options_panel do
+  =link_to 'Back', @product
+  =link_to 'Add a photo', new_product_photo_path(:product_id => @product.id)

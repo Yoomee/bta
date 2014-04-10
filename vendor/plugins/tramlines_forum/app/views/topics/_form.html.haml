@@ -1,0 +1,15 @@
+-semantic_form_for(topic, :multipart => true) do |form|
+  -form.inputs do
+    =form.input :member_id, :as => :hidden
+    =form.input :forum_id, :as => :hidden
+  -form.semantic_fields_for(:posts, topic.posts.first) do |post_form|
+    -post_form.inputs do
+      =post_form.input :member_id, :as => :hidden
+      =post_form.input :subject
+      =post_form.input :message
+      -if false
+        =post_form.input :upload_file, :help => "You can also upload a file for your post. People will be able to download this file."
+      =form.input :sticky, :as => :boolean, :help => "Would you like this topic to be a sticky? By making this topic a sticky it will be issued at the top of the topics in the forum.", :label => "Yes, make my topic a sticky!" if logged_in_member.is_admin?
+      =post_form.input :email, :as => :boolean, :help => "You can get notifications by email, about any replies to topic. Would you like to receive notifications by email?", :label => "Yes, please!" if logged_in_member == topic.author
+  -form.buttons do
+    =form.commit_button topic.new_record? ? "Post" : "Update"

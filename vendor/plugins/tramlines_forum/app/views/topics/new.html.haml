@@ -1,0 +1,24 @@
+-title "New Topic"
+
+=render("form", :topic => @topic)
+
+-options_panel do
+  =back_link
+  
+-#
+  / <div id="forums">
+  /     <div class="tabberlive">
+  /       <ul class="tabbernav">
+  /         <li><%=link_to @topic.forum.title, :controller=> 'forum', :action => 'show', :id => @topic.forum%></li>
+  /       <li class="tabberactive" id="new_message_button"><span>New topic +</span></li>
+  /       </ul>
+  /     <div class="tabbertab">
+  / 
+  /   <% form_tag({:action=>'create', :id=>@topic.forum.id}, :multipart => true) do%>
+  /  
+  /     <%=render :partial => 'form'%>
+  / 
+  /   <% end %>
+  /   </div>
+  /   </div>
+  

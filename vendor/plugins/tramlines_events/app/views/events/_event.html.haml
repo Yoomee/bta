@@ -1,0 +1,12 @@
+-description_length ||= 200
+%li.event_list_item
+  %span.cal_sheet
+    -link_if_allowed event.page do
+      %span.month
+        =event.start_at.to_s(:month)
+      %span.day
+        =event.start_at.day
+  %strong.summary
+    =link_if_allowed(truncate(event.name, :length => 100), event.page)
+  %span.events_desc
+    =truncate(strip_tags(event.description), :length => description_length)

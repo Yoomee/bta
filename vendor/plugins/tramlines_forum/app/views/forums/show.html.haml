@@ -1,0 +1,34 @@
+-title @forum.title
+
+%p=@forum.description
+
+-if @forum.is_private?
+  #private_forum_message
+    This forum is private.
+    
+-if !@topics.blank?
+  %p#forum_intro
+    Click on the topic that you're interested and see what's being discussed. If you want to discuss something else, why not start your own topic?
+    ="#{link_to('Login', new_session_path)} or #{link_to('register', new_member_path)} to add a topic." if logged_out?
+  #forums
+    %table.forum
+      - @topics.each do |topic|
+        %tr{:class => "forum_row_#{cycle("even", "odd")}"}
+          %td{:width => "70%"}
+            %strong= link_to(topic.subject, topic)
+            %br
+            %span.light_text
+              ="Started by #{link_to_poster(topic.member)} | #{pluralize(topic.get_replies, 'reply')} and #{pluralize(topic.get_views, 'view')}"
+          %td
+            =link_to_last_post(topic)
+  =will_paginate @topics
+  
+-else
+  %p.intro No one wants to be the first to post in a new forum. If you have something to say be the first and have your say.
+  %i No Topics have been posted yet!
+
+-options_panel do
+  =back_link
+  =link_if_allowed 'Create a topic', new_forum_topic_proc(@forum)
+  =link_if_allowed "Edit forum", edit_forum_proc(@forum)
+  =link_if_allowed 'Delete forum', @forum, :method => :delete, :confirm => "Are you sure?"

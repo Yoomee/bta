@@ -1,0 +1,27 @@
+Dear Webmaster,
+%p A new booking has been placed on the #{APP_CONFIG[:site_name]} website for the event #{@booking.event_name}.
+%p The details are:
+%table
+  %tr
+    %td Name:
+    %td="#{@booking.first_name} #{@booking.surname}"
+  %tr
+    %td Date of birth:
+    %td="#{@booking.date_of_birth.to_s(:short_date)}"
+  %tr
+    %td Gender:
+    %td="#{@booking.gender}"
+  %tr
+    %td Phone number:
+    %td="#{@booking.phone_number}"
+  %tr
+    %td Email address:
+    %td="#{@booking.email}"
+  %tr
+    %td Address line:
+    %td="#{@booking.address_string}"
+  %tr
+    %td Where did you hear about the event?
+    %td="#{@booking.where_did_you_hear_about_the_event}"
+
+%p="Please click here for more information: #{APP_CONFIG[:site_url]}/events/#{@booking.event_page_id}"

@@ -1,0 +1,28 @@
+<p id="intro">
+	Below are listed all the Forum Categories and their subsequent Forums. Controls are listed on the right hand side.
+</p>
+
+	<% for @forum_category in @forum_categories %>
+		<div id="forum_heading">
+			<!-- Image For Javascript +/- -->
+			<%= image_tag "forum/minus.png", :onClick=>"ToggleBlock('cat_#{@forum_category.id}', this)"  %>
+			<%= @forum_category.title %>
+		</div>
+	
+		<div id="cat_<%= @forum_category.id %>" style="display: block;">
+            <table>
+            <% @forum_category.forums.each do |forum| %>
+                <tr>
+                    <td><%= link_if_allowed forum.title, {:controller=>'forum', :action=>'show', :id=>forum.id} %></td>
+                    <td class="details"><%= link_if_allowed 'Edit Forum', {:controller=>'forum', :action => 'edit', :id => forum.id} %></td>
+                    <td class="details"><%= link_if_allowed 'Delete Forum', {:controller=>'forum', :action => 'delete', :id => forum.id} %></td>
+                    <td class="details"><%= link_if_allowed 'Set Permissions', {:controller=>'forumpermission', :action=>'edit', :id=>forum.id} %></td>
+                </tr>
+            <% end %>
+            </table>
+		</div>
+	<% end %>
+
+<%= pagination_links @forum_pages %>
+
+<!-- End Of Forums -->

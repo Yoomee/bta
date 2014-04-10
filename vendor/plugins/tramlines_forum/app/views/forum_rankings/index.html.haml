@@ -1,0 +1,22 @@
+-hidden_title "Forum rankings"
+
+-if @manual_forum_rankings.empty? && @automatic_forum_rankings.empty?
+  %p There are no forum rankings yet.
+-else
+  #manual_forum_rankings.flcb
+    %h2 Manual rankings
+    %p These rankings need to be manually awarded.
+    %ul
+      -@manual_forum_rankings.each do |forum_ranking|
+        %li
+          =link_to_self(forum_ranking)
+  #automatic_forum_rankings.flcb
+    %h2 Automatic rankings
+    %p These rankings will be awarded when members reach a certain number of posts.
+    %ul
+      -@automatic_forum_rankings.each do |forum_ranking|
+        %li
+          =link_to_self(forum_ranking)
+          ="#{pluralize(forum_ranking.num_posts_needed, 'post')}"
+
+=options_panel(:forum_ranking)

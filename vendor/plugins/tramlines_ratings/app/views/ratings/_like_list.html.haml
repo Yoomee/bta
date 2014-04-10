@@ -1,0 +1,5 @@
+.like_list{:id => "like_list_#{unique_rating_string(rateable)}", :style => rateable.been_rated? ? "" : "display:none"}
+  -if rateable.been_liked?
+    =liking_name_list(rateable)
+  -if rateable.been_disliked?
+    =disliking_name_list(rateable)

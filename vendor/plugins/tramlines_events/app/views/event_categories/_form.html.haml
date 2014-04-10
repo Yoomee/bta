@@ -1,0 +1,11 @@
+-unique_id = category.id.to_s
+:javascript
+  $(document).ready(function() {
+    $('##{unique_id}_category_color_input').colorPicker();
+  });
+-semantic_remote_form_for category, :url => url_for(category), :loading => "CategoryForm.loading('#{unique_id}');", :complete => "CategoryForm.complete('#{unique_id}');", :method => method, :html => {:id => "#{unique_id}_category_form", :class => "edit_category_form",:style => "#{'display:none' unless show_form}"} do |form|
+  -form.inputs do
+    =form.input :color, :label => false, :input_html => {:class => "category_color_input", :id => "#{unique_id}_category_color_input"} 
+    =form.input :name, :label => false, :input_html => {:class => "category_name_input"} 
+    -form.buttons do
+      =form.commit_button :button_html => {:id => "#{unique_id}_category_form_submit", :style => 'display:none'}

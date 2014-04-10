@@ -1,0 +1,78 @@
+-title(thank_you? ? 'Thank you' : "Order #{order}")
+-if params[:id] == 'paypal'
+  %p
+    Thank you for your order. 
+    Please click
+    =link_to 'here', shop_path
+    to go back to the shop, or
+    =link_to 'here', home_path
+    to return to the homepage.
+-else
+  -if thank_you?
+    %p
+      Thank you for your order, reference number
+      =order.transaction_reference
+    %p The details are shown below:
+  %table.order
+    %tr
+      %th.product_column Product
+      %th.price_column Price (each)
+      %th.quantity_column Quantity
+      %th.price_column Price
+    -order.lines.each do |line|
+      %tr
+        %td.product_column
+          =link_to line.product, line.product
+        %td.price_column
+          =number_to_currency line.product_price_in_pounds, :unit => '£'
+        %td.quantity_column
+          =line.quantity
+        %td.price_column
+          =number_to_currency(line.price_in_pounds, :unit => '£')
+    %tr.totalRow
+      %td{:colspan => 3} Total
+      %td.price_column
+        =number_to_currency(order.amount_in_pounds, :unit => '£')
+  %h5 Address
+  %p
+    -if admin_logged_in?
+      This
+    -else 
+      Your
+    order 
+    -if order.status == 'Placed'
+      will be
+    -else
+      has been
+    sent to:
+  %p.address
+    =order.full_name
+    %br
+    =render_address order.delivery_address, :multi_line => true
+
+  -if admin_logged_in?
+    %br.clear
+    %h5 History
+    %p
+      Placed on
+      =order.created_at.to_s(:neat_date_and_time_with_at)
+      %br
+      -if order.status == 'Placed'
+        =link_to 'Dispatch order', dispatch_order_path(order), :method => :post, :class => 'bttn_l'
+        =link_to 'Cancel order', cancel_order_path(order), :method => :post, :class => 'bttn_l', :confirm => 'Are you sure?'
+      -else
+        -if order.status == 'Dispatched'
+          Dispatched on
+          =order.dispatched_at.to_s(:neat_date_and_time_with_at)
+        -if order.status == 'Cancelled'
+          Cancelled on
+          =order.cancelled_at.to_s(:neat_date_and_time_with_at)
+    -options_panel do
+      =link_to 'Back', orders_path
+  -else
+    %p
+      Please click
+      =link_to 'here', shop_path
+      to go back to the shop, or
+      =link_to 'here', home_path
+      to return to the homepage.

@@ -1,0 +1,26 @@
+-title "Book for #{@event.name}"
+%p.help
+  Please enter your details and click 'Book'.
+  -if @booking.event_uses_paypal?
+    You will then be forwarded to the Paypal website in order to make your payment.
+-semantic_form_for @booking do |form|
+  -if @booking.event_has_terms_and_conditions?
+    -form.inputs(:name => 'Terms and conditions') do
+      =@booking.terms_and_conditions
+      =form.input :terms_and_conditions_accepted, :as => :boolean, :label => 'Click to accept'
+  -form.inputs(:name => 'Your details') do
+    =form.input :event_id, :as => :hidden
+    =form.input :first_name
+    =form.input :surname
+    =form.input :date_of_birth_english, :hint => 'dd/mm/yyyy', :input_html => {:size => 10}, :label => 'Date of birth'
+    =form.input :gender, :as => :select, :collection => %w{male female}
+    =form.input :phone_number
+    =form.input :email, :label => 'Email address'
+    =form.input :address1, :label => 'Address line 1'
+    =form.input :address2, :label => 'Address line 2'
+    =form.input :city
+    =form.input :postcode, :input_html => {:size => 10}
+    =form.input :country, :as => :country, :priority_countries => ['United Kingdom']
+    =form.input :where_did_you_hear_about_the_event, :label => 'Where did you hear about the event?'
+  -form.buttons do
+    =form.submit 'Book'

@@ -1,0 +1,49 @@
+-title @topic.subject
+=render_breadcrumb(:object => @topic)
+#forums
+  %table.forum
+    -@posts.each do |post|
+      %tr{ :class => "forum_row_#{cycle("even", "odd")}" }
+        %td.author
+          %a{:name => "#{post.id}"}
+          =image_for(post.member, "55x")
+          %br
+          =link_to_poster(post.member)
+          .author_ranking
+            %strong=post.member.forum_ranking_name
+          .author_num_posts
+            =pluralize(post.member.posts.count, 'post')
+          .author_registered_date
+            ="Registered on #{post.member.created_at.strftime('%e %b %G')}"
+        %td.message
+          .forum_message
+            %h4
+              =get_message_icon(post)
+              =post.subject
+            .post_info
+              -if post.has_file?
+                %p.forum_attachments
+                  =image_tag("attach.png")
+                  Attachments:
+                  = link_to post.file, :controller => 'post', :action => 'download', :id => post.id
+                  = link_to image_tag(post.file_image, :alt=>"Download"), :controller =>'post', :action=>'download', :id=>post.id
+              %p.message_posted
+                Posted:
+                =post.created_at.to_s(:long)
+                by
+                =link_to_poster(post.member)
+            .message_body
+              =post.message
+        %td.actions
+          =link_if_allowed('Edit', edit_post_proc(post))
+          %br
+          =link_if_allowed('Delete', post, :method => :delete, :confirm => "Are you sure?|")
+  %p="#{link_to('Login', new_session_path)} or #{link_to('register', new_member_path)} to add a reply." if logged_out?
+  #pagination_links
+    = will_paginate @posts
+  -options_panel do
+    =back_link
+    =link_if_allowed 'Edit Topic', edit_topic_proc(@topic)
+    =link_if_allowed 'Delete Topic', @topic, :method => :delete, :confirm => 'Are you sure?'
+    =link_if_allowed "Post Reply", new_topic_post_proc(@topic)
+    =link_if_allowed "New Topic", new_forum_topic_proc(@topic.forum)

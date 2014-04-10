@@ -1,0 +1,15 @@
+-content_for :head do
+  = javascript_include_tag 'client/event_calendar'
+  = stylesheet_link_tag 'client/event_calendar'
+  = tramlines_calendar_javascript
+-hide_page_title
+#event_categories
+  -form_tag(calendar_path(:year => @year, :month => @month)) do
+    =select_tag :category_id, event_category_select_options(@category), :onchange => "$('#event_categories_submit').click()"
+    =submit_tag "Submit", :id => "event_categories_submit", :style => "display:none"
+%br.clear
+= event_calendar
+- options_panel do
+  =back_link
+  =link_if_allowed "Add event", new_event_proc
+  =link_if_allowed "Edit event categories", event_categories_proc

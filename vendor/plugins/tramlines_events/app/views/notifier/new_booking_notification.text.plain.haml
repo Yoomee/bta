@@ -1,0 +1,15 @@
+Dear Webmaster,
+
+A new booking has been placed on the #{APP_CONFIG[:site_name]} website for the event #{@booking.event_name}.
+
+The details are:
+
+Name:                               #{@booking.first_name} #{@booking.surname}
+Date of birth:                      #{@booking.date_of_birth.to_s(:short_date)}
+Gender:                             #{@booking.gender}
+Phone number:                       #{@booking.phone_number}
+Email address:                      #{@booking.email}
+Address line:                       #{@booking.address_string}
+Where did you hear about the event? #{@booking.where_did_you_hear_about_the_event}
+
+Please use the following link for more information: #{APP_CONFIG[:site_url]}/events/#{@booking.event_page_id}

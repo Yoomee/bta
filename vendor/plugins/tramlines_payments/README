@@ -1,0 +1,14 @@
+TramlinesPayments
+=================
+
+Copy tramlines_payments/assets/* into client/public.
+Needs active_merchant plugin (our version), which can be found in the childrens CRM.
+
+
+Example
+=======
+
+Example goes here.
+
+
+Copyright (c) 2011 [name of plugin creator], released under the MIT license

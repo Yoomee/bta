@@ -1,0 +1,25 @@
+:javascript
+  var PayPalFields = {
+
+    updateStatus: function(status) {
+      if (status) {
+        $('#paypal_fields').show();
+      } else {
+        $('#paypal_fields').hide();
+      }
+    }
+
+  }
+  $(document).ready(function() {
+    PayPalFields.updateStatus($('#page_event_use_paypal').attr('checked'));
+  });
+  
+%p
+  Please enter the details of your Paypal account below.
+-semantic_fields_for page do |fields|
+  -fields.semantic_fields_for :event, :as => :event_attributes do |event|
+    -event.inputs do
+      =event.input :use_paypal, :as => :boolean, :label => 'Use Paypal?', :selected => page.event_use_paypal?, :input_html => {:onchange => "PayPalFields.updateStatus($(this).attr('checked'))", :id => "page_event_use_paypal"}
+      #paypal_fields
+        =event.input :paypal_business, :label => 'Business login email'
+        =event.input :paypal_payment_amount, :label => 'Payment amount'

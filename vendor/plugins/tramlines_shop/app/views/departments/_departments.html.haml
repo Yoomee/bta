@@ -1,0 +1,4 @@
+-unless departments.empty?
+  %ul
+    -departments.each do |department|
+      =render :partial => 'department', :object => department

@@ -1,0 +1,6 @@
+-options ||= {}
+-if events.blank?
+  There are no up coming events.
+-else
+  -events.each do |event|
+    =render('events/event', options.merge(:event => event))

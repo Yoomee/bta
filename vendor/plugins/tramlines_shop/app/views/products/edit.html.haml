@@ -1,0 +1,6 @@
+-title 'Edit product'
+%p.intro
+  Please edit the product as necessary and click 'Save'.
+=render :partial => 'form', :locals => {:product => @product}
+-options_panel do
+  =back_link

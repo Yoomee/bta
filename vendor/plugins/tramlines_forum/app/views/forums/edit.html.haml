@@ -1,0 +1,27 @@
+-title "Edit Forum"
+
+=render("form", :forum => @forum)
+
+-options_panel do
+  =back_link
+
+-#
+  / 
+  / <p id="intro">
+  /     You can edit this forum below. Please fill in the form and click 'Save'. All fields marked with a <%= render_star %> are required.  
+  / </p>
+  / 
+  / <% form_for :forum, @forum, :url => {:action => 'update', :id => @forum} do |form| %>
+  /  
+  /   <%= render :partial => 'form'%>
+  / 
+  /   <input type="hidden" name='forumcategory[id]' value="<%=@forum.forumcategory.id %>" >
+  / 
+  /   <div class='buttonPanel'>
+  /     <%=submit_tag 'Save'%>
+  /   </div>
+  / 
+  / <%end%>
+  / <div class='details'>
+  /   <%=link_to 'Back', :action => 'list'%>
+  / </div>

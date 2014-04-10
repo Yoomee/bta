@@ -1,0 +1,11 @@
+-title 'Your details'
+%h5.article_info 
+  Please enter your name and email address below. This will allow us to keep track of your order.
+-semantic_form_for(order) do |form|
+  -form.inputs do
+    %li.your_name_label=form.label :forename, "Your name"
+    =form.input :forename, :label => false, :input_html => {:class => "labelify", :title => "First name", :size => 24}
+    =form.input :surname, :label => false, :input_html => {:class => "labelify", :title => "Surname", :size => 24}
+    =form.input :email, :label => "Email address"
+  -form.buttons do
+    =form.commit_button 'Proceed to payment'

@@ -1,0 +1,35 @@
+-title "Edit Post"
+
+=render("posts/form", :post => @post)
+
+-options_panel do
+  =back_link
+  
+-#
+
+  / <%title "Edit Post"%>
+  / <%= error_messages_for 'post' %>
+  / 
+  / <div id="forums"> 
+  / <div class="tabberlive">
+  /   <ul class="tabbernav">
+  /   <li><%=link_to @post.forum.title, :controller=> 'forum', :action => 'show', :id => @post.topic.forum%></li>
+  /     <li><%=link_to 'Topic View', :controller=>'topic', :action => 'show', :id => @post.topic%></li>
+  /   <li id="new_message_button"><%=link_to 'New topic +', :controller=> 'topic', :action => 'new', :id => @post.topic.forum%></li>
+  /   </ul>
+  / 
+  / <div class="tabbertab">
+  / 
+  / <% form_tag :action => 'update', :id=>@post.id do %>
+  /  
+  /   <%=render :partial => 'form'%>
+  / 
+  /   <div class='buttonPanel'>
+  /     <%=submit_tag 'Update'%>
+  /   </div>
+  / 
+  / <% end %>
+  / 
+  / </div>
+  / </div>
+  / </div>

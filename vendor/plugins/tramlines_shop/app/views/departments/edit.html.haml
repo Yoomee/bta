@@ -1,0 +1,6 @@
+-title 'Edit department'
+%p.intro
+  Please edit the department as necessary and click 'Save'.
+=render :partial => 'form', :locals => {:department => @department}
+-options_panel do
+  =back_link

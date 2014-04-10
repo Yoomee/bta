@@ -1,0 +1,36 @@
+%p
+  Thank you for your order, reference number
+  =@order.transaction_reference
+%p The details are shown below:
+%table.order
+  %tr
+    %th.product_column Product
+    %th.price_column Price (each)
+    %th.quantity_column Quantity
+    %th.price_column Price
+  -@order.lines.each do |line|
+    %tr
+      %td.product_column
+        =line.product
+      %td.price_column
+        =number_to_currency line.product_price_in_pounds, :unit => '£'
+      %td.quantity_column
+        =line.quantity
+      %td.price_column
+        =number_to_currency(line.price_in_pounds, :unit => '£')
+  %tr.totalRow
+    %td{:colspan => 3}
+      %b
+        Total
+    %td.price_column
+      =number_to_currency(@order.amount_in_pounds, :unit => '£')
+%p Your order will be sent to:
+%p.address
+  =@order.full_name
+  %br
+  =render_address @order.delivery_address, :multi_line => true
+
+%p
+  You can view you order online by clicking
+  =link_to('clicking this link', "#{APP_CONFIG[:site_url]}#{order_path(@order)}")
+  ='.'

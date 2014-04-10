@@ -1,0 +1,4 @@
+-unless products.empty?
+  %ul
+    -products.each do |product|
+      =render :partial => 'product', :object => product

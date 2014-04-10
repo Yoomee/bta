@@ -1,0 +1,15 @@
+-title @forum_ranking
+
+-if @forum_ranking.num_posts_needed.nil?
+  %p This rank must be awarded manually.
+-else
+  %p
+    Members need to have
+    =pluralize(@forum_ranking.num_posts_needed, 'post')
+    to earn this rank.
+
+%p
+  =full_pluralize("There are", @forum_ranking.members.count, 'member')
+  with this rank.
+
+=options_panel(@forum_ranking)

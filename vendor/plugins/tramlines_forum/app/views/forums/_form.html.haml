@@ -1,0 +1,63 @@
+-content_for(:head) do
+  =labelify_javascript
+  :javascript
+    $(document).ready(function() {
+      ForumForm.toggleMembers();  
+      ForumForm.initAutocomplete();
+    });
+    var ForumForm = {
+      addMember: function(memberId, memberName) {
+        if ($('#forum_member_' + memberId).length == 0) {
+          var html = $("<li id=forum_member_" + memberId + "></li>");
+          html.append("<input type='hidden' name='forum[member_ids][]' value='" + memberId + "'/>");
+          html.append("<span>" + memberName + "</span>");
+          html.append("<a href='#' onclick='ForumForm.removeMember($(this)); return false;'> x</a>");
+          $('#forum_members_input ul').append(html);
+        }
+        $('#forum_members_autocomplete').val('');
+      },
+      initAutocomplete: function() {      
+        $('#forum_members_autocomplete').autocomplete({
+          source: '/members/autocomplete',
+          minLength: 2,
+          select: function(event, ui) {
+            ForumForm.addMember(ui.item.id, ui.item.name);
+          }
+        }).data("autocomplete")._renderItem = function(ul, item) {
+          return $("<li></li>")
+          .data( "item.autocomplete", item)
+          .append("<a>" + item.name + "</a>" )
+          .appendTo(ul);
+        };
+      },
+      removeMember: function(elem) {
+        elem.parent().fadeOut('fast', function() {
+          $(this).remove();
+        });
+      },
+      toggleMembers: function() {
+        if ($('#forum_is_private').is(':checked')) {
+          $('#forum_members_input').show();
+        } else {
+          $('#forum_members_input').hide();        
+        }
+      }
+    };
+
+-semantic_form_for(forum) do |form|
+  -form.inputs do
+    =form.input :title
+    =form.input :description
+    =form.input :allow_uploads, :as => :boolean, :help => "If you would like this forum to allow members to uploads files please tick the box below."
+    =form.input :is_private, :label => "This forum is private", :help => "If you would like to select which members can view this forum please tick the box below.", :input_html => {:onchange => "ForumForm.toggleMembers();"}
+    %li#forum_members_input
+      =hidden_field_tag("forum[member_ids][]", nil)
+      %ul.lst
+        -forum.members.ascend_by_forename.each do |member|
+          %li{:id => "forum_member_#{member.id}"}
+            =hidden_field_tag("forum[member_ids][]", member.id)
+            %span=member.full_name
+            =link_to_function(" x", "ForumForm.removeMember($(this))")
+      =text_field_tag("forum_members_autocomplete", "", :size => 50, :class => "labelify", :title => "Type a member's name here")
+  -form.buttons do
+    =form.commit_button forum.new_record? ? "Create" : "Update"

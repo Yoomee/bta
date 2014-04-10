@@ -1,0 +1,9 @@
+-title 'Departments'
+-if @departments.empty?
+  %p
+    There are no departments yet.
+-else
+  =render :partial => 'departments', :locals => {:departments => @departments}
+-options_panel do
+  =back_link
+  =link_if_allowed 'New department', new_department_proc

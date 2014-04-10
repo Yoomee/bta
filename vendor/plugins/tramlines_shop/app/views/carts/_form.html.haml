@@ -1,0 +1,35 @@
+-if cart.empty?
+  %p
+    Your cart is currently empty. Click
+    =link_to 'here', departments_path
+    to go back to shopping
+-else
+  -semantic_form_for(cart, :url => cart_path, :html => {:id => "cart_form"}) do |form|
+    %table.cart_list
+      %tr
+        %th.product_column Product
+        %th.price_column Price (each)
+        %th.quantity_column Quantity
+        %th.price_column Price
+        %th
+      -cart.items.each do |item|
+        %tr
+          %td.product_column
+            =link_to item.product, item.product
+          %td.price_column
+            =number_to_currency item.product_price_in_pounds, :unit => '£'
+          %td.quantity_column
+            -form.semantic_fields_for(:items, item) do |item_form|
+              -item_form.inputs do
+                =item_form.input :quantity, :label => false, :required => false, :input_html => {:size => 2}
+          %td.price_column
+            =item.valid? ? number_to_currency(item.price_in_pounds, :unit => '£') : "n/a"
+          %td.link_column
+            =link_to 'Remove', item, :method => :delete, :confirm => "Are you sure?"
+      %tr.totalRow
+        %td{:colspan => 3} Total
+        %td.price_column
+          =cart.valid? ? number_to_currency(cart.total_in_pounds, :unit => '£') : "n/a"
+        %td
+    -form.buttons do
+      =form.commit_button "Update cart"

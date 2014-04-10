@@ -1,0 +1,13 @@
+<p class="intro">
+    Below are the topics which had <%= @search_term %> as a tag. Click the subject to be taken to the topic.
+</p>
+
+<% @topics.each do |topic| %>
+    <div id="topic_preview">
+        <%= link_if_allowed topic.get_subject, :controller => 'topic', :action => 'show', :id => topic.id %><br/>
+        Tags:           <%= highlight(topic.tags.collect(&:name).join(" "), @search_term) %><br/>
+        <%= truncate topic.get_last_message %>
+    </div>
+<% end %>
+
+<%= link_to 'Back', :controller => 'topic', :action => 'tagcloud' %>

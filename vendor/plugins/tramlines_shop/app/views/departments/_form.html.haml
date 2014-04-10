@@ -1,0 +1,11 @@
+-content_for(:head) do
+  =javascript_include_tag :ckeditor
+-semantic_form_for(department) do |form|
+  -form.inputs do
+    =form.input :name
+    =form.input :parent_id, :as => :select, :collection => department_id_options(department)
+    =form.input :intro, :as => :ck_text, :help => "Please enter an intro - this will be shown at the top of the department's page"
+    =form.input :description, :as => :ck_text, :help => "Please enter a description - this will be shown in the list of departments"
+    =form.input :weight, :label => 'Order', :help => "Please set an 'order' for the department (departments with higher order numbers will appear further down the list)"
+  -form.buttons do
+    =form.submit 'Save'

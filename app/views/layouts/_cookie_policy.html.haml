@@ -1,0 +1,15 @@
+-if cookies[:cookie_policy].nil?
+  :javascript
+    function closeCookieBanner(){
+      document.cookie = 'cookie_policy=1;path=/;expires=Sun, 17 Jan 2038 13:48:44 GMT';
+      $('#cookie_policy').slideUp();
+    }
+  .container
+    .row
+      .twelvecol
+        #cookie_policy
+          %p
+            ="This site uses cookies to make it work better. You can find out what cookies we use and why #{link_to_slug("here",:cookie_policy)}."
+            %br
+            If you do not agree to our use of cookies please do not use this site.
+          =link_to_function("X", "closeCookieBanner()", :class => 'bttn')

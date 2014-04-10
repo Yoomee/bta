@@ -1,0 +1,19 @@
+="Hi #{@member.forename},"
+
+-if @post.topic.contains_post_by?(@member)
+  = "#{@post.member.full_name} has replied to your thread in the forum #{@post.forum.title}."
+-else
+  = "#{@post.member.full_name} has posted in the forum #{@post.forum.title}."
+
+="#{@post.member.forename} wrote:"
+
+= @post.message
+
+To view the post click the link below.
+
+= "#{site_url}#{post_path(@post, :only_path => true)}"
+
+Thanks
+
+="The #{site_name} Team"
+

@@ -1,0 +1,37 @@
+-content_for(:head) do
+  :coffeescript
+    DeliveryAddress =
+      update: ->
+        if $('#order_deliver_to_billing_address').attr('checked')
+          $('#delivery_address').hide()
+        else
+          $('#delivery_address').show();
+    $ ->
+      DeliveryAddress.update()
+      $('#order_deliver_to_billing_address').click ->
+        DeliveryAddress.update()
+-title "Enter your card details"
+%h5.article_info 
+  Nearly there - please enter your details below and click 'Confirm payment'.
+  Your card will be charged with
+  =number_to_currency(cart.total_in_pounds, :unit => '£')
+-semantic_form_for(order) do |form|
+  -form.inputs do
+    =form.input :email, :as => :hidden
+    =form.input :forename, :as => :hidden
+    =form.input :surname, :as => :hidden
+    =form.input :form_step, :as => :hidden
+  =render('payments/card_details', :form => form, :card_details => card_details)
+  %h4 Delivery
+  -form.inputs do
+    =form.input :deliver_to_billing_address, :as => :boolean, :label => 'Deliver to my billing address?'
+  #delivery_address
+    -form.semantic_fields_for :location, delivery_address do |delivery_address_fields|
+      -delivery_address_fields.inputs do
+        =delivery_address_fields.input :address1
+        =delivery_address_fields.input :address2
+        =delivery_address_fields.input :city
+        =delivery_address_fields.input :country
+        =delivery_address_fields.input :postcode
+  -form.buttons do
+    =form.commit_button 'Confirm payment'

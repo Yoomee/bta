@@ -1,0 +1,11 @@
+#calendar_content
+  #all_content
+    %ul
+      -@events.each do |event|
+        %li
+          .calendar_marker{:style => "background: #ff0;"}
+          =event.start_date.to_s(:short_date)
+          -unless event.start_date == event.end_date
+            \-
+            =event.end_date.to_s(:short_date)
+          =link_to event, event.page

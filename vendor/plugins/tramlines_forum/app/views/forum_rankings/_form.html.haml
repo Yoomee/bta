@@ -1,0 +1,5 @@
+-semantic_form_for(forum_ranking) do |form|
+  -form.inputs do
+    =form.input :name
+    =form.input :num_posts_needed, :input_html => {:size => 10}, :label => "Number of posts", :help => "Fill in the field below for members to get automatically awarded this rank."
+  =form.buttons

@@ -1,0 +1,36 @@
+-title "Post reply"
+
+=render("posts/form", :post => @post)
+
+-options_panel do
+  =back_link
+
+-#
+  / <%= error_messages_for 'post' %>
+  / 
+  / <% form_tag({:action => 'create', :id=>@post.topic.id}, :multipart => true) do %>
+  / 
+  / <div id="forums"> 
+  / <div class="tabberlive">
+  /   <ul class="tabbernav">
+  /     <li><a href="/forum/show/1">Topics</a></li>
+  /     <li><%=link_to 'Topic View', :controller=>'topic', :action => 'show', :id => @post.topic%></li>
+  /   <li id="new_message_button"><a href="/topic/new/1">New topic +</a></li>
+  /   </ul>
+  / 
+  / <div class="tabbertab">
+  / 
+  /   <%=render :partial => 'form'%>
+  / 
+  /   <input type="hidden" name="topic" value="<%= @post.topic.id %>">
+  / 
+  /   <div class='buttonPanel'>
+  /     <%=submit_tag 'Create'%>
+  /   </div>
+  / <% end %>
+  / </div>
+  / </div>
+  / <div class='details'>
+  /   <%=link_to 'Back', :action => 'list'%>
+  / </div>
+  / </div>

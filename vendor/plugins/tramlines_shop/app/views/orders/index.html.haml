@@ -1,0 +1,29 @@
+-title "Orders"
+-content_for(:head) do
+  =stylesheet_link_tag 'client/tablesorter/themes/blue/style.css'
+  :coffeescript
+    $ -> 
+      $('.tablesorter').tablesorter()
+-if orders.empty?
+  %p No orders have been placed yet on the site.
+-else
+  %p
+    These are the orders placed on the site. Click on an order ID to view more details.
+  %table.tablesorter
+    %thead
+      %tr
+        %th ID
+        %th Date/time
+        %th Name
+        %th Amount
+        %th Status
+    %tbody
+      -orders.each do |order|
+        %tr
+          %td=link_to order.transaction_reference, order
+          %td=order.created_at.to_s(:neat_date_and_time)
+          %td=order.full_name
+          %td=number_to_currency order.amount_in_pounds, :unit => '£'
+          %td=order.status
+-options_panel do
+  =back_link

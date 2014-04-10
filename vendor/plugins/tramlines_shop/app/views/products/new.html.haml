@@ -1,0 +1,6 @@
+-title 'New product'
+%p.intro
+  Please enter details of the product and click 'Save'.
+=render :partial => 'form', :locals => {:product => @product}
+-options_panel do
+  =back_link

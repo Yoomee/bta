@@ -1,0 +1,13 @@
+=error_messages_for(:order)
+-if uses_paypal?
+  %p.intro
+    Please review your order and click 'Update cart' if there is anything which needs changing. Then click 'Confirm' when you are satisfied to 
+    -if uses_paypal?
+      go to PayPal and 
+    complete the order.
+  =render :partial => 'carts/form', :locals => {:cart => cart}
+  %p
+    =link_to 'Confirm', orders_path, :method => :post, :class => 'bttn_l'
+-else
+  =render("form_step#{order.form_step}", :cart => cart)
+=render :partial => 'shop/options_panel'

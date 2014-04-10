@@ -1,0 +1,16 @@
+Thank you for your order, reference number
+=@order.transaction_reference
+
+
+The details are shown below:
+
+=Terminal::Table.new :headings => ['Product', 'Price (each)', 'Quantity', 'Price'], :rows => @order.lines.collect{|line| [line.product.to_s, number_to_currency(line.product_price_in_pounds, :unit => '£'), line.quantity,number_to_currency(line.price_in_pounds, :unit => '£')]} + [:separator, ['Total','','',number_to_currency(@order.amount_in_pounds, :unit => '£')]]
+
+
+Your order will be sent to:
+=@order.full_name
+=render_address @order.delivery_address, :multi_line => true
+
+
+You can view you order online by visiting 
+="#{APP_CONFIG[:site_url]}#{order_path(@order)}"

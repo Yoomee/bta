@@ -1,0 +1,10 @@
+-title "#{@product}: Add photo"
+%p
+  Please select a file and click 'Save' to add the photo.
+-semantic_form_for @photo, :html => {:multipart => true} do |form|
+  -form.inputs do
+    =form.input :image, :as => :image
+  -form.buttons do
+    =form.commit_button 'Save'
+-options_panel do
+  =back_link

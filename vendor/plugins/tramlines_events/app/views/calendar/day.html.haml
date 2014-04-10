@@ -1,0 +1,19 @@
+-hide_page_title
+#previous_next_day_links
+  =link_to("<< #{time_without_current_year(@date.yesterday)}", url_for_day(@date.yesterday), :id => "previous_day_link")
+  =link_to("#{time_without_current_year(@date.tomorrow)} >>", url_for_day(@date.tomorrow), :id => "next_day_link")
+  %br.clear
+%h2=time_without_current_year(@date)
+
+%ul#day_events
+  =event_list(@events)
+
+-#
+  %ul#day_events
+    -@events.each do |event|
+      %li
+        =link_to(event.name, event.page)
+
+-options_panel do
+  =back_link
+  =link_to("Add event", new_event_path(:year => @date.year, :month => @date.month, :day => @date.day)) if allowed_to?(new_event_proc)

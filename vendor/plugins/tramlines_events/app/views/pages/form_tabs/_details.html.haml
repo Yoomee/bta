@@ -1,0 +1,26 @@
+%p
+  = "Please enter the details of the #{page.type_name} below."
+-semantic_fields_for page do |fields|
+  -fields.inputs do
+    -if page.event
+      =fields.input :section_id, :as => :hidden
+      %li
+        -fields.semantic_fields_for :event, :as => :event_attributes do |event|
+          -event.inputs do
+            =event.input :category_id, :as => :select, :collection => EventCategory.all
+    -else  
+      %li.select.required#page_section_input
+        =fields.label :section_id, "Section#{content_tag :abbr, '*', :title => 'required'}"
+        =fields.select :section_id, section_option_tags(page)
+    =fields.input :title
+    =#fields.input :intro, :input_html => {:rows => 5, :cols => 97}
+    =fields.input :text, :as => :ck_text
+    %li=fields.photo_browser_button :photo
+  -if page.event
+    %li
+      -fields.semantic_fields_for :event, :as => :event_attributes do |event|
+        -event.inputs do
+          =event.input :formatted_start_at, :as => :string, :label => "Start time", :input_html => {:class => 'datetime'}
+          =event.input :formatted_end_at, :as => :string, :label => "End time", :input_html => {:class => 'datetime'}
+  :javascript
+    PageForm.init_datepicker();

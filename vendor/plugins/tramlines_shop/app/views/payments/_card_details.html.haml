@@ -1,0 +1,24 @@
+-form.semantic_fields_for(:card_details, card_details) do |card_form|
+  -card_form.inputs do
+    -if @card_error_message
+      %li.card_error
+        %p
+          Your payment details were rejected, please check them and try again.
+          %br
+          The bank gave the following reason:
+        %p.message=@card_error_message
+    =card_form.input :cardholder_name
+    =card_form.input :card_type, :as => :select, :collection => card_types_array, :include_blank => false
+    =card_form.input :card_number, :label => "Card number (do not add spaces between numbers)"
+    =card_form.input :expiry_date, :as => :date, :labels => {:month => "", :year => ""}, :order => [:month, :year], :use_month_names => card_month_names, :start_year => Date.today.year, :include_blank => false
+    =card_form.input :security_number, :label => "CVV number", :hint => "This is the last 3 numbers after the signature strip on the back of your card. #{link_to_function('See here', "window.open('/client/cvv.html', '_blank', 'height=200,width=300,directories=0,location=0',menubar=0,titlebar=0,toolbar=0,status=0,resizable=0)")}", :input_html => {:size => 3, :maxlength => 3}, :wrapper_html => {:class => "inline-fields"}
+%h4 Billing address
+-form.semantic_fields_for(:card_details, card_details) do |card_form|
+  -card_form.inputs do
+    =card_form.input :address1
+    =card_form.input :address2
+    =card_form.input :city
+    =card_form.input :county
+    =card_form.input :country, :as => :country, :priority_countries => ["United Kingdom"]
+    =card_form.input :postcode
+    
