@@ -5514,3 +5514,6 @@ input#enquiry_please_send_this_information_to_me_via_email {
   padding-left:17px;
 	background:url("/images/report.png") no-repeat scroll 0px 2px;
 }
+#CAFDonateButtonContainer img {
+float: right;
+}
