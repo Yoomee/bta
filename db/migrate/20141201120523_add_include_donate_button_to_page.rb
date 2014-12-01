@@ -4,6 +4,6 @@ class AddIncludeDonateButtonToPage < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :pages, :image_centre
+    remove_column :pages, :include_donate_button
   end
 end

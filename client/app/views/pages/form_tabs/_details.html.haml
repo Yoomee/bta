@@ -13,7 +13,7 @@
     =fields.input :title
     =#fields.input :intro, :input_html => {:rows => 5, :cols => 97}
     =fields.input :text, :as => :ck_text
-    =fields.input :include_donate_button
+    =fields.input :donate_url, :label => 'URL of donation page'
     %li=fields.photo_browser_button :photo
   -if page.event
     -fields.inputs do
