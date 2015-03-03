@@ -5,7 +5,7 @@
       var mapOptions = {
         center: new google.maps.LatLng(54.00366,-2.547855),
         zoom: 5,
-        mapTypeId: google.maps.MapTypeId.ROADMAP          
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       var map = new google.maps.Map(document.getElementById("directory_map"), mapOptions);
       contactLatLngs = #{contacts.collect {|c| [c.lat, c.lng, c.category_id, c.name]}.to_json};
@@ -13,17 +13,16 @@
         var type = latLng[2];
         var colour;
           if(type == 2){
-            colour = 'blue';            
+            colour = 'blue';
           }
           else if(type == 3){
-            colour = 'yellow';            
+            colour = 'yellow';
           }
           else if(type == 4){
-            colour = 'green';            
+            colour = 'green';
           }
           var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(latLng[0], latLng[1]),          
-          icon: 'http://www.google.com/intl/en_us/mapfiles/ms/micons/' + colour + '-dot.png'        
+          position: new google.maps.LatLng(latLng[0], latLng[1])
         });
 
         var infowindow = new google.maps.InfoWindow({
