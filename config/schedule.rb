@@ -20,4 +20,4 @@
 # Learn more: http://github.com/javan/whenever
 
 client_schedule = "client/config/schedule.rb"
-# eval(IO.read(client_schedule), binding, client_schedule) if File.exists?(client_schedule)
+eval(IO.read(client_schedule), binding, client_schedule) if File.exists?(client_schedule)

@@ -25,19 +25,19 @@ Rails::Initializer.run do |config|
   config.gem 'httparty'
   # config.gem 'dragonfly', :version => "0.6.2"
   config.gem 'dragonfly', '0.8.2'
-  config.gem 'rack-cache', :lib => 'rack/cache'  
+  config.gem 'rack-cache', :lib => 'rack/cache'
   config.gem 'aasm', :source => 'http://gemcutter.org', :version => '2.3.1'
   config.gem 'formtastic', :source => 'http://gemcutter.org', :version => '1.0.1'
   config.gem "acts-as-taggable-on", :source => "http://gemcutter.org", :version => '2.0.6'
-  config.gem 'will_paginate', :version => "~> 2.3"  
+  config.gem 'will_paginate', :version => "~> 2.3"
   config.gem 'haml', :version => '3.0.25'
   config.gem 'hpricot'
   config.gem 'json'
   config.gem 'has_many_polymorphs'
-  config.gem 'SystemTimer', :lib => 'system_timer', :source => "http://gemcutter.org/" 
+  config.gem 'SystemTimer', :lib => 'system_timer', :source => "http://gemcutter.org/"
   # config.gem 'system_timer' # for memcache-client
   config.gem 'eventmachine' # for memcache-client
-  config.gem 'memcache-client', :lib => 'memcache' # for starling  
+  config.gem 'memcache-client', :lib => 'memcache' # for starling
   config.gem 'starling-starling', :source => "http://gems.github.com/", :lib => 'starling'
   config.gem 'daemons' #for workling
   # config.gem 'validatable'
@@ -50,7 +50,6 @@ Rails::Initializer.run do |config|
   config.gem 'datetimespan'
   config.gem 'whenever'
   config.gem 'yoomee-decent_exposure', :lib => 'decent_exposure', :version => '1.2.1'
-  config.gem 'barista'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -68,12 +67,12 @@ Rails::Initializer.run do |config|
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.active_record.default_timezone = :utc
   config.time_zone = 'London'
-  
+
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 
-  
+
   client_environment = "#{RAILS_ROOT}/client/config/environment.rb"
   client_rails_env_environment = "#{RAILS_ROOT}/client/config/environments/#{RAILS_ENV}.rb"
   require client_environment if File.exists?(client_environment)
@@ -96,7 +95,7 @@ Rails::Initializer.run do |config|
       end
     end
   end
-  
+
 end
 
 # client_helpers_dir_glob = "#{RAILS_ROOT}/client/app/helpers"
