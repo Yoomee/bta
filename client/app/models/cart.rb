@@ -5,19 +5,11 @@ Cart.class_eval do
   validates_each :donation_amount_in_pounds_s do |record, attr, value|
     record.errors.add attr, 'cannot be less than zero' if record.donation_amount_in_pence < 0
   end
-  
-  validates_each :donation_gift_aid do |record, attr, value|
-    record.errors.add attr, 'Please confirm that you understand this statement' if (record.donation_gift_aid_today || record.donation_gift_aid_past || record.donation_gift_aid_future) && (value == false)
-  end
-  
-  validates_each :donation_gift_aid_future do |record, attr, value|
-    record.errors.add attr, 'Please tick one or more of these boxes' if !(value || record.donation_gift_aid_past || record.donation_gift_aid_today) && (record.donation_gift_aid == true)
-  end
-  
+
   def donation_amount_in_pounds
     donation_amount_in_pence.to_f / 100
   end
-  
+
   def donation_amount_in_pounds=(pounds)
     self.donation_amount_in_pence = pounds.to_f * 100
   end
@@ -26,15 +18,15 @@ Cart.class_eval do
   def donation_amount_in_pounds_s
     "%.2f" % donation_amount_in_pounds
   end
-  
+
   def donation_item
-    CartItem.new(:is_donation => true, :donation_amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid, :gift_aid_today => donation_gift_aid_today, :gift_aid_past => donation_gift_aid_past, :gift_aid_future => donation_gift_aid_future)
+    CartItem.new(:is_donation => true, :donation_amount => donation_amount_in_pounds, :gift_aid => donation_gift_aid)
   end
-  
+
   def has_donation?
     !donation_amount_in_pence.zero?
   end
-  
+
   def paypal_url_with_donations
     if has_donation?
       # Add the donation item
@@ -49,11 +41,11 @@ Cart.class_eval do
     end
   end
   alias_method_chain :paypal_url, :donations
-  
+
   def total_to_pay_in_pounds
     total_in_pounds + donation_amount_in_pounds
   end
-  
+
   private
   def update_price_brackets
     # bta_member and overseas need to be mutually-exclusive
@@ -63,5 +55,5 @@ Cart.class_eval do
       item.update_attributes!(:bta_member => bta_member?, :overseas => overseas?)
     end
   end
-  
+
 end

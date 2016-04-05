@@ -50,19 +50,23 @@
         %th.price_column Amount
       %tr
         %td.gift_aid_column
-          Please treat as Gift Aid donations all qualifying gifts of money I have made to the British Tinnitus Association:
-          -form.inputs do
-            =form.input :donation_gift_aid_today, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_today_before_type_cast), :label => "today"
-            =form.input :donation_gift_aid_past, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_past_before_type_cast), :label => "in the past 4 years"
-            =form.input :donation_gift_aid_future, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_future_before_type_cast), :label => "in the future"
-            
+          %p
+            -form.inputs do
+              =form.input :donation_gift_aid,
+                :as => :boolean,
+                :checked => Module::value_to_boolean(cart.donation_gift_aid_before_type_cast),
+                :label => "I want to Gift Aid this donation and any donations I make in the future or have made in the last four years to the British Tinnitus Association."
+          %p{ :style => "font-size: 11px;" }
+            I am a UK taxpayer and understand that if I pay less Income Tax and/or Capital Gains Tax than the amount of Gift Aid claimed on all my donations in that tax year it is my responsibility to pay any difference.
+            %br
+            Please notify us if you:
+            %ul{ :style => "font-size: 11px;" }
+              %li Want to cancel this declaration
+              %li Change your name or home address
+              %li No longer pay sufficient tax on your income and/or capital gains
         %td.price_column
           -form.inputs do
             =form.input :donation_amount_in_pounds_s, :label => "£", :required => false, :input_html => {:size => 8}
-      %tr
-        %td.gift_aid_column
-          -form.inputs do
-            =form.input :donation_gift_aid, :as => :boolean, :checked => Module::value_to_boolean(cart.donation_gift_aid_before_type_cast), :label => "I confirm I have paid or will pay an amount of Income Tax and/or Capital Gains Tax for each tax year that is at least equal to the amount of tax that all the charities or community amateur sports clubs that I donate to will reclaim on my gifts for that tax year. I understand that other taxes such as VAT and Council Tax do not qualify. The BTA will reclaim 25p of tax on every £1 you have given."
     %table.cart_list
       %tr.totalToPayRow
         %th Total to pay
