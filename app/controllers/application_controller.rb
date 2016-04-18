@@ -1,11 +1,6 @@
 # Filters added to this controller apply to all controllers in the application.
 # Likewise, all the methods added will be available for all controllers.
 class ApplicationController < ActionController::Base
-
-  ExceptionNotifier.exception_recipients = "developers@yoomee.com"
-  ExceptionNotifier.sender_address = "exception@#{APP_CONFIG["site_url"].gsub(/https?:\/\/(www.)?/,'')}"
-  ExceptionNotifier.email_prefix = APP_CONFIG['site_name'] + ': '
-
   extend ActiveSupport::Memoizable
 
   include ApplicationControllerConcerns::Permissions
@@ -16,8 +11,6 @@ class ApplicationController < ActionController::Base
   include ApplicationControllerConcerns::HelperMethods  
   include ApplicationControllerConcerns::HttpBasicAuthentication
   
-  include ExceptionNotifiable
-
   include ProvidesAdminItems
   
   # Initialize permissions data for controller
